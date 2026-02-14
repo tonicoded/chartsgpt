@@ -9,6 +9,70 @@
       name="description"
       content="ChartsGPT helps you scan trading charts and get fast AI-powered analysis with levels, scenarios, and setup ideas."
     />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#070a12" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="canonical" href="/" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ChartsGPT" />
+    <meta property="og:title" content="ChartsGPT — AI Chart Analyzer" />
+    <meta
+      property="og:description"
+      content="Scan any trading chart and get clean AI analysis with key levels, scenarios, and setup ideas in seconds."
+    />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/logo.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ChartsGPT — AI Chart Analyzer" />
+    <meta
+      name="twitter:description"
+      content="Scan any trading chart and get clean AI analysis with key levels, scenarios, and setup ideas in seconds."
+    />
+    <meta name="twitter:image" content="/logo.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "ChartsGPT",
+            "url": "/",
+            "logo": "/logo.png"
+          },
+          {
+            "@type": "WebSite",
+            "name": "ChartsGPT",
+            "url": "/",
+            "inLanguage": "en"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "ChartsGPT",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "iOS, Android",
+            "description": "Scan trading charts and get fast AI-powered analysis with levels, scenarios, and setup ideas."
+          }
+        ]
+      }
+    </script>
+    <link rel="alternate" type="application/rss+xml" title="ChartsGPT Blog" href="/feed.xml" />
+    <script src="/site-config.js" defer></script>
+    <script src="/site.js" defer></script>
+    <link rel="preload" href="/Unbounded-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/Unbounded-SemiBold.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/Unbounded-Black.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -16,7 +80,19 @@
       <div class="frame">
         <div class="frame-inner">
           <main class="frame-scroll home">
-            <img class="home-gif" src="./video.gif" alt="" aria-hidden="true" loading="eager" />
+            <video
+              class="home-media"
+              aria-hidden="true"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="./video-poster.jpg"
+            >
+              <source src="./video.webm" type="video/webm" />
+              <source src="./video.mp4" type="video/mp4" />
+            </video>
             <div class="home-overlay" aria-hidden="true"></div>
             <div class="home-content">
               <h1 class="hero-title reveal" style="--delay: 90ms">ChartsGPT</h1>
@@ -28,7 +104,7 @@
               </p>
               <div class="store-row reveal" style="--delay: 270ms">
                 <a
-                  class="store-badge"
+                  class="store-badge js-appstore"
                   href="#"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -37,7 +113,7 @@
                   <img src="./appstore.svg" alt="Download on the App Store" />
                 </a>
                 <a
-                  class="store-badge"
+                  class="store-badge js-playstore"
                   href="#"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -50,6 +126,8 @@
           </main>
           <footer class="footer-bar">
             <div class="footer-links" aria-label="Footer">
+              <a href="./blog/">Blog</a>
+              <a href="./about/">About</a>
               <a href="./privacy/">Privacy</a>
               <a href="./terms/">Terms</a>
               <a href="./support/">Support</a>

@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>Position Sizing Calculator (Risk Management) — ChartsGPT</title>
+    <meta
+      name="description"
+      content="Free position sizing calculator: enter account size, risk %, and stop distance to calculate risk amount and position size. Built for trading risk management."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#070a12" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="canonical" href="/blog/position-sizing-calculator/" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="ChartsGPT" />
+    <meta property="og:title" content="Position Sizing Calculator (Risk Management)" />
+    <meta
+      property="og:description"
+      content="Enter account size, risk %, and stop distance to calculate risk amount and position size."
+    />
+    <meta property="og:url" content="/blog/position-sizing-calculator/" />
+    <meta property="og:image" content="/blog/assets/position-sizing-calculator.png" />
+    <meta property="article:published_time" content="2026-02-14" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Position Sizing Calculator (Risk Management)" />
+    <meta
+      name="twitter:description"
+      content="Enter account size, risk %, and stop distance to calculate risk amount and position size."
+    />
+    <meta name="twitter:image" content="/blog/assets/position-sizing-calculator.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Article",
+            "headline": "Position Sizing Calculator (Risk Management)",
+            "datePublished": "2026-02-14",
+            "dateModified": "2026-02-14",
+            "inLanguage": "en",
+            "mainEntityOfPage": { "@type": "WebPage", "@id": "/blog/position-sizing-calculator/" },
+            "publisher": { "@type": "Organization", "name": "ChartsGPT", "url": "/", "logo": "/logo.png" },
+            "image": ["/blog/assets/position-sizing-calculator.png"],
+            "description": "A simple position sizing calculator for trading risk management."
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is position sizing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Position sizing is how much you buy/sell so your loss at the stop loss equals your chosen risk amount. It helps control risk consistently."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is a good risk per trade?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Many traders use 0.25%–2% depending on volatility and strategy. The right risk is the one you can repeat without emotional decisions and without damaging the account during drawdowns."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "/" },
+              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "/blog/" },
+              { "@type": "ListItem", "position": 3, "name": "Position Sizing Calculator", "item": "/blog/position-sizing-calculator/" }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <link rel="alternate" type="application/rss+xml" title="ChartsGPT Blog" href="/feed.xml" />
+    <script src="/site-config.js" defer></script>
+    <script src="/site.js" defer></script>
+    <link rel="preload" href="/Unbounded-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/Unbounded-SemiBold.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/Unbounded-Black.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body class="blog-body">
+    <div class="blog-shell">
+      <header class="blog-topbar" aria-label="Site header">
+        <div class="blog-topbar-inner">
+          <a class="blog-brand" href="../../" aria-label="ChartsGPT Home">
+            <img src="../../logo.png" alt="ChartsGPT logo" width="30" height="30" loading="eager" />
+            <span>ChartsGPT</span>
+          </a>
+          <nav class="blog-nav" aria-label="Primary">
+            <a href="../../">Home</a>
+            <a href="../">Blog</a>
+            <a href="../../about/">About</a>
+            <a href="../../privacy/">Privacy</a>
+            <a href="../../terms/">Terms</a>
+            <a href="../../support/">Support</a>
+          </nav>
+          <details class="blog-menu">
+            <summary aria-label="Open menu"><span class="blog-menu-icon" aria-hidden="true"></span></summary>
+            <div class="blog-menu-panel" role="menu" aria-label="Menu">
+              <a role="menuitem" href="../../">Home</a>
+              <a role="menuitem" href="../">Blog</a>
+              <a role="menuitem" href="../../about/">About</a>
+              <a role="menuitem" href="../../privacy/">Privacy</a>
+              <a role="menuitem" href="../../terms/">Terms</a>
+              <a role="menuitem" href="../../support/">Support</a>
+            </div>
+          </details>
+        </div>
+      </header>
+
+      <main class="blog-main">
+        <div class="blog-container">
+          <div class="blog-hero">
+            <div class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="../../">Home</a><span>›</span><a href="../">Blog</a><span>›</span><span aria-current="page">Position Sizing</span>
+            </div>
+            <h1>Position Sizing Calculator (Risk Management)</h1>
+            <p>Enter your account size, risk %, and stop distance to get an instant risk amount and position size.</p>
+            <div class="blog-meta">Published: February 14, 2026 • Last updated: February 14, 2026 • Reading time: ~6 minutes</div>
+          </div>
+
+          <article class="blog-card">
+            <div class="blog-article">
+              <div class="callout">
+                <strong>Quick answer:</strong> Position size = (Account × Risk %) ÷ Stop distance.
+                <br />
+                <strong>Reality check:</strong> this is a math tool, not financial advice.
+              </div>
+              <div class="pillar-bar" aria-label="Pillar guide">
+                <span class="pill-label">Pillar guide:</span>
+                <a href="../risk-management-position-sizing/">Risk Management</a>
+                <span>•</span>
+                <a href="../pillars/">All pillar guides</a>
+              </div>
+              <div class="toc js-toc" aria-label="Table of contents"></div>
+
+              <h2>Calculator</h2>
+              <form class="calc" id="calc" novalidate>
+                <label class="calc-row">
+                  <span>Account size (USD)</span>
+                  <input inputmode="decimal" name="account" type="number" min="0" step="0.01" value="10000" />
+                </label>
+                <label class="calc-row">
+                  <span>Risk per trade (%)</span>
+                  <input inputmode="decimal" name="risk_pct" type="number" min="0" step="0.01" value="1" />
+                </label>
+                <label class="calc-row">
+                  <span>Stop distance (price units)</span>
+                  <input inputmode="decimal" name="stop" type="number" min="0" step="0.01" value="50" />
+                </label>
+                <div class="calc-actions">
+                  <button type="button" class="calc-btn" id="calcBtn">Calculate</button>
+                  <button type="button" class="calc-btn calc-btn-ghost" id="resetBtn">Reset</button>
+                </div>
+              </form>
+
+              <div class="calc-out" aria-label="Results">
+                <div class="calc-kv"><span>Risk amount</span><strong id="riskOut">$0</strong></div>
+                <div class="calc-kv"><span>Position size</span><strong id="sizeOut">0</strong></div>
+              </div>
+
+              <h2>How it works</h2>
+              <pre><code>risk_amount = account × (risk_pct ÷ 100)
+position_size = risk_amount ÷ stop_distance</code></pre>
+              <p>
+                This calculator outputs position size in “units” of your stop distance. Your platform may use contracts, shares, lots, or
+                tokens—convert units accordingly.
+              </p>
+
+              <h2>Related posts</h2>
+              <ul>
+                <li><a href="../risk-management-position-sizing/">Risk Management & Position Sizing (Deep Guide)</a></li>
+                <li><a href="../trading-plan-template/">Trading Plan Template (Copy/Paste)</a></li>
+                <li><a href="../support-and-resistance/">Support & Resistance Trading</a></li>
+                <li><a href="../crypto-vs-stocks-volatility/">Crypto vs Stocks Volatility</a></li>
+              </ul>
+
+              <h2>Get ChartsGPT</h2>
+              <p>Turn your screenshot into key levels, scenarios, trigger, and invalidation in seconds.</p>
+              <div class="download-row" aria-label="Download ChartsGPT">
+                <a class="store-badge js-appstore" href="#" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                  <img src="/appstore.svg" alt="Download on the App Store" />
+                </a>
+                <a class="store-badge js-playstore" href="#" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+                  <img src="/googleplay.svg" alt="Get it on Google Play" />
+                </a>
+              </div>
+
+              <h2>About ChartsGPT</h2>
+              <p>
+                ChartsGPT is an AI chart analysis app designed to turn screenshots into structured levels and scenarios. For support,
+                contact <a href="mailto:anthonyvvza@gmail.com">anthonyvvza@gmail.com</a>.
+              </p>
+
+              <p class="blog-meta">Disclaimer: ChartsGPT provides educational analysis tools only and is not financial advice.</p>
+            </div>
+          </article>
+        </div>
+      </main>
+
+      <footer class="blog-footer" aria-label="Site footer">
+        <div class="blog-footer-inner">
+          <div>
+            <a href="../../">Home</a> • <a href="../">Blog</a> • <a href="../../about/">About</a> • <a href="../../privacy/">Privacy</a> •
+            <a href="../../terms/">Terms</a> • <a href="../../support/">Support</a>
+          </div>
+          <div>© ChartsGPT 2026</div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      (() => {
+        const form = document.getElementById("calc");
+        const calcBtn = document.getElementById("calcBtn");
+        const resetBtn = document.getElementById("resetBtn");
+        const riskOut = document.getElementById("riskOut");
+        const sizeOut = document.getElementById("sizeOut");
+
+        const fmtMoney = (n) =>
+          new Intl.NumberFormat(undefined, { style: "currency", currency: "USD", maximumFractionDigits: 2 }).format(n);
+        const fmtNum = (n) => new Intl.NumberFormat(undefined, { maximumFractionDigits: 6 }).format(n);
+
+        const read = (name) => Number(form.elements[name].value || 0);
+        const calc = () => {
+          const account = Math.max(0, read("account"));
+          const riskPct = Math.max(0, read("risk_pct"));
+          const stop = Math.max(0, read("stop"));
+          const riskAmount = account * (riskPct / 100);
+          const positionSize = stop > 0 ? riskAmount / stop : 0;
+          riskOut.textContent = fmtMoney(riskAmount);
+          sizeOut.textContent = fmtNum(positionSize);
+        };
+
+        calcBtn.addEventListener("click", calc);
+        resetBtn.addEventListener("click", () => {
+          form.elements.account.value = 10000;
+          form.elements.risk_pct.value = 1;
+          form.elements.stop.value = 50;
+          calc();
+        });
+        calc();
+      })();
+    </script>
+  </body>
+</html>

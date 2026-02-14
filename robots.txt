@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# If you have a custom domain, set this to the full URL:
+# Sitemap: https://YOUR_DOMAIN/sitemap.xml
+
+# RSS feed (optional):
+# https://YOUR_DOMAIN/feed.xml

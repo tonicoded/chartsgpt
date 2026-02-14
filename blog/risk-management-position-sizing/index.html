@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>Risk Management & Position Sizing (The Only Trading Edge That Scales) — ChartsGPT</title>
+    <meta
+      name="description"
+      content="Risk management that actually boosts long-term profit: pick risk per trade, place stops logically, calculate position size, and avoid the mistakes that blow accounts."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#070a12" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="canonical" href="/blog/risk-management-position-sizing/" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="ChartsGPT" />
+    <meta property="og:title" content="Risk Management & Position Sizing (The Only Trading Edge That Scales)" />
+    <meta
+      property="og:description"
+      content="Pick risk per trade, place stops logically, calculate position size, and avoid the mistakes that blow accounts."
+    />
+    <meta property="og:url" content="/blog/risk-management-position-sizing/" />
+    <meta property="og:image" content="/blog/assets/risk-sizing.png" />
+    <meta property="article:published_time" content="2026-02-14" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Risk Management & Position Sizing (The Only Trading Edge That Scales)" />
+    <meta
+      name="twitter:description"
+      content="Pick risk per trade, place stops logically, calculate position size, and avoid the mistakes that blow accounts."
+    />
+    <meta name="twitter:image" content="/blog/assets/risk-sizing.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Article",
+            "headline": "Risk Management & Position Sizing (The Only Trading Edge That Scales)",
+            "datePublished": "2026-02-14",
+            "dateModified": "2026-02-14",
+            "inLanguage": "en",
+            "mainEntityOfPage": { "@type": "WebPage", "@id": "/blog/risk-management-position-sizing/" },
+            "publisher": { "@type": "Organization", "name": "ChartsGPT", "url": "/", "logo": "/logo.png" },
+            "image": ["/blog/assets/risk-sizing.png"],
+            "description": "Risk management explained simply with position sizing and common mistakes."
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is a good risk per trade?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Many traders use 0.25%–2% depending on strategy and volatility. The correct number is the one you can repeat without emotional decision-making and without damaging the account during drawdowns."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Should I move my stop loss?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Move stops only as part of a predefined plan (for example after structure confirms). Moving a stop because you feel discomfort is usually a mistake."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "/" },
+              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "/blog/" },
+              { "@type": "ListItem", "position": 3, "name": "Risk Management", "item": "/blog/risk-management-position-sizing/" }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <link rel="alternate" type="application/rss+xml" title="ChartsGPT Blog" href="/feed.xml" />
+    <script src="/site-config.js" defer></script>
+    <script src="/site.js" defer></script>
+    <link rel="preload" href="/Unbounded-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/Unbounded-SemiBold.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/Unbounded-Black.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body class="blog-body">
+    <div class="blog-shell">
+      <header class="blog-topbar" aria-label="Site header">
+        <div class="blog-topbar-inner">
+          <a class="blog-brand" href="../../" aria-label="ChartsGPT Home">
+            <img src="../../logo.png" alt="ChartsGPT logo" width="30" height="30" loading="eager" />
+            <span>ChartsGPT</span>
+          </a>
+          <nav class="blog-nav" aria-label="Primary">
+            <a href="../../">Home</a>
+            <a href="../">Blog</a>
+            <a href="../../about/">About</a>
+            <a href="../../privacy/">Privacy</a>
+            <a href="../../terms/">Terms</a>
+            <a href="../../support/">Support</a>
+          </nav>
+          <details class="blog-menu">
+            <summary aria-label="Open menu"><span class="blog-menu-icon" aria-hidden="true"></span></summary>
+            <div class="blog-menu-panel" role="menu" aria-label="Menu">
+              <a role="menuitem" href="../../">Home</a>
+              <a role="menuitem" href="../">Blog</a>
+              <a role="menuitem" href="../../about/">About</a>
+              <a role="menuitem" href="../../privacy/">Privacy</a>
+              <a role="menuitem" href="../../terms/">Terms</a>
+              <a role="menuitem" href="../../support/">Support</a>
+            </div>
+          </details>
+        </div>
+      </header>
+
+      <main class="blog-main">
+        <div class="blog-container">
+          <div class="blog-hero">
+            <div class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="../../">Home</a><span>›</span><a href="../">Blog</a><span>›</span><span aria-current="page">Risk Management</span>
+            </div>
+            <h1>Risk Management & Position Sizing (The Only Trading Edge That Scales)</h1>
+            <p>
+              If you want “consistent profits,” start here. Most traders don’t lose because their entry is terrible — they lose because
+              their <strong>risk</strong> is uncontrolled.
+            </p>
+            <div class="blog-meta">Published: February 14, 2026 • Last updated: February 14, 2026 • Reading time: ~10 minutes</div>
+          </div>
+
+          <article class="blog-card">
+            <div class="blog-article">
+              <figure class="blog-figure">
+                <img src="../assets/risk-sizing.svg" alt="Position sizing equation based on account, risk, and stop size." loading="eager" />
+                <figcaption class="blog-figcap">Risk first. Then position size. Then trade.</figcaption>
+              </figure>
+
+              <div class="pillar-bar" aria-label="Pillar guide">
+                <span class="pill-label">Pillar guide</span>
+                <span>•</span>
+                <span>Core framework page. See all pillars: <a href="../pillars/">Trading pillar guides</a>.</span>
+              </div>
+
+              <div class="definition">
+                <div class="definition-title">Definition (quick)</div>
+                <p>
+                  <strong>Risk management</strong> is the system you use to survive variance: define invalidation, size your position from that stop,
+                  and keep risk consistent so one bad day can’t erase months of progress.
+                </p>
+              </div>
+
+              <div class="quick-steps">
+                <div class="quick-steps-title">Quick steps (copy/paste)</div>
+                <ol>
+                  <li>Pick a repeatable risk per trade (example: 0.5%–1%).</li>
+                  <li>Place the stop where the idea is wrong (not where it “feels tight”).</li>
+                  <li>Calculate size from risk ÷ stop distance.</li>
+                  <li>Reduce size if volatility expands; don’t “revenge size.”</li>
+                </ol>
+              </div>
+
+              <div class="callout">
+                <strong>Non-negotiable:</strong> choose risk per trade <em>before</em> you enter. If you size based on emotion, you’ll blow up eventually.
+                <br />
+                <strong>Reality check:</strong> no strategy guarantees wins, but disciplined risk is how you survive variance and compound.
+              </div>
+              <div class="toc js-toc" aria-label="Table of contents"></div>
+
+              <h2>1) Pick a risk per trade you can repeat</h2>
+              <p>
+                You don’t need a perfect number. You need a consistent number. Many traders sit around 0.25%–2% depending on volatility
+                and strategy. Consistency is the edge.
+              </p>
+
+              <h2>2) Place stops where the idea is wrong</h2>
+              <p>A stop loss should sit beyond a level that changes the story:</p>
+              <ul>
+                <li>beyond a support/resistance zone</li>
+                <li>beyond a swing high/low in structure</li>
+                <li>beyond the wick that swept liquidity (if trading a sweep)</li>
+              </ul>
+              <p>If the stop is “because I want a tight stop,” it’s not logical—it's wishful.</p>
+
+              <h2>3) Calculate position size (simple)</h2>
+              <p>Basic formula:</p>
+              <pre><code>Position size = (Account × Risk per trade) ÷ Stop size</code></pre>
+              <p>
+                Example: $10,000 account, 1% risk ($100), 50-point stop → size = $100 ÷ 50 = 2 units (adjust units per instrument).
+              </p>
+
+              <h2>Three account-killers (avoid these)</h2>
+              <ul>
+                <li><strong>Revenge sizing:</strong> increasing size after a loss to “get it back.”</li>
+                <li><strong>Moving stops emotionally:</strong> widening the stop because price is close.</li>
+                <li><strong>Overtrading:</strong> taking low-quality setups because you feel behind.</li>
+              </ul>
+
+              <h2>A prompt for AI risk planning</h2>
+              <pre><code>Given this setup, help me define risk clearly.
+
+1) Where is the logical invalidation level (stop) and why?
+2) What is the stop distance from entry?
+3) If my account is [X] and risk per trade is [Y%], what is position size?
+4) What is the main mistake traders make with this setup?</code></pre>
+
+              <h2>Related posts</h2>
+              <ul>
+                <li><a href="../position-sizing-calculator/">Position Sizing Calculator (Risk Management)</a></li>
+                <li><a href="../trading-plan-template/">Trading Plan Template (Copy/Paste)</a></li>
+                <li><a href="../support-and-resistance/">Support & Resistance Trading (Simple Levels That Actually Work)</a></li>
+                <li><a href="../crypto-vs-stocks-volatility/">Crypto vs Stocks Volatility</a></li>
+                <li><a href="../ai-trading-chart-analysis/">AI Trading Chart Analysis Workflow</a></li>
+              </ul>
+
+              <h2>Get ChartsGPT</h2>
+              <p>Turn your screenshot into key levels, scenarios, trigger, and invalidation in seconds.</p>
+              <div class="download-row" aria-label="Download ChartsGPT">
+                <a class="store-badge js-appstore" href="#" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                  <img src="/appstore.svg" alt="Download on the App Store" />
+                </a>
+                <a class="store-badge js-playstore" href="#" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+                  <img src="/googleplay.svg" alt="Get it on Google Play" />
+                </a>
+              </div>
+
+              <h2>About ChartsGPT</h2>
+              <p>
+                ChartsGPT is an AI chart analysis app designed to turn screenshots into structured levels and scenarios. For support,
+                contact <a href="mailto:anthonyvvza@gmail.com">anthonyvvza@gmail.com</a>.
+              </p>
+
+              <p class="blog-meta">Disclaimer: ChartsGPT provides educational analysis tools only and is not financial advice.</p>
+            </div>
+          </article>
+        </div>
+      </main>
+
+      <footer class="blog-footer" aria-label="Site footer">
+        <div class="blog-footer-inner">
+          <div>
+            <a href="../../">Home</a> • <a href="../">Blog</a> • <a href="../../about/">About</a> • <a href="../../privacy/">Privacy</a> •
+            <a href="../../terms/">Terms</a> • <a href="../../support/">Support</a>
+          </div>
+          <div>© ChartsGPT 2026</div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

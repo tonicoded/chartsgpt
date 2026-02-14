@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#03060e"/>
+    </linearGradient>
+    <radialGradient id="g1" cx="70%" cy="25%" r="60%">
+      <stop offset="0" stop-color="#27d4ff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#27d4ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="25%" cy="20%" r="60%">
+      <stop offset="0" stop-color="#7c5cff" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#7c5cff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#g1)"/>
+  <rect width="1200" height="630" fill="url(#g2)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="90" y="92" width="1020" height="446" rx="32" fill="rgba(10,12,18,0.72)" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+  </g>
+
+  <g transform="translate(140 160)" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial">
+    <text x="0" y="0" font-size="40" font-weight="800" fill="rgba(255,255,255,0.92)" letter-spacing="-0.5">Break &amp; Retest</text>
+    <text x="0" y="40" font-size="18" fill="rgba(255,255,255,0.72)">Trade the retest. Not the hype.</text>
+  </g>
+
+  <g transform="translate(160 240)">
+    <rect x="0" y="0" width="880" height="260" rx="26" fill="rgba(0,0,0,0.22)" stroke="rgba(255,255,255,0.12)"/>
+
+    <path d="M40 200 L180 200 L260 200 L330 196 L400 180 L470 150 L540 110 L610 90 L680 110 L740 130 L810 90" fill="none" stroke="rgba(39,212,255,0.92)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <path d="M40 156 H840" stroke="rgba(124,92,255,0.50)" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 10"/>
+
+    <g font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="14" fill="rgba(255,255,255,0.78)">
+      <text x="54" y="146">Key level</text>
+      <text x="410" y="212">Break</text>
+      <text x="655" y="146">Retest</text>
+      <text x="785" y="112">Continue</text>
+    </g>
+
+    <circle cx="420" cy="178" r="9" fill="rgba(39,212,255,0.92)"/>
+    <circle cx="680" cy="110" r="9" fill="rgba(124,92,255,0.92)"/>
+  </g>
+</svg>
+
