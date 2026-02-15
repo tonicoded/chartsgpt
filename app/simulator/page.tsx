@@ -2,22 +2,22 @@ import type { Metadata } from "next";
 import SimulatorClient from "./SimulatorClient";
 
 export const metadata: Metadata = {
-  title: "Chart Analysis Simulator (No AI) — ChartsGPT",
+  title: "ChartsGPT Simulator — App-style Market Analysis (No AI)",
   description:
-    "A fast, deterministic chart-analysis simulator (no AI). Enter key levels + context and get a two-scenario plan with triggers and invalidation.",
+    "Run the same deterministic market-analysis workflow as the ChartsGPT app — key levels, scenarios, bias, and risk notes. No AI.",
   alternates: { canonical: "https://charts-gpt.com/simulator/" },
   openGraph: {
-    title: "Chart Analysis Simulator (No AI) — ChartsGPT",
+    title: "ChartsGPT Simulator — App-style Market Analysis (No AI)",
     description:
-      "Enter key levels + context and get a two-scenario plan with triggers and invalidation — no AI, just a structured workflow.",
+      "App-style market analysis on the web: key levels, scenarios, bias, and risk notes — no AI.",
     url: "https://charts-gpt.com/simulator/",
     images: [{ url: "https://charts-gpt.com/blog/assets/og-default.png" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chart Analysis Simulator (No AI) — ChartsGPT",
+    title: "ChartsGPT Simulator — App-style Market Analysis (No AI)",
     description:
-      "Enter key levels + context and get a two-scenario plan with triggers and invalidation — no AI, just a structured workflow.",
+      "App-style market analysis on the web: key levels, scenarios, bias, and risk notes — no AI.",
     images: ["https://charts-gpt.com/blog/assets/og-default.png"]
   }
 };
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function SimulatorPage() {
   return (
     <div className="legacy-scroll">
-      <div className="blog-shell">
+      <div className="blog-shell sim-shell">
         <header className="blog-topbar" aria-label="Site header">
           <div className="blog-topbar-inner">
             <a className="blog-brand" href="/" aria-label="ChartsGPT Home">
@@ -76,25 +76,9 @@ export default function SimulatorPage() {
           </div>
         </header>
 
-        <main className="blog-main">
-          <div className="blog-container">
-            <div className="blog-hero">
-              <div className="breadcrumbs" aria-label="Breadcrumb">
-                <a href="/">Home</a>
-                <span>›</span>
-                <span aria-current="page">Simulator</span>
-              </div>
-              <h1>Chart Analysis Simulator (No AI)</h1>
-              <p>
-                A fast simulator that mimics the <strong>structure</strong> of the app’s output (levels → scenarios → trigger →
-                invalidation) without using AI.
-              </p>
-              <div className="blog-meta">Updated: February 15, 2026</div>
-            </div>
-
-            <article className="blog-card">
-              <SimulatorClient />
-            </article>
+        <main className="blog-main sim-main">
+          <div className="blog-container sim-container">
+            <SimulatorClient />
           </div>
         </main>
 
@@ -111,4 +95,3 @@ export default function SimulatorPage() {
     </div>
   );
 }
-
