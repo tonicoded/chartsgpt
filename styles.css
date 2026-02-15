@@ -59,6 +59,14 @@ body {
   overflow: hidden;
 }
 
+/* When rendered via Next.js, we inject legacy HTML into a wrapper div.
+   The root `body` remains `overflow: hidden` for the app-like homepage frame,
+   so blog/long-form pages use this scroll container instead. */
+.legacy-scroll {
+  height: 100svh;
+  overflow: auto;
+}
+
 /* Blog / long-form pages (override the 9:16 app-like frame) */
 body.blog-body {
   overflow: auto;

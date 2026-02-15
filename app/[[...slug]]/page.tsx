@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import {
+  bodyHasClass,
   extractBodyInnerHtml,
   extractCanonical,
   extractMetaContent,
@@ -95,6 +96,11 @@ export default async function LegacyPage(props: PageProps) {
   }
 
   const bodyInner = extractBodyInnerHtml(html);
+  const isBlogLayout = bodyHasClass(html, "blog-body");
+
+  if (isBlogLayout) {
+    return <div className="legacy-scroll" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: bodyInner }} />;
+  }
 
   return <div suppressHydrationWarning dangerouslySetInnerHTML={{ __html: bodyInner }} />;
 }

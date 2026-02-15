@@ -24,6 +24,13 @@ export function extractBodyInnerHtml(html: string) {
   return body ?? html;
 }
 
+export function bodyHasClass(html: string, className: string) {
+  const escaped = className.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const bodyTag = findFirstMatch(html, [/(<body[^>]*>)/i]);
+  if (!bodyTag) return false;
+  return new RegExp(`\\bclass\\s*=\\s*\"[^\"]*\\b${escaped}\\b[^\"]*\"`, "i").test(bodyTag);
+}
+
 export function extractTitle(html: string) {
   return findFirstMatch(html, [/<title>([\s\S]*?)<\/title>/i]);
 }
@@ -47,4 +54,3 @@ export function toAbsoluteUrl(url: string, base = "https://charts-gpt.com") {
   if (url.startsWith("/")) return `${base}${url}`;
   return url;
 }
-
