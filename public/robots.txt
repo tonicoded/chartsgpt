@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://charts-gpt.com/sitemap.xml
+
+# RSS feed (optional):
+# https://charts-gpt.com/feed.xml
