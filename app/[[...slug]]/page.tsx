@@ -11,12 +11,15 @@ import {
 } from "../_lib/legacy";
 
 type PageProps = {
-  params: Promise<{ slug?: string[] }>;
+  params: { slug?: string[] };
 };
+
+export const dynamic = "force-static";
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return [
-    {},
+    { slug: [] },
     { slug: ["about"] },
     { slug: ["privacy"] },
     { slug: ["terms"] },
@@ -43,7 +46,7 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
-  const { slug } = await props.params;
+  const { slug } = props.params;
   const legacyFile = slugToLegacyFile(slug);
 
   let html: string;
@@ -81,7 +84,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 }
 
 export default async function LegacyPage(props: PageProps) {
-  const { slug } = await props.params;
+  const { slug } = props.params;
   const legacyFile = slugToLegacyFile(slug);
 
   let html: string;
