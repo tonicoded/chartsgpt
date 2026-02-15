@@ -1,140 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Replace https://YOUR_DOMAIN with your real domain (must be absolute). -->
+  <!-- Sitemap URLs are absolute. -->
   <url>
-    <loc>https://YOUR_DOMAIN/</loc>
+    <loc>https://charts-gpt.com/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/about/</loc>
+    <loc>https://charts-gpt.com/about/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/</loc>
+    <loc>https://charts-gpt.com/blog/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/pillars/</loc>
+    <loc>https://charts-gpt.com/blog/pillars/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/ai-trading-chart-analysis/</loc>
+    <loc>https://charts-gpt.com/blog/ai-trading-chart-analysis/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/best-ai-chart-analyzer-2026/</loc>
+    <loc>https://charts-gpt.com/blog/best-ai-chart-analyzer-2026/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/best-support-and-resistance-strategy/</loc>
+    <loc>https://charts-gpt.com/blog/best-support-and-resistance-strategy/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/break-and-retest-crypto/</loc>
+    <loc>https://charts-gpt.com/blog/break-and-retest-crypto/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/how-to-find-key-levels-day-trading/</loc>
+    <loc>https://charts-gpt.com/blog/how-to-find-key-levels-day-trading/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/position-sizing-calculator/</loc>
+    <loc>https://charts-gpt.com/blog/position-sizing-calculator/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/trading-plan-template/</loc>
+    <loc>https://charts-gpt.com/blog/trading-plan-template/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/support-and-resistance/</loc>
+    <loc>https://charts-gpt.com/blog/support-and-resistance/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/break-and-retest/</loc>
+    <loc>https://charts-gpt.com/blog/break-and-retest/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/market-structure-bos-choch/</loc>
+    <loc>https://charts-gpt.com/blog/market-structure-bos-choch/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/rsi-divergence/</loc>
+    <loc>https://charts-gpt.com/blog/rsi-divergence/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/candlestick-patterns-that-matter/</loc>
+    <loc>https://charts-gpt.com/blog/candlestick-patterns-that-matter/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/moving-averages-strategy/</loc>
+    <loc>https://charts-gpt.com/blog/moving-averages-strategy/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/risk-management-position-sizing/</loc>
+    <loc>https://charts-gpt.com/blog/risk-management-position-sizing/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/crypto-vs-stocks-volatility/</loc>
+    <loc>https://charts-gpt.com/blog/crypto-vs-stocks-volatility/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/blog/gold-and-silver-trading/</loc>
+    <loc>https://charts-gpt.com/blog/gold-and-silver-trading/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/privacy/</loc>
+    <loc>https://charts-gpt.com/privacy/</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/terms/</loc>
+    <loc>https://charts-gpt.com/terms/</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://YOUR_DOMAIN/support/</loc>
+    <loc>https://charts-gpt.com/support/</loc>
     <lastmod>2026-02-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
