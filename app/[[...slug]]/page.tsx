@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import fs from "node:fs";
+import path from "node:path";
 import {
   bodyHasClass,
   extractBodyInnerHtml,
@@ -19,31 +21,42 @@ export const dynamic = "force-static";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return [
-    { slug: [] },
-    { slug: ["about"] },
-    { slug: ["privacy"] },
-    { slug: ["terms"] },
-    { slug: ["support"] },
-    { slug: ["blog"] },
-    { slug: ["blog", "pillars"] },
-    { slug: ["blog", "ai-trading-chart-analysis"] },
-    { slug: ["blog", "best-ai-chart-analyzer-2026"] },
-    { slug: ["blog", "best-support-and-resistance-strategy"] },
-    { slug: ["blog", "break-and-retest-crypto"] },
-    { slug: ["blog", "how-to-find-key-levels-day-trading"] },
-    { slug: ["blog", "position-sizing-calculator"] },
-    { slug: ["blog", "trading-plan-template"] },
-    { slug: ["blog", "support-and-resistance"] },
-    { slug: ["blog", "break-and-retest"] },
-    { slug: ["blog", "market-structure-bos-choch"] },
-    { slug: ["blog", "rsi-divergence"] },
-    { slug: ["blog", "candlestick-patterns-that-matter"] },
-    { slug: ["blog", "moving-averages-strategy"] },
-    { slug: ["blog", "risk-management-position-sizing"] },
-    { slug: ["blog", "crypto-vs-stocks-volatility"] },
-    { slug: ["blog", "gold-and-silver-trading"] }
-  ];
+  const ignoredDirs = new Set(["app", "public", "node_modules", ".git"]);
+
+  const slugs: string[][] = [];
+
+  function walk(dir: string, segments: string[]) {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (entry.name.startsWith(".")) continue;
+      const fullPath = path.join(dir, entry.name);
+
+      if (entry.isDirectory()) {
+        if (ignoredDirs.has(entry.name)) continue;
+        walk(fullPath, [...segments, entry.name]);
+        continue;
+      }
+
+      if (entry.isFile() && entry.name === "index.html") {
+        slugs.push(segments);
+      }
+    }
+  }
+
+  walk(process.cwd(), []);
+
+  // Optional catch-all expects the root as `{ slug: [] }`.
+  // De-dupe and normalize.
+  const seen = new Set<string>();
+  const params = [];
+  for (const slug of slugs) {
+    const key = slug.join("/");
+    if (seen.has(key)) continue;
+    seen.add(key);
+    params.push({ slug });
+  }
+
+  return params;
 }
 
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
