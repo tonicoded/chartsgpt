@@ -7,7 +7,7 @@
   const withUtm = (url, platform) => {
     try {
       const parsed = new URL(url);
-      parsed.searchParams.set("utm_source", "chartsgpt.com");
+      parsed.searchParams.set("utm_source", "charts-gpt.com");
       parsed.searchParams.set("utm_medium", "website");
       parsed.searchParams.set("utm_campaign", "organic_seo");
       parsed.searchParams.set("utm_content", platform);
