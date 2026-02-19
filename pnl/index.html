@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>PnL Calendar (Simulated Example) — ChartsGPT</title>
+    <meta
+      name="description"
+      content="A simulated PnL calendar UI mockup for demos and videos. Not real performance."
+    />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="theme-color" content="#070a12" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="canonical" href="https://charts-gpt.com/pnl/" />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+  </head>
+  <body class="blog-body">
+    <style>
+      :root {
+        --pnl-border: rgba(255, 255, 255, 0.1);
+        --pnl-text: rgba(255, 255, 255, 0.92);
+        --pnl-muted: rgba(255, 255, 255, 0.68);
+        --pnl-green: #46d278;
+        --pnl-red: #ff5e5e;
+      }
+
+      .pnl-container {
+        max-width: 1200px;
+      }
+
+      .pnl-card {
+        overflow: hidden;
+      }
+
+      .pnl-hero p {
+        max-width: 70ch;
+      }
+
+      .pnl-badges {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pnl-badge {
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.03em;
+        padding: 7px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid var(--pnl-border);
+        color: var(--pnl-text);
+      }
+
+      .pnl-badge-warn {
+        background: rgba(255, 197, 66, 0.14);
+        border-color: rgba(255, 197, 66, 0.28);
+      }
+
+      .pnl-toolbar {
+        display: flex;
+        gap: 12px;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 14px;
+        background: rgba(255, 255, 255, 0.04);
+        border-bottom: 1px solid var(--pnl-border);
+      }
+
+      .pnl-toolbar-left,
+      .pnl-toolbar-right {
+        display: flex;
+        gap: 10px;
+        align-items: flex-end;
+        flex-wrap: wrap;
+      }
+
+      .pnl-btn {
+        appearance: none;
+        border: 1px solid var(--pnl-border);
+        background: rgba(255, 255, 255, 0.07);
+        color: var(--pnl-text);
+        padding: 10px 12px;
+        border-radius: 14px;
+        font-weight: 900;
+        font-size: 13px;
+      }
+
+      .pnl-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .pnl-btn-accent {
+        background: linear-gradient(180deg, rgba(48, 194, 250, 1), rgba(37, 154, 240, 1));
+        color: rgba(0, 0, 0, 0.9);
+        border-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .pnl-field {
+        display: grid;
+        gap: 6px;
+      }
+
+      .pnl-field span {
+        font-size: 12px;
+        font-weight: 800;
+        color: var(--pnl-muted);
+      }
+
+      .pnl-field input {
+        width: 108px;
+        border-radius: 12px;
+        padding: 10px 12px;
+        background: rgba(0, 0, 0, 0.26);
+        border: 1px solid var(--pnl-border);
+        color: var(--pnl-text);
+        font-weight: 800;
+      }
+
+      .pnl-headline {
+        padding: 14px;
+        display: grid;
+        gap: 8px;
+      }
+
+      .pnl-titleline {
+        display: flex;
+        gap: 12px;
+        align-items: baseline;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .pnl-month {
+        font-size: 18px;
+        font-weight: 950;
+        letter-spacing: -0.01em;
+      }
+
+      .pnl-meta {
+        font-size: 13px;
+        color: var(--pnl-muted);
+        font-weight: 700;
+      }
+
+      .pnl-disclaimer-line {
+        font-size: 13px;
+        color: var(--pnl-muted);
+        font-weight: 650;
+      }
+
+      .pnl-grid-wrap {
+        position: relative;
+        padding: 14px;
+        background: radial-gradient(900px 520px at 15% 0%, rgba(48, 194, 250, 0.1), rgba(0, 0, 0, 0)),
+          radial-gradient(900px 520px at 85% 0%, rgba(120, 76, 255, 0.1), rgba(0, 0, 0, 0));
+      }
+
+      .pnl-watermark {
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        font-family: var(--font-heavy);
+        font-size: clamp(72px, 9vw, 160px);
+        letter-spacing: 0.06em;
+        color: rgba(255, 255, 255, 0.08);
+        transform: rotate(-18deg);
+        user-select: none;
+      }
+
+      .pnl-grid {
+        display: grid;
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .pnl-th {
+        font-size: 13px;
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.8);
+        padding: 8px 8px 2px;
+      }
+
+      .pnl-cell {
+        border-radius: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        padding: 12px;
+        min-height: 98px;
+        display: grid;
+        align-content: start;
+        gap: 6px;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+      }
+
+      .pnl-empty {
+        background: rgba(255, 255, 255, 0.03);
+        border-color: rgba(255, 255, 255, 0.08);
+        box-shadow: none;
+      }
+
+      .pnl-green {
+        background: color-mix(in srgb, var(--pnl-green) 94%, #000 6%);
+      }
+
+      .pnl-red {
+        background: color-mix(in srgb, var(--pnl-red) 94%, #000 6%);
+      }
+
+      .pnl-day {
+        font-size: 12px;
+        font-weight: 900;
+        color: rgba(0, 0, 0, 0.55);
+      }
+
+      .pnl-pnl {
+        font-size: 22px;
+        font-weight: 950;
+        color: rgba(0, 0, 0, 0.92);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .pnl-trades {
+        font-size: 13px;
+        font-weight: 900;
+        color: rgba(0, 0, 0, 0.86);
+      }
+
+      .pnl-week {
+        display: grid;
+        gap: 6px;
+      }
+
+      .pnl-week .pnl-day {
+        color: rgba(0, 0, 0, 0.62);
+      }
+
+      .pnl-footer {
+        padding: 14px;
+        background: rgba(255, 255, 255, 0.04);
+        border-top: 1px solid var(--pnl-border);
+        display: grid;
+        gap: 6px;
+      }
+
+      .pnl-summary {
+        font-size: 13px;
+        font-weight: 800;
+        color: rgba(255, 255, 255, 0.86);
+      }
+
+      .pnl-summary-sub {
+        color: var(--pnl-muted);
+        font-weight: 650;
+      }
+
+      @media (max-width: 980px) {
+        .pnl-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 620px) {
+        .pnl-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .pnl-field input {
+          width: 96px;
+        }
+      }
+    </style>
+
+    <div class="blog-shell pnl-shell">
+      <header class="blog-topbar" aria-label="Site header">
+        <div class="blog-topbar-inner">
+          <a class="blog-brand" href="/" aria-label="ChartsGPT Home">
+            <img src="/logo.png" alt="ChartsGPT logo" width="30" height="30" loading="eager" />
+            <span>ChartsGPT</span>
+          </a>
+          <nav class="blog-nav" aria-label="Primary">
+            <a href="/">Home</a>
+            <a href="/blog/">Blog</a>
+            <a href="/about/">About</a>
+            <a href="/support/">Support</a>
+          </nav>
+          <details class="blog-menu">
+            <summary aria-label="Open menu">
+              <span class="blog-menu-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="blog-menu-panel" role="menu" aria-label="Menu">
+              <a role="menuitem" href="/">Home</a>
+              <a role="menuitem" href="/blog/">Blog</a>
+              <a role="menuitem" href="/about/">About</a>
+              <a role="menuitem" href="/support/">Support</a>
+            </div>
+          </details>
+        </div>
+      </header>
+
+      <main class="blog-main">
+        <div class="blog-container pnl-container">
+          <div class="blog-hero pnl-hero">
+            <div class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="/">Home</a>
+              <span>›</span>
+              <span aria-current="page">PnL Calendar (Simulated)</span>
+            </div>
+            <h1>PnL Calendar (Simulated Example)</h1>
+            <p>
+              This is <strong>simulated data</strong> for <strong>demos/videos</strong>. It is <strong>not real performance</strong>.
+            </p>
+            <div class="pnl-badges">
+              <span class="pnl-badge pnl-badge-warn">SIMULATED</span>
+              <span class="pnl-badge">UI mockup</span>
+              <span class="pnl-badge">Not financial advice</span>
+            </div>
+          </div>
+
+          <section class="blog-card pnl-card" aria-label="PnL calendar mockup">
+            <div class="pnl-toolbar" aria-label="Controls">
+              <div class="pnl-toolbar-left">
+                <button class="pnl-btn" type="button" data-action="prev">◀ Prev</button>
+                <button class="pnl-btn" type="button" data-action="today">Today</button>
+                <button class="pnl-btn" type="button" data-action="next">Next ▶</button>
+              </div>
+
+              <div class="pnl-toolbar-right">
+                <label class="pnl-field">
+                  <span>Month</span>
+                  <input data-field="month" inputmode="numeric" placeholder="12" />
+                </label>
+                <label class="pnl-field">
+                  <span>Year</span>
+                  <input data-field="year" inputmode="numeric" placeholder="2025" />
+                </label>
+                <label class="pnl-field">
+                  <span>Seed</span>
+                  <input data-field="seed" inputmode="numeric" placeholder="7" />
+                </label>
+                <button class="pnl-btn pnl-btn-accent" type="button" data-action="generate">Generate</button>
+              </div>
+            </div>
+
+            <div class="pnl-headline">
+              <div class="pnl-titleline">
+                <div class="pnl-month" data-out="monthLabel">—</div>
+                <div class="pnl-meta" data-out="metaLabel">—</div>
+              </div>
+              <div class="pnl-disclaimer-line">
+                <strong>SIMULATED EXAMPLE:</strong> numbers below are generated for visuals only.
+              </div>
+            </div>
+
+            <div class="pnl-grid-wrap">
+              <div class="pnl-watermark" aria-hidden="true">SIMULATED</div>
+              <div class="pnl-grid" role="table" aria-label="PnL calendar grid" data-out="grid"></div>
+            </div>
+
+            <div class="pnl-footer" aria-label="Summary">
+              <div class="pnl-summary" data-out="summaryTop">—</div>
+              <div class="pnl-summary pnl-summary-sub" data-out="summaryBottom">—</div>
+            </div>
+          </section>
+
+          <p class="blog-meta">
+            Tip: for videos, keep the “SIMULATED” watermark visible to avoid misleading viewers.
+          </p>
+        </div>
+      </main>
+
+      <footer class="blog-footer" aria-label="Site footer">
+        <div class="blog-footer-inner">
+          <div>
+            <a href="/">Home</a> • <a href="/blog/">Blog</a> • <a href="/privacy/">Privacy</a> • <a href="/terms/">Terms</a> •
+            <a href="/support/">Support</a>
+          </div>
+          <div>© ChartsGPT 2026</div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        const monthNames = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        ];
+
+        function clamp(n, a, b) {
+          return Math.max(a, Math.min(b, n));
+        }
+
+        function mulberry32(seed) {
+          let t = seed >>> 0;
+          return function () {
+            t += 0x6d2b79f5;
+            let x = Math.imul(t ^ (t >>> 15), 1 | t);
+            x ^= x + Math.imul(x ^ (x >>> 7), 61 | x);
+            return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
+          };
+        }
+
+        function fmtMoney(v) {
+          const sign = v >= 0 ? "+" : "-";
+          const abs = Math.abs(v);
+          const digits = abs >= 1000 ? 0 : 2;
+          return `${sign}$${abs.toFixed(digits)}`;
+        }
+
+        function monthDays(year, month1to12) {
+          return new Date(year, month1to12, 0).getDate();
+        }
+
+        function firstWeekdaySunday0(year, month1to12) {
+          return new Date(year, month1to12 - 1, 1).getDay();
+        }
+
+        function generateSimulatedMonth({ year, month, seed }) {
+          const rng = mulberry32(seed);
+          const daysInMonth = monthDays(year, month);
+          const first = firstWeekdaySunday0(year, month);
+
+          const values = {};
+          for (let day = 1; day <= daysInMonth; day++) {
+            const pos = first + (day - 1);
+            const weekIndex = Math.floor(pos / 7);
+
+            let loss = false;
+            if (weekIndex === 0 && day % 6 === 0) loss = true;
+            if (weekIndex === 1 && day % 5 === 0) loss = true;
+            if (weekIndex === 2 && day % 7 === 3) loss = true;
+            if (weekIndex === 3 && (day % 7 === 1 || day % 7 === 3)) loss = true;
+            if (weekIndex >= 4 && day % 9 === 1) loss = true;
+
+            let base = 20 + rng() * 240;
+            if (weekIndex >= 4 && day >= daysInMonth - 2) base = 320 + rng() * 720;
+            const pnl = loss ? -(40 + rng() * 210) : base;
+
+            const trades = Math.round(loss ? 3 + rng() * 16 : 2 + rng() * 18);
+            values[day] = { pnl, trades };
+          }
+
+          const total = Object.values(values).reduce((a, b) => a + b.pnl, 0);
+          const tradesTotal = Object.values(values).reduce((a, b) => a + b.trades, 0);
+          const winDays = Object.values(values).filter((x) => x.pnl > 0).length;
+          const lossDays = Object.values(values).filter((x) => x.pnl < 0).length;
+          const winRate = (winDays / Math.max(1, winDays + lossDays)) * 100;
+
+          return { values, total, tradesTotal, winDays, lossDays, winRate, first, daysInMonth };
+        }
+
+        function renderGrid(el, model) {
+          const days = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa", "Σ Week"];
+          el.innerHTML = "";
+
+          for (const d of days) {
+            const th = document.createElement("div");
+            th.className = "pnl-th";
+            th.textContent = d;
+            el.appendChild(th);
+          }
+
+          const rows = 5;
+          for (let r = 0; r < rows; r++) {
+            let weekSum = 0;
+            let weekTr = 0;
+
+            for (let c = 0; c < 7; c++) {
+              const idx = r * 7 + c;
+              const day = idx - model.first + 1;
+
+              const cell = document.createElement("div");
+              cell.className = "pnl-cell";
+
+              if (day < 1 || day > model.daysInMonth) {
+                cell.classList.add("pnl-empty");
+                el.appendChild(cell);
+                continue;
+              }
+
+              const v = model.values[day];
+              weekSum += v.pnl;
+              weekTr += v.trades;
+
+              cell.classList.add(v.pnl >= 0 ? "pnl-green" : "pnl-red");
+              cell.innerHTML = `
+                <div class="pnl-day">${day}</div>
+                <div class="pnl-pnl">${fmtMoney(v.pnl)}</div>
+                <div class="pnl-trades">${v.trades} trades</div>
+              `;
+              el.appendChild(cell);
+            }
+
+            const week = document.createElement("div");
+            week.className = "pnl-cell pnl-week " + (weekSum >= 0 ? "pnl-green" : "pnl-red");
+            week.innerHTML = `
+              <div class="pnl-day">Week</div>
+              <div class="pnl-pnl">${fmtMoney(weekSum)}</div>
+              <div class="pnl-trades">${weekTr} tr</div>
+            `;
+            el.appendChild(week);
+          }
+        }
+
+        function setText(sel, value) {
+          const node = document.querySelector(sel);
+          if (node) node.textContent = value;
+        }
+
+        function getField(name, fallback) {
+          const el = document.querySelector(`[data-field="${name}"]`);
+          const raw = String(el && "value" in el ? el.value : "").trim();
+          if (!raw) return fallback;
+          const n = Number(raw);
+          return Number.isFinite(n) ? n : fallback;
+        }
+
+        function setField(name, value) {
+          const el = document.querySelector(`[data-field="${name}"]`);
+          if (!el) return;
+          el.value = String(value);
+        }
+
+        function stateFromUrl() {
+          const u = new URL(window.location.href);
+          const year = Number(u.searchParams.get("year") || "2025");
+          const month = Number(u.searchParams.get("month") || "12");
+          const seed = Number(u.searchParams.get("seed") || "7");
+          return {
+            year: Number.isFinite(year) ? year : 2025,
+            month: clamp(Number.isFinite(month) ? month : 12, 1, 12),
+            seed: Number.isFinite(seed) ? seed : 7
+          };
+        }
+
+        function pushUrl(state) {
+          const u = new URL(window.location.href);
+          u.searchParams.set("year", String(state.year));
+          u.searchParams.set("month", String(state.month));
+          u.searchParams.set("seed", String(state.seed));
+          window.history.replaceState(null, "", u.toString());
+        }
+
+        function render(state) {
+          pushUrl(state);
+          setField("year", state.year);
+          setField("month", state.month);
+          setField("seed", state.seed);
+
+          const model = generateSimulatedMonth(state);
+
+          setText('[data-out="monthLabel"]', `${monthNames[state.month - 1]} ${state.year} • All Symbols`);
+          setText(
+            '[data-out="metaLabel"]',
+            `Fees: On • TZ: UTC+00:00 • Total: ${fmtMoney(model.total)} • Trades: ${model.tradesTotal}`
+          );
+
+          const grid = document.querySelector('[data-out="grid"]');
+          if (grid) renderGrid(grid, model);
+
+          setText(
+            '[data-out="summaryTop"]',
+            `Win days: ${model.winDays} • Loss days: ${model.lossDays} • Win rate: ${model.winRate.toFixed(1)}% • Total: ${fmtMoney(model.total)}`
+          );
+          setText('[data-out="summaryBottom"]', "SIMULATED EXAMPLE — numbers are generated for visuals only (not real performance).");
+        }
+
+        function addHandlers() {
+          document.querySelectorAll("[data-action]").forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const action = btn.getAttribute("data-action");
+              const state = stateFromUrl();
+
+              if (action === "prev") {
+                state.month -= 1;
+                if (state.month < 1) {
+                  state.month = 12;
+                  state.year -= 1;
+                }
+                render(state);
+                return;
+              }
+
+              if (action === "next") {
+                state.month += 1;
+                if (state.month > 12) {
+                  state.month = 1;
+                  state.year += 1;
+                }
+                render(state);
+                return;
+              }
+
+              if (action === "today") {
+                const now = new Date();
+                state.year = now.getFullYear();
+                state.month = now.getMonth() + 1;
+                render(state);
+                return;
+              }
+
+              if (action === "generate") {
+                state.year = clamp(getField("year", state.year), 2000, 2100);
+                state.month = clamp(getField("month", state.month), 1, 12);
+                state.seed = clamp(getField("seed", state.seed), 0, 999999);
+                render(state);
+                return;
+              }
+            });
+          });
+        }
+
+        addHandlers();
+        render(stateFromUrl());
+      })();
+    </script>
+  </body>
+</html>
