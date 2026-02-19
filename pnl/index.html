@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark" />
-    <title>PnL Calendar (Simulated Example) — ChartsGPT</title>
+    <title>PnL Calendar (Demo) — ChartsGPT</title>
     <meta
       name="description"
       content="A simulated PnL calendar UI mockup for demos and videos. Not real performance."
@@ -319,12 +319,12 @@
               <span>›</span>
               <span aria-current="page">PnL Calendar (Simulated)</span>
             </div>
-            <h1>PnL Calendar (Simulated Example)</h1>
+            <h1>PnL Calendar (Demo)</h1>
             <p>
-              This is <strong>simulated data</strong> for <strong>demos/videos</strong>. It is <strong>not real performance</strong>.
+              Demo calendar view with generated numbers for visuals.
             </p>
             <div class="pnl-badges">
-              <span class="pnl-badge pnl-badge-warn">SIMULATED</span>
+              <span class="pnl-badge pnl-badge-warn">Demo data</span>
               <span class="pnl-badge">UI mockup</span>
               <span class="pnl-badge">Not financial advice</span>
             </div>
@@ -361,12 +361,12 @@
                 <div class="pnl-meta" data-out="metaLabel">—</div>
               </div>
               <div class="pnl-disclaimer-line">
-                <strong>SIMULATED EXAMPLE:</strong> numbers below are generated for visuals only.
+                <strong>Demo:</strong> for the current month, days after today stay blank.
               </div>
             </div>
 
             <div class="pnl-grid-wrap">
-              <div class="pnl-watermark" aria-hidden="true">SIMULATED</div>
+              <div class="pnl-watermark" aria-hidden="true">DEMO</div>
               <div class="pnl-grid" role="table" aria-label="PnL calendar grid" data-out="grid"></div>
             </div>
 
@@ -377,7 +377,7 @@
           </section>
 
           <p class="blog-meta">
-            Tip: for videos, keep the “SIMULATED” watermark visible to avoid misleading viewers.
+            Tip: for videos, keep the “DEMO” watermark visible to avoid misleading viewers.
           </p>
         </div>
       </main>
@@ -394,7 +394,7 @@
     </div>
 
     <script>
-      (function () {
+              (function () {
         const monthNames = [
           "January",
           "February",
@@ -439,13 +439,14 @@
           return new Date(year, month1to12 - 1, 1).getDay();
         }
 
-        function generateSimulatedMonth({ year, month, seed }) {
+        function generateDemoMonth({ year, month, seed, cutoffDay }) {
           const rng = mulberry32(seed);
           const daysInMonth = monthDays(year, month);
           const first = firstWeekdaySunday0(year, month);
 
           const values = {};
-          for (let day = 1; day <= daysInMonth; day++) {
+          const maxDay = clamp(cutoffDay, 0, daysInMonth);
+          for (let day = 1; day <= maxDay; day++) {
             const pos = first + (day - 1);
             const weekIndex = Math.floor(pos / 7);
 
@@ -470,7 +471,7 @@
           const lossDays = Object.values(values).filter((x) => x.pnl < 0).length;
           const winRate = (winDays / Math.max(1, winDays + lossDays)) * 100;
 
-          return { values, total, tradesTotal, winDays, lossDays, winRate, first, daysInMonth };
+          return { values, total, tradesTotal, winDays, lossDays, winRate, first, daysInMonth, cutoffDay: maxDay };
         }
 
         function renderGrid(el, model) {
@@ -488,6 +489,7 @@
           for (let r = 0; r < rows; r++) {
             let weekSum = 0;
             let weekTr = 0;
+            let weekHasAny = false;
 
             for (let c = 0; c < 7; c++) {
               const idx = r * 7 + c;
@@ -503,6 +505,14 @@
               }
 
               const v = model.values[day];
+              if (!v) {
+                cell.classList.add("pnl-empty");
+                cell.innerHTML = `<div class="pnl-day">${day}</div>`;
+                el.appendChild(cell);
+                continue;
+              }
+
+              weekHasAny = true;
               weekSum += v.pnl;
               weekTr += v.trades;
 
@@ -516,12 +526,17 @@
             }
 
             const week = document.createElement("div");
-            week.className = "pnl-cell pnl-week " + (weekSum >= 0 ? "pnl-green" : "pnl-red");
-            week.innerHTML = `
-              <div class="pnl-day">Week</div>
-              <div class="pnl-pnl">${fmtMoney(weekSum)}</div>
-              <div class="pnl-trades">${weekTr} tr</div>
-            `;
+            if (!weekHasAny) {
+              week.className = "pnl-cell pnl-week pnl-empty";
+              week.innerHTML = `<div class="pnl-day">Week</div>`;
+            } else {
+              week.className = "pnl-cell pnl-week " + (weekSum >= 0 ? "pnl-green" : "pnl-red");
+              week.innerHTML = `
+                <div class="pnl-day">Week</div>
+                <div class="pnl-pnl">${fmtMoney(weekSum)}</div>
+                <div class="pnl-trades">${weekTr} tr</div>
+              `;
+            }
             el.appendChild(week);
           }
         }
@@ -547,12 +562,12 @@
 
         function stateFromUrl() {
           const u = new URL(window.location.href);
-          const year = Number(u.searchParams.get("year") || "2025");
-          const month = Number(u.searchParams.get("month") || "12");
+          const year = Number(u.searchParams.get("year") || "2026");
+          const month = Number(u.searchParams.get("month") || "2");
           const seed = Number(u.searchParams.get("seed") || "7");
           return {
-            year: Number.isFinite(year) ? year : 2025,
-            month: clamp(Number.isFinite(month) ? month : 12, 1, 12),
+            year: Number.isFinite(year) ? year : 2026,
+            month: clamp(Number.isFinite(month) ? month : 2, 1, 12),
             seed: Number.isFinite(seed) ? seed : 7
           };
         }
@@ -571,7 +586,10 @@
           setField("month", state.month);
           setField("seed", state.seed);
 
-          const model = generateSimulatedMonth(state);
+          const now = new Date();
+          const isCurrentMonth = state.year === now.getFullYear() && state.month === now.getMonth() + 1;
+          const cutoffDay = isCurrentMonth ? now.getDate() : monthDays(state.year, state.month);
+          const model = generateDemoMonth({ ...state, cutoffDay });
 
           setText('[data-out="monthLabel"]', `${monthNames[state.month - 1]} ${state.year} • All Symbols`);
           setText(
@@ -586,7 +604,10 @@
             '[data-out="summaryTop"]',
             `Win days: ${model.winDays} • Loss days: ${model.lossDays} • Win rate: ${model.winRate.toFixed(1)}% • Total: ${fmtMoney(model.total)}`
           );
-          setText('[data-out="summaryBottom"]', "SIMULATED EXAMPLE — numbers are generated for visuals only (not real performance).");
+          setText(
+            '[data-out="summaryBottom"]',
+            `Demo data • Days shown: 1–${model.cutoffDay} (${monthNames[state.month - 1]} ${state.year})`
+          );
         }
 
         function addHandlers() {
