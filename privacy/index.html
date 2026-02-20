@@ -112,7 +112,7 @@
             </div>
             <h1>Privacy Policy</h1>
             <p>How ChartsGPT collects, uses, and shares information.</p>
-            <div class="blog-meta">Last updated: February 7, 2026</div>
+            <div class="blog-meta">Last updated: February 20, 2026</div>
           </div>
 
           <article class="blog-card">
@@ -129,6 +129,9 @@
                 <li><strong>Analysis content</strong>: prompts, model outputs, and analysis metadata needed to produce chart insights.</li>
                 <li><strong>On-device history and settings</strong>: saved analyses, preferences, and app state stored locally on your device.</li>
                 <li>
+                  <strong>Anonymous identifiers</strong>: a client ID and request ID used for rate-limiting, abuse prevention, and usage tracking.
+                </li>
+                <li>
                   <strong>Subscription status</strong>: entitlement and transaction status for Pro features (payments are handled by Apple).
                 </li>
                 <li><strong>Support messages</strong>: information you provide when contacting support.</li>
@@ -144,15 +147,26 @@
               <h2>3. How information is shared</h2>
               <p>We do not sell your personal data. We share limited data only with service providers required to run the app:</p>
               <ul>
-                <li><strong>OpenAI</strong>: chart images and related prompt data are sent to OpenAI to generate analysis results.</li>
+                <li>
+                  <strong>Supabase</strong>: we use Supabase (Edge Functions + database) to run our backend proxy and to track anonymous usage limits.
+                </li>
+                <li>
+                  <strong>OpenAI</strong>: chart images (compressed) and related prompt data (including OCR text and chat prompts) are sent to OpenAI to
+                  generate AI results.
+                </li>
                 <li><strong>Apple</strong>: App Store distribution, subscription billing, and purchase management.</li>
                 <li><strong>RevenueCat</strong>: subscription entitlement validation and restore flow for Pro access.</li>
               </ul>
 
               <h2>4. Data storage and retention</h2>
               <p>
-                ChartsGPT stores analysis history and settings locally on your device. You can remove local data from app settings (Delete
-                account) or by deleting the app.
+                ChartsGPT stores analysis history and settings locally on your device. You can remove local data from app settings (Delete account)
+                or by deleting the app.
+              </p>
+              <p>
+                Our backend may store limited, non-content metadata (such as an anonymous client ID, request ID, and usage counts) to enforce monthly
+                limits and prevent abuse. AI content (images/prompts) is processed by our service providers (Supabase and OpenAI) as needed to return
+                results.
               </p>
 
               <h2>5. Permissions and controls</h2>
