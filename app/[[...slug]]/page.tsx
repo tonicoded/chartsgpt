@@ -7,6 +7,7 @@ import {
   extractBodyInnerHtml,
   extractCanonical,
   extractMetaContent,
+  extractJsonLd,
   extractTitle,
   readLegacyHtml,
   slugToLegacyFile,
@@ -74,6 +75,8 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   const description = extractMetaContent(html, "description") ?? undefined;
   const canonical = extractCanonical(html) ?? undefined;
   const ogImage = extractMetaContent(html, "og:image") ?? undefined;
+  const robotsContent = extractMetaContent(html, "robots") ?? undefined;
+  const keywords = extractMetaContent(html, "keywords") ?? undefined;
 
   const canonicalAbs = canonical ? toAbsoluteUrl(canonical) : undefined;
   const ogImageAbs = ogImage ? toAbsoluteUrl(ogImage) : undefined;
@@ -81,8 +84,13 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   return {
     title,
     description,
+    keywords,
+    robots: robotsContent,
     alternates: canonicalAbs ? { canonical: canonicalAbs } : undefined,
     openGraph: {
+      type: "website",
+      locale: "en_US",
+      siteName: "ChartsGPT",
       title,
       description,
       url: canonicalAbs,
@@ -108,12 +116,27 @@ export default async function LegacyPage(props: PageProps) {
     notFound();
   }
 
+  const jsonLd = extractJsonLd(html);
   const bodyInner = extractBodyInnerHtml(html);
   const isBlogLayout = bodyHasClass(html, "blog-body");
 
   if (isBlogLayout) {
-    return <div className="legacy-scroll" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: bodyInner }} />;
+    return (
+      <div className="legacy-scroll" suppressHydrationWarning>
+        {jsonLd.map((data, index) => (
+          <script key={`jsonld-${index}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: data }} />
+        ))}
+        <div dangerouslySetInnerHTML={{ __html: bodyInner }} />
+      </div>
+    );
   }
 
-  return <div suppressHydrationWarning dangerouslySetInnerHTML={{ __html: bodyInner }} />;
+  return (
+    <div suppressHydrationWarning>
+      {jsonLd.map((data, index) => (
+        <script key={`jsonld-${index}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: data }} />
+      ))}
+      <div dangerouslySetInnerHTML={{ __html: bodyInner }} />
+    </div>
+  );
 }

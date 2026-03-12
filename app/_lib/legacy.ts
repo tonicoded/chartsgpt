@@ -47,6 +47,17 @@ export function extractCanonical(html: string) {
   return findFirstMatch(html, [/<link[^>]+rel="canonical"[^>]+href="([^"]+)"[^>]*>/i]);
 }
 
+export function extractJsonLd(html: string) {
+  const scripts: string[] = [];
+  const re = /<script[^>]+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi;
+  let match: RegExpExecArray | null;
+  while ((match = re.exec(html))) {
+    const data = match[1]?.trim();
+    if (data) scripts.push(data);
+  }
+  return scripts;
+}
+
 export function toAbsoluteUrl(url: string, base = "https://charts-gpt.com") {
   if (!url) return url;
   if (url.startsWith("http://") || url.startsWith("https://")) return url;

@@ -7,7 +7,7 @@
     <title>ChartsGPT — AI Chart Analyzer</title>
     <meta
       name="description"
-      content="ChartsGPT helps you scan trading charts and get fast AI-powered analysis with levels, scenarios, and setup ideas."
+      content="Scan any trading chart screenshot and get clean AI analysis with key levels, scenarios, triggers, and invalidation in seconds."
     />
     <meta name="robots" content="index,follow" />
     <meta name="theme-color" content="#070a12" />
@@ -28,7 +28,7 @@
     <meta property="og:title" content="ChartsGPT — AI Chart Analyzer" />
     <meta
       property="og:description"
-      content="Scan any trading chart and get clean AI analysis with key levels, scenarios, and setup ideas in seconds."
+      content="Scan any trading chart screenshot and get clean AI analysis with key levels, scenarios, triggers, and invalidation in seconds."
     />
     <meta property="og:url" content="https://charts-gpt.com/" />
     <meta property="og:image" content="https://charts-gpt.com/logo.png" />
@@ -37,7 +37,7 @@
     <meta name="twitter:title" content="ChartsGPT — AI Chart Analyzer" />
     <meta
       name="twitter:description"
-      content="Scan any trading chart and get clean AI analysis with key levels, scenarios, and setup ideas in seconds."
+      content="Scan any trading chart screenshot and get clean AI analysis with key levels, scenarios, triggers, and invalidation in seconds."
     />
     <meta name="twitter:image" content="https://charts-gpt.com/logo.png" />
 
@@ -62,7 +62,36 @@
       "name": "ChartsGPT",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "iOS, Android",
-      "description": "Scan trading charts and get fast AI-powered analysis with levels, scenarios, and setup ideas."
+      "description": "Scan any trading chart screenshot and get clean AI analysis with key levels, scenarios, triggers, and invalidation in seconds."
+    }
+  ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this financial advice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. ChartsGPT provides informational analysis to help you think through scenarios. You’re responsible for your decisions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What markets does it support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Crypto, forex, metals, and stocks—anything you can chart and screenshot."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need TradingView?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Any chart screenshot works." }
     }
   ]
 }
@@ -76,66 +105,245 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="stage">
-      <div class="frame">
-        <div class="frame-inner">
-          <main class="frame-scroll home">
-            <video
-              class="home-media"
-              aria-hidden="true"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="metadata"
-              poster="./video-poster.jpg"
-            >
-              <source src="./video.webm" type="video/webm" />
-              <source src="./video.mp4" type="video/mp4" />
-            </video>
-            <div class="home-overlay" aria-hidden="true"></div>
-            <div class="home-content">
-              <h1 class="hero-title reveal" style="--delay: 90ms">ChartsGPT</h1>
-              <p class="hero-sub reveal" style="--delay: 180ms">
-                Scan any trading chart and get clean AI analysis with key levels, scenarios, and setup ideas in seconds.
-              </p>
-              <p class="hero-note reveal" style="--delay: 230ms">
-                Built for crypto, forex, metals, and stocks.
-              </p>
-              <div class="store-row reveal" style="--delay: 270ms">
-	                <a
-	                  class="store-badge js-appstore"
-	                  href="https://apps.apple.com/nl/app/chartsgpt-ai-trading-assist/id6758857719?l=en-GB"
-	                  target="_blank"
-	                  rel="noopener noreferrer"
-	                  aria-label="Download ChartsGPT on the App Store"
-	                >
-                  <img src="./appstore.svg" alt="Download on the App Store" />
-                </a>
-                <a
-                  class="store-badge js-playstore"
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Get ChartsGPT on Google Play"
-                >
-                  <img src="./googleplay.svg" alt="Get it on Google Play" />
-                </a>
-              </div>
-            </div>
-          </main>
-          <footer class="footer-bar">
-            <div class="footer-links" aria-label="Footer">
-              <a href="./blog/">Blog</a>
-              <a href="./about/">About</a>
-              <a href="./privacy/">Privacy</a>
-              <a href="./terms/">Terms</a>
-              <a href="./support/">Support</a>
-              <span>© ChartsGPT 2026</span>
-            </div>
-          </footer>
+    <header class="site-header" aria-label="Site header">
+      <div class="site-header-inner">
+        <a class="site-brand" href="./" aria-label="ChartsGPT Home">
+          <img src="./logo.png" alt="ChartsGPT logo" width="34" height="34" loading="eager" />
+          <span>ChartsGPT</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="./blog/">Blog</a>
+          <a href="./about/">About</a>
+          <a href="./support/">Support</a>
+          <a class="site-nav-pill" href="#faq">FAQ</a>
+        </nav>
+        <details class="blog-menu">
+          <summary aria-label="Open menu"><span class="blog-menu-icon" aria-hidden="true"></span></summary>
+          <div class="blog-menu-panel" role="menu" aria-label="Menu">
+            <a role="menuitem" href="./">Home</a>
+            <a role="menuitem" href="./blog/">Blog</a>
+            <a role="menuitem" href="./about/">About</a>
+            <a role="menuitem" href="./privacy/">Privacy</a>
+            <a role="menuitem" href="./terms/">Terms</a>
+            <a role="menuitem" href="./support/">Support</a>
+            <a role="menuitem" href="#faq">FAQ</a>
+          </div>
+        </details>
+        <div class="site-actions" aria-label="Download">
+          <a class="btn btn-ghost" href="#download">Download</a>
+          <a class="btn btn-primary js-appstore" href="https://apps.apple.com/nl/app/chartsgpt-ai-trading-assist/id6758857719?l=en-GB" target="_blank" rel="noopener noreferrer">
+            App Store
+          </a>
         </div>
       </div>
-    </div>
+    </header>
+
+    <main class="landing" aria-label="ChartsGPT landing page">
+      <section class="hero" aria-label="Hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="pill-row">
+              <span class="pill pill-accent">AI-powered chart analysis</span>
+              <span class="pill pill-muted">Not financial advice</span>
+            </div>
+            <h1 class="headline">
+              Turn any trading chart into <span class="headline-accent">clear levels</span>, scenarios, and setup ideas.
+            </h1>
+            <p class="subhead">
+              Upload a screenshot. Get structured analysis fast—key levels, triggers, invalidation, and what to watch next. Built for crypto, forex, metals, and stocks.
+            </p>
+            <div class="hero-cta" id="download">
+              <a
+                class="store-badge store-badge-lg js-appstore"
+                href="https://apps.apple.com/nl/app/chartsgpt-ai-trading-assist/id6758857719?l=en-GB"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download ChartsGPT on the App Store"
+              >
+                <img src="./appstore.svg" alt="Download on the App Store" />
+              </a>
+              <a
+                class="store-badge store-badge-lg js-playstore"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get ChartsGPT on Google Play"
+              >
+                <img src="./googleplay.svg" alt="Get it on Google Play" />
+              </a>
+            </div>
+            <div class="mini-proof" aria-label="Highlights">
+              <div class="mini-proof-item">
+                <div class="mini-proof-k">Clean output</div>
+                <div class="mini-proof-v">Levels • Scenarios • Triggers</div>
+              </div>
+              <div class="mini-proof-item">
+                <div class="mini-proof-k">Works with</div>
+                <div class="mini-proof-v">Screenshots from any platform</div>
+              </div>
+              <div class="mini-proof-item">
+                <div class="mini-proof-k">Fast</div>
+                <div class="mini-proof-v">From image → analysis in seconds</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-media" aria-label="Product preview">
+            <div class="device">
+              <div class="device-top" aria-hidden="true"></div>
+              <div class="device-screen">
+                <video
+                  class="device-video"
+                  aria-label="ChartsGPT app preview"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  poster="./video-poster.jpg"
+                >
+                  <source src="./video.webm" type="video/webm" />
+                  <source src="./video.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="device-glow" aria-hidden="true"></div>
+            </div>
+            <div class="hero-card" aria-label="What you get">
+              <div class="hero-card-title">What you get</div>
+              <ul class="hero-card-list">
+                <li>Key levels: support/resistance + liquidity zones</li>
+                <li>Scenarios: bullish/bearish paths with triggers</li>
+                <li>Invalidation + risk notes to stay disciplined</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Features">
+        <div class="container">
+          <div class="section-head">
+            <h2>Built for speed. Designed for clarity.</h2>
+            <p>Stop guessing. Get a structured read on your chart with the pieces you actually use.</p>
+          </div>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-kicker">Levels</div>
+              <h3>Key zones that matter</h3>
+              <p>Instantly highlight areas where price is likely to react—so your plan starts grounded.</p>
+            </div>
+            <div class="card">
+              <div class="card-kicker">Scenarios</div>
+              <h3>Plan A / Plan B</h3>
+              <p>Clear paths for what happens next, with triggers and invalidation you can act on.</p>
+            </div>
+            <div class="card">
+              <div class="card-kicker">Setups</div>
+              <h3>Entry ideas, not noise</h3>
+              <p>Setup-style guidance that stays readable—built for quick decisions and review.</p>
+            </div>
+            <div class="card">
+              <div class="card-kicker">Multi-market</div>
+              <h3>Crypto to metals</h3>
+              <p>One workflow across markets: crypto, forex, metals, and equities.</p>
+            </div>
+            <div class="card">
+              <div class="card-kicker">Workflow</div>
+              <h3>Screenshot → structure</h3>
+              <p>Upload, analyze, save—then move on. No long prompts required.</p>
+            </div>
+            <div class="card">
+              <div class="card-kicker">Clarity</div>
+              <h3>Readable output</h3>
+              <p>Concise sections and bullet points so you can scan fast and stay consistent.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="How it works">
+        <div class="container">
+          <div class="section-head">
+            <h2>How it works</h2>
+            <p>Three steps. No fluff.</p>
+          </div>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">01</div>
+              <div class="step-body">
+                <h3>Upload a chart screenshot</h3>
+                <p>From TradingView, exchanges, brokers—anything you can screenshot.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">02</div>
+              <div class="step-body">
+                <h3>Get analysis in seconds</h3>
+                <p>Levels, scenarios, triggers, invalidation, and a clean summary.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">03</div>
+              <div class="step-body">
+                <h3>Use it as your checklist</h3>
+                <p>Before you take a trade, verify the plan—then execute or stay out.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq" aria-label="Frequently asked questions">
+        <div class="container">
+          <div class="section-head">
+            <h2>FAQ</h2>
+            <p>Quick answers to common questions.</p>
+          </div>
+          <div class="faq">
+            <details class="faq-item">
+              <summary>Is this financial advice?</summary>
+              <div class="faq-body">
+                No. ChartsGPT provides informational analysis to help you think through scenarios. You’re responsible for your decisions.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>What markets does it support?</summary>
+              <div class="faq-body">Crypto, forex, metals, and stocks—anything you can chart and screenshot.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Do I need TradingView?</summary>
+              <div class="faq-body">No. Any chart screenshot works.</div>
+            </details>
+          </div>
+          <div class="cta-band">
+            <div class="cta-band-copy">
+              <div class="cta-band-title">Ready to scan your next chart?</div>
+              <div class="cta-band-sub">Download ChartsGPT and get structured analysis in seconds.</div>
+            </div>
+            <div class="cta-band-actions">
+              <a class="store-badge js-appstore" href="https://apps.apple.com/nl/app/chartsgpt-ai-trading-assist/id6758857719?l=en-GB" target="_blank" rel="noopener noreferrer">
+                <img src="./appstore.svg" alt="Download on the App Store" />
+              </a>
+              <a class="store-badge js-playstore" href="#" target="_blank" rel="noopener noreferrer">
+                <img src="./googleplay.svg" alt="Get it on Google Play" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Footer">
+      <div class="container site-footer-inner">
+        <div class="footer-links">
+          <a href="./blog/">Blog</a>
+          <a href="./about/">About</a>
+          <a href="./privacy/">Privacy</a>
+          <a href="./terms/">Terms</a>
+          <a href="./support/">Support</a>
+        </div>
+        <div class="footer-note">© ChartsGPT 2026</div>
+      </div>
+    </footer>
   </body>
 </html>
