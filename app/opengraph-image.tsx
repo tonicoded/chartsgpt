@@ -49,7 +49,7 @@ export default async function Image() {
                 height: 44,
                 borderRadius: 14,
                 background:
-                  "radial-gradient(60px 60px at 30% 30%, rgba(39,212,255,0.85), rgba(124,92,255,0.85))",
+                  "radial-gradient(circle at 30% 30%, rgba(39,212,255,0.90) 0%, rgba(124,92,255,0.90) 100%)",
                 boxShadow: "0 18px 46px rgba(0,0,0,0.45)"
               }}
             />
