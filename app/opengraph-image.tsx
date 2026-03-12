@@ -58,10 +58,18 @@ export default async function Image() {
             </div>
           </div>
 
-          <div style={{ fontSize: 72, lineHeight: 1.02, fontFamily: "UnboundedBold", letterSpacing: -1.5 }}>
-            AI chart analysis
-            <br />
-            in seconds.
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              fontSize: 72,
+              lineHeight: 1.02,
+              fontFamily: "UnboundedBold",
+              letterSpacing: -1.5
+            }}
+          >
+            <span>AI chart analysis</span>
+            <span>in seconds.</span>
           </div>
           <div style={{ fontSize: 26, fontFamily: "UnboundedSemi", lineHeight: 1.35, opacity: 0.88, maxWidth: 900 }}>
             Scan any trading chart screenshot and get clean output: key levels, scenarios, triggers, and invalidation.
