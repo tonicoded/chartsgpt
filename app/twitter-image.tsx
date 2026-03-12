@@ -26,7 +26,7 @@ export default async function Image() {
           justifyContent: "center",
           padding: 72,
           background:
-            "radial-gradient(900px 520px at 10% 15%, rgba(124,92,255,0.42), transparent 60%), radial-gradient(900px 520px at 95% 20%, rgba(39,212,255,0.34), transparent 55%), linear-gradient(180deg, rgba(255,255,255,0.05), transparent 35%), #03060e",
+            "radial-gradient(circle at 10% 15%, rgba(124,92,255,0.42) 0%, transparent 60%), radial-gradient(circle at 95% 20%, rgba(39,212,255,0.34) 0%, transparent 55%), linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 35%), #03060e",
           color: "rgba(255,255,255,0.96)"
         }}
       >
@@ -77,4 +77,3 @@ export default async function Image() {
     }
   );
 }
-
