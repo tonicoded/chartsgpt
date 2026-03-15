@@ -830,6 +830,17 @@ summary:focus-visible {
   color: rgba(255, 255, 255, 0.80);
 }
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .landing {
   padding-bottom: 72px;
 }
@@ -841,6 +852,14 @@ summary:focus-visible {
 
 .hero {
   padding: 56px 0 34px;
+}
+
+.hero-copy {
+  animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-media {
+  animation: fadeUp 0.55s 0.12s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .hero-grid {
@@ -1178,8 +1197,8 @@ summary:focus-visible {
 .cta-band {
   margin-top: 18px;
   border-radius: 26px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(90, 141, 255, 0.22);
+  background: linear-gradient(135deg, rgba(90, 141, 255, 0.10), rgba(43, 213, 196, 0.06));
   padding: 18px 18px;
   display: flex;
   align-items: center;
@@ -1897,5 +1916,36 @@ summary:focus-visible {
 
   .card {
     grid-column: span 12;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-media {
+    display: none;
+  }
+
+  .headline {
+    font-size: clamp(28px, 8vw, 38px);
+  }
+
+  .section {
+    padding: 36px 0;
+  }
+
+  .landing {
+    padding-bottom: 48px;
+  }
+
+  .mini-proof {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mini-proof-item:last-child {
+    grid-column: span 2;
+  }
+
+  .cta-band {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
