@@ -14,11 +14,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://charts-gpt.com"),
   applicationName: "ChartsGPT",
   title: {
-    default: "ChartsGPT — AI Chart Analyzer",
+    default: "ChartsGPT — AI-Powered Trading Chart Analysis App",
     template: "%s — ChartsGPT"
   },
   description:
-    "Scan any trading chart screenshot and get clean AI analysis with key levels, scenarios, triggers, and invalidation in seconds.",
+    "Upload any trading chart screenshot and get instant AI analysis: key support & resistance levels, bullish/bearish scenarios, entry triggers, and invalidation points. Works for crypto, forex, stocks, and metals.",
   category: "finance",
   creator: "ChartsGPT",
   publisher: "ChartsGPT",
@@ -47,20 +47,26 @@ export const metadata: Metadata = {
       "max-video-preview": -1
     }
   },
+  keywords: [
+    "AI chart analysis", "trading chart analyzer", "chart screenshot analysis",
+    "AI trading app", "technical analysis AI", "crypto chart analysis",
+    "forex chart analyzer", "stock chart AI", "support resistance levels AI",
+    "trading setup ideas", "chart pattern recognition"
+  ],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "/",
     siteName: "ChartsGPT",
-    title: "ChartsGPT — AI Chart Analyzer",
+    title: "ChartsGPT — AI-Powered Trading Chart Analysis App",
     description:
-      "Scan any trading chart screenshot and get clean AI analysis with key levels, scenarios, triggers, and invalidation in seconds."
+      "Upload any trading chart screenshot and get instant AI analysis: key support & resistance levels, bullish/bearish scenarios, entry triggers, and invalidation points. Works for crypto, forex, stocks, and metals."
   },
   twitter: {
     card: "summary_large_image",
-    title: "ChartsGPT — AI Chart Analyzer",
+    title: "ChartsGPT — AI-Powered Trading Chart Analysis App",
     description:
-      "Scan any trading chart screenshot and get clean AI analysis with key levels, scenarios, triggers, and invalidation in seconds."
+      "Upload any trading chart screenshot and get instant AI analysis: key support & resistance levels, bullish/bearish scenarios, entry triggers, and invalidation points."
   },
   formatDetection: {
     telephone: false
