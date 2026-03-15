@@ -70,9 +70,9 @@
     let W = 0, H = 0, raf = 0;
 
     const LINES = [
-      { color: "rgba(90,141,255,0.7)",  speed: 0.18, offset: 0,   amp: 0.13, freq: 0.0018 },
-      { color: "rgba(43,213,196,0.55)", speed: 0.12, offset: 180, amp: 0.10, freq: 0.0022 },
-      { color: "rgba(90,141,255,0.4)",  speed: 0.22, offset: 90,  amp: 0.08, freq: 0.0014 },
+      { color: "rgba(255,255,255,0.55)", speed: 0.18, offset: 0,   amp: 0.13, freq: 0.0018 },
+      { color: "rgba(255,255,255,0.30)", speed: 0.12, offset: 180, amp: 0.10, freq: 0.0022 },
+      { color: "rgba(255,255,255,0.18)", speed: 0.22, offset: 90,  amp: 0.08, freq: 0.0014 },
     ];
 
     function resize() {

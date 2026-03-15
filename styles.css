@@ -11,9 +11,9 @@
   --panel-strong: rgba(10, 12, 18, 0.78);
   --surface: rgba(10, 12, 18, 0.62);
   --surface-2: rgba(10, 12, 18, 0.82);
-  --accent: #5a8dff;
-  --accent-2: #2bd5c4;
-  --ring: rgba(90, 141, 255, 0.40);
+  --accent: rgba(255, 255, 255, 0.92);
+  --accent-2: rgba(255, 255, 255, 0.72);
+  --ring: rgba(255, 255, 255, 0.30);
   --radius-xl: 28px;
   --radius-lg: 18px;
   --shadow: 0 30px 70px rgba(0, 0, 0, 0.66);
@@ -61,11 +61,7 @@ body {
   font-family: var(--font-base);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background:
-    radial-gradient(1000px 620px at 14% -10%, rgba(90, 141, 255, 0.12), transparent 56%),
-    radial-gradient(900px 560px at 92% 0%, rgba(43, 213, 196, 0.08), transparent 55%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 28%),
-    var(--bg);
+  background: var(--bg);
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -817,13 +813,13 @@ summary:focus-visible {
 }
 
 .btn-primary {
-  border-color: rgba(90, 141, 255, 0.42);
-  background: rgba(90, 141, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.10);
 }
 
 .btn-primary:hover {
-  border-color: rgba(90, 141, 255, 0.58);
-  background: rgba(90, 141, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.50);
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .btn-ghost {
@@ -899,8 +895,8 @@ summary:focus-visible {
 }
 
 .pill-accent {
-  border-color: rgba(90, 141, 255, 0.26);
-  background: rgba(90, 141, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .pill-muted {
@@ -917,11 +913,11 @@ summary:focus-visible {
 }
 
 .headline-accent {
-  color: rgba(170, 198, 255, 0.98);
+  color: #fff;
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 6px;
-  text-decoration-color: rgba(90, 141, 255, 0.44);
+  text-decoration-color: rgba(255, 255, 255, 0.36);
 }
 
 .subhead {
@@ -1011,10 +1007,8 @@ summary:focus-visible {
   position: absolute;
   inset: -40px;
   pointer-events: none;
-  background:
-    radial-gradient(520px 320px at 18% 16%, rgba(90, 141, 255, 0.22), transparent 60%),
-    radial-gradient(520px 340px at 100% 30%, rgba(43, 213, 196, 0.14), transparent 58%);
-  opacity: 0.55;
+  background: radial-gradient(520px 320px at 50% 20%, rgba(255, 255, 255, 0.06), transparent 60%);
+  opacity: 0.8;
 }
 
 .hero-card {
@@ -1104,7 +1098,7 @@ summary:focus-visible {
   font-family: var(--font-semibold);
   font-size: 12px;
   letter-spacing: 0.01em;
-  color: rgba(170, 198, 255, 0.82);
+  color: rgba(255, 255, 255, 0.54);
 }
 
 .card h3 {
@@ -1208,8 +1202,8 @@ summary:focus-visible {
 .cta-band {
   margin-top: 18px;
   border-radius: 26px;
-  border: 1px solid rgba(90, 141, 255, 0.22);
-  background: linear-gradient(135deg, rgba(90, 141, 255, 0.10), rgba(43, 213, 196, 0.06));
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
   padding: 18px 18px;
   display: flex;
   align-items: center;
@@ -1365,9 +1359,8 @@ summary:focus-visible {
   inset: -1px;
   border-radius: 24px;
   pointer-events: none;
-  background: radial-gradient(420px 240px at 12% 0%, rgba(90, 141, 255, 0.18), transparent 60%),
-    radial-gradient(420px 240px at 100% 30%, rgba(43, 213, 196, 0.10), transparent 58%);
-  opacity: 0.55;
+  background: radial-gradient(420px 240px at 50% 0%, rgba(255, 255, 255, 0.05), transparent 60%);
+  opacity: 0.8;
 }
 
 @supports (backdrop-filter: blur(10px)) {
