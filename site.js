@@ -130,12 +130,12 @@
 
     if (stage && main && left && right) {
       const shots = [
-        { src: "./6.5_01.jpg", alt: "ChartsGPT camera capture flow" },
-        { src: "./6.5_02.jpg", alt: "ChartsGPT trend analysis screen" },
-        { src: "./6.5_03.jpg", alt: "ChartsGPT entry and risk guidance view" },
-        { src: "./6.5_04.jpg", alt: "ChartsGPT all-in-one scanner output" },
-        { src: "./6.5_05.jpg", alt: "ChartsGPT live market tracking view" },
-        { src: "./6.5_06.jpg", alt: "ChartsGPT AI chat assistant view" }
+        { src: "/6.5_01.jpg", alt: "ChartsGPT camera capture flow" },
+        { src: "/6.5_02.jpg", alt: "ChartsGPT trend analysis screen" },
+        { src: "/6.5_03.jpg", alt: "ChartsGPT entry and risk guidance view" },
+        { src: "/6.5_04.jpg", alt: "ChartsGPT all-in-one scanner output" },
+        { src: "/6.5_05.jpg", alt: "ChartsGPT live market tracking view" },
+        { src: "/6.5_06.jpg", alt: "ChartsGPT AI chat assistant view" }
       ];
 
       const slots = [
@@ -155,7 +155,7 @@
         if (!img) return;
 
         const currentSrc = img.getAttribute("src") || "";
-        const sameShot = currentSrc.endsWith(shot.src.replace("./", "/")) && img.getAttribute("alt") === shot.alt;
+        const sameShot = currentSrc.endsWith(shot.src) && img.getAttribute("alt") === shot.alt;
         if (sameShot) return;
 
         const swap = () => {
