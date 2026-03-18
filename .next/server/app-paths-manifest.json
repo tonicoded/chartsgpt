@@ -1,9 +1,9 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/opengraph-image/route": "app/opengraph-image/route.js",
-  "/feed.xml/route": "app/feed.xml/route.js",
-  "/twitter-image/route": "app/twitter-image/route.js",
   "/[[...slug]]/page": "app/[[...slug]]/page.js",
+  "/feed.xml/route": "app/feed.xml/route.js",
+  "/opengraph-image/route": "app/opengraph-image/route.js",
+  "/twitter-image/route": "app/twitter-image/route.js",
   "/robots.txt/route": "app/robots.txt/route.js",
   "/sitemap.xml/route": "app/sitemap.xml/route.js"
 }

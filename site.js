@@ -334,22 +334,6 @@
         ctx.fillRect(x, top, CANDLE_W, bodyH);
       });
 
-      if (isHomeV2) {
-        // Extra moving signal line so the animation is unmistakably visible.
-        ctx.beginPath();
-        for (let i = 0; i <= 120; i++) {
-          const x = (i / 120) * W;
-          const y = H * 0.44
-            + Math.sin(x * 0.013 + tSec * 2.2) * H * 0.06
-            + Math.sin(x * 0.028 + tSec * 3.1) * H * 0.02;
-          if (i === 0) ctx.moveTo(x, y);
-          else ctx.lineTo(x, y);
-        }
-        ctx.strokeStyle = "rgba(255,255,255,0.42)";
-        ctx.lineWidth = 1.6;
-        ctx.stroke();
-      }
-
       if (!isHomeV2) {
         // Keep legacy curved lines for non-home surfaces if canvas is reused elsewhere.
         const alpha = 0.24;

@@ -2953,13 +2953,14 @@ body.home-body.home-v2 {
 
 @media (max-width: 760px) {
   body.home-body.home-v2 {
-    height: auto;
+    height: 100svh;
     min-height: 100svh;
-    overflow-y: auto;
+    overflow-y: hidden;
   }
 
   .home-shell-v2 {
-    height: auto;
+    height: 100svh;
+    overflow: clip;
   }
 
   .hero-v2 {
