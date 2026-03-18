@@ -234,10 +234,11 @@
   const canvas = document.getElementById("hero-canvas");
   if (canvas) {
     const ctx = canvas.getContext("2d");
+    if (!ctx) return;
     let W = 0;
     let H = 0;
     let raf = 0;
-    const isHomeV2 = document.body.classList.contains("home-v2");
+    const isHomeV2 = Boolean(canvas.closest(".hero-v2"));
     const startTime = performance.now();
 
     // Same market cycle used in iOS WelcomeChartCanvas / Paywall background.
@@ -334,34 +335,15 @@
         ctx.fillRect(x, top, CANDLE_W, bodyH);
       });
 
-      if (!isHomeV2) {
-        // Keep legacy curved lines for non-home surfaces if canvas is reused elsewhere.
-        const alpha = 0.24;
-        const lines = [
-          { color: `rgba(90,141,255,${alpha + 0.2})`, speed: 1.0, amp: 0.11, freq: 0.0018, offset: 0 },
-          { color: `rgba(43,213,196,${alpha + 0.08})`, speed: 0.76, amp: 0.08, freq: 0.0022, offset: 170 }
-        ];
-        lines.forEach((line) => {
-          ctx.beginPath();
-          for (let i = 0; i <= 84; i++) {
-            const x = (i / 84) * W;
-            const y = H * 0.5
-              + Math.sin(x * line.freq + tSec * line.speed + line.offset) * H * line.amp
-              + Math.sin(x * line.freq * 2.2 + tSec * line.speed * 1.5 + line.offset * 0.7) * H * line.amp * 0.42;
-            if (i === 0) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-          }
-          ctx.strokeStyle = line.color;
-          ctx.lineWidth = 1.2;
-          ctx.stroke();
-        });
-      }
-
       raf = requestAnimationFrame(draw);
     }
 
-    const ro = new ResizeObserver(() => { resize(); });
-    ro.observe(canvas.parentElement);
+    if (typeof ResizeObserver !== "undefined") {
+      const ro = new ResizeObserver(() => { resize(); });
+      ro.observe(canvas.parentElement || canvas);
+    } else {
+      window.addEventListener("resize", resize, { passive: true });
+    }
     resize();
     raf = requestAnimationFrame(draw);
 
