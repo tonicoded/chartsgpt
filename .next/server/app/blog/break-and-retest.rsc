@@ -1,0 +1,256 @@
+3:I[4707,[],""]
+5:I[6423,[],""]
+6:I[8003,["185","static/chunks/app/layout-9922ba835c5b33ad.js"],""]
+7:I[9050,["185","static/chunks/app/layout-9922ba835c5b33ad.js"],"Analytics"]
+4:["slug","blog/break-and-retest","oc"]
+0:["hYjtaeieCi6ZXbuGER64i",[[["",{"children":[["slug","blog/break-and-retest","oc"],{"children":["__PAGE__?{\"slug\":[\"blog\",\"break-and-retest\"]}",{}]}]},"$undefined","$undefined",true],["",{"children":[["slug","blog/break-and-retest","oc"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0cdbfc11b3305111.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":[["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","html",null,{"lang":"en","children":["$","body",null,{"style":{"margin":0,"fontFamily":"system-ui, -apple-system, Segoe UI, sans-serif"},"children":["$","div",null,{"style":{"padding":24},"children":[["$","h1",null,{"style":{"margin":"0 0 8px"},"children":"404"}],["$","p",null,{"style":{"margin":0},"children":"Page not found."}]]}]}]}],"notFoundStyles":[]}],["$","$L6",null,{"src":"/site-config.js","strategy":"afterInteractive"}],["$","$L6",null,{"src":"/site.js","strategy":"afterInteractive"}],["$","$L7",null,{}]]}]}]],null],null],["$L8",null]]]]
+9:T84b,{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Break and Retest Strategy (How to Trade It Clean)",
+      "datePublished": "2026-02-14",
+      "dateModified": "2026-02-14",
+      "inLanguage": "en",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://charts-gpt.com/blog/break-and-retest/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ChartsGPT",
+        "url": "https://charts-gpt.com/",
+        "logo": "https://charts-gpt.com/logo.png"
+      },
+      "image": [
+        "https://charts-gpt.com/blog/assets/break-retest.png"
+      ],
+      "description": "What counts as a real breakout, how to trade the retest, triggers, invalidation, and common traps."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What confirms a breakout before a retest trade?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Look for a break and close beyond the level, followed by acceptance (price holding above/below). Then wait for a retest with a clear trigger."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where should invalidation go on a break and retest?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually beyond the retest level/zone. If price reclaims the broken level in the opposite direction, the breakout thesis is invalid."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://charts-gpt.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://charts-gpt.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Break & Retest",
+          "item": "https://charts-gpt.com/blog/break-and-retest/"
+        }
+      ]
+    }
+  ]
+}a:T26a0,<div class="blog-shell">
+      <header class="blog-topbar" aria-label="Site header">
+        <div class="blog-topbar-inner">
+          <a class="blog-brand" href="../../" aria-label="ChartsGPT Home">
+            <img src="../../logo.png" alt="ChartsGPT logo" width="30" height="30" loading="eager" />
+            <span>ChartsGPT</span>
+          </a>
+          <nav class="blog-nav" aria-label="Primary">
+            <a href="../../">Home</a>
+            <a href="../">Blog</a>
+            <a href="../../about/">About</a>
+            <a href="../../privacy/">Privacy</a>
+            <a href="../../terms/">Terms</a>
+            <a href="../../support/">Support</a>
+          </nav>
+          <details class="blog-menu">
+            <summary aria-label="Open menu"><span class="blog-menu-icon" aria-hidden="true"></span></summary>
+            <div class="blog-menu-panel" role="menu" aria-label="Menu">
+              <a role="menuitem" href="../../">Home</a>
+              <a role="menuitem" href="../">Blog</a>
+              <a role="menuitem" href="../../about/">About</a>
+              <a role="menuitem" href="../../privacy/">Privacy</a>
+              <a role="menuitem" href="../../terms/">Terms</a>
+              <a role="menuitem" href="../../support/">Support</a>
+            </div>
+          </details>
+        </div>
+      </header>
+
+      <main class="blog-main">
+        <div class="blog-container">
+          <div class="blog-hero">
+            <div class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="../../">Home</a><span>›</span><a href="../">Blog</a><span>›</span><span aria-current="page">Break & Retest</span>
+            </div>
+            <h1>Break and Retest Strategy (How to Trade It Clean)</h1>
+            <p>
+              The breakout itself is where most people get trapped. The retest is where you get <strong>confirmation</strong> and a
+              cleaner <strong>risk-to-reward</strong>. Here’s the checklist that filters fakeouts and finds the clean retest entries.
+            </p>
+            <div class="blog-meta">Published: February 14, 2026 • Last updated: February 14, 2026 • Reading time: ~9 minutes</div>
+          </div>
+
+          <article class="blog-card">
+            <div class="blog-article">
+              <figure class="blog-figure">
+                <img src="../assets/break-retest.svg" alt="Break and retest diagram with breakout, pullback, and continuation." loading="eager" />
+                <figcaption class="blog-figcap">Wait for the retest. Your edge is patience + structure.</figcaption>
+              </figure>
+
+              <div class="pillar-bar" aria-label="Pillar guide">
+                <span class="pill-label">Pillar guide</span>
+                <span>•</span>
+                <span>Core framework page. See all pillars: <a href="../pillars/">Trading pillar guides</a>.</span>
+              </div>
+
+              <div class="definition">
+                <div class="definition-title">Definition (quick)</div>
+                <p>
+                  A <strong>break &amp; retest</strong> is when price breaks a key level, comes back to retest it, and then continues. The retest gives
+                  you <strong>confirmation</strong> and a clean invalidation point, so you’re not chasing the breakout.
+                </p>
+              </div>
+
+              <div class="quick-steps">
+                <div class="quick-steps-title">Quick checklist</div>
+                <ol>
+                  <li>Pick a real level (range high/low, major swing, prior day/week).</li>
+                  <li>Confirm acceptance (break + close, hold beyond the zone).</li>
+                  <li>Wait for the retest trigger (hold, sweep+reclaim, micro shift).</li>
+                  <li>Invalidate beyond the zone; size risk before entry.</li>
+                </ol>
+              </div>
+
+              <div class="callout">
+                <strong>Rule:</strong> you don’t trade the break — you trade the <strong>retest</strong> with a clear trigger and invalidation.
+                <br />
+                <strong>Reality check:</strong> no breakout guarantees profit. Your edge comes from waiting for acceptance + retest proof.
+              </div>
+              <div class="toc js-toc" aria-label="Table of contents"></div>
+
+              <h2>What “break and retest” actually means</h2>
+              <p>
+                A break and retest is a simple idea: price breaks a key level, then returns to that level, and continues in the breakout
+                direction. The retest is where you get confirmation and a cleaner invalidation point.
+              </p>
+
+              <h2>Step 1: Choose the right level</h2>
+              <p>Not every line is worth retesting. Use levels that matter:</p>
+              <ul>
+                <li>range highs/lows</li>
+                <li>prior day/week high/low</li>
+                <li>major swing highs/lows</li>
+                <li>clear structure flips (resistance → support, support → resistance)</li>
+              </ul>
+
+              <h2>Step 2: Confirm the breakout (avoid fakeouts)</h2>
+              <p>Before you even look for a retest trade, demand evidence of acceptance:</p>
+              <ul>
+                <li><strong>Break + close</strong> beyond the zone on your execution timeframe.</li>
+                <li><strong>Hold</strong>: price stays beyond the level for more than a single wick.</li>
+                <li><strong>Momentum</strong> (optional): expansion candle(s) or rising volume if you watch it.</li>
+              </ul>
+
+              <h2>Step 3: Trade the retest (the clean entry)</h2>
+              <p>
+                The retest is where you upgrade randomness into structure. You’re waiting for price to interact with the broken level and
+                show intent.
+              </p>
+              <ul>
+                <li><strong>Retest hold:</strong> price tags the zone and holds, then starts to push away.</li>
+                <li><strong>Sweep + reclaim:</strong> wick through the level, then closes back in the breakout direction.</li>
+                <li><strong>Micro structure shift:</strong> lower highs stop forming (bear → bull), or higher lows stop forming (bull → bear).</li>
+              </ul>
+
+              <h2>Invalidation (where the idea is wrong)</h2>
+              <p>
+                Invalidation belongs beyond the retest zone. If price returns <em>through</em> the level and holds on the wrong side, the
+                breakout thesis is invalid.
+              </p>
+
+              <h2>Common traps (and how to avoid them)</h2>
+              <ul>
+                <li><strong>Chasing the break:</strong> you enter at the worst price. Wait for the retest.</li>
+                <li><strong>Retest never comes:</strong> skip it. No retest = no trade.</li>
+                <li><strong>Retest is too deep:</strong> if it re-enters the prior range and accepts, the setup is degraded.</li>
+              </ul>
+
+              <h2>A copy/paste prompt for break & retest</h2>
+              <pre><code>Analyze this chart screenshot for a break-and-retest setup.
+
+1) Identify the key level being broken and why it matters
+2) Confirm breakout: what evidence shows acceptance?
+3) Retest plan: trigger + invalidation + target zone
+4) List the main fakeout risk and what would invalidate the setup.</code></pre>
+
+              <h2>Related posts</h2>
+              <ul>
+                <li><a href="../support-and-resistance/">Support & Resistance Trading (Simple Levels That Actually Work)</a></li>
+                <li><a href="../break-and-retest-crypto/">Break and Retest Strategy for Crypto (Avoid Fakeouts)</a></li>
+                <li><a href="../market-structure-bos-choch/">Market Structure: BOS vs CHoCH (Simple Guide)</a></li>
+                <li><a href="../moving-averages-strategy/">Moving Average Strategy</a></li>
+                <li><a href="../crypto-vs-stocks-volatility/">Crypto vs Stocks Volatility</a></li>
+                <li><a href="../risk-management-position-sizing/">Risk Management & Position Sizing</a></li>
+              </ul>
+
+              <h2>Get ChartsGPT</h2>
+              <p>Turn your screenshot into key levels, scenarios, trigger, and invalidation in seconds.</p>
+              <div class="download-row" aria-label="Download ChartsGPT">
+                <a class="store-badge js-appstore" href="https://apps.apple.com/nl/app/chartsgpt-ai-trading-assist/id6758857719?l=en-GB" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                  <img src="/appstore.svg" alt="Download on the App Store" />
+                </a>
+                <a class="store-badge js-playstore" href="#" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+                  <img src="/googleplay.svg" alt="Get it on Google Play" />
+                </a>
+              </div>
+
+              <h2>About ChartsGPT</h2>
+              <p>
+                ChartsGPT is an AI chart analysis app designed to turn screenshots into structured levels and scenarios. For support,
+                contact <a href="mailto:anthonyvvza@gmail.com">anthonyvvza@gmail.com</a>.
+              </p>
+
+              <p class="blog-meta">Disclaimer: ChartsGPT provides educational analysis tools only and is not financial advice.</p>
+            </div>
+          </article>
+        </div>
+      </main>
+
+      <footer class="blog-footer" aria-label="Site footer">
+        <div class="blog-footer-inner">
+          <div>
+            <a href="../../">Home</a> • <a href="../">Blog</a> • <a href="../../about/">About</a> • <a href="../../privacy/">Privacy</a> •
+            <a href="../../terms/">Terms</a> • <a href="../../support/">Support</a>
+          </div>
+          <div>© ChartsGPT 2026</div>
+        </div>
+      </footer>
+    </div>2:["$","div",null,{"className":"legacy-scroll","suppressHydrationWarning":true,"children":[[["$","script","jsonld-0",{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$9"}}]],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$a"}}]]}]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"name":"theme-color","content":"#070a12"}],["$","meta","2",{"name":"color-scheme","content":"dark"}],["$","meta","3",{"charSet":"utf-8"}],["$","title","4",{"children":"Break and Retest Strategy (How to Trade It Clean) — ChartsGPT — ChartsGPT"}],["$","meta","5",{"name":"description","content":"A high-probability break and retest guide: spot real breakouts, avoid fakeouts, and trade the retest with clear triggers and invalidation."}],["$","meta","6",{"name":"application-name","content":"ChartsGPT"}],["$","meta","7",{"name":"creator","content":"ChartsGPT"}],["$","meta","8",{"name":"publisher","content":"ChartsGPT"}],["$","meta","9",{"name":"robots","content":"index,follow"}],["$","meta","10",{"name":"category","content":"finance"}],["$","meta","11",{"name":"apple-itunes-app","content":"app-id=6758857719"}],["$","link","12",{"rel":"canonical","href":"https://charts-gpt.com/blog/break-and-retest/"}],["$","meta","13",{"name":"format-detection","content":"telephone=no"}],["$","meta","14",{"property":"og:title","content":"Break and Retest Strategy (How to Trade It Clean) — ChartsGPT"}],["$","meta","15",{"property":"og:description","content":"A high-probability break and retest guide: spot real breakouts, avoid fakeouts, and trade the retest with clear triggers and invalidation."}],["$","meta","16",{"property":"og:url","content":"https://charts-gpt.com/blog/break-and-retest/"}],["$","meta","17",{"property":"og:site_name","content":"ChartsGPT"}],["$","meta","18",{"property":"og:locale","content":"en_US"}],["$","meta","19",{"property":"og:image","content":"https://charts-gpt.com/blog/assets/break-retest.png"}],["$","meta","20",{"property":"og:type","content":"website"}],["$","meta","21",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","22",{"name":"twitter:title","content":"Break and Retest Strategy (How to Trade It Clean) — ChartsGPT"}],["$","meta","23",{"name":"twitter:description","content":"A high-probability break and retest guide: spot real breakouts, avoid fakeouts, and trade the retest with clear triggers and invalidation."}],["$","meta","24",{"name":"twitter:image","content":"https://charts-gpt.com/blog/assets/break-retest.png"}],["$","link","25",{"rel":"icon","href":"/favicon.ico"}],["$","link","26",{"rel":"icon","href":"/favicon-16x16.png","sizes":"16x16","type":"image/png"}],["$","link","27",{"rel":"icon","href":"/favicon-32x32.png","sizes":"32x32","type":"image/png"}],["$","link","28",{"rel":"apple-touch-icon","href":"/apple-touch-icon.png","sizes":"180x180","type":"image/png"}]]
+1:null

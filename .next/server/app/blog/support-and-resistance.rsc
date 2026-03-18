@@ -1,0 +1,270 @@
+3:I[4707,[],""]
+5:I[6423,[],""]
+6:I[8003,["185","static/chunks/app/layout-9922ba835c5b33ad.js"],""]
+7:I[9050,["185","static/chunks/app/layout-9922ba835c5b33ad.js"],"Analytics"]
+4:["slug","blog/support-and-resistance","oc"]
+0:["hYjtaeieCi6ZXbuGER64i",[[["",{"children":[["slug","blog/support-and-resistance","oc"],{"children":["__PAGE__?{\"slug\":[\"blog\",\"support-and-resistance\"]}",{}]}]},"$undefined","$undefined",true],["",{"children":[["slug","blog/support-and-resistance","oc"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/0cdbfc11b3305111.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":[["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","html",null,{"lang":"en","children":["$","body",null,{"style":{"margin":0,"fontFamily":"system-ui, -apple-system, Segoe UI, sans-serif"},"children":["$","div",null,{"style":{"padding":24},"children":[["$","h1",null,{"style":{"margin":"0 0 8px"},"children":"404"}],["$","p",null,{"style":{"margin":0},"children":"Page not found."}]]}]}]}],"notFoundStyles":[]}],["$","$L6",null,{"src":"/site-config.js","strategy":"afterInteractive"}],["$","$L6",null,{"src":"/site.js","strategy":"afterInteractive"}],["$","$L7",null,{}]]}]}]],null],null],["$L8",null]]]]
+9:T82f,{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Support & Resistance Trading (Simple Levels That Actually Work)",
+      "datePublished": "2026-02-14",
+      "dateModified": "2026-02-14",
+      "inLanguage": "en",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://charts-gpt.com/blog/support-and-resistance/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ChartsGPT",
+        "url": "https://charts-gpt.com/",
+        "logo": "https://charts-gpt.com/logo.png"
+      },
+      "image": [
+        "https://charts-gpt.com/blog/assets/support-resistance.png"
+      ],
+      "description": "How to draw fewer levels, confirm reactions, and build 2-scenario plans with clear invalidation."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many support and resistance levels should I draw?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with 2–4 key levels: the range high/low and one or two prior swing highs/lows that repeatedly caused reactions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are support and resistance lines exact?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Treat them as zones, not single-pixel lines. Price often wicks through a level before deciding."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://charts-gpt.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://charts-gpt.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Support & Resistance",
+          "item": "https://charts-gpt.com/blog/support-and-resistance/"
+        }
+      ]
+    }
+  ]
+}a:T2a67,<div class="blog-shell">
+      <header class="blog-topbar" aria-label="Site header">
+        <div class="blog-topbar-inner">
+          <a class="blog-brand" href="../../" aria-label="ChartsGPT Home">
+            <img src="../../logo.png" alt="ChartsGPT logo" width="30" height="30" loading="eager" />
+            <span>ChartsGPT</span>
+          </a>
+          <nav class="blog-nav" aria-label="Primary">
+            <a href="../../">Home</a>
+            <a href="../">Blog</a>
+            <a href="../../about/">About</a>
+            <a href="../../privacy/">Privacy</a>
+            <a href="../../terms/">Terms</a>
+            <a href="../../support/">Support</a>
+          </nav>
+          <details class="blog-menu">
+            <summary aria-label="Open menu"><span class="blog-menu-icon" aria-hidden="true"></span></summary>
+            <div class="blog-menu-panel" role="menu" aria-label="Menu">
+              <a role="menuitem" href="../../">Home</a>
+              <a role="menuitem" href="../">Blog</a>
+              <a role="menuitem" href="../../about/">About</a>
+              <a role="menuitem" href="../../privacy/">Privacy</a>
+              <a role="menuitem" href="../../terms/">Terms</a>
+              <a role="menuitem" href="../../support/">Support</a>
+            </div>
+          </details>
+        </div>
+      </header>
+
+      <main class="blog-main">
+        <div class="blog-container">
+          <div class="blog-hero">
+            <div class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="../../">Home</a><span>›</span><a href="../">Blog</a><span>›</span><span aria-current="page">Support & Resistance</span>
+            </div>
+            <h1>Support & Resistance Trading (Simple Levels That Actually Work)</h1>
+            <p>
+              Most traders lose because they draw <strong>too many levels</strong> and then “wing it.” This guide shows how to mark
+              support/resistance the clean way, avoid fakeouts, and build a plan with <strong>triggers</strong> + <strong>invalidation</strong>.
+            </p>
+            <div class="blog-meta">Published: February 14, 2026 • Last updated: February 14, 2026 • Reading time: ~8 minutes</div>
+          </div>
+
+          <article class="blog-card">
+            <div class="blog-article">
+              <figure class="blog-figure">
+                <img src="../assets/support-resistance.svg" alt="Support and resistance zones on a chart with reactions." loading="eager" />
+                <figcaption class="blog-figcap">Levels are zones. Your job is to mark the zones that change decisions.</figcaption>
+              </figure>
+
+              <div class="pillar-bar" aria-label="Pillar guide">
+                <span class="pill-label">Pillar guide</span>
+                <span>•</span>
+                <span>Core framework page. See all pillars: <a href="../pillars/">Trading pillar guides</a>.</span>
+              </div>
+
+              <div class="definition">
+                <div class="definition-title">Definition (quick)</div>
+                <p>
+                  <strong>Support</strong> is a zone where buyers repeatedly step in. <strong>Resistance</strong> is a zone where sellers repeatedly
+                  step in. Your edge isn’t “drawing lines”—it’s picking the <strong>few zones</strong> that actually change decisions and then waiting
+                  for confirmation.
+                </p>
+              </div>
+
+              <div class="quick-steps">
+                <div class="quick-steps-title">Quick steps (copy this)</div>
+                <ol>
+                  <li>Pick your execution timeframe (don’t mix timeframes mid-plan).</li>
+                  <li>Mark range high/low or the last obvious swing high/low.</li>
+                  <li>Add only 1–2 extra zones with 2+ clean reactions.</li>
+                  <li>Wait for a trigger (break+close, sweep+reclaim, or retest hold).</li>
+                  <li>Set invalidation beyond the zone, then size risk before entry.</li>
+                </ol>
+              </div>
+
+              <div class="callout">
+                <strong>Goal:</strong> pick <strong>2–4</strong> levels, then build a plan with <strong>two scenarios</strong> + a
+                <strong>trigger</strong> + <strong>invalidation</strong>.
+                <br />
+                <strong>Reality check:</strong> no “level” guarantees wins. The edge is choosing better zones and waiting for proof.
+              </div>
+              <div class="toc js-toc" aria-label="Table of contents"></div>
+
+              <h2>What support & resistance really is</h2>
+              <p>
+                Support and resistance (S/R) is just a map of where traders repeatedly made decisions. The level matters when it creates
+                one of these behaviors:
+              </p>
+              <ul>
+                <li><strong>Rejection:</strong> price touches the zone and quickly pushes away.</li>
+                <li><strong>Acceptance:</strong> price holds inside the zone and trades through it.</li>
+                <li><strong>Flip:</strong> resistance becomes support (or support becomes resistance) after a break.</li>
+              </ul>
+
+              <h2>The fastest way to draw fewer (better) levels</h2>
+              <p>Start from higher timeframe → refine down. Use this checklist:</p>
+              <ul>
+                <li>Mark the current <strong>range high</strong> and <strong>range low</strong> (if ranging).</li>
+                <li>Mark the most obvious <strong>swing high</strong> and <strong>swing low</strong> (if trending).</li>
+                <li>Add only levels that caused <strong>multiple reactions</strong> (2+ clean touches).</li>
+                <li>Skip “maybe” levels. If you wouldn’t trade it, don’t draw it.</li>
+              </ul>
+
+              <h2>Zones, not lines (how to size the zone)</h2>
+              <p>
+                Most mistakes happen because traders expect a line to hold perfectly. In real markets, you’ll see wicks and stop hunts.
+                Make your level a zone:
+              </p>
+              <ul>
+                <li>Anchor to <strong>wicks</strong> when the market is volatile.</li>
+                <li>Anchor to <strong>closes</strong> when the market is trending cleanly.</li>
+                <li>Widen the zone slightly around major levels (daily/weekly highs/lows).</li>
+              </ul>
+
+              <h2>Turn levels into a plan (two scenarios)</h2>
+              <p>When price is near a key S/R zone, only two things can happen: it holds or it breaks.</p>
+              <ul>
+                <li>
+                  <strong>Bull scenario (hold):</strong> price rejects support → you wait for a trigger → target the next resistance zone.
+                </li>
+                <li>
+                  <strong>Bear scenario (break):</strong> price accepts below support → you wait for a retest trigger → target the next support zone.
+                </li>
+              </ul>
+
+              <h2>Triggers that keep you out of trouble</h2>
+              <p>Pick triggers that prove intent. A few practical ones:</p>
+              <ul>
+                <li><strong>Break + close:</strong> price breaks the zone and closes beyond it on your timeframe.</li>
+                <li><strong>Sweep + reclaim:</strong> wick through the level then closes back above/below it.</li>
+                <li><strong>Retest hold:</strong> after a break, price comes back and holds the zone from the other side.</li>
+              </ul>
+
+              <h2>Invalidation: the one line that ends the debate</h2>
+              <p>
+                Your invalidation should be beyond the zone in a place that changes the story (new low, range break, structure shift). If
+                you can’t define invalidation, you’re not planning—you’re hoping.
+              </p>
+
+              <h2>A copy/paste prompt for S/R analysis</h2>
+              <pre><code>Analyze this chart screenshot. Focus only on support/resistance.
+
+1) Timeframe: [fill in]
+2) Identify the 2–4 most important S/R zones and why they matter
+3) Build two scenarios:
+   - Bull: trigger + invalidation + target zone
+   - Bear: trigger + invalidation + target zone
+4) End with a 5-line plan summary.</code></pre>
+
+              <h2>Related posts</h2>
+              <ul>
+                <li><a href="../break-and-retest/">Break and Retest Strategy (How to Trade It Clean)</a></li>
+                <li><a href="../best-support-and-resistance-strategy/">Best Support and Resistance Strategy (High-Probability Framework)</a></li>
+                <li><a href="../how-to-find-key-levels-day-trading/">How to Find Key Levels (Day Trading)</a></li>
+                <li><a href="../market-structure-bos-choch/">Market Structure: BOS vs CHoCH (Simple Guide)</a></li>
+                <li><a href="../candlestick-patterns-that-matter/">Candlestick Patterns That Matter</a></li>
+                <li><a href="../risk-management-position-sizing/">Risk Management & Position Sizing</a></li>
+              </ul>
+
+              <h2>Get ChartsGPT</h2>
+              <p>Turn your screenshot into key levels, scenarios, trigger, and invalidation in seconds.</p>
+              <div class="download-row" aria-label="Download ChartsGPT">
+                <a class="store-badge js-appstore" href="https://apps.apple.com/nl/app/chartsgpt-ai-trading-assist/id6758857719?l=en-GB" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                  <img src="/appstore.svg" alt="Download on the App Store" />
+                </a>
+                <a class="store-badge js-playstore" href="#" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+                  <img src="/googleplay.svg" alt="Get it on Google Play" />
+                </a>
+              </div>
+
+              <h2>About ChartsGPT</h2>
+              <p>
+                ChartsGPT is an AI chart analysis app designed to turn screenshots into structured levels and scenarios. For support,
+                contact <a href="mailto:anthonyvvza@gmail.com">anthonyvvza@gmail.com</a>.
+              </p>
+
+              <p class="blog-meta">Disclaimer: ChartsGPT provides educational analysis tools only and is not financial advice.</p>
+            </div>
+          </article>
+        </div>
+      </main>
+
+      <footer class="blog-footer" aria-label="Site footer">
+        <div class="blog-footer-inner">
+          <div>
+            <a href="../../">Home</a> • <a href="../">Blog</a> • <a href="../../about/">About</a> • <a href="../../privacy/">Privacy</a> •
+            <a href="../../terms/">Terms</a> • <a href="../../support/">Support</a>
+          </div>
+          <div>© ChartsGPT 2026</div>
+        </div>
+      </footer>
+    </div>2:["$","div",null,{"className":"legacy-scroll","suppressHydrationWarning":true,"children":[[["$","script","jsonld-0",{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$9"}}]],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$a"}}]]}]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"name":"theme-color","content":"#070a12"}],["$","meta","2",{"name":"color-scheme","content":"dark"}],["$","meta","3",{"charSet":"utf-8"}],["$","title","4",{"children":"Support & Resistance Trading (Simple Levels That Actually Work) — ChartsGPT — ChartsGPT"}],["$","meta","5",{"name":"description","content":"Support and resistance trading made practical: draw fewer levels, avoid fakeouts, and build higher-probability plans with clear triggers and invalidation."}],["$","meta","6",{"name":"application-name","content":"ChartsGPT"}],["$","meta","7",{"name":"creator","content":"ChartsGPT"}],["$","meta","8",{"name":"publisher","content":"ChartsGPT"}],["$","meta","9",{"name":"robots","content":"index,follow"}],["$","meta","10",{"name":"category","content":"finance"}],["$","meta","11",{"name":"apple-itunes-app","content":"app-id=6758857719"}],["$","link","12",{"rel":"canonical","href":"https://charts-gpt.com/blog/support-and-resistance/"}],["$","meta","13",{"name":"format-detection","content":"telephone=no"}],["$","meta","14",{"property":"og:title","content":"Support & Resistance Trading (Simple Levels That Actually Work) — ChartsGPT"}],["$","meta","15",{"property":"og:description","content":"Support and resistance trading made practical: draw fewer levels, avoid fakeouts, and build higher-probability plans with clear triggers and invalidation."}],["$","meta","16",{"property":"og:url","content":"https://charts-gpt.com/blog/support-and-resistance/"}],["$","meta","17",{"property":"og:site_name","content":"ChartsGPT"}],["$","meta","18",{"property":"og:locale","content":"en_US"}],["$","meta","19",{"property":"og:image","content":"https://charts-gpt.com/blog/assets/support-resistance.png"}],["$","meta","20",{"property":"og:type","content":"website"}],["$","meta","21",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","22",{"name":"twitter:title","content":"Support & Resistance Trading (Simple Levels That Actually Work) — ChartsGPT"}],["$","meta","23",{"name":"twitter:description","content":"Support and resistance trading made practical: draw fewer levels, avoid fakeouts, and build higher-probability plans with clear triggers and invalidation."}],["$","meta","24",{"name":"twitter:image","content":"https://charts-gpt.com/blog/assets/support-resistance.png"}],["$","link","25",{"rel":"icon","href":"/favicon.ico"}],["$","link","26",{"rel":"icon","href":"/favicon-16x16.png","sizes":"16x16","type":"image/png"}],["$","link","27",{"rel":"icon","href":"/favicon-32x32.png","sizes":"32x32","type":"image/png"}],["$","link","28",{"rel":"apple-touch-icon","href":"/apple-touch-icon.png","sizes":"180x180","type":"image/png"}]]
+1:null
