@@ -2454,6 +2454,12 @@ body.home-body.home-v2 {
   color: var(--home-text);
 }
 
+/* Hard stop: no motion on home */
+body.home-body.home-v2 * {
+  animation: none !important;
+  transition: none !important;
+}
+
 .home-shell-v2 {
   min-height: 100svh;
   height: 100svh;

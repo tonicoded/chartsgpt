@@ -3,7 +3,7 @@
 6:I[8003,["185","static/chunks/app/layout-9922ba835c5b33ad.js"],""]
 7:I[9050,["185","static/chunks/app/layout-9922ba835c5b33ad.js"],"Analytics"]
 4:["slug","","oc"]
-0:["emykp5UX4W3iGlk8K0RiT",[[["",{"children":[["slug","","oc"],{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":[["slug","","oc"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/b3a14266b96b90ad.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":[["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","html",null,{"lang":"en","children":["$","body",null,{"style":{"margin":0,"fontFamily":"system-ui, -apple-system, Segoe UI, sans-serif"},"children":["$","div",null,{"style":{"padding":24},"children":[["$","h1",null,{"style":{"margin":"0 0 8px"},"children":"404"}],["$","p",null,{"style":{"margin":0},"children":"Page not found."}]]}]}]}],"notFoundStyles":[]}],["$","$L6",null,{"src":"/site-config.js","strategy":"afterInteractive"}],["$","$L6",null,{"src":"/site.js","strategy":"afterInteractive"}],["$","$L7",null,{}]]}]}]],null],null],["$L8",null]]]]
+0:["lk17Qqu0Sdxx8qCxmwdxh",[[["",{"children":[["slug","","oc"],{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":[["slug","","oc"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/da1211eddc74abcb.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":[["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","html",null,{"lang":"en","children":["$","body",null,{"style":{"margin":0,"fontFamily":"system-ui, -apple-system, Segoe UI, sans-serif"},"children":["$","div",null,{"style":{"padding":24},"children":[["$","h1",null,{"style":{"margin":"0 0 8px"},"children":"404"}],["$","p",null,{"style":{"margin":0},"children":"Page not found."}]]}]}]}],"notFoundStyles":[]}],["$","$L6",null,{"src":"/site-config.js","strategy":"afterInteractive"}],["$","$L6",null,{"src":"/site.js","strategy":"afterInteractive"}],["$","$L7",null,{}]]}]}]],null],null],["$L8",null]]]]
 9:T496,{
   "@context": "https://schema.org",
   "@graph": [
@@ -35,7 +35,7 @@
       "installUrl": "https://apps.apple.com/nl/app/chartsgpt-ai-trading-assist/id6758857719"
     }
   ]
-}a:Tdc8,<div class="home-shell home-shell-v2">
+}a:Tce9,<div class="home-shell home-shell-v2">
       <header class="site-header site-header-home" aria-label="Site header">
         <div class="site-header-inner">
           <a class="site-brand" href="./" aria-label="ChartsGPT Home">
@@ -63,10 +63,6 @@
 
       <main class="landing landing-home" aria-label="ChartsGPT landing page">
         <section class="hero-v2" aria-label="Hero">
-          <canvas id="hero-canvas" aria-hidden="true"></canvas>
-          <span class="hero-v2-glow hero-v2-glow-1" aria-hidden="true"></span>
-          <span class="hero-v2-glow hero-v2-glow-2" aria-hidden="true"></span>
-
           <div class="container hero-v2-grid">
             <div class="hero-v2-copy reveal" style="--delay: 60ms">
               <h1 class="hero-v2-title">From noisy chart to sniper setup in seconds.</h1>
