@@ -3010,8 +3010,8 @@ body.home-body.home-v2 *,
 
   .hero-v2-stage {
     min-height: clamp(390px, 56vw, 470px);
-    margin-top: -18px;
-    transform: translateY(6px);
+    margin-top: -2px;
+    transform: translateY(28px);
     place-items: end center;
     justify-self: center;
   }
@@ -3087,8 +3087,8 @@ body.home-body.home-v2 *,
   }
 
   .hero-v2-stage {
-    margin-top: -26px;
-    transform: translateY(-10px);
+    margin-top: -4px;
+    transform: translateY(16px);
     min-height: 380px;
   }
 

@@ -87,6 +87,9 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     description,
     keywords,
     robots: robotsContent,
+    other: {
+      "apple-itunes-app": "app-id=6758857719"
+    },
     alternates: canonicalAbs ? { canonical: canonicalAbs } : undefined,
     openGraph: {
       type: "website",
