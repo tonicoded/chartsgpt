@@ -1,4 +1,4 @@
-// File: /Users/anthonyverruijt/Downloads/ChartGPT 2/Website/app/feed.xml/route.ts
+// File: /Users/anthonyverruijt/Downloads/Website/app/feed.xml/route.ts
 import * as entry from '../../../../app/feed.xml/route.js'
 import type { NextRequest } from 'next/server.js'
 

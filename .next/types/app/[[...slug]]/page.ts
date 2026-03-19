@@ -1,4 +1,4 @@
-// File: /Users/anthonyverruijt/Downloads/ChartGPT 2/Website/app/[[...slug]]/page.tsx
+// File: /Users/anthonyverruijt/Downloads/Website/app/[[...slug]]/page.tsx
 import * as entry from '../../../../app/[[...slug]]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
