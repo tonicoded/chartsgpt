@@ -3563,3 +3563,99 @@ body.home-body.home-v2 {
   border-color: rgba(255, 255, 255, 0.24);
   box-shadow: none;
 }
+
+/* ── Mobile premium enhancements ──────────────────────────────────── */
+
+.hero-v2-trust {
+  display: none;
+}
+
+.hero-v2-trust-stars {
+  color: #f0b429;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 760px) {
+  /* Trust badge */
+  .hero-v2-trust {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 999px;
+    padding: 5px 14px 5px 10px;
+    font-size: 11.5px;
+    letter-spacing: 0.025em;
+    color: rgba(255, 255, 255, 0.54);
+    font-family: "Geist-Medium", var(--font-base);
+    margin-bottom: 15px;
+  }
+
+  /* Gradient text on hero title */
+  .hero-v2-title {
+    background: linear-gradient(158deg, #ffffff 18%, rgba(255, 255, 255, 0.72) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Refined subtitle */
+  .hero-v2-sub {
+    color: rgba(255, 255, 255, 0.44);
+    letter-spacing: 0.005em;
+  }
+
+  /* Glassmorphism header – overrides noanim section */
+  .home-v2 .site-header-home {
+    background: rgba(4, 4, 4, 0.48) !important;
+    backdrop-filter: blur(22px) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(22px) saturate(160%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055) !important;
+  }
+
+  /* Stronger center glow on mobile */
+  body.home-body.home-v2 {
+    background:
+      radial-gradient(560px 240px at 50% 6%, rgba(255, 255, 255, 0.085), transparent 60%),
+      radial-gradient(360px 420px at 80% 72%, rgba(255, 255, 255, 0.03), transparent 70%),
+      linear-gradient(180deg, #050505 0%, #040404 55%, #020202 100%) !important;
+  }
+
+  /* Deeper phone shadows for premium depth */
+  .stage-phone {
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.72), 0 0 0 0.5px rgba(255, 255, 255, 0.10);
+  }
+
+  /* Make store badge images slightly bigger on mobile */
+  .store-badge-hero img {
+    height: 50px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-v2-trust {
+    font-size: 11px;
+    padding: 4px 12px 4px 9px;
+    margin-bottom: 12px;
+    gap: 6px;
+  }
+
+  .hero-v2-trust-stars {
+    font-size: 8.5px;
+    letter-spacing: 1px;
+  }
+
+  /* Slightly tighter gradient angle for small screens */
+  .hero-v2-title {
+    background: linear-gradient(152deg, #ffffff 15%, rgba(255, 255, 255, 0.70) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .store-badge-hero img {
+    height: 44px;
+  }
+}
