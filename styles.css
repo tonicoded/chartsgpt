@@ -3625,7 +3625,63 @@ body.home-body.home-v2 {
 
   /* Deeper phone shadows for premium depth */
   .stage-phone {
-    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.72), 0 0 0 0.5px rgba(255, 255, 255, 0.10);
+    box-shadow: 0 36px 90px rgba(0, 0, 0, 0.78), 0 0 0 0.5px rgba(255, 255, 255, 0.11);
+  }
+
+  /* Single clean phone – hide side phones */
+  .stage-phone-left,
+  .stage-phone-right {
+    display: none;
+  }
+
+  /* Main phone: wider, centered */
+  .stage-phone-main {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: min(64vw, 268px);
+    animation: none;
+  }
+
+  /* Stage: center alignment for single phone */
+  .hero-v2-stage {
+    place-items: center;
+    transform: translateY(16px);
+    min-height: clamp(300px, 48vw, 400px);
+  }
+
+  /* Bottom gradient fade – phone fades into background */
+  .hero-v2-stage::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: -28px;
+    right: -28px;
+    height: 52%;
+    background: linear-gradient(to top, #040404 5%, transparent 100%);
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  /* Spotlight glow behind hero text */
+  .hero-v2-copy::before {
+    content: "";
+    position: absolute;
+    inset: -55% -55%;
+    background: radial-gradient(ellipse at 50% 65%, rgba(255, 255, 255, 0.052), transparent 55%);
+    pointer-events: none;
+    z-index: -1;
+    border-radius: 50%;
+  }
+
+  /* Circular, refined hamburger button */
+  .home-v2 .blog-menu summary {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.055);
+    border-color: rgba(255, 255, 255, 0.09);
   }
 
   /* Make store badge images slightly bigger on mobile */
@@ -3653,6 +3709,11 @@ body.home-body.home-v2 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Slightly smaller phone on very small screens */
+  .stage-phone-main {
+    width: min(66vw, 244px);
   }
 
   .store-badge-hero img {
