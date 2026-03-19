@@ -90,7 +90,8 @@ body {
   overflow-y: auto;
 }
 
-body.home-body {
+body.home-body,
+.home-body {
   height: 100svh;
   overflow: hidden;
 }
@@ -102,14 +103,19 @@ body.home-body {
 }
 
 /* Blog / long-form pages (override the 9:16 app-like frame) */
-body.blog-body {
+body.blog-body,
+.blog-body {
   overflow: auto;
 }
 
 body.blog-body .stage,
 body.blog-body .frame,
 body.blog-body .frame-inner,
-body.blog-body .footer-bar {
+body.blog-body .footer-bar,
+.blog-body .stage,
+.blog-body .frame,
+.blog-body .frame-inner,
+.blog-body .footer-bar {
   display: none;
 }
 
@@ -2442,7 +2448,8 @@ summary:focus-visible {
   --home-muted: rgba(196, 196, 201, 0.76);
 }
 
-body.home-body.home-v2 {
+body.home-body.home-v2,
+.home-body.home-v2 {
   min-height: 100svh;
   height: 100svh;
   overflow-y: hidden;
@@ -2455,7 +2462,8 @@ body.home-body.home-v2 {
 }
 
 /* Hard stop: no motion on home */
-body.home-body.home-v2 * {
+body.home-body.home-v2 *,
+.home-body.home-v2 * {
   animation: none !important;
   transition: none !important;
 }
@@ -2952,7 +2960,8 @@ body.home-body.home-v2 * {
 }
 
 @media (max-width: 760px) {
-  body.home-body.home-v2 {
+  body.home-body.home-v2,
+  .home-body.home-v2 {
     height: 100svh;
     min-height: 100svh;
     overflow-y: hidden;
@@ -3122,7 +3131,8 @@ body.home-body.home-v2 * {
 /* =========================
    Global Premium Skin (Blog/Docs/Legal/Support)
    ========================= */
-body.blog-body {
+body.blog-body,
+.blog-body {
   background:
     radial-gradient(900px 420px at 10% -8%, rgba(255, 255, 255, 0.08), transparent 62%),
     radial-gradient(860px 360px at 88% 4%, rgba(255, 255, 255, 0.06), transparent 66%),
@@ -3130,57 +3140,68 @@ body.blog-body {
   color: rgba(248, 248, 250, 0.96);
 }
 
-body.blog-body .blog-topbar {
+body.blog-body .blog-topbar,
+.blog-body .blog-topbar {
   border-bottom-color: rgba(255, 255, 255, 0.12);
   background: rgba(8, 8, 9, 0.72);
 }
 
-body.blog-body .blog-topbar-inner {
+body.blog-body .blog-topbar-inner,
+.blog-body .blog-topbar-inner {
   max-width: 1080px;
 }
 
-body.blog-body .blog-brand img {
+body.blog-body .blog-brand img,
+.blog-body .blog-brand img {
   border-color: rgba(255, 255, 255, 0.22);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.42);
 }
 
-body.blog-body .blog-brand span {
+body.blog-body .blog-brand span,
+.blog-body .blog-brand span {
   font-family: "Geist-SemiBold", var(--font-base);
   letter-spacing: -0.02em;
 }
 
-body.blog-body .blog-nav a {
+body.blog-body .blog-nav a,
+.blog-body .blog-nav a {
   color: rgba(228, 228, 232, 0.84);
 }
 
-body.blog-body .blog-nav a:hover {
+body.blog-body .blog-nav a:hover,
+.blog-body .blog-nav a:hover {
   color: rgba(255, 255, 255, 0.98);
   border-color: rgba(255, 255, 255, 0.34);
 }
 
-body.blog-body .blog-menu summary {
+body.blog-body .blog-menu summary,
+.blog-body .blog-menu summary {
   border-color: rgba(255, 255, 255, 0.16);
   background: rgba(16, 16, 17, 0.86);
 }
 
-body.blog-body .blog-menu-panel {
+body.blog-body .blog-menu-panel,
+.blog-body .blog-menu-panel {
   border-color: rgba(255, 255, 255, 0.14);
   background: rgba(13, 13, 14, 0.92);
   box-shadow: 0 24px 56px rgba(0, 0, 0, 0.6);
 }
 
-body.blog-body .blog-container {
+body.blog-body .blog-container,
+.blog-body .blog-container {
   max-width: 1080px;
   padding-top: 30px;
 }
 
-body.blog-body .blog-hero h1 {
+body.blog-body .blog-hero h1,
+.blog-body .blog-hero h1 {
   font-family: "Geist-Bold", var(--font-heavy);
   font-size: clamp(32px, 4.1vw, 52px);
   letter-spacing: -0.03em;
 }
 
-body.blog-body .blog-hero p {
+body.blog-body .blog-hero p,
+.blog-body .blog-hero p {
   color: rgba(214, 214, 220, 0.82);
 }
 
@@ -3192,7 +3213,16 @@ body.blog-body .faq-item,
 body.blog-body .toc,
 body.blog-body .callout,
 body.blog-body .calc-out,
-body.blog-body .blog-figure {
+body.blog-body .blog-figure,
+.blog-body .blog-card,
+.blog-body .sheet,
+.blog-body .post-card,
+.blog-body .pillar-card,
+.blog-body .faq-item,
+.blog-body .toc,
+.blog-body .callout,
+.blog-body .calc-out,
+.blog-body .blog-figure {
   border-color: rgba(255, 255, 255, 0.12);
   background: linear-gradient(180deg, rgba(22, 22, 24, 0.88), rgba(12, 12, 13, 0.84));
   box-shadow: 0 18px 46px rgba(0, 0, 0, 0.46);
@@ -3201,7 +3231,11 @@ body.blog-body .blog-figure {
 body.blog-body .blog-article h2,
 body.blog-body .sheet h2,
 body.blog-body .post-title,
-body.blog-body .pillar-card-title {
+body.blog-body .pillar-card-title,
+.blog-body .blog-article h2,
+.blog-body .sheet h2,
+.blog-body .post-title,
+.blog-body .pillar-card-title {
   font-family: "Geist-SemiBold", var(--font-semibold);
   letter-spacing: -0.02em;
   color: rgba(248, 248, 250, 0.96);
@@ -3215,7 +3249,16 @@ body.blog-body .post-excerpt,
 body.blog-body .pillar-card p,
 body.blog-body .faq-body,
 body.blog-body .calc-kv span,
-body.blog-body .blog-figcap {
+body.blog-body .blog-figcap,
+.blog-body .blog-article p,
+.blog-body .blog-article li,
+.blog-body .sheet p,
+.blog-body .sheet li,
+.blog-body .post-excerpt,
+.blog-body .pillar-card p,
+.blog-body .faq-body,
+.blog-body .calc-kv span,
+.blog-body .blog-figcap {
   color: rgba(212, 212, 219, 0.84);
 }
 
@@ -3224,7 +3267,13 @@ body.blog-body .sheet a,
 body.blog-body .toc a,
 body.blog-body .breadcrumbs a,
 body.blog-body .pillar-bar a,
-body.blog-body .blog-footer a {
+body.blog-body .blog-footer a,
+.blog-body .blog-article a,
+.blog-body .sheet a,
+.blog-body .toc a,
+.blog-body .breadcrumbs a,
+.blog-body .pillar-bar a,
+.blog-body .blog-footer a {
   color: rgba(243, 243, 247, 0.96);
   text-decoration-color: rgba(255, 255, 255, 0.34);
 }
@@ -3234,29 +3283,41 @@ body.blog-body .sheet a:hover,
 body.blog-body .toc a:hover,
 body.blog-body .breadcrumbs a:hover,
 body.blog-body .pillar-bar a:hover,
-body.blog-body .blog-footer a:hover {
+body.blog-body .blog-footer a:hover,
+.blog-body .blog-article a:hover,
+.blog-body .sheet a:hover,
+.blog-body .toc a:hover,
+.blog-body .breadcrumbs a:hover,
+.blog-body .pillar-bar a:hover,
+.blog-body .blog-footer a:hover {
   text-decoration-color: rgba(255, 255, 255, 0.62);
 }
 
 body.blog-body .calc input,
-body.blog-body .calc-btn {
+body.blog-body .calc-btn,
+.blog-body .calc input,
+.blog-body .calc-btn {
   border-color: rgba(255, 255, 255, 0.16);
   background: rgba(18, 18, 20, 0.86);
   color: rgba(248, 248, 250, 0.95);
 }
 
-body.blog-body .calc-btn:hover {
+body.blog-body .calc-btn:hover,
+.blog-body .calc-btn:hover {
   border-color: rgba(255, 255, 255, 0.32);
   background: rgba(28, 28, 31, 0.92);
 }
 
 body.blog-body .download-row .store-badge,
-body.blog-body .store-badge-home {
+body.blog-body .store-badge-home,
+.blog-body .download-row .store-badge,
+.blog-body .store-badge-home {
   border-color: rgba(255, 255, 255, 0.14);
   background: rgba(12, 12, 13, 0.88);
 }
 
-body.blog-body .blog-footer {
+body.blog-body .blog-footer,
+.blog-body .blog-footer {
   border-top-color: rgba(255, 255, 255, 0.12);
   background: rgba(8, 8, 9, 0.82);
 }

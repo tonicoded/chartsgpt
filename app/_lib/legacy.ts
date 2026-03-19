@@ -31,6 +31,13 @@ export function bodyHasClass(html: string, className: string) {
   return new RegExp(`\\bclass\\s*=\\s*\"[^\"]*\\b${escaped}\\b[^\"]*\"`, "i").test(bodyTag);
 }
 
+export function extractBodyClass(html: string) {
+  const bodyTag = findFirstMatch(html, [/(<body[^>]*>)/i]);
+  if (!bodyTag) return "";
+  const match = bodyTag.match(/\bclass\s*=\s*"([^"]*)"/i);
+  return match?.[1]?.trim() ?? "";
+}
+
 export function extractTitle(html: string) {
   return findFirstMatch(html, [/<title>([\s\S]*?)<\/title>/i]);
 }

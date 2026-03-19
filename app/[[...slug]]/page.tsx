@@ -4,6 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import {
   bodyHasClass,
+  extractBodyClass,
   extractBodyInnerHtml,
   extractCanonical,
   extractMetaContent,
@@ -118,11 +119,12 @@ export default async function LegacyPage(props: PageProps) {
 
   const jsonLd = extractJsonLd(html);
   const bodyInner = extractBodyInnerHtml(html);
+  const bodyClassName = extractBodyClass(html);
   const isBlogLayout = bodyHasClass(html, "blog-body");
 
   if (isBlogLayout) {
     return (
-      <div className="legacy-scroll" suppressHydrationWarning>
+      <div className={`legacy-scroll ${bodyClassName}`.trim()} suppressHydrationWarning>
         {jsonLd.map((data, index) => (
           <script key={`jsonld-${index}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: data }} />
         ))}
@@ -132,7 +134,7 @@ export default async function LegacyPage(props: PageProps) {
   }
 
   return (
-    <div suppressHydrationWarning>
+    <div className={bodyClassName || undefined} suppressHydrationWarning>
       {jsonLd.map((data, index) => (
         <script key={`jsonld-${index}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: data }} />
       ))}

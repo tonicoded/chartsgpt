@@ -3,7 +3,7 @@
 6:I[8003,["185","static/chunks/app/layout-9922ba835c5b33ad.js"],""]
 7:I[9050,["185","static/chunks/app/layout-9922ba835c5b33ad.js"],"Analytics"]
 4:["slug","","oc"]
-0:["lk17Qqu0Sdxx8qCxmwdxh",[[["",{"children":[["slug","","oc"],{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":[["slug","","oc"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/da1211eddc74abcb.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":[["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","html",null,{"lang":"en","children":["$","body",null,{"style":{"margin":0,"fontFamily":"system-ui, -apple-system, Segoe UI, sans-serif"},"children":["$","div",null,{"style":{"padding":24},"children":[["$","h1",null,{"style":{"margin":"0 0 8px"},"children":"404"}],["$","p",null,{"style":{"margin":0},"children":"Page not found."}]]}]}]}],"notFoundStyles":[]}],["$","$L6",null,{"src":"/site-config.js","strategy":"afterInteractive"}],["$","$L6",null,{"src":"/site.js","strategy":"afterInteractive"}],["$","$L7",null,{}]]}]}]],null],null],["$L8",null]]]]
+0:["2xWan2beFsHre1Jgudm3M",[[["",{"children":[["slug","","oc"],{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":[["slug","","oc"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/b29ea45145b6165b.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":[["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","html",null,{"lang":"en","children":["$","body",null,{"style":{"margin":0,"fontFamily":"system-ui, -apple-system, Segoe UI, sans-serif"},"children":["$","div",null,{"style":{"padding":24},"children":[["$","h1",null,{"style":{"margin":"0 0 8px"},"children":"404"}],["$","p",null,{"style":{"margin":0},"children":"Page not found."}]]}]}]}],"notFoundStyles":[]}],["$","$L6",null,{"src":"/site-config.js","strategy":"afterInteractive"}],["$","$L6",null,{"src":"/site.js","strategy":"afterInteractive"}],["$","$L7",null,{}]]}]}]],null],null],["$L8",null]]]]
 9:T496,{
   "@context": "https://schema.org",
   "@graph": [
@@ -35,7 +35,7 @@
       "installUrl": "https://apps.apple.com/nl/app/chartsgpt-ai-trading-assist/id6758857719"
     }
   ]
-}a:Tce9,<div class="home-shell home-shell-v2">
+}a:Td37,<div class="home-shell home-shell-v2">
       <header class="site-header site-header-home" aria-label="Site header">
         <div class="site-header-inner">
           <a class="site-brand" href="./" aria-label="ChartsGPT Home">
@@ -65,11 +65,12 @@
         <section class="hero-v2" aria-label="Hero">
           <div class="container hero-v2-grid">
             <div class="hero-v2-copy reveal" style="--delay: 60ms">
-              <h1 class="hero-v2-title">From noisy chart to sniper setup in seconds.</h1>
+              <h1 class="hero-v2-title">Upload a chart. Get the setup, entry, and risk in seconds.</h1>
               <p class="hero-v2-sub">
-                ChartsGPT turns one screenshot into a clean trading plan:
-                key levels, directional bias, trigger zones, and invalidation.
-                Built for traders who move fast and hate clutter.
+                ChartsGPT analyzes any trading screenshot and gives you the
+                important part immediately: key levels, bullish or bearish bias,
+                entry zones, stop loss, and invalidation. Built for fast chart
+                reads without the usual noise.
               </p>
             </div>
 
@@ -102,6 +103,6 @@
           </div>
         </section>
       </main>
-    </div>2:["$","div",null,{"suppressHydrationWarning":true,"children":[[["$","script","jsonld-0",{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$9"}}]],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$a"}}]]}]
+    </div>2:["$","div",null,{"className":"home-body home-v2","suppressHydrationWarning":true,"children":[[["$","script","jsonld-0",{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$9"}}]],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$a"}}]]}]
 8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"name":"theme-color","content":"#070a12"}],["$","meta","2",{"name":"color-scheme","content":"dark"}],["$","meta","3",{"charSet":"utf-8"}],["$","title","4",{"children":"ChartsGPT — AI-Powered Trading Chart Analysis App — ChartsGPT"}],["$","meta","5",{"name":"description","content":"Upload any trading chart screenshot and get instant AI analysis: key support & resistance levels, bullish/bearish scenarios, entry triggers, and invalidation points. Works for crypto, forex, stocks, and metals."}],["$","meta","6",{"name":"application-name","content":"ChartsGPT"}],["$","meta","7",{"name":"creator","content":"ChartsGPT"}],["$","meta","8",{"name":"publisher","content":"ChartsGPT"}],["$","meta","9",{"name":"robots","content":"index,follow"}],["$","meta","10",{"name":"category","content":"finance"}],["$","meta","11",{"name":"apple-itunes-app","content":"app-id=6758857719"}],["$","link","12",{"rel":"canonical","href":"https://charts-gpt.com/"}],["$","meta","13",{"name":"format-detection","content":"telephone=no"}],["$","meta","14",{"property":"og:title","content":"ChartsGPT — AI-Powered Trading Chart Analysis App"}],["$","meta","15",{"property":"og:description","content":"Upload any trading chart screenshot and get instant AI analysis: key support & resistance levels, bullish/bearish scenarios, entry triggers, and invalidation points. Works for crypto, forex, stocks, and metals."}],["$","meta","16",{"property":"og:url","content":"https://charts-gpt.com/"}],["$","meta","17",{"property":"og:site_name","content":"ChartsGPT"}],["$","meta","18",{"property":"og:locale","content":"en_US"}],["$","meta","19",{"property":"og:image","content":"https://charts-gpt.com/logo.png"}],["$","meta","20",{"property":"og:type","content":"website"}],["$","meta","21",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","22",{"name":"twitter:title","content":"ChartsGPT — AI-Powered Trading Chart Analysis App"}],["$","meta","23",{"name":"twitter:description","content":"Upload any trading chart screenshot and get instant AI analysis: key support & resistance levels, bullish/bearish scenarios, entry triggers, and invalidation points. Works for crypto, forex, stocks, and metals."}],["$","meta","24",{"name":"twitter:image","content":"https://charts-gpt.com/logo.png"}],["$","link","25",{"rel":"icon","href":"/favicon.ico"}],["$","link","26",{"rel":"icon","href":"/favicon-16x16.png","sizes":"16x16","type":"image/png"}],["$","link","27",{"rel":"icon","href":"/favicon-32x32.png","sizes":"32x32","type":"image/png"}],["$","link","28",{"rel":"apple-touch-icon","href":"/apple-touch-icon.png","sizes":"180x180","type":"image/png"}]]
 1:null
