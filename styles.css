@@ -3564,26 +3564,21 @@ body.home-body.home-v2 {
   box-shadow: none;
 }
 
-/* ── Mobile premium enhancements ──────────────────────────────────── */
+/* ── Epic mobile upgrade ──────────────────────────────────────────── */
 
-.hero-v2-trust {
-  display: none;
-}
+.hero-v2-trust { display: none; }
+.hero-v2-note  { display: none; }
 
-.hero-v2-note {
-  display: none;
-}
-
-/* Subtle grain/noise overlay for depth – very low opacity */
+/* Film grain for texture */
 .home-shell-v2::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 98;
-  opacity: 0.028;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 300px 300px;
+  opacity: 0.032;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
 }
 
 .hero-v2-trust-stars {
@@ -3593,167 +3588,175 @@ body.home-body.home-v2 {
 }
 
 @media (max-width: 760px) {
-  /* Trust badge */
+
+  /* ── Background: dark with top beam + green portal below ── */
+  body.home-body.home-v2 {
+    background:
+      radial-gradient(700px 320px at 50% 0%,   rgba(255, 255, 255, 0.10), transparent 55%),
+      radial-gradient(500px 500px at 50% 78%,   rgba(34, 197, 94, 0.07),  transparent 65%),
+      radial-gradient(300px 200px at 20% 85%,   rgba(34, 197, 94, 0.04),  transparent 60%),
+      linear-gradient(180deg, #050505 0%, #040404 50%, #020202 100%) !important;
+  }
+
+  /* ── Glassmorphism header ── */
+  .home-v2 .site-header-home {
+    background: rgba(3, 3, 3, 0.5) !important;
+    backdrop-filter: blur(24px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+
+  /* ── Circular hamburger ── */
+  .home-v2 .blog-menu summary {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.09);
+  }
+
+  /* ── Trust badge ── */
   .hero-v2-trust {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.055);
     border: 1px solid rgba(255, 255, 255, 0.10);
     border-radius: 999px;
     padding: 5px 14px 5px 10px;
     font-size: 11.5px;
     letter-spacing: 0.025em;
-    color: rgba(255, 255, 255, 0.54);
+    color: rgba(255, 255, 255, 0.52);
     font-family: "Geist-Medium", var(--font-base);
-    margin-bottom: 15px;
+    margin-bottom: 16px;
   }
 
-  /* Gradient text on hero title */
+  /* ── Hero title: bigger + dramatic gradient ── */
   .hero-v2-title {
-    background: linear-gradient(158deg, #ffffff 18%, rgba(255, 255, 255, 0.72) 100%);
+    font-size: clamp(2.1rem, 10.5vw, 2.8rem);
+    line-height: 0.88;
+    letter-spacing: -0.05em;
+    background: linear-gradient(160deg, #ffffff 0%, rgba(255, 255, 255, 0.65) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Refined subtitle */
+  /* ── Subtitle ── */
   .hero-v2-sub {
-    color: rgba(255, 255, 255, 0.44);
-    letter-spacing: 0.005em;
+    color: rgba(255, 255, 255, 0.38);
+    font-size: 0.88rem;
+    margin-top: 12px;
+    line-height: 1.5;
   }
 
-  /* Glassmorphism header – overrides noanim section */
-  .home-v2 .site-header-home {
-    background: rgba(4, 4, 4, 0.48) !important;
-    backdrop-filter: blur(22px) saturate(160%) !important;
-    -webkit-backdrop-filter: blur(22px) saturate(160%) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.055) !important;
-  }
-
-  /* Stronger center glow on mobile */
-  body.home-body.home-v2 {
-    background:
-      radial-gradient(560px 240px at 50% 6%, rgba(255, 255, 255, 0.085), transparent 60%),
-      radial-gradient(360px 420px at 80% 72%, rgba(255, 255, 255, 0.03), transparent 70%),
-      linear-gradient(180deg, #050505 0%, #040404 55%, #020202 100%) !important;
-  }
-
-  /* Tighter grid gap to close dead zone between badges and phones */
-  .hero-v2-grid {
-    gap: 6px;
-  }
-
-  /* Pull stage up – less translateY so phones start closer to CTA */
-  .hero-v2-stage {
-    transform: translateY(8px);
-    min-height: clamp(370px, 54vw, 450px);
-  }
-
-  /* Main phone starts closer to top of stage */
-  .stage-phone-main {
-    top: 0;
-  }
-
-  /* Social proof note */
-  .hero-v2-note {
-    display: block;
-    margin: 8px 0 0;
-    font-size: 11px;
-    letter-spacing: 0.035em;
-    color: rgba(255, 255, 255, 0.28);
-    text-align: center;
-    font-family: "Geist-Medium", var(--font-base);
-  }
-
-  /* Side phone shadows */
-  .stage-phone {
-    box-shadow: 0 36px 90px rgba(0, 0, 0, 0.78), 0 0 0 0.5px rgba(255, 255, 255, 0.11);
-  }
-
-  /* Main phone: stronger glow ring to make it pop */
-  .stage-phone-main {
-    box-shadow:
-      0 40px 100px rgba(0, 0, 0, 0.88),
-      0 0 0 1px rgba(255, 255, 255, 0.18),
-      0 0 55px rgba(255, 255, 255, 0.055);
-  }
-
-  /* Bottom gradient fade – phones fade into background */
-  .hero-v2-stage::after {
-    content: "";
-    position: absolute;
-    bottom: -6px;
-    left: -28px;
-    right: -28px;
-    height: 46%;
-    background: linear-gradient(to top, #040404 5%, transparent 100%);
-    pointer-events: none;
-    z-index: 5;
-  }
-
-  /* Spotlight glow behind hero text */
+  /* ── Spotlight behind hero copy ── */
   .hero-v2-copy::before {
     content: "";
     position: absolute;
-    inset: -55% -55%;
-    background: radial-gradient(ellipse at 50% 65%, rgba(255, 255, 255, 0.052), transparent 55%);
+    inset: -60% -60%;
+    background: radial-gradient(ellipse at 50% 60%, rgba(255, 255, 255, 0.06), transparent 55%);
     pointer-events: none;
     z-index: -1;
     border-radius: 50%;
   }
 
-  /* Circular, refined hamburger button */
-  .home-v2 .blog-menu summary {
-    width: 40px;
-    height: 40px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.055);
-    border-color: rgba(255, 255, 255, 0.09);
+  /* ── Store badges: unified frosted look ── */
+  .store-badge-hero {
+    border: 1px solid rgba(255, 255, 255, 0.11) !important;
+    border-radius: 15px !important;
+    background: rgba(255, 255, 255, 0.055) !important;
+    padding: 0 !important;
+    overflow: hidden;
+    height: 54px;
   }
 
-  /* Make store badge images slightly bigger on mobile */
   .store-badge-hero img {
-    height: 50px;
+    height: 54px !important;
+    mix-blend-mode: screen;
   }
 
-  /* ── Phone animations – override noanim block via higher specificity ── */
-  /* Specificity 0-3-1 beats the universal-selector noanim 0-2-1          */
+  /* ── Tighter grid ── */
+  .hero-v2-grid { gap: 4px; }
 
+  /* ── Stage: closer to CTA, green glow underneath ── */
+  .hero-v2-stage {
+    transform: translateY(6px);
+    min-height: clamp(360px, 52vw, 440px);
+  }
+
+  .hero-v2-stage::before {
+    content: "";
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 45%;
+    background: radial-gradient(ellipse at 50% 100%, rgba(34, 197, 94, 0.13), transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Bottom fade ── */
+  .hero-v2-stage::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: -32px;
+    right: -32px;
+    height: 50%;
+    background: linear-gradient(to top, #030303 10%, transparent 100%);
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  /* ── Phone shadows ── */
+  .stage-phone {
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.75), 0 0 0 0.5px rgba(255, 255, 255, 0.10);
+  }
+
+  /* ── Main phone: glow ring + green halo ── */
+  .stage-phone-main {
+    top: 0;
+    box-shadow:
+      0 44px 110px rgba(0, 0, 0, 0.90),
+      0 0 0 1px   rgba(255, 255, 255, 0.20),
+      0 0 60px     rgba(255, 255, 255, 0.055),
+      0 20px 80px  rgba(34, 197, 94, 0.08);
+  }
+
+  /* ── Phone animations (specificity 0-3-1 beats noanim 0-2-1) ── */
   body.home-body.home-v2 .stage-phone-left {
     animation:
-      phoneSlideLeft  0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both,
-      phoneFloatLeft  6.4s ease-in-out 0.65s infinite !important;
+      phoneSlideLeft  0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.04s both,
+      phoneFloatLeft  6.4s  ease-in-out 0.69s infinite !important;
   }
-
   body.home-body.home-v2 .stage-phone-main {
     animation:
-      phoneSlideMain  0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both,
-      phoneFloatMain  5.2s ease-in-out 0.78s infinite !important;
+      phoneSlideMain  0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both,
+      phoneFloatMain  5.2s  ease-in-out 0.83s infinite !important;
   }
-
   body.home-body.home-v2 .stage-phone-right {
     animation:
-      phoneSlideRight 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s  both,
-      phoneFloatRight 5.8s ease-in-out 0.9s  infinite !important;
+      phoneSlideRight 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.30s both,
+      phoneFloatRight 5.8s  ease-in-out 0.95s infinite !important;
   }
 }
 
-/* Entrance: slide up from below */
+/* ── Keyframes ──────────────────────────────────────────────────────── */
 @keyframes phoneSlideMain {
-  from { transform: translateY(72px); opacity: 0; }
+  from { transform: translateY(80px); opacity: 0; }
   to   { transform: translateY(0);    opacity: 1; }
 }
 @keyframes phoneSlideLeft {
-  from { transform: rotate(-13deg) translateY(72px); opacity: 0; }
+  from { transform: rotate(-13deg) translateY(80px); opacity: 0; }
   to   { transform: rotate(-13deg) translateY(0);    opacity: 1; }
 }
 @keyframes phoneSlideRight {
-  from { transform: rotate(11deg) translateY(72px); opacity: 0; }
+  from { transform: rotate(11deg) translateY(80px); opacity: 0; }
   to   { transform: rotate(11deg) translateY(0);    opacity: 1; }
 }
-
-/* Continuous ambient float after entrance */
 @keyframes phoneFloatMain {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(-9px); }
@@ -3768,27 +3771,22 @@ body.home-body.home-v2 {
 }
 
 @media (max-width: 520px) {
+  .hero-v2-title {
+    font-size: clamp(2rem, 10vw, 2.5rem);
+    line-height: 0.87;
+  }
+
   .hero-v2-trust {
     font-size: 11px;
     padding: 4px 12px 4px 9px;
     margin-bottom: 12px;
-    gap: 6px;
   }
 
-  .hero-v2-trust-stars {
-    font-size: 8.5px;
-    letter-spacing: 1px;
-  }
-
-  /* Slightly tighter gradient angle for small screens */
-  .hero-v2-title {
-    background: linear-gradient(152deg, #ffffff 15%, rgba(255, 255, 255, 0.70) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .store-badge-hero {
+    height: 50px;
   }
 
   .store-badge-hero img {
-    height: 44px;
+    height: 50px !important;
   }
 }
