@@ -3631,12 +3631,12 @@ body.home-body.home-v2 {
     margin-bottom: 16px;
   }
 
-  /* ── Hero title: bigger + dramatic gradient ── */
+  /* ── Hero title: max impact ── */
   .hero-v2-title {
-    font-size: clamp(2.1rem, 10.5vw, 2.8rem);
-    line-height: 0.88;
-    letter-spacing: -0.05em;
-    background: linear-gradient(160deg, #ffffff 0%, rgba(255, 255, 255, 0.65) 100%);
+    font-size: clamp(2.2rem, 11vw, 3rem);
+    line-height: 0.87;
+    letter-spacing: -0.052em;
+    background: linear-gradient(168deg, #ffffff 0%, #ffffff 35%, rgba(255, 255, 255, 0.58) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -3644,10 +3644,11 @@ body.home-body.home-v2 {
 
   /* ── Subtitle ── */
   .hero-v2-sub {
-    color: rgba(255, 255, 255, 0.38);
-    font-size: 0.88rem;
-    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.36);
+    font-size: 0.875rem;
+    margin-top: 11px;
     line-height: 1.5;
+    max-width: 26ch;
   }
 
   /* ── Spotlight behind hero copy ── */
@@ -3661,23 +3662,37 @@ body.home-body.home-v2 {
     border-radius: 50%;
   }
 
-  /* ── Store badges: unified frosted look ── */
+  /* ── Store badges: both dark, unified ── */
   .store-badge-hero {
-    border: 1px solid rgba(255, 255, 255, 0.11) !important;
-    border-radius: 15px !important;
-    background: rgba(255, 255, 255, 0.055) !important;
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+    border-radius: 14px !important;
+    background: rgba(12, 12, 12, 0.85) !important;
     padding: 0 !important;
     overflow: hidden;
     height: 54px;
   }
 
+  /* App Store badge is the white SVG variant – invert it to black */
+  .store-badge-hero.js-appstore img {
+    filter: invert(1);
+  }
+
   .store-badge-hero img {
     height: 54px !important;
-    mix-blend-mode: screen;
+  }
+
+  /* ── Thin separator line between copy and phones ── */
+  .hero-v2-cta-row::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+    margin: 14px auto 0;
   }
 
   /* ── Tighter grid ── */
-  .hero-v2-grid { gap: 4px; }
+  .hero-v2-grid { gap: 2px; }
 
   /* ── Stage: closer to CTA, green glow underneath ── */
   .hero-v2-stage {
@@ -3772,7 +3787,7 @@ body.home-body.home-v2 {
 
 @media (max-width: 520px) {
   .hero-v2-title {
-    font-size: clamp(2rem, 10vw, 2.5rem);
+    font-size: clamp(2rem, 10.5vw, 2.4rem);
     line-height: 0.87;
   }
 
