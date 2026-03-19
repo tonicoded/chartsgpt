@@ -3,7 +3,7 @@
 6:I[8003,["185","static/chunks/app/layout-de51da8d5e3efac9.js"],""]
 7:I[9050,["185","static/chunks/app/layout-de51da8d5e3efac9.js"],"Analytics"]
 4:["slug","","oc"]
-0:["_OY7lTBECocNe_oNfT4V9",[[["",{"children":[["slug","","oc"],{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":[["slug","","oc"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/5a8b3743219fe12f.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":[["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","html",null,{"lang":"en","children":["$","body",null,{"style":{"margin":0,"fontFamily":"system-ui, -apple-system, Segoe UI, sans-serif"},"children":["$","div",null,{"style":{"padding":24},"children":[["$","h1",null,{"style":{"margin":"0 0 8px"},"children":"404"}],["$","p",null,{"style":{"margin":0},"children":"Page not found."}]]}]}]}],"notFoundStyles":[]}],["$","$L6",null,{"src":"/site-config.js","strategy":"afterInteractive"}],["$","$L6",null,{"src":"/site.js","strategy":"afterInteractive"}],["$","$L7",null,{}]]}]}]],null],null],["$L8",null]]]]
+0:["U2PCLcX6hND6nFiiKnM8S",[[["",{"children":[["slug","","oc"],{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":[["slug","","oc"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/5887cae4a334272a.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":[["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","html",null,{"lang":"en","children":["$","body",null,{"style":{"margin":0,"fontFamily":"system-ui, -apple-system, Segoe UI, sans-serif"},"children":["$","div",null,{"style":{"padding":24},"children":[["$","h1",null,{"style":{"margin":"0 0 8px"},"children":"404"}],["$","p",null,{"style":{"margin":0},"children":"Page not found."}]]}]}]}],"notFoundStyles":[]}],["$","$L6",null,{"src":"/site-config.js","strategy":"afterInteractive"}],["$","$L6",null,{"src":"/site.js","strategy":"afterInteractive"}],["$","$L7",null,{}]]}]}]],null],null],["$L8",null]]]]
 9:T496,{
   "@context": "https://schema.org",
   "@graph": [
@@ -35,7 +35,7 @@
       "installUrl": "https://apps.apple.com/nl/app/chartsgpt-ai-trading-assist/id6758857719"
     }
   ]
-}a:Td17,<div class="home-shell home-shell-v2">
+}a:T139c,<div class="home-shell home-shell-v2">
       <header class="site-header site-header-home" aria-label="Site header">
         <div class="site-header-inner">
           <a class="site-brand" href="./" aria-label="ChartsGPT Home">
@@ -97,13 +97,41 @@
               >
                 <img src="./appstore.svg" alt="Download on the App Store" />
               </a>
-              <span class="store-badge store-badge-hero store-badge-static" aria-label="Google Play coming soon">
+              <button class="store-badge store-badge-hero store-badge-static gp-trigger" aria-label="Google Play — coming soon" type="button">
                 <img src="./googleplay.svg" alt="Get it on Google Play" />
-              </span>
+              </button>
             </div>
           </div>
         </section>
       </main>
-    </div>2:["$","div",null,{"className":"home-body home-v2","suppressHydrationWarning":true,"children":[[["$","script","jsonld-0",{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$9"}}]],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$a"}}]]}]
+    </div>
+
+    <dialog class="gp-modal" id="gp-modal">
+      <div class="gp-modal-inner">
+        <div class="gp-modal-top">
+          <svg class="gp-modal-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 20.5v-17c0-.83 1-.83 1.5-.5L20 12 4.5 21c-.5.33-1.5.33-1.5-.5Z" fill="url(#gp-grad)"/>
+            <defs><linearGradient id="gp-grad" x1="3" y1="3.5" x2="20" y2="12" gradientUnits="userSpaceOnUse"><stop stop-color="#34d17a"/><stop offset="1" stop-color="#22c55e" stop-opacity=".7"/></linearGradient></defs>
+          </svg>
+          <button class="gp-modal-close" onclick="document.getElementById('gp-modal').close()" aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <h3 class="gp-modal-title">Android is on its way</h3>
+        <p class="gp-modal-text">We're actively building the Android version. ChartsGPT is currently available on iOS.</p>
+        <a class="gp-modal-btn js-appstore" href="https://apps.apple.com/nl/app/chartsgpt-ai-trading-assist/id6758857719?l=en-GB" target="_blank" rel="noopener noreferrer">
+          Download on iOS instead
+        </a>
+      </div>
+    </dialog>
+
+    <script>
+      document.querySelector('.gp-trigger').addEventListener('click', function () {
+        document.getElementById('gp-modal').showModal();
+      });
+      document.getElementById('gp-modal').addEventListener('click', function (e) {
+        if (e.target === this) this.close();
+      });
+    </script>2:["$","div",null,{"className":"home-body home-v2","suppressHydrationWarning":true,"children":[[["$","script","jsonld-0",{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$9"}}]],["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$a"}}]]}]
 8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"name":"theme-color","content":"#070a12"}],["$","meta","2",{"name":"color-scheme","content":"dark"}],["$","meta","3",{"charSet":"utf-8"}],["$","title","4",{"children":"ChartsGPT — AI-Powered Trading Chart Analysis App — ChartsGPT"}],["$","meta","5",{"name":"description","content":"Upload any trading chart screenshot and get instant AI analysis: key support & resistance levels, bullish/bearish scenarios, entry triggers, and invalidation points. Works for crypto, forex, stocks, and metals."}],["$","meta","6",{"name":"application-name","content":"ChartsGPT"}],["$","meta","7",{"name":"creator","content":"ChartsGPT"}],["$","meta","8",{"name":"publisher","content":"ChartsGPT"}],["$","meta","9",{"name":"robots","content":"index,follow"}],["$","meta","10",{"name":"category","content":"finance"}],["$","meta","11",{"name":"apple-itunes-app","content":"app-id=6758857719"}],["$","link","12",{"rel":"canonical","href":"https://charts-gpt.com/"}],["$","meta","13",{"name":"format-detection","content":"telephone=no"}],["$","meta","14",{"property":"og:title","content":"ChartsGPT — AI-Powered Trading Chart Analysis App"}],["$","meta","15",{"property":"og:description","content":"Upload any trading chart screenshot and get instant AI analysis: key support & resistance levels, bullish/bearish scenarios, entry triggers, and invalidation points. Works for crypto, forex, stocks, and metals."}],["$","meta","16",{"property":"og:url","content":"https://charts-gpt.com/"}],["$","meta","17",{"property":"og:site_name","content":"ChartsGPT"}],["$","meta","18",{"property":"og:locale","content":"en_US"}],["$","meta","19",{"property":"og:image","content":"https://charts-gpt.com/logo.png"}],["$","meta","20",{"property":"og:type","content":"website"}],["$","meta","21",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","22",{"name":"twitter:title","content":"ChartsGPT — AI-Powered Trading Chart Analysis App"}],["$","meta","23",{"name":"twitter:description","content":"Upload any trading chart screenshot and get instant AI analysis: key support & resistance levels, bullish/bearish scenarios, entry triggers, and invalidation points. Works for crypto, forex, stocks, and metals."}],["$","meta","24",{"name":"twitter:image","content":"https://charts-gpt.com/logo.png"}],["$","link","25",{"rel":"icon","href":"/favicon.ico"}],["$","link","26",{"rel":"icon","href":"/favicon-16x16.png","sizes":"16x16","type":"image/png"}],["$","link","27",{"rel":"icon","href":"/favicon-32x32.png","sizes":"32x32","type":"image/png"}],["$","link","28",{"rel":"apple-touch-icon","href":"/apple-touch-icon.png","sizes":"180x180","type":"image/png"}]]
 1:null

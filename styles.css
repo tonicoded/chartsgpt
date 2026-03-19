@@ -3564,6 +3564,118 @@ body.home-body.home-v2 {
   box-shadow: none;
 }
 
+/* ── Google Play coming-soon modal ───────────────────────────────── */
+
+.gp-trigger {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  display: inline-flex;
+}
+
+.gp-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(88vw, 360px);
+  max-height: 90svh;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 24px;
+  background: #0f0f0f;
+  color: rgba(255, 255, 255, 0.92);
+  padding: 0;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.72), 0 0 0 1px rgba(255,255,255,0.06);
+  font-family: var(--font-base);
+  overflow: hidden;
+}
+
+.gp-modal::backdrop {
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.gp-modal-inner {
+  padding: 24px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.gp-modal-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.gp-modal-logo {
+  width: 36px;
+  height: 36px;
+}
+
+.gp-modal-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.54);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.gp-modal-close svg {
+  width: 14px;
+  height: 14px;
+}
+
+.gp-modal-close:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.gp-modal-title {
+  margin: 0 0 10px;
+  font-family: var(--font-heavy);
+  font-size: 1.25rem;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.gp-modal-text {
+  margin: 0 0 22px;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.gp-modal-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 20px;
+  border-radius: 14px;
+  background: #ffffff;
+  color: #050505;
+  font-family: var(--font-semibold);
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.gp-modal-btn:hover {
+  background: rgba(255, 255, 255, 0.92);
+}
+
 /* ── Epic mobile upgrade ──────────────────────────────────────────── */
 
 .hero-v2-trust { display: none; }
@@ -3803,5 +3915,109 @@ body.home-body.home-v2 {
 
   .store-badge-hero img {
     height: 50px !important;
+  }
+}
+
+/* ── Responsive fixes ─────────────────────────────────────────────── */
+
+/* 1. Tablet / browser-resize range (761px–1100px)
+      Grid collapses to single column but text stays left-aligned → fix */
+@media (min-width: 761px) and (max-width: 1100px) {
+  .hero-v2-copy {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 0;
+    max-width: 640px;
+  }
+
+  .hero-v2-title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 16ch;
+  }
+
+  .hero-v2-sub {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-v2-cta-row {
+    justify-content: center;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .hero-v2-stage {
+    justify-self: center;
+  }
+}
+
+/* 2. Landscape phone at ≤760px (height is ~320–500px)
+      The page is locked to 100svh → everything overflows and clips */
+@media (max-width: 760px) and (max-height: 520px) {
+  /* Allow scrolling in landscape */
+  body.home-body.home-v2,
+  .home-body.home-v2 {
+    height: auto !important;
+    min-height: 100svh !important;
+    overflow-y: auto !important;
+  }
+
+  .home-shell-v2 {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Compact hero padding */
+  .hero-v2 {
+    padding-top: 58px !important;
+    padding-bottom: 16px;
+    min-height: auto;
+  }
+
+  /* Smaller title to fit */
+  .hero-v2-title {
+    font-size: clamp(1.55rem, 5.8vw, 2rem) !important;
+    line-height: 0.9 !important;
+  }
+
+  /* Hide subtitle to save vertical space */
+  .hero-v2-sub {
+    display: none;
+  }
+
+  /* Shrink trust badge */
+  .hero-v2-trust {
+    font-size: 10px !important;
+    padding: 3px 10px 3px 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Smaller phone stage */
+  .hero-v2-stage {
+    transform: translateY(4px) !important;
+    min-height: clamp(240px, 38vw, 320px) !important;
+  }
+
+  /* Scale phones down for landscape */
+  .stage-phone-main {
+    width: min(32vw, 155px) !important;
+  }
+
+  .stage-phone-left,
+  .stage-phone-right {
+    width: min(22vw, 108px) !important;
+  }
+
+  /* Compact CTA */
+  .store-badge-hero {
+    height: 46px !important;
+  }
+
+  .store-badge-hero img {
+    height: 46px !important;
   }
 }
