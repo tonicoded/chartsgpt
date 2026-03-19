@@ -3,7 +3,7 @@
 6:I[8003,["185","static/chunks/app/layout-9922ba835c5b33ad.js"],""]
 7:I[9050,["185","static/chunks/app/layout-9922ba835c5b33ad.js"],"Analytics"]
 4:["slug","","oc"]
-0:["2xWan2beFsHre1Jgudm3M",[[["",{"children":[["slug","","oc"],{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":[["slug","","oc"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/b29ea45145b6165b.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":[["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","html",null,{"lang":"en","children":["$","body",null,{"style":{"margin":0,"fontFamily":"system-ui, -apple-system, Segoe UI, sans-serif"},"children":["$","div",null,{"style":{"padding":24},"children":[["$","h1",null,{"style":{"margin":"0 0 8px"},"children":"404"}],["$","p",null,{"style":{"margin":0},"children":"Page not found."}]]}]}]}],"notFoundStyles":[]}],["$","$L6",null,{"src":"/site-config.js","strategy":"afterInteractive"}],["$","$L6",null,{"src":"/site.js","strategy":"afterInteractive"}],["$","$L7",null,{}]]}]}]],null],null],["$L8",null]]]]
+0:["fvT2yBqvjxcXut-GNXUx6",[[["",{"children":[["slug","","oc"],{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":[["slug","","oc"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/5815c981e7192745.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":[["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","html",null,{"lang":"en","children":["$","body",null,{"style":{"margin":0,"fontFamily":"system-ui, -apple-system, Segoe UI, sans-serif"},"children":["$","div",null,{"style":{"padding":24},"children":[["$","h1",null,{"style":{"margin":"0 0 8px"},"children":"404"}],["$","p",null,{"style":{"margin":0},"children":"Page not found."}]]}]}]}],"notFoundStyles":[]}],["$","$L6",null,{"src":"/site-config.js","strategy":"afterInteractive"}],["$","$L6",null,{"src":"/site.js","strategy":"afterInteractive"}],["$","$L7",null,{}]]}]}]],null],null],["$L8",null]]]]
 9:T496,{
   "@context": "https://schema.org",
   "@graph": [
@@ -35,7 +35,7 @@
       "installUrl": "https://apps.apple.com/nl/app/chartsgpt-ai-trading-assist/id6758857719"
     }
   ]
-}a:Td37,<div class="home-shell home-shell-v2">
+}a:Tc5d,<div class="home-shell home-shell-v2">
       <header class="site-header site-header-home" aria-label="Site header">
         <div class="site-header-inner">
           <a class="site-brand" href="./" aria-label="ChartsGPT Home">
@@ -65,12 +65,9 @@
         <section class="hero-v2" aria-label="Hero">
           <div class="container hero-v2-grid">
             <div class="hero-v2-copy reveal" style="--delay: 60ms">
-              <h1 class="hero-v2-title">Upload a chart. Get the setup, entry, and risk in seconds.</h1>
+              <h1 class="hero-v2-title">Scan a chart. Get the trade plan.</h1>
               <p class="hero-v2-sub">
-                ChartsGPT analyzes any trading screenshot and gives you the
-                important part immediately: key levels, bullish or bearish bias,
-                entry zones, stop loss, and invalidation. Built for fast chart
-                reads without the usual noise.
+                Key levels, bias, entry, stop loss, and invalidation from one screenshot.
               </p>
             </div>
 
