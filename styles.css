@@ -3536,7 +3536,7 @@ body.home-body.home-v2 {
 
 .stage-phone img,
 .shot-tile img {
-  filter: grayscale(1) contrast(1.08);
+  filter: saturate(1.04) contrast(1.04);
 }
 
 .shot-tile::after {
