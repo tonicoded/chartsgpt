@@ -3746,6 +3746,24 @@ body.home-body.home-v2 {
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
+  .hero-v2-trust-divider {
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 1px;
+    margin: 0 2px;
+  }
+
+  .hero-v2-trust-traders {
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .hero-v2-trust-traders strong {
+    color: #fff;
+    font-family: "Geist-SemiBold", var(--font-base);
+  }
+
   /* ── Hero title: max impact ── */
   .hero-v2-title {
     font-size: clamp(2.2rem, 11vw, 3rem);
