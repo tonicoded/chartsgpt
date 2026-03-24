@@ -83,11 +83,30 @@
     <link rel="preload" href="/Geist-Medium.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/Geist-SemiBold.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/Geist-Bold.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="stylesheet" href="./styles.css?v=20260324b" />
+    <link rel="stylesheet" href="./styles.css?v=20260324c" />
   </head>
   <body class="home-body home-v2">
     <div class="home-shell home-shell-v2">
-<main class="landing landing-home" aria-label="ChartsGPT landing page">
+      <header class="site-header site-header-home" aria-label="Site header">
+        <div class="site-header-inner">
+          <a class="site-brand" href="./" aria-label="ChartsGPT Home">
+            <img src="./logo.png" alt="ChartsGPT logo" width="36" height="36" loading="eager" />
+            <span>ChartsGPT</span>
+          </a>
+          <details class="blog-menu">
+            <summary aria-label="Open menu"><span class="blog-menu-icon" aria-hidden="true"></span></summary>
+            <div class="blog-menu-panel" role="menu" aria-label="Menu">
+              <a role="menuitem" href="./">Home</a>
+              <a role="menuitem" href="./blog/">Blog</a>
+              <a role="menuitem" href="./about/">About</a>
+              <a role="menuitem" href="./privacy/">Privacy</a>
+              <a role="menuitem" href="./terms/">Terms</a>
+              <a role="menuitem" href="./support/">Support</a>
+            </div>
+          </details>
+        </div>
+      </header>
+      <main class="landing landing-home" aria-label="ChartsGPT landing page">
         <section class="hero-v2" aria-label="Hero">
           <div class="container hero-v2-grid">
             <div class="hero-v2-copy reveal" style="--delay: 60ms">
