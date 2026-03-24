@@ -3896,6 +3896,50 @@ body.home-body.home-v2 {
   body.home-body.home-v2 .hero-v2-stage::before {
     animation: greenGlowPulse 4.5s ease-in-out 1s infinite !important;
   }
+
+  /* ── Phone screen stacking (two images, crossfade) ── */
+  .phone-screen {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+
+  body.home-body.home-v2 .stage-phone-left   .phone-screen-a { animation: screenFadeA 8s ease-in-out 0s   infinite !important; }
+  body.home-body.home-v2 .stage-phone-left   .phone-screen-b { animation: screenFadeB 8s ease-in-out 0s   infinite !important; }
+  body.home-body.home-v2 .stage-phone-main   .phone-screen-a { animation: screenFadeA 8s ease-in-out 2.5s infinite !important; }
+  body.home-body.home-v2 .stage-phone-main   .phone-screen-b { animation: screenFadeB 8s ease-in-out 2.5s infinite !important; }
+  body.home-body.home-v2 .stage-phone-right  .phone-screen-a { animation: screenFadeA 8s ease-in-out 5s   infinite !important; }
+  body.home-body.home-v2 .stage-phone-right  .phone-screen-b { animation: screenFadeB 8s ease-in-out 5s   infinite !important; }
+
+  /* ── Side-by-side download buttons ── */
+  .hero-v2-cta-row {
+    flex-wrap: nowrap !important;
+    justify-content: center;
+    gap: 10px;
+  }
+  .store-badge-hero.js-appstore,
+  .store-badge-hero.gp-trigger {
+    height: 50px !important;
+  }
+  .store-badge-hero.js-appstore img,
+  .store-badge-hero.gp-trigger img {
+    height: 50px !important;
+  }
+}
+
+/* ── Screen crossfade keyframes ── */
+@keyframes screenFadeA {
+  0%, 44%  { opacity: 1; }
+  50%, 94% { opacity: 0; }
+  100%     { opacity: 1; }
+}
+@keyframes screenFadeB {
+  0%, 44%  { opacity: 0; }
+  50%, 94% { opacity: 1; }
+  100%     { opacity: 0; }
 }
 
 /* ── Keyframes ──────────────────────────────────────────────────────── */
