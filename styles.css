@@ -3897,23 +3897,6 @@ body.home-body.home-v2 {
     animation: greenGlowPulse 4.5s ease-in-out 1s infinite !important;
   }
 
-  /* ── Phone screen stacking (two images, crossfade) ── */
-  .phone-screen {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: inherit;
-  }
-
-  body.home-body.home-v2 .stage-phone-left   .phone-screen-a { animation: screenFadeA 8s ease-in-out 0s   infinite !important; }
-  body.home-body.home-v2 .stage-phone-left   .phone-screen-b { animation: screenFadeB 8s ease-in-out 0s   infinite !important; }
-  body.home-body.home-v2 .stage-phone-main   .phone-screen-a { animation: screenFadeA 8s ease-in-out 2.5s infinite !important; }
-  body.home-body.home-v2 .stage-phone-main   .phone-screen-b { animation: screenFadeB 8s ease-in-out 2.5s infinite !important; }
-  body.home-body.home-v2 .stage-phone-right  .phone-screen-a { animation: screenFadeA 8s ease-in-out 5s   infinite !important; }
-  body.home-body.home-v2 .stage-phone-right  .phone-screen-b { animation: screenFadeB 8s ease-in-out 5s   infinite !important; }
-
   /* ── Side-by-side download buttons ── */
   .hero-v2-cta-row {
     flex-wrap: nowrap !important;
@@ -3971,6 +3954,26 @@ body.home-body.home-v2 {
   0%, 100% { transform: rotate(11deg) translateY(0); }
   50%       { transform: rotate(10.4deg) translateY(-9px); }
 }
+
+/* ── Phone screen stacking — global (works locally + Vercel) ── */
+.phone-screen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* Override the global animation:none with higher-specificity class selector.
+   Uses .home-body.home-v2 (not body.home-body) so it matches on Vercel
+   where the wrapper is a <div class="home-body home-v2">, not <body>. */
+.home-body.home-v2 .stage-phone-left   .phone-screen-a { animation: screenFadeA 8s ease-in-out 0s   infinite !important; }
+.home-body.home-v2 .stage-phone-left   .phone-screen-b { animation: screenFadeB 8s ease-in-out 0s   infinite !important; }
+.home-body.home-v2 .stage-phone-main   .phone-screen-a { animation: screenFadeA 8s ease-in-out 2.5s infinite !important; }
+.home-body.home-v2 .stage-phone-main   .phone-screen-b { animation: screenFadeB 8s ease-in-out 2.5s infinite !important; }
+.home-body.home-v2 .stage-phone-right  .phone-screen-a { animation: screenFadeA 8s ease-in-out 5s   infinite !important; }
+.home-body.home-v2 .stage-phone-right  .phone-screen-b { animation: screenFadeB 8s ease-in-out 5s   infinite !important; }
 
 @media (max-width: 520px) {
   .hero-v2-title {
