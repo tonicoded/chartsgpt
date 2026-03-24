@@ -2935,7 +2935,7 @@ body.home-body.home-v2 *,
   .hero-v2-stage {
     grid-column: 1;
     grid-row: 3;
-    min-height: clamp(360px, 58vw, 520px);
+    min-height: clamp(280px, 38svh, 420px);
     width: 100%;
   }
 
@@ -2946,12 +2946,12 @@ body.home-body.home-v2 *,
   }
 
   .stage-phone-main {
-    width: min(48vw, 292px);
+    width: min(38vw, 248px);
   }
 
   .stage-phone-left,
   .stage-phone-right {
-    width: min(30vw, 208px);
+    width: min(26vw, 178px);
   }
 
   .screens-v2-rail {
@@ -3009,9 +3009,9 @@ body.home-body.home-v2 *,
   }
 
   .hero-v2-stage {
-    min-height: clamp(390px, 56vw, 470px);
+    min-height: clamp(300px, 44svh, 400px);
     margin-top: -2px;
-    transform: translateY(28px);
+    transform: translateY(16px);
     place-items: end center;
     justify-self: center;
   }
@@ -3028,18 +3028,18 @@ body.home-body.home-v2 *,
   }
 
   .stage-phone-main {
-    width: min(58vw, 270px);
-    top: 12px;
+    width: min(50vw, 230px);
+    top: 0;
   }
 
   .stage-phone-left {
-    width: min(38vw, 176px);
+    width: min(34vw, 158px);
     left: 8%;
     top: 18%;
   }
 
   .stage-phone-right {
-    width: min(38vw, 176px);
+    width: min(34vw, 158px);
     right: 6%;
     top: 22%;
   }
@@ -3089,8 +3089,8 @@ body.home-body.home-v2 *,
 
   .hero-v2-stage {
     margin-top: -4px;
-    transform: translateY(16px);
-    min-height: 380px;
+    transform: translateY(10px);
+    min-height: clamp(260px, 38svh, 340px);
   }
 
   .home-v2 .site-header .blog-menu {
@@ -3106,18 +3106,18 @@ body.home-body.home-v2 *,
   }
 
   .stage-phone-main {
-    width: min(56vw, 220px);
+    width: min(48vw, 196px) !important;
     top: 0;
   }
 
   .stage-phone-left {
-    width: min(40vw, 156px);
+    width: min(34vw, 138px) !important;
     left: 5%;
     top: 18%;
   }
 
   .stage-phone-right {
-    width: min(40vw, 156px);
+    width: min(34vw, 138px) !important;
     right: 5%;
     top: 21%;
   }
@@ -3797,10 +3797,11 @@ body.home-body.home-v2 {
   .hero-v2-cta-row::after {
     content: "";
     display: block;
+    flex-basis: 100%;
     width: 48px;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
-    margin: 14px auto 0;
+    margin: 8px auto 0;
   }
 
   /* ── Tighter grid ── */
@@ -3808,8 +3809,8 @@ body.home-body.home-v2 {
 
   /* ── Stage: closer to CTA, green glow underneath ── */
   .hero-v2-stage {
-    transform: translateY(6px);
-    min-height: clamp(360px, 52vw, 440px);
+    transform: translateY(10px);
+    min-height: clamp(300px, 44svh, 400px);
   }
 
   .hero-v2-stage::before {
@@ -3825,22 +3826,24 @@ body.home-body.home-v2 {
     z-index: 0;
   }
 
-  /* ── Bottom fade ── */
+  /* ── Bottom fade (removed) ── */
   .hero-v2-stage::after {
-    content: "";
-    position: absolute;
-    bottom: -8px;
-    left: -32px;
-    right: -32px;
-    height: 50%;
-    background: linear-gradient(to top, #030303 10%, transparent 100%);
-    pointer-events: none;
-    z-index: 5;
+    display: none;
   }
 
   /* ── Phone shadows ── */
   .stage-phone {
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.75), 0 0 0 0.5px rgba(255, 255, 255, 0.10);
+  }
+
+  /* ── Phone sizes ── */
+  .stage-phone-main {
+    width: min(50vw, 230px) !important;
+  }
+
+  .stage-phone-left,
+  .stage-phone-right {
+    width: min(34vw, 158px) !important;
   }
 
   /* ── Main phone: glow ring + green halo ── */
@@ -3920,18 +3923,27 @@ body.home-body.home-v2 {
 
 /* ── Responsive fixes ─────────────────────────────────────────────── */
 
-/* 1. Tablet / browser-resize range (761px–1100px)
-      Grid collapses to single column but text stays left-aligned → fix */
+/* 1. Tablet / browser-resize range (761px–1100px) */
 @media (min-width: 761px) and (max-width: 1100px) {
+  .hero-v2 {
+    padding-top: clamp(70px, 9vw, 90px);
+    padding-bottom: 0;
+  }
+
+  .hero-v2-grid {
+    gap: 18px;
+  }
+
   .hero-v2-copy {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     padding-right: 0;
-    max-width: 640px;
+    max-width: 580px;
   }
 
   .hero-v2-title {
+    font-size: clamp(1.9rem, 4.6vw, 3.2rem);
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -3942,6 +3954,7 @@ body.home-body.home-v2 {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 12px;
   }
 
   .hero-v2-cta-row {
@@ -3952,6 +3965,18 @@ body.home-body.home-v2 {
 
   .hero-v2-stage {
     justify-self: center;
+    min-height: clamp(260px, 34svh, 360px);
+    transform: translateY(16px);
+  }
+
+  .stage-phone-main {
+    width: min(36vw, 252px);
+    top: 0;
+  }
+
+  .stage-phone-left,
+  .stage-phone-right {
+    width: min(24vw, 172px);
   }
 }
 
