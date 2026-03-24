@@ -3974,6 +3974,32 @@ body.home-body.home-v2 {
   50%       { transform: rotate(10.4deg) translateY(-9px); }
 }
 
+/* ── Typewriter cursor ── */
+.tw-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 1px;
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: cursorBlink 1s step-end infinite !important;
+}
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── Hero copy staggered fade-in ── */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.home-body.home-v2 .hero-v2-trust   { animation: heroFadeUp 0.55s cubic-bezier(0.22,1,0.36,1) 0.05s both !important; }
+.home-body.home-v2 .hero-v2-title   { animation: heroFadeUp 0.60s cubic-bezier(0.22,1,0.36,1) 0.18s both !important; }
+.home-body.home-v2 .hero-v2-sub     { animation: heroFadeUp 0.60s cubic-bezier(0.22,1,0.36,1) 0.32s both !important; }
+.home-body.home-v2 .hero-v2-cta-row { animation: heroFadeUp 0.60s cubic-bezier(0.22,1,0.36,1) 0.44s both !important; }
+
 /* ── Phone screen stacking — global (works locally + Vercel) ── */
 .phone-screen {
   position: absolute;

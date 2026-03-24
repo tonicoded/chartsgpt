@@ -78,12 +78,12 @@
     </script>
     <link rel="alternate" type="application/rss+xml" title="ChartsGPT Blog" href="/feed.xml" />
     <script src="./site-config.js" defer></script>
-    <script src="./site.js?v=20260318-noanim" defer></script>
+    <script src="./site.js?v=20260324a" defer></script>
     <link rel="preload" href="/Geist-Regular.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/Geist-Medium.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/Geist-SemiBold.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/Geist-Bold.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="stylesheet" href="./styles.css?v=20260324d" />
+    <link rel="stylesheet" href="./styles.css?v=20260324e" />
   </head>
   <body class="home-body home-v2">
     <div class="home-shell home-shell-v2">
@@ -117,9 +117,7 @@
                 <span class="hero-v2-trust-traders">Join <strong>10k+</strong> traders</span>
               </div>
               <h1 class="hero-v2-title">Scan a chart.<br>Get the<br><span class="hero-title-green">trade plan.</span></h1>
-              <p class="hero-v2-sub">
-                Key levels, bias, entry, stop loss, and invalidation from one screenshot.
-              </p>
+              <p class="hero-v2-sub"><span class="tw-text"></span><span class="tw-cursor" aria-hidden="true"></span></p>
             </div>
 
             <div class="hero-v2-stage reveal" style="--delay: 160ms" aria-label="Product preview">
@@ -175,13 +173,5 @@
       </div>
     </dialog>
 
-    <script>
-      document.querySelector('.gp-trigger').addEventListener('click', function () {
-        document.getElementById('gp-modal').showModal();
-      });
-      document.getElementById('gp-modal').addEventListener('click', function (e) {
-        if (e.target === this) this.close();
-      });
-    </script>
   </body>
 </html>
