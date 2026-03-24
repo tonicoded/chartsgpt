@@ -3701,14 +3701,14 @@ body.home-body.home-v2 {
 
 @media (max-width: 760px) {
 
-  /* ── Background: dark with top beam + green portal below ── */
+  /* ── Background ── */
   body.home-body.home-v2 {
     background:
-      radial-gradient(900px 420px at 50% -2%,  rgba(255, 255, 255, 0.15), transparent 52%),
-      radial-gradient(640px 640px at 50% 85%,  rgba(34, 197, 94, 0.13),  transparent 60%),
-      radial-gradient(380px 280px at 12% 90%,  rgba(34, 197, 94, 0.08),  transparent 55%),
-      radial-gradient(380px 280px at 88% 90%,  rgba(34, 197, 94, 0.06),  transparent 55%),
-      linear-gradient(180deg, #070707 0%, #040404 55%, #010101 100%) !important;
+      radial-gradient(ellipse 110% 55% at 50% -5%,  rgba(255, 255, 255, 0.18), transparent 52%),
+      radial-gradient(ellipse 80% 60% at 50% 96%,   rgba(34, 197, 94, 0.28),  transparent 56%),
+      radial-gradient(ellipse 55% 45% at 8%  92%,   rgba(34, 197, 94, 0.14),  transparent 52%),
+      radial-gradient(ellipse 55% 45% at 92% 92%,   rgba(34, 197, 94, 0.10),  transparent 52%),
+      linear-gradient(180deg, #080808 0%, #050505 50%, #010101 100%) !important;
   }
 
   /* ── Glassmorphism header ── */
@@ -3748,12 +3748,21 @@ body.home-body.home-v2 {
   /* ── Hero title: max impact ── */
   .hero-v2-title {
     font-size: clamp(2.2rem, 11vw, 3rem);
-    line-height: 0.87;
+    line-height: 0.88;
     letter-spacing: -0.052em;
-    background: linear-gradient(168deg, #ffffff 0%, #ffffff 35%, rgba(255, 255, 255, 0.58) 100%);
+    background: linear-gradient(168deg, #ffffff 0%, rgba(255, 255, 255, 0.82) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* ── Green accent on "trade plan." ── */
+  .hero-title-green {
+    background: linear-gradient(135deg, #22c55e 0%, #4ade80 55%, #86efac 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline;
   }
 
   /* ── Subtitle ── */
@@ -3776,23 +3785,35 @@ body.home-body.home-v2 {
     border-radius: 50%;
   }
 
-  /* ── Store badges: premium dark glass ── */
-  .store-badge-hero {
-    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  /* ── App Store: white primary CTA ── */
+  .store-badge-hero.js-appstore {
+    background: #ffffff !important;
+    border: 1px solid #ffffff !important;
     border-radius: 16px !important;
-    background: rgba(18, 18, 20, 0.96) !important;
     padding: 0 !important;
     overflow: hidden;
     height: 56px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.07) !important;
+    box-shadow: 0 6px 28px rgba(255, 255, 255, 0.18) !important;
   }
 
-  /* App Store badge is the white SVG variant – invert it to black */
+  /* White SVG inverted = black badge on white — perfect */
   .store-badge-hero.js-appstore img {
     filter: invert(1);
+    height: 56px !important;
   }
 
-  .store-badge-hero img {
+  /* ── Google Play: outlined secondary ── */
+  .store-badge-hero.gp-trigger {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    border-radius: 16px !important;
+    padding: 0 !important;
+    overflow: hidden;
+    height: 56px;
+    box-shadow: none !important;
+  }
+
+  .store-badge-hero.gp-trigger img {
     height: 56px !important;
   }
 
@@ -3813,12 +3834,12 @@ body.home-body.home-v2 {
   .hero-v2-stage::before {
     content: "";
     position: absolute;
-    bottom: 2%;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 85%;
-    height: 55%;
-    background: radial-gradient(ellipse at 50% 100%, rgba(34, 197, 94, 0.22), transparent 62%);
+    width: 100%;
+    height: 65%;
+    background: radial-gradient(ellipse at 50% 100%, rgba(34, 197, 94, 0.35), rgba(34, 197, 94, 0.10) 45%, transparent 68%);
     pointer-events: none;
     z-index: 0;
   }
@@ -3835,23 +3856,24 @@ body.home-body.home-v2 {
 
   /* ── Phone sizes ── */
   .stage-phone-main {
-    width: min(50vw, 230px) !important;
+    width: min(56vw, 252px) !important;
   }
 
   .stage-phone-left,
   .stage-phone-right {
-    width: min(34vw, 158px) !important;
+    width: min(36vw, 168px) !important;
   }
 
   /* ── Main phone: glow ring + green halo ── */
   .stage-phone-main {
     top: 0;
     box-shadow:
-      0 52px 130px rgba(0, 0, 0, 0.96),
-      0 0 0 1px    rgba(255, 255, 255, 0.28),
-      0 0 90px     rgba(255, 255, 255, 0.10),
-      0 0 40px     rgba(255, 255, 255, 0.05),
-      0 28px 110px rgba(34, 197, 94, 0.18);
+      0 60px 140px rgba(0, 0, 0, 0.98),
+      0 0 0 1px    rgba(255, 255, 255, 0.32),
+      0 0 100px    rgba(255, 255, 255, 0.12),
+      0 0 50px     rgba(255, 255, 255, 0.06),
+      0 32px 120px rgba(34, 197, 94, 0.28),
+      0 0 60px     rgba(34, 197, 94, 0.12);
   }
 
   /* ── Phone animations (specificity 0-3-1 beats noanim 0-2-1) ── */
