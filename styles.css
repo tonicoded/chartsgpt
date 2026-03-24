@@ -3704,10 +3704,11 @@ body.home-body.home-v2 {
   /* ── Background: dark with top beam + green portal below ── */
   body.home-body.home-v2 {
     background:
-      radial-gradient(700px 320px at 50% 0%,   rgba(255, 255, 255, 0.10), transparent 55%),
-      radial-gradient(500px 500px at 50% 78%,   rgba(34, 197, 94, 0.07),  transparent 65%),
-      radial-gradient(300px 200px at 20% 85%,   rgba(34, 197, 94, 0.04),  transparent 60%),
-      linear-gradient(180deg, #050505 0%, #040404 50%, #020202 100%) !important;
+      radial-gradient(900px 420px at 50% -2%,  rgba(255, 255, 255, 0.15), transparent 52%),
+      radial-gradient(640px 640px at 50% 85%,  rgba(34, 197, 94, 0.13),  transparent 60%),
+      radial-gradient(380px 280px at 12% 90%,  rgba(34, 197, 94, 0.08),  transparent 55%),
+      radial-gradient(380px 280px at 88% 90%,  rgba(34, 197, 94, 0.06),  transparent 55%),
+      linear-gradient(180deg, #070707 0%, #040404 55%, #010101 100%) !important;
   }
 
   /* ── Glassmorphism header ── */
@@ -3732,15 +3733,16 @@ body.home-body.home-v2 {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    background: rgba(255, 255, 255, 0.055);
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 999px;
-    padding: 5px 14px 5px 10px;
-    font-size: 11.5px;
-    letter-spacing: 0.025em;
-    color: rgba(255, 255, 255, 0.52);
+    padding: 6px 16px 6px 11px;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.72);
     font-family: "Geist-Medium", var(--font-base);
-    margin-bottom: 16px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   /* ── Hero title: max impact ── */
@@ -3756,11 +3758,11 @@ body.home-body.home-v2 {
 
   /* ── Subtitle ── */
   .hero-v2-sub {
-    color: rgba(255, 255, 255, 0.36);
-    font-size: 0.875rem;
-    margin-top: 11px;
-    line-height: 1.5;
-    max-width: 26ch;
+    color: rgba(255, 255, 255, 0.48);
+    font-size: 0.9rem;
+    margin-top: 13px;
+    line-height: 1.55;
+    max-width: 28ch;
   }
 
   /* ── Spotlight behind hero copy ── */
@@ -3774,14 +3776,15 @@ body.home-body.home-v2 {
     border-radius: 50%;
   }
 
-  /* ── Store badges: both dark, unified ── */
+  /* ── Store badges: premium dark glass ── */
   .store-badge-hero {
-    border: 1px solid rgba(255, 255, 255, 0.10) !important;
-    border-radius: 14px !important;
-    background: rgba(12, 12, 12, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 16px !important;
+    background: rgba(18, 18, 20, 0.96) !important;
     padding: 0 !important;
     overflow: hidden;
-    height: 54px;
+    height: 56px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.07) !important;
   }
 
   /* App Store badge is the white SVG variant – invert it to black */
@@ -3790,18 +3793,12 @@ body.home-body.home-v2 {
   }
 
   .store-badge-hero img {
-    height: 54px !important;
+    height: 56px !important;
   }
 
-  /* ── Thin separator line between copy and phones ── */
+  /* ── Separator line hidden ── */
   .hero-v2-cta-row::after {
-    content: "";
-    display: block;
-    flex-basis: 100%;
-    width: 48px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
-    margin: 8px auto 0;
+    display: none;
   }
 
   /* ── Tighter grid ── */
@@ -3816,12 +3813,12 @@ body.home-body.home-v2 {
   .hero-v2-stage::before {
     content: "";
     position: absolute;
-    bottom: 5%;
+    bottom: 2%;
     left: 50%;
     transform: translateX(-50%);
-    width: 70%;
-    height: 45%;
-    background: radial-gradient(ellipse at 50% 100%, rgba(34, 197, 94, 0.13), transparent 65%);
+    width: 85%;
+    height: 55%;
+    background: radial-gradient(ellipse at 50% 100%, rgba(34, 197, 94, 0.22), transparent 62%);
     pointer-events: none;
     z-index: 0;
   }
@@ -3833,7 +3830,7 @@ body.home-body.home-v2 {
 
   /* ── Phone shadows ── */
   .stage-phone {
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.75), 0 0 0 0.5px rgba(255, 255, 255, 0.10);
+    box-shadow: 0 36px 96px rgba(0, 0, 0, 0.86), 0 0 0 1px rgba(255, 255, 255, 0.13);
   }
 
   /* ── Phone sizes ── */
@@ -3850,10 +3847,11 @@ body.home-body.home-v2 {
   .stage-phone-main {
     top: 0;
     box-shadow:
-      0 44px 110px rgba(0, 0, 0, 0.90),
-      0 0 0 1px   rgba(255, 255, 255, 0.20),
-      0 0 60px     rgba(255, 255, 255, 0.055),
-      0 20px 80px  rgba(34, 197, 94, 0.08);
+      0 52px 130px rgba(0, 0, 0, 0.96),
+      0 0 0 1px    rgba(255, 255, 255, 0.28),
+      0 0 90px     rgba(255, 255, 255, 0.10),
+      0 0 40px     rgba(255, 255, 255, 0.05),
+      0 28px 110px rgba(34, 197, 94, 0.18);
   }
 
   /* ── Phone animations (specificity 0-3-1 beats noanim 0-2-1) ── */
@@ -3872,9 +3870,17 @@ body.home-body.home-v2 {
       phoneSlideRight 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.30s both,
       phoneFloatRight 5.8s  ease-in-out 0.95s infinite !important;
   }
+
+  body.home-body.home-v2 .hero-v2-stage::before {
+    animation: greenGlowPulse 4.5s ease-in-out 1s infinite !important;
+  }
 }
 
 /* ── Keyframes ──────────────────────────────────────────────────────── */
+@keyframes greenGlowPulse {
+  0%, 100% { opacity: 0.75; transform: translateX(-50%) scale(1); }
+  50%       { opacity: 1;    transform: translateX(-50%) scale(1.12); }
+}
 @keyframes phoneSlideMain {
   from { transform: translateY(80px); opacity: 0; }
   to   { transform: translateY(0);    opacity: 1; }
