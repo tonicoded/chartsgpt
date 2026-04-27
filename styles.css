@@ -4739,3 +4739,203 @@ body.home-body.home-v2,
   from { transform: rotate(8deg) translate(4px, 56px); opacity: 0; }
   to   { transform: rotate(8deg) translate(4px, 0); opacity: 0.72; }
 }
+
+/* Keep the original responsive composition; only re-skin it gold. */
+.home-v2 {
+  --gold: #f5bd27;
+}
+
+.home-v2 .site-brand img {
+  border-color: rgba(245, 189, 39, 0.28);
+  background: #000;
+}
+
+.hero-title-green {
+  color: var(--gold);
+  background: none !important;
+  -webkit-text-fill-color: var(--gold) !important;
+}
+
+.hero-v2-trust-stars {
+  color: var(--gold);
+  background-color: transparent;
+}
+
+.tw-cursor {
+  background-color: var(--gold);
+}
+
+.stage-phone {
+  border-color: rgba(245, 189, 39, 0.24);
+}
+
+@media (max-width: 760px) {
+  body.home-body.home-v2,
+  .home-body.home-v2 {
+    background: #030303 !important;
+  }
+
+  .home-v2 .site-header-home {
+    padding-top: initial;
+  }
+
+  .home-v2 .site-header-inner {
+    max-width: none;
+    padding: 0 var(--frame-pad);
+  }
+
+  .home-v2 .site-brand {
+    gap: 12px;
+  }
+
+  .home-v2 .site-brand img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .home-v2 .site-brand span {
+    font-size: clamp(1.25rem, 4.9vw, 1.65rem);
+  }
+
+  .home-v2 .blog-menu summary {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-v2 {
+    align-items: center;
+    padding-top: 82px;
+    padding-bottom: 0;
+  }
+
+  .hero-v2-grid {
+    max-width: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 2px;
+  }
+
+  .hero-v2-title {
+    max-width: 10.5ch;
+    font-size: clamp(2.2rem, 11vw, 3rem);
+    line-height: 0.88;
+    letter-spacing: -0.052em;
+    background: none !important;
+    -webkit-text-fill-color: #fff !important;
+  }
+
+  .hero-title-green {
+    -webkit-text-fill-color: var(--gold) !important;
+  }
+
+  .hero-v2-sub {
+    margin-top: 13px;
+    max-width: 28ch;
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .hero-v2-cta-row {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    margin-top: 0;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: nowrap !important;
+  }
+
+  .store-badge-hero.js-appstore,
+  .store-badge-hero.gp-trigger {
+    height: 50px !important;
+    border-radius: 16px !important;
+    padding: 0 !important;
+  }
+
+  .store-badge-hero.js-appstore img,
+  .store-badge-hero.gp-trigger img {
+    height: 50px !important;
+  }
+
+  .hero-v2-stage {
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%;
+    min-height: clamp(300px, 44svh, 400px);
+    margin-top: -2px;
+    transform: translateY(10px);
+    place-items: center;
+    justify-self: center;
+  }
+
+  .hero-v2-stage::before {
+    bottom: 0;
+    width: 100%;
+    height: 65%;
+    background: rgba(245, 189, 39, 0.11);
+    filter: blur(54px);
+  }
+
+  .stage-phone {
+    border-radius: 34px;
+    box-shadow: 0 36px 96px rgba(0, 0, 0, 0.86), 0 0 0 1px rgba(245, 189, 39, 0.18);
+  }
+
+  .stage-phone-main {
+    top: 0;
+    width: min(56vw, 252px) !important;
+    box-shadow:
+      0 60px 140px rgba(0, 0, 0, 0.98),
+      0 0 0 1px rgba(245, 189, 39, 0.34),
+      0 0 84px rgba(245, 189, 39, 0.16);
+  }
+
+  .stage-phone-left,
+  .stage-phone-right {
+    display: block;
+    width: min(36vw, 168px) !important;
+    opacity: 1;
+  }
+
+  .stage-phone-left {
+    left: 6%;
+    top: 18%;
+    transform: rotate(-13deg);
+  }
+
+  .stage-phone-right {
+    right: 6%;
+    top: 23%;
+    transform: rotate(11deg);
+  }
+
+  body.home-body.home-v2 .stage-phone-left {
+    animation:
+      phoneSlideLeft 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.04s both,
+      phoneFloatLeft 6.4s ease-in-out 0.69s infinite !important;
+  }
+
+  body.home-body.home-v2 .stage-phone-main {
+    animation:
+      phoneSlideMain 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both,
+      phoneFloatMain 5.2s ease-in-out 0.83s infinite !important;
+  }
+
+  body.home-body.home-v2 .stage-phone-right {
+    animation:
+      phoneSlideRight 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.30s both,
+      phoneFloatRight 5.8s ease-in-out 0.95s infinite !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-v2-title {
+    font-size: clamp(2rem, 10.5vw, 2.4rem);
+  }
+
+  .hero-v2-trust {
+    font-size: 11px;
+    padding: 4px 12px 4px 9px;
+    margin-bottom: 12px;
+  }
+}
