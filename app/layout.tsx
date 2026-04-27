@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "../styles.css";
 
 export const viewport: Viewport = {
-  themeColor: "#070a12",
+  themeColor: "#030303",
   colorScheme: "dark",
   width: "device-width",
   initialScale: 1
@@ -60,13 +60,15 @@ export const metadata: Metadata = {
     siteName: "ChartsGPT",
     title: "ChartsGPT — AI-Powered Trading Chart Analysis App",
     description:
-      "Upload any trading chart screenshot and get instant AI analysis: key support & resistance levels, bullish/bearish scenarios, entry triggers, and invalidation points. Works for crypto, forex, stocks, and metals."
+      "Upload any trading chart screenshot and get instant AI analysis: key support & resistance levels, bullish/bearish scenarios, entry triggers, and invalidation points. Works for crypto, forex, stocks, and metals.",
+    images: [{ url: "/chartsgptnewlogo.png" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "ChartsGPT — AI-Powered Trading Chart Analysis App",
     description:
-      "Upload any trading chart screenshot and get instant AI analysis: key support & resistance levels, bullish/bearish scenarios, entry triggers, and invalidation points."
+      "Upload any trading chart screenshot and get instant AI analysis: key support & resistance levels, bullish/bearish scenarios, entry triggers, and invalidation points.",
+    images: ["/chartsgptnewlogo.png"]
   },
   formatDetection: {
     telephone: false
