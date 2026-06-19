@@ -28,7 +28,7 @@ export function GET() {
     if (p.startsWith("blog/")) return { changefreq: "monthly", priority: 0.7 };
     if (p === "about") return { changefreq: "monthly", priority: 0.6 };
     if (p === "support") return { changefreq: "yearly", priority: 0.3 };
-    if (p === "privacy" || p === "terms") return { changefreq: "yearly", priority: 0.3 };
+    if (p === "privacy" || p === "terms" || p.endsWith("/privacy") || p.endsWith("/terms")) return { changefreq: "yearly", priority: 0.3 };
     return { changefreq: "monthly", priority: 0.5 };
   }
 
