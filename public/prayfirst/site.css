@@ -1,0 +1,295 @@
+@font-face {
+  font-family: "Pray First";
+  src: url("/prayfirst/satoshi-variable.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+:root {
+  --pf-orange: #f88005;
+  --pf-orange-deep: #ca4c00;
+  --pf-cream: #fff4e5;
+  --pf-white: #fffdfa;
+  --pf-brown: #2c1c12;
+  --pf-muted: #806959;
+  --pf-line: rgba(255, 255, 255, 0.24);
+  --pf-radius: 32px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body:has(.pf-site) {
+  margin: 0;
+  background: var(--pf-orange);
+  color: white;
+}
+
+.pf-site {
+  min-height: 100dvh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 4%, rgba(255,255,255,.18), transparent 24rem),
+    radial-gradient(circle at 8% 48%, rgba(164,55,0,.22), transparent 32rem),
+    var(--pf-orange);
+  color: white;
+  font-family: "Pray First", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: -.01em;
+}
+
+.pf-wrap { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+
+.pf-nav {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+}
+
+.pf-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 780;
+  letter-spacing: -.04em;
+}
+
+.pf-brand img { width: 42px; height: 42px; object-fit: contain; }
+.pf-navlinks { display: flex; align-items: center; gap: 26px; }
+.pf-navlinks a { color: rgba(255,255,255,.78); text-decoration: none; font-size: 14px; font-weight: 600; }
+.pf-navlinks a:hover, .pf-navlinks a[aria-current="page"] { color: white; }
+
+.pf-pill,
+.pf-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 999px;
+  padding: 13px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: 680;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.pf-pill { background: rgba(74,28,0,.22); backdrop-filter: blur(18px); }
+.pf-button { min-height: 56px; padding-inline: 26px; background: white; color: var(--pf-brown); border: 0; }
+.pf-button.secondary { background: rgba(255,255,255,.10); color: white; border: 1px solid rgba(255,255,255,.28); }
+.pf-button:hover, .pf-pill:hover { transform: translateY(-2px); }
+
+.pf-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.02fr .98fr;
+  min-height: 720px;
+  align-items: center;
+  gap: clamp(42px, 7vw, 96px);
+  padding: 54px 0 92px;
+}
+
+.pf-eyebrow {
+  margin: 0 0 18px;
+  color: rgba(255,255,255,.78);
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: .18em;
+  font-weight: 760;
+  text-transform: lowercase;
+}
+
+.pf-hero h1,
+.pf-section h2,
+.pf-legal-hero h1 {
+  margin: 0;
+  font-weight: 850;
+  letter-spacing: -.065em;
+  line-height: .92;
+}
+
+.pf-hero h1 { font-size: clamp(62px, 8vw, 118px); max-width: 8ch; }
+.pf-hero-copy { margin: 28px 0 0; max-width: 560px; color: rgba(255,255,255,.78); font-size: clamp(18px, 2vw, 24px); line-height: 1.45; }
+.pf-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.pf-micro { margin-top: 18px; color: rgba(255,255,255,.62); font-size: 12px; }
+
+.pf-phone {
+  position: relative;
+  width: min(410px, 86vw);
+  aspect-ratio: 9 / 18.4;
+  justify-self: center;
+  border: 8px solid rgba(43,21,8,.72);
+  border-radius: 58px;
+  overflow: hidden;
+  background: #0b1115;
+  box-shadow: 0 46px 90px rgba(91,29,0,.38), inset 0 0 0 1px rgba(255,255,255,.26);
+  transform: rotate(2deg);
+}
+
+.pf-phone::before {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  top: 12px;
+  left: 50%;
+  width: 34%;
+  height: 27px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #080808;
+}
+
+.pf-phone-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.pf-phone-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.15) 35%, rgba(0,0,0,.82)); }
+.pf-phone-ui { position: absolute; z-index: 3; inset: 0; padding: 74px 26px 30px; display: flex; flex-direction: column; }
+.pf-status { align-self: flex-start; padding: 10px 14px; border-radius: 999px; background: rgba(26,28,28,.58); border: 1px solid rgba(255,255,255,.18); backdrop-filter: blur(14px); font-size: 12px; font-weight: 700; }
+.pf-phone-logo { margin-left: auto; width: 92px; height: 92px; object-fit: contain; }
+.pf-phone-copy { margin-top: auto; }
+.pf-phone-copy strong { display: block; max-width: 7ch; font-size: clamp(42px, 5vw, 62px); line-height: .94; letter-spacing: -.055em; }
+.pf-phone-copy span { display: block; margin-top: 16px; color: rgba(255,255,255,.72); line-height: 1.35; }
+.pf-phone-cta { margin-top: 22px; padding: 17px 18px; text-align: center; border-radius: 999px; background: var(--pf-orange); font-weight: 720; }
+
+.pf-quiet-strip { border-block: 1px solid var(--pf-line); background: rgba(128,45,0,.15); }
+.pf-quiet-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.pf-quiet-stat { padding: 28px; border-right: 1px solid var(--pf-line); }
+.pf-quiet-stat:last-child { border-right: 0; }
+.pf-quiet-stat strong { display: block; font-size: 25px; letter-spacing: -.04em; }
+.pf-quiet-stat span { color: rgba(255,255,255,.64); font-size: 12px; }
+
+.pf-section { padding: 112px 0; }
+.pf-section-head { display: grid; grid-template-columns: 1fr .7fr; align-items: end; gap: 40px; margin-bottom: 44px; }
+.pf-section h2 { font-size: clamp(48px, 6vw, 84px); max-width: 10ch; }
+.pf-section-intro { margin: 0; color: rgba(255,255,255,.70); font-size: 18px; line-height: 1.55; }
+
+.pf-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.pf-card {
+  position: relative;
+  min-height: 420px;
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: var(--pf-radius);
+  background: rgba(255,255,255,.10);
+  box-shadow: 0 26px 60px rgba(115,37,0,.15);
+  overflow: hidden;
+}
+.pf-card-number { color: rgba(255,255,255,.55); font-size: 12px; font-weight: 760; letter-spacing: .14em; }
+.pf-card h3 { margin: 18px 0 10px; font-size: 31px; line-height: 1; letter-spacing: -.045em; }
+.pf-card p { margin: 0; color: rgba(255,255,255,.70); line-height: 1.55; }
+.pf-card-visual { position: absolute; left: 22px; right: 22px; bottom: 22px; height: 195px; border-radius: 24px; background: rgba(76,26,0,.18); overflow: hidden; }
+.pf-lock-visual { display: grid; place-items: center; }
+.pf-lock-visual img { width: 180px; height: 180px; object-fit: contain; filter: drop-shadow(0 16px 24px rgba(65,22,0,.18)); }
+.pf-verse-visual { padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
+.pf-verse-visual q { font-family: Georgia, serif; font-size: 23px; line-height: 1.17; }
+.pf-verse-visual span { color: rgba(255,255,255,.64); font-size: 12px; font-weight: 700; }
+.pf-bible-visual img { width: 116%; height: 116%; object-fit: contain; transform: translate(-7%, 6%); }
+
+.pf-dark {
+  background: #231811;
+  border-radius: 52px 52px 0 0;
+  color: white;
+}
+.pf-privacy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.pf-privacy-lead { padding-right: 8vw; }
+.pf-privacy-lead p { color: rgba(255,255,255,.68); font-size: 18px; line-height: 1.55; }
+.pf-privacy-points { display: grid; gap: 12px; }
+.pf-privacy-point { display: grid; grid-template-columns: 46px 1fr; gap: 14px; padding: 18px; border: 1px solid rgba(255,255,255,.12); border-radius: 22px; background: rgba(255,255,255,.055); }
+.pf-icon { width: 46px; height: 46px; border-radius: 15px; display: grid; place-items: center; background: var(--pf-orange); color: white; font-size: 19px; }
+.pf-privacy-point strong { display: block; margin: 2px 0 4px; }
+.pf-privacy-point span { color: rgba(255,255,255,.60); font-size: 13px; line-height: 1.4; }
+
+.pf-quote { padding: 110px 0; text-align: center; }
+.pf-quote blockquote { margin: 0 auto; max-width: 920px; font-size: clamp(42px, 7vw, 92px); font-weight: 820; line-height: .98; letter-spacing: -.06em; }
+.pf-quote cite { display: block; margin-top: 24px; color: rgba(255,255,255,.62); font-style: normal; }
+
+.pf-footer { padding: 52px 0 34px; border-top: 1px solid rgba(255,255,255,.12); background: #231811; }
+.pf-footer-grid { display: grid; grid-template-columns: 1.2fr repeat(3, .6fr); gap: 34px; }
+.pf-footer p { max-width: 370px; color: rgba(255,255,255,.58); font-size: 13px; line-height: 1.5; }
+.pf-footer h3 { margin: 0 0 12px; font-size: 12px; color: rgba(255,255,255,.46); text-transform: uppercase; letter-spacing: .14em; }
+.pf-footer a { display: block; margin: 8px 0; color: rgba(255,255,255,.78); text-decoration: none; font-size: 13px; }
+.pf-footer-base { display: flex; justify-content: space-between; gap: 20px; margin-top: 48px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.10); color: rgba(255,255,255,.44); font-size: 11px; }
+
+/* Legal and support pages */
+.pf-legal { background: #fff7ec; color: var(--pf-brown); }
+.pf-legal .pf-nav { color: var(--pf-brown); }
+.pf-legal .pf-nav .pf-brand img { filter: brightness(0) saturate(100%) invert(48%) sepia(96%) saturate(2719%) hue-rotate(4deg) brightness(101%) contrast(103%); }
+.pf-legal .pf-navlinks a { color: rgba(44,28,18,.62); }
+.pf-legal .pf-navlinks a:hover, .pf-legal .pf-navlinks a[aria-current="page"] { color: var(--pf-brown); }
+.pf-legal .pf-pill { color: var(--pf-brown); border-color: rgba(44,28,18,.12); background: white; }
+.pf-legal-hero { padding: 70px 0 50px; border-bottom: 1px solid rgba(90,47,16,.12); }
+.pf-legal-hero .pf-eyebrow { color: var(--pf-orange-deep); }
+.pf-legal-hero h1 { max-width: 10ch; font-size: clamp(56px, 8vw, 96px); }
+.pf-legal-hero p { max-width: 700px; margin: 26px 0 0; color: var(--pf-muted); font-size: 19px; line-height: 1.55; }
+.pf-updated { display: inline-flex; margin-top: 24px; padding: 9px 12px; border-radius: 999px; background: rgba(248,128,5,.10); color: var(--pf-orange-deep); font-size: 12px; font-weight: 700; }
+.pf-document { display: grid; grid-template-columns: 260px minmax(0, 760px); justify-content: center; gap: 54px; padding: 72px 0 100px; }
+.pf-toc { position: sticky; top: 30px; align-self: start; padding: 20px; border-radius: 22px; background: white; box-shadow: 0 16px 46px rgba(90,47,16,.07); }
+.pf-toc strong { display: block; margin-bottom: 10px; color: var(--pf-orange-deep); font-size: 11px; text-transform: uppercase; letter-spacing: .14em; }
+.pf-toc a { display: block; padding: 7px 0; color: var(--pf-muted); text-decoration: none; font-size: 12px; }
+.pf-copy section { scroll-margin-top: 26px; padding: 0 0 34px; margin: 0 0 34px; border-bottom: 1px solid rgba(90,47,16,.12); }
+.pf-copy section:last-child { border: 0; }
+.pf-copy h2 { margin: 0 0 13px; font-size: 25px; letter-spacing: -.04em; }
+.pf-copy h3 { margin: 24px 0 9px; font-size: 17px; }
+.pf-copy p, .pf-copy li { color: #604b3d; font-size: 15px; line-height: 1.7; }
+.pf-copy ul, .pf-copy ol { padding-left: 23px; }
+.pf-copy a { color: #a83e00; text-underline-offset: 3px; }
+.pf-note { padding: 18px 20px; border-left: 4px solid var(--pf-orange); border-radius: 0 18px 18px 0; background: rgba(248,128,5,.09); }
+.pf-note p { margin: 0; color: #5b3b25; }
+.pf-legal .pf-footer { color: white; }
+
+.pf-support-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 30px; }
+.pf-support-card { padding: 24px; border: 1px solid rgba(90,47,16,.10); border-radius: 24px; background: white; box-shadow: 0 12px 34px rgba(90,47,16,.06); }
+.pf-support-card h2 { margin: 8px 0 10px; font-size: 21px; }
+.pf-support-card p { margin: 0; color: var(--pf-muted); line-height: 1.55; font-size: 14px; }
+.pf-support-card a { display: inline-flex; margin-top: 16px; color: var(--pf-orange-deep); font-weight: 700; }
+
+@media (max-width: 900px) {
+  .pf-hero { grid-template-columns: 1fr; padding-top: 42px; }
+  .pf-hero h1 { max-width: 9ch; }
+  .pf-phone { width: min(380px, 88vw); }
+  .pf-cards { grid-template-columns: 1fr; }
+  .pf-card { min-height: 390px; }
+  .pf-section-head, .pf-privacy-grid { grid-template-columns: 1fr; }
+  .pf-quiet-grid { grid-template-columns: repeat(2, 1fr); }
+  .pf-quiet-stat:nth-child(2) { border-right: 0; }
+  .pf-quiet-stat:nth-child(-n+2) { border-bottom: 1px solid var(--pf-line); }
+  .pf-footer-grid { grid-template-columns: 1fr 1fr; }
+  .pf-document { grid-template-columns: 1fr; gap: 28px; }
+  .pf-toc { position: static; columns: 2; }
+}
+
+@media (max-width: 620px) {
+  .pf-wrap { width: min(100% - 28px, 1180px); }
+  .pf-nav { padding: 17px 0; }
+  .pf-brand { font-size: 18px; }
+  .pf-brand img { width: 37px; height: 37px; }
+  .pf-navlinks a:not(.pf-pill) { display: none; }
+  .pf-pill { padding: 10px 14px; font-size: 12px; }
+  .pf-hero { min-height: auto; padding: 54px 0 78px; }
+  .pf-hero h1 { font-size: clamp(58px, 19vw, 82px); }
+  .pf-hero-copy { font-size: 18px; }
+  .pf-actions { flex-direction: column; align-items: stretch; }
+  .pf-phone { border-width: 6px; border-radius: 48px; }
+  .pf-section { padding: 78px 0; }
+  .pf-section h2 { font-size: 50px; }
+  .pf-card { min-height: 410px; }
+  .pf-quiet-stat { padding: 20px 16px; }
+  .pf-quiet-stat strong { font-size: 20px; }
+  .pf-footer-grid { grid-template-columns: 1fr 1fr; }
+  .pf-footer-grid > div:first-child { grid-column: 1 / -1; }
+  .pf-footer-base { flex-direction: column; }
+  .pf-legal-hero { padding: 48px 0 36px; }
+  .pf-legal-hero h1 { font-size: 54px; }
+  .pf-document { padding: 44px 0 74px; }
+  .pf-toc { columns: 1; }
+  .pf-support-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pf-phone { animation: pf-float 5.8s ease-in-out infinite; }
+  @keyframes pf-float { 0%,100% { transform: rotate(2deg) translateY(0); } 50% { transform: rotate(1deg) translateY(-13px); } }
+}
