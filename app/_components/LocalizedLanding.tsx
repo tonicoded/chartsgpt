@@ -126,6 +126,21 @@ export default function LocalizedLanding({ content }: { content: LocaleContent }
               <p className="seo-eyebrow">ChartsGPT AI Chart Analyzer</p>
               <h2 id="seo-intro-title">{content.introTitle}</h2>
               <p className="seo-lead">{content.introText}</p>
+              <div className="seo-product-showcase" aria-label="ChartsGPT app preview">
+                <div className="seo-showcase-copy">
+                  <span>{content.audience}</span>
+                  <strong>{content.heroLead} {content.heroAccent}</strong>
+                </div>
+                <figure className="seo-showcase-card seo-showcase-left">
+                  <img src="/screen2.jpg" alt="ChartsGPT AI chart analysis preview" loading="lazy" />
+                </figure>
+                <figure className="seo-showcase-card seo-showcase-main">
+                  <img src="/screen6.jpg" alt="ChartsGPT real-time trading signals preview" loading="lazy" />
+                </figure>
+                <figure className="seo-showcase-card seo-showcase-right">
+                  <img src="/screen5.jpg" alt="ChartsGPT technical indicators preview" loading="lazy" />
+                </figure>
+              </div>
               <div className="seo-card-grid">
                 {content.features.map((feature) => (
                   <article className="seo-card" key={feature.title}><h3>{feature.title}</h3><p>{feature.text}</p></article>
