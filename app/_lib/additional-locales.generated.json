@@ -1,0 +1,2680 @@
+{
+  "ca": {
+    "code": "ca",
+    "hreflang": "ca",
+    "lang": "ca",
+    "label": "Català",
+    "ogLocale": "ca_ES",
+    "title": "ChartsGPT: Anàlisi amb IA | Escàner d'accions i cripto",
+    "description": "Escaneja qualsevol gràfic per obtenir una anàlisi IA a l'instant — nivells, tendència, risc i setups clars. Amb coach IA, watchlist i notícies.",
+    "keywords": [
+      "trader",
+      "trading",
+      "acció",
+      "borsa",
+      "senyals",
+      "tècnic",
+      "inversió",
+      "mercat",
+      "opcions",
+      "indicador",
+      "gràfic",
+      "forex",
+      "cripto"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Escàner d'accions i cripto",
+    "heroLead": "Anàlisi amb IA",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Escàner d'accions i cripto",
+    "phrases": [
+      "de la càmera o captura a l'anàlisi completa en segons",
+      "pregunta el que vulguis sobre un setup i rep respostes clares",
+      "watchlist amb cotitzacions en temps real de cripto, accions, índexs, forex i metalls"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: Anàlisi amb IA",
+    "introText": "ChartsGPT converteix qualsevol gràfic en una anàlisi clara i pràctica en segons. Fes una captura o tria un mercat: la IA identifica el símbol i la temporalitat i analitza estructura, nivells clau, tendència i risc — amb setups de trading clars (entrada, stop i objectius).",
+    "features": [
+      {
+        "title": "Escaneja i analitza",
+        "text": "de la càmera o captura a l'anàlisi completa en segons"
+      },
+      {
+        "title": "Coach de trading IA",
+        "text": "pregunta el que vulguis sobre un setup i rep respostes clares"
+      },
+      {
+        "title": "Preus en directe",
+        "text": "watchlist amb cotitzacions en temps real de cripto, accions, índexs, forex i metalls"
+      },
+      {
+        "title": "Setups de trading",
+        "text": "entrada, stop, objectius i invalidació, amb puntuació de qualitat"
+      }
+    ],
+    "howTitle": "QUÈ OBTENS",
+    "steps": [
+      {
+        "title": "Nivells i patrons",
+        "text": "suport, resistència, estructura i lectura d'espelmes"
+      },
+      {
+        "title": "Notícies i resum diari",
+        "text": "catalitzadors macro i el que mou els teus mercats"
+      },
+      {
+        "title": "Diari i seguiment",
+        "text": "registra operacions i segueix el teu rendiment"
+      }
+    ],
+    "marketsTitle": "MERCATS",
+    "marketsText": "Cripto, accions, índexs, forex, metalls i matèries primeres, amb dades de mercat en directe.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Escàner d'accions i cripto",
+    "ctaText": "Escaneja qualsevol gràfic per obtenir una anàlisi IA a l'instant — nivells, tendència, risc i setups clars. Amb coach IA, watchlist i notícies.",
+    "disclaimer": "ChartsGPT és només per a educació i anàlisi i no és assessorament financer. Operar comporta risc.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "cs": {
+    "code": "cs",
+    "hreflang": "cs",
+    "lang": "cs",
+    "label": "Čeština",
+    "ogLocale": "cs_CZ",
+    "title": "ChartsGPT: Analýza grafů AI | Skener akcií a krypta",
+    "description": "Naskenuj jakýkoli graf pro okamžitou AI analýzu — úrovně, trend, riziko a jasné setupy. S AI koučem, watchlistem a zprávami z trhu.",
+    "keywords": [
+      "trader",
+      "trading",
+      "akcie",
+      "burza",
+      "signál",
+      "technická",
+      "formace",
+      "investice",
+      "trh",
+      "opce",
+      "indikátor",
+      "graf",
+      "forex",
+      "krypto"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Skener akcií a krypta",
+    "heroLead": "Analýza grafů AI",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Skener akcií a krypta",
+    "phrases": [
+      "z kamery nebo screenshotu k plné analýze během sekund",
+      "zeptej se na cokoli k setupu a dostaň srozumitelnou odpověď",
+      "watchlist s cenami v reálném čase pro krypto, akcie, indexy, forex a kovy"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: Analýza grafů AI",
+    "introText": "ChartsGPT promění jakýkoli graf v jasnou a praktickou analýzu během sekund. Vyfoť obrazovku nebo vyber trh: AI rozpozná symbol a časový rámec a rozebere strukturu, klíčové úrovně, trend a riziko — s jasnými obchodními setupy (vstup, stop a cíle).",
+    "features": [
+      {
+        "title": "Sken a analýza",
+        "text": "z kamery nebo screenshotu k plné analýze během sekund"
+      },
+      {
+        "title": "AI obchodní kouč",
+        "text": "zeptej se na cokoli k setupu a dostaň srozumitelnou odpověď"
+      },
+      {
+        "title": "Živé ceny",
+        "text": "watchlist s cenami v reálném čase pro krypto, akcie, indexy, forex a kovy"
+      },
+      {
+        "title": "Obchodní setupy",
+        "text": "vstup, stop, cíle a invalidace, s hodnocením kvality"
+      }
+    ],
+    "howTitle": "CO ZÍSKÁŠ",
+    "steps": [
+      {
+        "title": "Úrovně a formace",
+        "text": "support, rezistence, struktura a čtení svíček"
+      },
+      {
+        "title": "Zprávy a denní přehled",
+        "text": "makro události a to, co hýbe tvými trhy"
+      },
+      {
+        "title": "Deník a sledování",
+        "text": "zaznamenávej obchody a sleduj výkonnost"
+      }
+    ],
+    "marketsTitle": "TRHY",
+    "marketsText": "Krypto, akcie, indexy, forex, kovy a komodity, na základě živých tržních dat.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Skener akcií a krypta",
+    "ctaText": "Naskenuj jakýkoli graf pro okamžitou AI analýzu — úrovně, trend, riziko a jasné setupy. S AI koučem, watchlistem a zprávami z trhu.",
+    "disclaimer": "ChartsGPT slouží pouze ke vzdělávání a analýze a není finančním poradenstvím. Obchodování je rizikové.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "da": {
+    "code": "da",
+    "hreflang": "da",
+    "lang": "da",
+    "label": "Dansk",
+    "ogLocale": "da_DK",
+    "title": "ChartsGPT: AI graf-analyse | Aktie- & krypto-scanner",
+    "description": "Scan enhver graf for en øjeblikkelig AI-analyse — niveauer, trend, risiko og klare setups. Med AI-coach, watchlist og markedsnyheder.",
+    "keywords": [
+      "trader",
+      "trading",
+      "aktie",
+      "børs",
+      "signal",
+      "teknisk",
+      "investering",
+      "marked",
+      "optioner",
+      "indikator",
+      "graf",
+      "forex",
+      "krypto"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Aktie- & krypto-scanner",
+    "heroLead": "AI graf-analyse",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Aktie- & krypto-scanner",
+    "phrases": [
+      "fra kamera eller screenshot til fuld analyse på sekunder",
+      "spørg om alt vedrørende et setup og få klare svar",
+      "watchlist med realtidskurser for krypto, aktier, indeks, forex og metaller"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: AI graf-analyse",
+    "introText": "ChartsGPT forvandler enhver graf til en klar og brugbar analyse på sekunder. Tag et screenshot eller vælg et marked: AI'en genkender symbol og tidsramme og analyserer struktur, vigtige niveauer, trend og risiko — med klare trade-setups (indgang, stop og mål).",
+    "features": [
+      {
+        "title": "Scan & analysér",
+        "text": "fra kamera eller screenshot til fuld analyse på sekunder"
+      },
+      {
+        "title": "AI-trading-coach",
+        "text": "spørg om alt vedrørende et setup og få klare svar"
+      },
+      {
+        "title": "Live priser",
+        "text": "watchlist med realtidskurser for krypto, aktier, indeks, forex og metaller"
+      },
+      {
+        "title": "Trade-setups",
+        "text": "indgang, stop, mål og invalidering, med kvalitetsscore"
+      }
+    ],
+    "howTitle": "DET FÅR DU",
+    "steps": [
+      {
+        "title": "Niveauer & mønstre",
+        "text": "støtte, modstand, struktur og lys-læsning"
+      },
+      {
+        "title": "Markedsnyheder & dagligt overblik",
+        "text": "makrobegivenheder og det, der bevæger dine markeder"
+      },
+      {
+        "title": "Journal & tracker",
+        "text": "log handler og følg din performance"
+      }
+    ],
+    "marketsTitle": "MARKEDER",
+    "marketsText": "Krypto, aktier, indeks, forex, metaller og råvarer, baseret på live markedsdata.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Aktie- & krypto-scanner",
+    "ctaText": "Scan enhver graf for en øjeblikkelig AI-analyse — niveauer, trend, risiko og klare setups. Med AI-coach, watchlist og markedsnyheder.",
+    "disclaimer": "ChartsGPT er kun til uddannelse og analyse og er ikke finansiel rådgivning. Handel indebærer risiko.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "el": {
+    "code": "el",
+    "hreflang": "el",
+    "lang": "el",
+    "label": "Ελληνικά",
+    "ogLocale": "el_GR",
+    "title": "ChartsGPT: Ανάλυση με AI | Σαρωτής Μετοχών & Crypto",
+    "description": "Σάρωσε οποιοδήποτε γράφημα για άμεση ανάλυση AI — επίπεδα, τάση, ρίσκο και ξεκάθαρα setup. Με προπονητή AI, watchlist και ειδήσεις αγοράς.",
+    "keywords": [
+      "trader",
+      "trading",
+      "μετοχή",
+      "σήμα",
+      "τεχνική",
+      "κερί",
+      "μοτίβο",
+      "επένδυση",
+      "αγορά",
+      "δείκτης",
+      "γράφημα",
+      "forex",
+      "crypto"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Σαρωτής Μετοχών & Crypto",
+    "heroLead": "Ανάλυση με AI",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Σαρωτής Μετοχών & Crypto",
+    "phrases": [
+      "από κάμερα ή στιγμιότυπο σε πλήρη ανάλυση σε δευτερόλεπτα",
+      "ρώτα ό,τι θες για ένα setup και πάρε ξεκάθαρη απάντηση",
+      "watchlist με τιμές σε πραγματικό χρόνο για crypto, μετοχές, δείκτες, forex και μέταλλα"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: Ανάλυση με AI",
+    "introText": "Το ChartsGPT μετατρέπει οποιοδήποτε γράφημα σε ξεκάθαρη, πρακτική ανάλυση μέσα σε δευτερόλεπτα. Τράβα ένα στιγμιότυπο ή διάλεξε αγορά: το AI αναγνωρίζει το σύμβολο και το χρονικό πλαίσιο και αναλύει δομή, βασικά επίπεδα, τάση και ρίσκο — με ξεκάθαρα setup (είσοδος, stop και στόχοι).",
+    "features": [
+      {
+        "title": "Σάρωση & ανάλυση",
+        "text": "από κάμερα ή στιγμιότυπο σε πλήρη ανάλυση σε δευτερόλεπτα"
+      },
+      {
+        "title": "Προπονητής trading AI",
+        "text": "ρώτα ό,τι θες για ένα setup και πάρε ξεκάθαρη απάντηση"
+      },
+      {
+        "title": "Ζωντανές τιμές",
+        "text": "watchlist με τιμές σε πραγματικό χρόνο για crypto, μετοχές, δείκτες, forex και μέταλλα"
+      },
+      {
+        "title": "Setup συναλλαγών",
+        "text": "είσοδος, stop, στόχοι και ακύρωση, με βαθμολογία ποιότητας"
+      }
+    ],
+    "howTitle": "ΤΙ ΠΑΙΡΝΕΙΣ",
+    "steps": [
+      {
+        "title": "Επίπεδα & μοτίβα",
+        "text": "στήριξη, αντίσταση, δομή και ανάγνωση κεριών"
+      },
+      {
+        "title": "Ειδήσεις & ημερήσια σύνοψη",
+        "text": "μακροοικονομικοί καταλύτες και ό,τι κινεί τις αγορές σου"
+      },
+      {
+        "title": "Ημερολόγιο & παρακολούθηση",
+        "text": "κατέγραψε συναλλαγές και παρακολούθησε την απόδοση"
+      }
+    ],
+    "marketsTitle": "ΑΓΟΡΕΣ",
+    "marketsText": "Crypto, μετοχές, δείκτες, forex, μέταλλα και εμπορεύματα, με ζωντανά δεδομένα αγοράς.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Σαρωτής Μετοχών & Crypto",
+    "ctaText": "Σάρωσε οποιοδήποτε γράφημα για άμεση ανάλυση AI — επίπεδα, τάση, ρίσκο και ξεκάθαρα setup. Με προπονητή AI, watchlist και ειδήσεις αγοράς.",
+    "disclaimer": "Το ChartsGPT είναι μόνο για εκπαίδευση και ανάλυση και δεν αποτελεί οικονομική συμβουλή. Οι συναλλαγές έχουν ρίσκο.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "en-au": {
+    "code": "en-au",
+    "hreflang": "en-AU",
+    "lang": "en",
+    "label": "English (Australia)",
+    "ogLocale": "en_AU",
+    "title": "ChartsGPT: AI Chart Analysis | Stock, Crypto & Forex Scanner",
+    "description": "Snap any chart for an instant AI read — key levels, trend, risk and clean trade setups. Plus a live AI coach, watchlist and market news.",
+    "keywords": [
+      "trader",
+      "trading",
+      "signal",
+      "technical",
+      "candlestick",
+      "pattern",
+      "invest",
+      "market",
+      "day",
+      "swing",
+      "options",
+      "indicator",
+      "setup"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Stock, Crypto & Forex Scanner",
+    "heroLead": "AI Chart Analysis",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Stock, Crypto & Forex Scanner",
+    "phrases": [
+      "camera or screenshot to full analysis in seconds",
+      "ask anything about a setup, get plain answers",
+      "a watchlist with real-time quotes for crypto, stocks, indices, forex and metals"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: AI Chart Analysis",
+    "introText": "ChartsGPT turns any chart into a clear, actionable read in seconds. Snap a screenshot or pick a market and the AI identifies the symbol and timeframe, then breaks down structure, key levels, trend and risk — with clean, rule-based trade setups (entry, stop and targets).",
+    "features": [
+      {
+        "title": "Scan & analyze",
+        "text": "camera or screenshot to full analysis in seconds"
+      },
+      {
+        "title": "AI trading coach",
+        "text": "ask anything about a setup, get plain answers"
+      },
+      {
+        "title": "Live prices",
+        "text": "a watchlist with real-time quotes for crypto, stocks, indices, forex and metals"
+      },
+      {
+        "title": "Trade setups",
+        "text": "entry, stop, targets and invalidation, scored for quality"
+      }
+    ],
+    "howTitle": "WHAT YOU GET",
+    "steps": [
+      {
+        "title": "Key levels & patterns",
+        "text": "support, resistance, structure and candlestick reads"
+      },
+      {
+        "title": "Market news & daily brief",
+        "text": "macro catalysts and what moves your markets"
+      },
+      {
+        "title": "Journal & tracker",
+        "text": "log trades and follow your performance"
+      }
+    ],
+    "marketsTitle": "MARKETS",
+    "marketsText": "Crypto, stocks, indices, forex, metals and commodities, powered by live market data.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Stock, Crypto & Forex Scanner",
+    "ctaText": "Snap any chart for an instant AI read — key levels, trend, risk and clean trade setups. Plus a live AI coach, watchlist and market news.",
+    "disclaimer": "Built for day traders, swing traders and investors who want a faster, clearer read of any chart.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "en-ca": {
+    "code": "en-ca",
+    "hreflang": "en-CA",
+    "lang": "en",
+    "label": "English (Canada)",
+    "ogLocale": "en_CA",
+    "title": "ChartsGPT: AI Chart Analysis | Stock, Crypto & Forex Scanner",
+    "description": "Snap any chart for an instant AI read — key levels, trend, risk and clean trade setups. Plus a live AI coach, watchlist and market news.",
+    "keywords": [
+      "trader",
+      "trading",
+      "signal",
+      "technical",
+      "candlestick",
+      "pattern",
+      "invest",
+      "market",
+      "day",
+      "swing",
+      "options",
+      "indicator",
+      "setup"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Stock, Crypto & Forex Scanner",
+    "heroLead": "AI Chart Analysis",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Stock, Crypto & Forex Scanner",
+    "phrases": [
+      "camera or screenshot to full analysis in seconds",
+      "ask anything about a setup, get plain answers",
+      "a watchlist with real-time quotes for crypto, stocks, indices, forex and metals"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: AI Chart Analysis",
+    "introText": "ChartsGPT turns any chart into a clear, actionable read in seconds. Snap a screenshot or pick a market and the AI identifies the symbol and timeframe, then breaks down structure, key levels, trend and risk — with clean, rule-based trade setups (entry, stop and targets).",
+    "features": [
+      {
+        "title": "Scan & analyze",
+        "text": "camera or screenshot to full analysis in seconds"
+      },
+      {
+        "title": "AI trading coach",
+        "text": "ask anything about a setup, get plain answers"
+      },
+      {
+        "title": "Live prices",
+        "text": "a watchlist with real-time quotes for crypto, stocks, indices, forex and metals"
+      },
+      {
+        "title": "Trade setups",
+        "text": "entry, stop, targets and invalidation, scored for quality"
+      }
+    ],
+    "howTitle": "WHAT YOU GET",
+    "steps": [
+      {
+        "title": "Key levels & patterns",
+        "text": "support, resistance, structure and candlestick reads"
+      },
+      {
+        "title": "Market news & daily brief",
+        "text": "macro catalysts and what moves your markets"
+      },
+      {
+        "title": "Journal & tracker",
+        "text": "log trades and follow your performance"
+      }
+    ],
+    "marketsTitle": "MARKETS",
+    "marketsText": "Crypto, stocks, indices, forex, metals and commodities, powered by live market data.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Stock, Crypto & Forex Scanner",
+    "ctaText": "Snap any chart for an instant AI read — key levels, trend, risk and clean trade setups. Plus a live AI coach, watchlist and market news.",
+    "disclaimer": "Built for day traders, swing traders and investors who want a faster, clearer read of any chart.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "en-gb": {
+    "code": "en-gb",
+    "hreflang": "en-GB",
+    "lang": "en",
+    "label": "English (UK)",
+    "ogLocale": "en_GB",
+    "title": "ChartsGPT: AI Chart Analysis | Stock, Crypto & Forex Scanner",
+    "description": "Snap any chart for an instant AI read — key levels, trend, risk and clean trade setups. Plus a live AI coach, watchlist and market news.",
+    "keywords": [
+      "trader",
+      "trading",
+      "signal",
+      "technical",
+      "candlestick",
+      "pattern",
+      "invest",
+      "market",
+      "day",
+      "swing",
+      "options",
+      "indicator",
+      "setup"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Stock, Crypto & Forex Scanner",
+    "heroLead": "AI Chart Analysis",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Stock, Crypto & Forex Scanner",
+    "phrases": [
+      "camera or screenshot to full analysis in seconds",
+      "ask anything about a setup, get plain answers",
+      "a watchlist with real-time quotes for crypto, stocks, indices, forex and metals"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: AI Chart Analysis",
+    "introText": "ChartsGPT turns any chart into a clear, actionable read in seconds. Snap a screenshot or pick a market and the AI identifies the symbol and timeframe, then breaks down structure, key levels, trend and risk — with clean, rule-based trade setups (entry, stop and targets).",
+    "features": [
+      {
+        "title": "Scan & analyze",
+        "text": "camera or screenshot to full analysis in seconds"
+      },
+      {
+        "title": "AI trading coach",
+        "text": "ask anything about a setup, get plain answers"
+      },
+      {
+        "title": "Live prices",
+        "text": "a watchlist with real-time quotes for crypto, stocks, indices, forex and metals"
+      },
+      {
+        "title": "Trade setups",
+        "text": "entry, stop, targets and invalidation, scored for quality"
+      }
+    ],
+    "howTitle": "WHAT YOU GET",
+    "steps": [
+      {
+        "title": "Key levels & patterns",
+        "text": "support, resistance, structure and candlestick reads"
+      },
+      {
+        "title": "Market news & daily brief",
+        "text": "macro catalysts and what moves your markets"
+      },
+      {
+        "title": "Journal & tracker",
+        "text": "log trades and follow your performance"
+      }
+    ],
+    "marketsTitle": "MARKETS",
+    "marketsText": "Crypto, stocks, indices, forex, metals and commodities, powered by live market data.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Stock, Crypto & Forex Scanner",
+    "ctaText": "Snap any chart for an instant AI read — key levels, trend, risk and clean trade setups. Plus a live AI coach, watchlist and market news.",
+    "disclaimer": "Built for day traders, swing traders and investors who want a faster, clearer read of any chart.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "es-mx": {
+    "code": "es-mx",
+    "hreflang": "es-MX",
+    "lang": "es",
+    "label": "Español (México)",
+    "ogLocale": "es_MX",
+    "title": "ChartsGPT: Trading con IA | Escáner Acciones y Cripto",
+    "description": "Escanea cualquier gráfico y obtén un análisis con IA al instante — niveles, tendencia, riesgo y setups claros. Con coach IA, watchlist y noticias.",
+    "keywords": [
+      "trader",
+      "señales",
+      "técnico",
+      "análisis",
+      "patrón",
+      "invertir",
+      "mercado",
+      "bolsa",
+      "opciones",
+      "indicador",
+      "gráfico",
+      "divisas"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Escáner Acciones y Cripto",
+    "heroLead": "Trading con IA",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Escáner Acciones y Cripto",
+    "phrases": [
+      "de la cámara o captura al análisis completo en segundos",
+      "pregunta lo que quieras sobre un setup y recibe respuestas claras",
+      "watchlist con cotizaciones en tiempo real de cripto, acciones, índices, forex y metales"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: Trading con IA",
+    "introText": "ChartsGPT convierte cualquier gráfico en un análisis claro y accionable en segundos. Haz una captura o elige un mercado: la IA identifica el símbolo y la temporalidad y analiza estructura, niveles clave, tendencia y riesgo — con setups de trading claros (entrada, stop y objetivos).",
+    "features": [
+      {
+        "title": "Escanear y analizar",
+        "text": "de la cámara o captura al análisis completo en segundos"
+      },
+      {
+        "title": "Coach de trading IA",
+        "text": "pregunta lo que quieras sobre un setup y recibe respuestas claras"
+      },
+      {
+        "title": "Precios en vivo",
+        "text": "watchlist con cotizaciones en tiempo real de cripto, acciones, índices, forex y metales"
+      },
+      {
+        "title": "Setups de trading",
+        "text": "entrada, stop, objetivos e invalidación, con puntuación de calidad"
+      }
+    ],
+    "howTitle": "QUÉ INCLUYE",
+    "steps": [
+      {
+        "title": "Niveles y patrones",
+        "text": "soporte, resistencia, estructura y lectura de velas"
+      },
+      {
+        "title": "Noticias y resumen diario",
+        "text": "catalizadores macro y lo que mueve tus mercados"
+      },
+      {
+        "title": "Diario y seguimiento",
+        "text": "registra operaciones y sigue tu rendimiento"
+      }
+    ],
+    "marketsTitle": "MERCADOS",
+    "marketsText": "Cripto, acciones, índices, forex, metales y materias primas, con datos de mercado en vivo.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Escáner Acciones y Cripto",
+    "ctaText": "Escanea cualquier gráfico y obtén un análisis con IA al instante — niveles, tendencia, riesgo y setups claros. Con coach IA, watchlist y noticias.",
+    "disclaimer": "Para day traders, swing traders e inversores que quieren leer cualquier gráfico más rápido y con más claridad.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "fi": {
+    "code": "fi",
+    "hreflang": "fi",
+    "lang": "fi",
+    "label": "Suomi",
+    "ogLocale": "fi_FI",
+    "title": "ChartsGPT: AI-kaavioanalyysi | Osake- ja kryptoskanneri",
+    "description": "Skannaa mikä tahansa kaavio ja saat välittömän AI-analyysin — tasot, trendi, riski ja selkeät setupit. AI-valmentaja, seurantalista ja uutiset.",
+    "keywords": [
+      "trader",
+      "trading",
+      "osake",
+      "pörssi",
+      "signaali",
+      "tekninen",
+      "sijoitus",
+      "markkina",
+      "indikaattori",
+      "kaavio",
+      "forex",
+      "krypto"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Osake- ja kryptoskanneri",
+    "heroLead": "AI-kaavioanalyysi",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Osake- ja kryptoskanneri",
+    "phrases": [
+      "kamerasta tai kuvakaappauksesta täyteen analyysiin sekunneissa",
+      "kysy setupista mitä vain ja saat selkeät vastaukset",
+      "seurantalista krypto-, osake-, indeksi-, forex- ja metallikursseille"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: AI-kaavioanalyysi",
+    "introText": "ChartsGPT muuttaa minkä tahansa kaavion selkeäksi ja käytännölliseksi analyysiksi sekunneissa. Ota kuvakaappaus tai valitse markkina: tekoäly tunnistaa symbolin ja aikavälin ja analysoi rakenteen, keskeiset tasot, trendin ja riskin — selkeillä kaupankäyntisetupeilla (sisääntulo, stop ja tavoitteet).",
+    "features": [
+      {
+        "title": "Skannaa ja analysoi",
+        "text": "kamerasta tai kuvakaappauksesta täyteen analyysiin sekunneissa"
+      },
+      {
+        "title": "AI-kaupankäyntivalmentaja",
+        "text": "kysy setupista mitä vain ja saat selkeät vastaukset"
+      },
+      {
+        "title": "Reaaliaikaiset hinnat",
+        "text": "seurantalista krypto-, osake-, indeksi-, forex- ja metallikursseille"
+      },
+      {
+        "title": "Kaupankäyntisetupit",
+        "text": "sisääntulo, stop, tavoitteet ja mitätöinti, laatupisteillä"
+      }
+    ],
+    "howTitle": "MITÄ SAAT",
+    "steps": [
+      {
+        "title": "Tasot ja kuviot",
+        "text": "tuki, vastus, rakenne ja kynttilöiden luku"
+      },
+      {
+        "title": "Markkinauutiset ja päiväkatsaus",
+        "text": "makrotapahtumat ja markkinoita liikuttavat tekijät"
+      },
+      {
+        "title": "Päiväkirja ja seuranta",
+        "text": "kirjaa kaupat ja seuraa tuloksia"
+      }
+    ],
+    "marketsTitle": "MARKKINAT",
+    "marketsText": "Krypto, osakkeet, indeksit, forex, metallit ja hyödykkeet, reaaliaikaisella markkinadatalla.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Osake- ja kryptoskanneri",
+    "ctaText": "Skannaa mikä tahansa kaavio ja saat välittömän AI-analyysin — tasot, trendi, riski ja selkeät setupit. AI-valmentaja, seurantalista ja uutiset.",
+    "disclaimer": "ChartsGPT on tarkoitettu vain koulutukseen ja analyysiin eikä ole sijoitusneuvontaa. Kaupankäyntiin liittyy riski.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "fr-ca": {
+    "code": "fr-ca",
+    "hreflang": "fr-CA",
+    "lang": "fr",
+    "label": "Français (Canada)",
+    "ogLocale": "fr_CA",
+    "title": "ChartsGPT : Analyse IA | Scanner Actions & Crypto",
+    "description": "Scannez n'importe quel graphique pour une analyse IA instantanée — niveaux, tendance, risque et setups clairs. Avec coach IA, watchlist et actus.",
+    "keywords": [
+      "trader",
+      "trading",
+      "signal",
+      "technique",
+      "chandelier",
+      "investir",
+      "marché",
+      "bourse",
+      "options",
+      "indicateur",
+      "graphique",
+      "forex"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Scanner Actions & Crypto",
+    "heroLead": "Analyse IA",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Scanner Actions & Crypto",
+    "phrases": [
+      "de la caméra ou d'une capture à une analyse complète en secondes",
+      "posez toutes vos questions sur un setup et obtenez des réponses claires",
+      "watchlist avec cotations en temps réel : crypto, actions, indices, forex et métaux"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT : Analyse IA",
+    "introText": "ChartsGPT transforme n'importe quel graphique en une analyse claire et exploitable en quelques secondes. Prenez une capture ou choisissez un marché : l'IA identifie le symbole et l'unité de temps, puis analyse la structure, les niveaux clés, la tendance et le risque — avec des setups de trading clairs (entrée, stop et objectifs).",
+    "features": [
+      {
+        "title": "Scanner et analyser",
+        "text": "de la caméra ou d'une capture à une analyse complète en secondes"
+      },
+      {
+        "title": "Coach de trading IA",
+        "text": "posez toutes vos questions sur un setup et obtenez des réponses claires"
+      },
+      {
+        "title": "Prix en direct",
+        "text": "watchlist avec cotations en temps réel : crypto, actions, indices, forex et métaux"
+      },
+      {
+        "title": "Setups de trading",
+        "text": "entrée, stop, objectifs et invalidation, avec score de qualité"
+      }
+    ],
+    "howTitle": "CE QUE VOUS OBTENEZ",
+    "steps": [
+      {
+        "title": "Niveaux et figures",
+        "text": "support, résistance, structure et lecture des chandeliers"
+      },
+      {
+        "title": "Actus et brief quotidien",
+        "text": "catalyseurs macro et ce qui fait bouger vos marchés"
+      },
+      {
+        "title": "Journal et suivi",
+        "text": "enregistrez vos trades et suivez vos performances"
+      }
+    ],
+    "marketsTitle": "MARCHÉS",
+    "marketsText": "Crypto, actions, indices, forex, métaux et matières premières, avec des données de marché en direct.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Scanner Actions & Crypto",
+    "ctaText": "Scannez n'importe quel graphique pour une analyse IA instantanée — niveaux, tendance, risque et setups clairs. Avec coach IA, watchlist et actus.",
+    "disclaimer": "Pour les day traders, swing traders et investisseurs qui veulent lire chaque graphique plus vite et plus clairement.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "he": {
+    "code": "he",
+    "hreflang": "he",
+    "lang": "he",
+    "dir": "rtl",
+    "label": "עברית",
+    "ogLocale": "he_IL",
+    "title": "ChartsGPT: ניתוח גרפים AI | מניות, קריפטו ופורקס",
+    "description": "סרקו כל גרף וקבלו ניתוח AI מיידי — רמות, מגמה, סיכון וסטאפים ברורים. עם מאמן AI, רשימת מעקב וחדשות שוק.",
+    "keywords": [
+      "מסחר",
+      "סוחר",
+      "מניה",
+      "בורסה",
+      "איתות",
+      "טכני",
+      "נר",
+      "תבנית",
+      "השקעה",
+      "שוק",
+      "אופציות",
+      "אינדיקטור",
+      "גרף",
+      "פורקס",
+      "קריפטו"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "מניות, קריפטו ופורקס",
+    "heroLead": "ניתוח גרפים AI",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "מניות, קריפטו ופורקס",
+    "phrases": [
+      "מהמצלמה או מצילום מסך לניתוח מלא בשניות",
+      "שאלו כל דבר על סטאפ וקבלו תשובה ברורה",
+      "רשימת מעקב לקריפטו, מניות, מדדים, פורקס ומתכות"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: ניתוח גרפים AI",
+    "introText": "ChartsGPT הופך כל גרף לניתוח ברור ומעשי תוך שניות. צלמו מסך או בחרו שוק — ה-AI מזהה את הנכס ואת טווח הזמן ומנתח מבנה, רמות מפתח, מגמה וסיכון, עם סטאפים ברורים למסחר (כניסה, סטופ ויעדים).",
+    "features": [
+      {
+        "title": "סריקה וניתוח",
+        "text": "מהמצלמה או מצילום מסך לניתוח מלא בשניות"
+      },
+      {
+        "title": "מאמן מסחר AI",
+        "text": "שאלו כל דבר על סטאפ וקבלו תשובה ברורה"
+      },
+      {
+        "title": "מחירים בזמן אמת",
+        "text": "רשימת מעקב לקריפטו, מניות, מדדים, פורקס ומתכות"
+      },
+      {
+        "title": "סטאפים למסחר",
+        "text": "כניסה, סטופ, יעדים וביטול, עם ציון איכות"
+      }
+    ],
+    "howTitle": "מה תקבלו",
+    "steps": [
+      {
+        "title": "רמות ותבניות",
+        "text": "תמיכה, התנגדות, מבנה וקריאת נרות"
+      },
+      {
+        "title": "חדשות שוק ותקציר יומי",
+        "text": "אירועי מאקרו ומה שמזיז את השווקים"
+      },
+      {
+        "title": "יומן ומעקב",
+        "text": "תעדו עסקאות ועקבו אחר הביצועים"
+      }
+    ],
+    "marketsTitle": "שווקים",
+    "marketsText": "קריפטו, מניות, מדדים, פורקס, מתכות וסחורות, על בסיס נתוני שוק בזמן אמת.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "מניות, קריפטו ופורקס",
+    "ctaText": "סרקו כל גרף וקבלו ניתוח AI מיידי — רמות, מגמה, סיכון וסטאפים ברורים. עם מאמן AI, רשימת מעקב וחדשות שוק.",
+    "disclaimer": "ChartsGPT מיועד ללימוד וניתוח בלבד ואינו ייעוץ פיננסי. במסחר יש סיכון.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "hr": {
+    "code": "hr",
+    "hreflang": "hr",
+    "lang": "hr",
+    "label": "Hrvatski",
+    "ogLocale": "hr_HR",
+    "title": "ChartsGPT: AI analiza grafa | Skener dionica i kripta",
+    "description": "Skeniraj bilo koji grafikon za trenutnu AI analizu — razine, trend, rizik i jasni setupi. Uz AI trenera, watchlist i tržišne vijesti.",
+    "keywords": [
+      "trader",
+      "trading",
+      "dionica",
+      "burza",
+      "signal",
+      "tehnička",
+      "ulaganje",
+      "tržište",
+      "opcije",
+      "indikator",
+      "graf",
+      "forex",
+      "kripto"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Skener dionica i kripta",
+    "heroLead": "AI analiza grafa",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Skener dionica i kripta",
+    "phrases": [
+      "od kamere ili snimke zaslona do potpune analize u sekundama",
+      "pitaj bilo što o setupu i dobij jasan odgovor",
+      "watchlist s cijenama u stvarnom vremenu za kripto, dionice, indekse, forex i metale"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: AI analiza grafa",
+    "introText": "ChartsGPT pretvara bilo koji grafikon u jasnu i praktičnu analizu u nekoliko sekundi. Snimi zaslon ili odaberi tržište: AI prepoznaje simbol i vremenski okvir te analizira strukturu, ključne razine, trend i rizik — s jasnim setupima (ulaz, stop i ciljevi).",
+    "features": [
+      {
+        "title": "Skeniraj i analiziraj",
+        "text": "od kamere ili snimke zaslona do potpune analize u sekundama"
+      },
+      {
+        "title": "AI trgovački trener",
+        "text": "pitaj bilo što o setupu i dobij jasan odgovor"
+      },
+      {
+        "title": "Cijene uživo",
+        "text": "watchlist s cijenama u stvarnom vremenu za kripto, dionice, indekse, forex i metale"
+      },
+      {
+        "title": "Trgovački setupi",
+        "text": "ulaz, stop, ciljevi i poništenje, s ocjenom kvalitete"
+      }
+    ],
+    "howTitle": "ŠTO DOBIVAŠ",
+    "steps": [
+      {
+        "title": "Razine i formacije",
+        "text": "podrška, otpor, struktura i čitanje svijeća"
+      },
+      {
+        "title": "Vijesti i dnevni pregled",
+        "text": "makro događaji i ono što pokreće tvoja tržišta"
+      },
+      {
+        "title": "Dnevnik i praćenje",
+        "text": "bilježi trgovine i prati uspješnost"
+      }
+    ],
+    "marketsTitle": "TRŽIŠTA",
+    "marketsText": "Kripto, dionice, indeksi, forex, metali i sirovine, na temelju tržišnih podataka uživo.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Skener dionica i kripta",
+    "ctaText": "Skeniraj bilo koji grafikon za trenutnu AI analizu — razine, trend, rizik i jasni setupi. Uz AI trenera, watchlist i tržišne vijesti.",
+    "disclaimer": "ChartsGPT služi samo za edukaciju i analizu i nije financijski savjet. Trgovanje nosi rizik.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "hu": {
+    "code": "hu",
+    "hreflang": "hu",
+    "lang": "hu",
+    "label": "Magyar",
+    "ogLocale": "hu_HU",
+    "title": "ChartsGPT: AI diagram elemzés | Részvény és kripto szkenner",
+    "description": "Szkennelj bármilyen chartot azonnali AI elemzésért — szintek, trend, kockázat és tiszta setupok. AI coachcsal, figyelőlistával és hírekkel.",
+    "keywords": [
+      "trader",
+      "trading",
+      "részvény",
+      "tőzsde",
+      "jelzés",
+      "technikai",
+      "befektetés",
+      "piac",
+      "opció",
+      "indikátor",
+      "chart",
+      "forex",
+      "kripto"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Részvény és kripto szkenner",
+    "heroLead": "AI diagram elemzés",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Részvény és kripto szkenner",
+    "phrases": [
+      "kamerából vagy képernyőképből teljes elemzés másodpercek alatt",
+      "kérdezz bármit egy setupról, és érthető választ kapsz",
+      "figyelőlista valós idejű árakkal: kripto, részvények, indexek, forex és fémek"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: AI diagram elemzés",
+    "introText": "A ChartsGPT másodpercek alatt tiszta, gyakorlati elemzéssé alakít bármilyen chartot. Készíts képernyőképet vagy válassz piacot: az AI felismeri a szimbólumot és az időtávot, majd elemzi a struktúrát, a kulcsszinteket, a trendet és a kockázatot — tiszta kereskedési setupokkal (belépő, stop és célok).",
+    "features": [
+      {
+        "title": "Szkennelés és elemzés",
+        "text": "kamerából vagy képernyőképből teljes elemzés másodpercek alatt"
+      },
+      {
+        "title": "AI kereskedési coach",
+        "text": "kérdezz bármit egy setupról, és érthető választ kapsz"
+      },
+      {
+        "title": "Élő árak",
+        "text": "figyelőlista valós idejű árakkal: kripto, részvények, indexek, forex és fémek"
+      },
+      {
+        "title": "Kereskedési setupok",
+        "text": "belépő, stop, célok és érvénytelenítés, minőségi pontszámmal"
+      }
+    ],
+    "howTitle": "MIT KAPSZ",
+    "steps": [
+      {
+        "title": "Szintek és alakzatok",
+        "text": "támasz, ellenállás, struktúra és gyertyaolvasás"
+      },
+      {
+        "title": "Hírek és napi összefoglaló",
+        "text": "makroesemények és ami mozgatja a piacaidat"
+      },
+      {
+        "title": "Napló és követés",
+        "text": "rögzítsd az ügyleteket és kövesd a teljesítményt"
+      }
+    ],
+    "marketsTitle": "PIACOK",
+    "marketsText": "Kripto, részvények, indexek, forex, fémek és nyersanyagok, élő piaci adatok alapján.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Részvény és kripto szkenner",
+    "ctaText": "Szkennelj bármilyen chartot azonnali AI elemzésért — szintek, trend, kockázat és tiszta setupok. AI coachcsal, figyelőlistával és hírekkel.",
+    "disclaimer": "A ChartsGPT kizárólag oktatási és elemzési célú, és nem pénzügyi tanácsadás. A kereskedés kockázattal jár.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "id": {
+    "code": "id",
+    "hreflang": "id",
+    "lang": "id",
+    "label": "Bahasa Indonesia",
+    "ogLocale": "id_ID",
+    "title": "ChartsGPT: Analisis Chart AI | Pemindai Saham & Kripto",
+    "description": "Pindai chart apa pun untuk analisis AI instan — level, tren, risiko, dan setup yang jelas. Dengan pelatih AI, watchlist, dan berita pasar.",
+    "keywords": [
+      "trader",
+      "trading",
+      "saham",
+      "bursa",
+      "sinyal",
+      "teknikal",
+      "pola",
+      "investasi",
+      "pasar",
+      "opsi",
+      "indikator",
+      "grafik",
+      "forex",
+      "kripto"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Pemindai Saham & Kripto",
+    "heroLead": "Analisis Chart AI",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Pemindai Saham & Kripto",
+    "phrases": [
+      "dari kamera atau tangkapan layar ke analisis lengkap dalam detik",
+      "tanyakan apa saja tentang sebuah setup dan dapatkan jawaban jelas",
+      "watchlist dengan kutipan real-time kripto, saham, indeks, forex, dan logam"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: Analisis Chart AI",
+    "introText": "ChartsGPT mengubah chart apa pun menjadi analisis yang jelas dan praktis dalam hitungan detik. Ambil tangkapan layar atau pilih pasar: AI mengenali simbol dan time frame lalu menganalisis struktur, level penting, tren, dan risiko — dengan setup trading yang jelas (entry, stop, dan target).",
+    "features": [
+      {
+        "title": "Pindai & analisis",
+        "text": "dari kamera atau tangkapan layar ke analisis lengkap dalam detik"
+      },
+      {
+        "title": "Pelatih trading AI",
+        "text": "tanyakan apa saja tentang sebuah setup dan dapatkan jawaban jelas"
+      },
+      {
+        "title": "Harga live",
+        "text": "watchlist dengan kutipan real-time kripto, saham, indeks, forex, dan logam"
+      },
+      {
+        "title": "Setup trading",
+        "text": "entry, stop, target, dan invalidasi, dengan skor kualitas"
+      }
+    ],
+    "howTitle": "YANG KAMU DAPAT",
+    "steps": [
+      {
+        "title": "Level & pola",
+        "text": "support, resistance, struktur, dan pembacaan candle"
+      },
+      {
+        "title": "Berita pasar & ringkasan harian",
+        "text": "katalis makro dan penggerak pasarmu"
+      },
+      {
+        "title": "Jurnal & pelacak",
+        "text": "catat transaksi dan pantau performa"
+      }
+    ],
+    "marketsTitle": "PASAR",
+    "marketsText": "Kripto, saham, indeks, forex, logam, dan komoditas, berbasis data pasar live.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Pemindai Saham & Kripto",
+    "ctaText": "Pindai chart apa pun untuk analisis AI instan — level, tren, risiko, dan setup yang jelas. Dengan pelatih AI, watchlist, dan berita pasar.",
+    "disclaimer": "ChartsGPT hanya untuk edukasi dan analisis, bukan nasihat keuangan. Trading mengandung risiko.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "it": {
+    "code": "it",
+    "hreflang": "it",
+    "lang": "it",
+    "label": "Italiano",
+    "ogLocale": "it_IT",
+    "title": "ChartsGPT: Analisi con IA | Scanner Azioni e Cripto",
+    "description": "Scansiona qualsiasi grafico per un'analisi IA immediata — livelli, trend, rischio e setup chiari. Con coach IA, watchlist e notizie di mercato.",
+    "keywords": [
+      "trader",
+      "trading",
+      "azione",
+      "borsa",
+      "segnali",
+      "tecnica",
+      "investire",
+      "mercato",
+      "opzioni",
+      "indicatore",
+      "grafico",
+      "forex"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Scanner Azioni e Cripto",
+    "heroLead": "Analisi con IA",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Scanner Azioni e Cripto",
+    "phrases": [
+      "dalla fotocamera o da uno screenshot all'analisi completa in secondi",
+      "chiedi tutto su un setup e ricevi risposte chiare",
+      "watchlist con quotazioni in tempo reale di cripto, azioni, indici, forex e metalli"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: Analisi con IA",
+    "introText": "ChartsGPT trasforma qualsiasi grafico in un'analisi chiara e pratica in pochi secondi. Fai uno screenshot o scegli un mercato: l'IA riconosce lo strumento e il timeframe e analizza struttura, livelli chiave, trend e rischio — con setup di trading chiari (ingresso, stop e target).",
+    "features": [
+      {
+        "title": "Scansiona e analizza",
+        "text": "dalla fotocamera o da uno screenshot all'analisi completa in secondi"
+      },
+      {
+        "title": "Coach di trading IA",
+        "text": "chiedi tutto su un setup e ricevi risposte chiare"
+      },
+      {
+        "title": "Prezzi live",
+        "text": "watchlist con quotazioni in tempo reale di cripto, azioni, indici, forex e metalli"
+      },
+      {
+        "title": "Setup di trading",
+        "text": "ingresso, stop, target e invalidazione, con punteggio di qualità"
+      }
+    ],
+    "howTitle": "COSA OTTIENI",
+    "steps": [
+      {
+        "title": "Livelli e pattern",
+        "text": "supporto, resistenza, struttura e lettura delle candele"
+      },
+      {
+        "title": "Notizie e brief giornaliero",
+        "text": "catalizzatori macro e ciò che muove i tuoi mercati"
+      },
+      {
+        "title": "Diario e tracker",
+        "text": "registra le operazioni e monitora le performance"
+      }
+    ],
+    "marketsTitle": "MERCATI",
+    "marketsText": "Cripto, azioni, indici, forex, metalli e materie prime, con dati di mercato live.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Scanner Azioni e Cripto",
+    "ctaText": "Scansiona qualsiasi grafico per un'analisi IA immediata — livelli, trend, rischio e setup chiari. Con coach IA, watchlist e notizie di mercato.",
+    "disclaimer": "Per day trader, swing trader e investitori che vogliono leggere ogni grafico più in fretta e con più chiarezza.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "ja": {
+    "code": "ja",
+    "hreflang": "ja",
+    "lang": "ja",
+    "label": "日本語",
+    "ogLocale": "ja_JP",
+    "title": "ChartsGPT：AIチャート分析 | 株・仮想通貨・FXスキャナー",
+    "description": "どんなチャートも即座にAIが解析——重要な価格帯・トレンド・リスク・明確なトレード設定。AIコーチ、ウォッチリスト、マーケットニュースも。",
+    "keywords": [
+      "トレード",
+      "トレーダー",
+      "株",
+      "投資",
+      "シグナル",
+      "テクニカル",
+      "ローソク足",
+      "チャート",
+      "相場",
+      "FX",
+      "仮想通貨",
+      "指標",
+      "デイトレード",
+      "先物"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "株・仮想通貨・FXスキャナー",
+    "heroLead": "AIチャート分析",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "株・仮想通貨・FXスキャナー",
+    "phrases": [
+      "カメラやスクショから数秒で完全解析",
+      "設定について何でも質問、分かりやすい回答",
+      "仮想通貨・株・指数・FX・メタルのリアルタイム相場ウォッチリスト"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT：AIチャート分析",
+    "introText": "ChartsGPTは、どんなチャートも数秒で明確で実用的な解析に変えます。 スクリーンショットを撮るか銘柄を選ぶだけで、AIが銘柄と時間足を認識し、構造・重要な価格帯・トレンド・リスクを解析。明確なトレード設定（エントリー・損切り・目標）も提示します。",
+    "features": [
+      {
+        "title": "スキャン＆解析",
+        "text": "カメラやスクショから数秒で完全解析"
+      },
+      {
+        "title": "AIトレードコーチ",
+        "text": "設定について何でも質問、分かりやすい回答"
+      },
+      {
+        "title": "ライブ価格",
+        "text": "仮想通貨・株・指数・FX・メタルのリアルタイム相場ウォッチリスト"
+      },
+      {
+        "title": "トレード設定",
+        "text": "エントリー・損切り・目標・無効化を品質スコア付きで"
+      }
+    ],
+    "howTitle": "主な機能",
+    "steps": [
+      {
+        "title": "価格帯とパターン",
+        "text": "サポート・レジスタンス・構造・ローソク足の読み"
+      },
+      {
+        "title": "マーケットニュースと日次ブリーフ",
+        "text": "マクロ材料と相場を動かす要因"
+      },
+      {
+        "title": "日誌とトラッカー",
+        "text": "トレードを記録し成績を追跡"
+      }
+    ],
+    "marketsTitle": "対象市場",
+    "marketsText": "仮想通貨・株・指数・FX・メタル・商品。ライブ市場データに基づきます。",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "株・仮想通貨・FXスキャナー",
+    "ctaText": "どんなチャートも即座にAIが解析——重要な価格帯・トレンド・リスク・明確なトレード設定。AIコーチ、ウォッチリスト、マーケットニュースも。",
+    "disclaimer": "ChartsGPTは教育・分析のみを目的とし、投資助言ではありません。取引にはリスクが伴います。",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "ko": {
+    "code": "ko",
+    "hreflang": "ko",
+    "lang": "ko",
+    "label": "한국어",
+    "ogLocale": "ko_KR",
+    "title": "ChartsGPT: AI 차트 분석 | 주식·코인·해외선물 스캐너",
+    "description": "어떤 차트든 즉시 AI 분석 — 핵심 가격대, 추세, 리스크, 명확한 매매 셋업. AI 코치, 관심목록, 마켓 뉴스까지.",
+    "keywords": [
+      "트레이딩",
+      "트레이더",
+      "주식",
+      "투자",
+      "신호",
+      "기술적",
+      "캔들",
+      "차트",
+      "시장",
+      "코인",
+      "암호화폐",
+      "지표",
+      "데이트레이딩",
+      "선물"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "주식·코인·해외선물 스캐너",
+    "heroLead": "AI 차트 분석",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "주식·코인·해외선물 스캐너",
+    "phrases": [
+      "카메라나 스크린샷에서 몇 초 만에 완전한 분석",
+      "셋업에 대해 무엇이든 물어보고 쉬운 답을 받기",
+      "코인, 주식, 지수, 외환, 금속의 실시간 관심목록"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: AI 차트 분석",
+    "introText": "ChartsGPT는 어떤 차트든 몇 초 만에 명확하고 실용적인 분석으로 바꿔줍니다. 스크린샷을 찍거나 종목을 고르면 AI가 종목과 시간대를 인식하고 구조, 핵심 가격대, 추세, 리스크를 분석합니다. 명확한 매매 셋업(진입, 손절, 목표)까지 제시합니다.",
+    "features": [
+      {
+        "title": "스캔 & 분석",
+        "text": "카메라나 스크린샷에서 몇 초 만에 완전한 분석"
+      },
+      {
+        "title": "AI 트레이딩 코치",
+        "text": "셋업에 대해 무엇이든 물어보고 쉬운 답을 받기"
+      },
+      {
+        "title": "실시간 시세",
+        "text": "코인, 주식, 지수, 외환, 금속의 실시간 관심목록"
+      },
+      {
+        "title": "매매 셋업",
+        "text": "진입, 손절, 목표, 무효화를 품질 점수와 함께"
+      }
+    ],
+    "howTitle": "주요 기능",
+    "steps": [
+      {
+        "title": "가격대 & 패턴",
+        "text": "지지, 저항, 구조, 캔들 읽기"
+      },
+      {
+        "title": "마켓 뉴스 & 데일리 브리프",
+        "text": "매크로 재료와 시장을 움직이는 요인"
+      },
+      {
+        "title": "매매일지 & 추적",
+        "text": "거래를 기록하고 성과를 추적"
+      }
+    ],
+    "marketsTitle": "대상 시장",
+    "marketsText": "코인, 주식, 지수, 외환, 금속, 원자재. 실시간 시장 데이터 기반입니다.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "주식·코인·해외선물 스캐너",
+    "ctaText": "어떤 차트든 즉시 AI 분석 — 핵심 가격대, 추세, 리스크, 명확한 매매 셋업. AI 코치, 관심목록, 마켓 뉴스까지.",
+    "disclaimer": "ChartsGPT는 교육 및 분석용이며 투자 자문이 아닙니다. 거래에는 위험이 따릅니다.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "ms": {
+    "code": "ms",
+    "hreflang": "ms",
+    "lang": "ms",
+    "label": "Bahasa Melayu",
+    "ogLocale": "ms_MY",
+    "title": "ChartsGPT: Analisis Carta AI | Pengimbas Saham & Kripto",
+    "description": "Imbas mana-mana carta untuk analisis AI segera — paras, arah aliran, risiko dan setup jelas. Dengan jurulatih AI, senarai pantau dan berita pasaran.",
+    "keywords": [
+      "trader",
+      "trading",
+      "saham",
+      "bursa",
+      "isyarat",
+      "teknikal",
+      "corak",
+      "pelaburan",
+      "pasaran",
+      "opsyen",
+      "carta",
+      "forex",
+      "kripto"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Pengimbas Saham & Kripto",
+    "heroLead": "Analisis Carta AI",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Pengimbas Saham & Kripto",
+    "phrases": [
+      "dari kamera atau tangkapan skrin ke analisis penuh dalam saat",
+      "tanya apa sahaja tentang setup dan dapat jawapan jelas",
+      "senarai pantau dengan sebut harga masa nyata kripto, saham, indeks, forex dan logam"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: Analisis Carta AI",
+    "introText": "ChartsGPT menukar mana-mana carta menjadi analisis yang jelas dan praktikal dalam beberapa saat. Ambil tangkapan skrin atau pilih pasaran: AI mengenal pasti simbol dan tempoh masa lalu menganalisis struktur, paras penting, arah aliran dan risiko — dengan setup dagangan yang jelas (masuk, henti dan sasaran).",
+    "features": [
+      {
+        "title": "Imbas & analisis",
+        "text": "dari kamera atau tangkapan skrin ke analisis penuh dalam saat"
+      },
+      {
+        "title": "Jurulatih dagangan AI",
+        "text": "tanya apa sahaja tentang setup dan dapat jawapan jelas"
+      },
+      {
+        "title": "Harga langsung",
+        "text": "senarai pantau dengan sebut harga masa nyata kripto, saham, indeks, forex dan logam"
+      },
+      {
+        "title": "Setup dagangan",
+        "text": "masuk, henti, sasaran dan pembatalan, dengan skor kualiti"
+      }
+    ],
+    "howTitle": "APA YANG ANDA DAPAT",
+    "steps": [
+      {
+        "title": "Paras & corak",
+        "text": "sokongan, rintangan, struktur dan bacaan lilin"
+      },
+      {
+        "title": "Berita pasaran & ringkasan harian",
+        "text": "pemangkin makro dan penggerak pasaran anda"
+      },
+      {
+        "title": "Jurnal & penjejak",
+        "text": "rekod dagangan dan pantau prestasi"
+      }
+    ],
+    "marketsTitle": "PASARAN",
+    "marketsText": "Kripto, saham, indeks, forex, logam dan komoditi, berdasarkan data pasaran langsung.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Pengimbas Saham & Kripto",
+    "ctaText": "Imbas mana-mana carta untuk analisis AI segera — paras, arah aliran, risiko dan setup jelas. Dengan jurulatih AI, senarai pantau dan berita pasaran.",
+    "disclaimer": "ChartsGPT untuk pendidikan dan analisis sahaja dan bukan nasihat kewangan. Dagangan melibatkan risiko.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "no": {
+    "code": "no",
+    "hreflang": "no",
+    "lang": "no",
+    "label": "Norsk",
+    "ogLocale": "nb_NO",
+    "title": "ChartsGPT: AI grafanalyse | Aksje- og kryptoskanner",
+    "description": "Skann hvilken som helst graf for en umiddelbar AI-analyse — nivåer, trend, risiko og tydelige oppsett. Med AI-coach, følgeliste og markedsnyheter.",
+    "keywords": [
+      "trader",
+      "trading",
+      "aksje",
+      "børs",
+      "signal",
+      "teknisk",
+      "investering",
+      "marked",
+      "opsjoner",
+      "indikator",
+      "graf",
+      "forex",
+      "krypto"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Aksje- og kryptoskanner",
+    "heroLead": "AI grafanalyse",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Aksje- og kryptoskanner",
+    "phrases": [
+      "fra kamera eller skjermbilde til full analyse på sekunder",
+      "spør om alt rundt et oppsett og få tydelige svar",
+      "følgeliste med sanntidskurser for krypto, aksjer, indekser, forex og metaller"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: AI grafanalyse",
+    "introText": "ChartsGPT gjør hvilken som helst graf om til en tydelig og nyttig analyse på sekunder. Ta et skjermbilde eller velg et marked: AI-en gjenkjenner symbol og tidsramme og analyserer struktur, viktige nivåer, trend og risiko — med tydelige oppsett (inngang, stopp og mål).",
+    "features": [
+      {
+        "title": "Skann og analyser",
+        "text": "fra kamera eller skjermbilde til full analyse på sekunder"
+      },
+      {
+        "title": "AI-tradingcoach",
+        "text": "spør om alt rundt et oppsett og få tydelige svar"
+      },
+      {
+        "title": "Sanntidspriser",
+        "text": "følgeliste med sanntidskurser for krypto, aksjer, indekser, forex og metaller"
+      },
+      {
+        "title": "Trade-oppsett",
+        "text": "inngang, stopp, mål og ugyldiggjøring, med kvalitetsscore"
+      }
+    ],
+    "howTitle": "DETTE FÅR DU",
+    "steps": [
+      {
+        "title": "Nivåer og mønstre",
+        "text": "støtte, motstand, struktur og leselys"
+      },
+      {
+        "title": "Markedsnyheter og daglig oversikt",
+        "text": "makrohendelser og det som beveger markedene dine"
+      },
+      {
+        "title": "Journal og sporing",
+        "text": "logg handler og følg utviklingen"
+      }
+    ],
+    "marketsTitle": "MARKEDER",
+    "marketsText": "Krypto, aksjer, indekser, forex, metaller og råvarer, basert på live markedsdata.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Aksje- og kryptoskanner",
+    "ctaText": "Skann hvilken som helst graf for en umiddelbar AI-analyse — nivåer, trend, risiko og tydelige oppsett. Med AI-coach, følgeliste og markedsnyheter.",
+    "disclaimer": "ChartsGPT er kun for læring og analyse og er ikke finansiell rådgivning. Handel innebærer risiko.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "pl": {
+    "code": "pl",
+    "hreflang": "pl",
+    "lang": "pl",
+    "label": "Polski",
+    "ogLocale": "pl_PL",
+    "title": "ChartsGPT: Analiza AI | Skaner Akcji i Krypto",
+    "description": "Zeskanuj dowolny wykres i uzyskaj natychmiastową analizę AI — poziomy, trend, ryzyko i gotowe setupy. Z coachem AI, listą obserwowanych i newsami.",
+    "keywords": [
+      "trader",
+      "trading",
+      "akcje",
+      "giełda",
+      "sygnał",
+      "techniczna",
+      "inwestowanie",
+      "rynek",
+      "opcje",
+      "wskaźnik",
+      "wykres",
+      "forex"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Skaner Akcji i Krypto",
+    "heroLead": "Analiza AI",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Skaner Akcji i Krypto",
+    "phrases": [
+      "od aparatu lub zrzutu do pełnej analizy w sekundy",
+      "zapytaj o dowolny setup i otrzymaj jasną odpowiedź",
+      "lista obserwowanych z notowaniami w czasie rzeczywistym: krypto, akcje, indeksy, forex i metale"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: Analiza AI",
+    "introText": "ChartsGPT zamienia dowolny wykres w jasną, praktyczną analizę w kilka sekund. Zrób zrzut ekranu lub wybierz rynek: AI rozpoznaje instrument i interwał, a następnie analizuje strukturę, kluczowe poziomy, trend i ryzyko — z jasnymi setupami (wejście, stop i cele).",
+    "features": [
+      {
+        "title": "Skanuj i analizuj",
+        "text": "od aparatu lub zrzutu do pełnej analizy w sekundy"
+      },
+      {
+        "title": "Coach tradingowy AI",
+        "text": "zapytaj o dowolny setup i otrzymaj jasną odpowiedź"
+      },
+      {
+        "title": "Ceny na żywo",
+        "text": "lista obserwowanych z notowaniami w czasie rzeczywistym: krypto, akcje, indeksy, forex i metale"
+      },
+      {
+        "title": "Setupy",
+        "text": "wejście, stop, cele i unieważnienie, z oceną jakości"
+      }
+    ],
+    "howTitle": "CO OTRZYMUJESZ",
+    "steps": [
+      {
+        "title": "Poziomy i formacje",
+        "text": "wsparcie, opór, struktura i odczyt świec"
+      },
+      {
+        "title": "Newsy i dzienny przegląd",
+        "text": "wydarzenia makro i to, co porusza rynki"
+      },
+      {
+        "title": "Dziennik i tracker",
+        "text": "zapisuj transakcje i śledź wyniki"
+      }
+    ],
+    "marketsTitle": "RYNKI",
+    "marketsText": "Krypto, akcje, indeksy, forex, metale i surowce, w oparciu o dane rynkowe na żywo.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Skaner Akcji i Krypto",
+    "ctaText": "Zeskanuj dowolny wykres i uzyskaj natychmiastową analizę AI — poziomy, trend, ryzyko i gotowe setupy. Z coachem AI, listą obserwowanych i newsami.",
+    "disclaimer": "ChartsGPT służy wyłącznie do edukacji i analizy i nie jest poradą finansową. Trading wiąże się z ryzykiem.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "pt-br": {
+    "code": "pt-br",
+    "hreflang": "pt-BR",
+    "lang": "pt",
+    "label": "Português (Brasil)",
+    "ogLocale": "pt_BR",
+    "title": "ChartsGPT: Análise com IA | Scanner de Ações e Cripto",
+    "description": "Escaneie qualquer gráfico para uma análise com IA na hora — níveis, tendência, risco e setups claros. Com coach IA, watchlist e notícias.",
+    "keywords": [
+      "trader",
+      "trading",
+      "ação",
+      "bolsa",
+      "sinais",
+      "técnica",
+      "vela",
+      "padrão",
+      "investir",
+      "mercado",
+      "opções",
+      "indicador",
+      "gráfico",
+      "forex"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Scanner de Ações e Cripto",
+    "heroLead": "Análise com IA",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Scanner de Ações e Cripto",
+    "phrases": [
+      "da câmera ou captura à análise completa em segundos",
+      "pergunte tudo sobre um setup e receba respostas claras",
+      "watchlist com cotações em tempo real de cripto, ações, índices, forex e metais"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: Análise com IA",
+    "introText": "O ChartsGPT transforma qualquer gráfico em uma leitura clara e prática em segundos. Tire uma captura ou escolha um mercado: a IA identifica o ativo e o tempo gráfico e analisa estrutura, níveis-chave, tendência e risco — com setups de trade claros (entrada, stop e alvos).",
+    "features": [
+      {
+        "title": "Escanear e analisar",
+        "text": "da câmera ou captura à análise completa em segundos"
+      },
+      {
+        "title": "Coach de trading com IA",
+        "text": "pergunte tudo sobre um setup e receba respostas claras"
+      },
+      {
+        "title": "Preços ao vivo",
+        "text": "watchlist com cotações em tempo real de cripto, ações, índices, forex e metais"
+      },
+      {
+        "title": "Setups de trade",
+        "text": "entrada, stop, alvos e invalidação, com nota de qualidade"
+      }
+    ],
+    "howTitle": "O QUE VOCÊ RECEBE",
+    "steps": [
+      {
+        "title": "Níveis e padrões",
+        "text": "suporte, resistência, estrutura e leitura de candles"
+      },
+      {
+        "title": "Notícias e resumo diário",
+        "text": "catalisadores macro e o que move seus mercados"
+      },
+      {
+        "title": "Diário e acompanhamento",
+        "text": "registre trades e acompanhe seu desempenho"
+      }
+    ],
+    "marketsTitle": "MERCADOS",
+    "marketsText": "Cripto, ações, índices, forex, metais e commodities, com dados de mercado ao vivo.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Scanner de Ações e Cripto",
+    "ctaText": "Escaneie qualquer gráfico para uma análise com IA na hora — níveis, tendência, risco e setups claros. Com coach IA, watchlist e notícias.",
+    "disclaimer": "Para day traders, swing traders e investidores que querem ler qualquer gráfico mais rápido e com mais clareza.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "pt-pt": {
+    "code": "pt-pt",
+    "hreflang": "pt-PT",
+    "lang": "pt",
+    "label": "Português (Portugal)",
+    "ogLocale": "pt_PT",
+    "title": "ChartsGPT: Análise com IA | Scanner de Ações e Cripto",
+    "description": "Escaneie qualquer gráfico para uma análise com IA na hora — níveis, tendência, risco e setups claros. Com coach IA, watchlist e notícias.",
+    "keywords": [
+      "trader",
+      "trading",
+      "ação",
+      "bolsa",
+      "sinais",
+      "técnica",
+      "vela",
+      "padrão",
+      "investir",
+      "mercado",
+      "opções",
+      "indicador",
+      "gráfico",
+      "forex"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Scanner de Ações e Cripto",
+    "heroLead": "Análise com IA",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Scanner de Ações e Cripto",
+    "phrases": [
+      "da câmera ou captura à análise completa em segundos",
+      "pergunte tudo sobre um setup e receba respostas claras",
+      "watchlist com cotações em tempo real de cripto, ações, índices, forex e metais"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: Análise com IA",
+    "introText": "O ChartsGPT transforma qualquer gráfico em uma leitura clara e prática em segundos. Tire uma captura ou escolha um mercado: a IA identifica o ativo e o tempo gráfico e analisa estrutura, níveis-chave, tendência e risco — com setups de trade claros (entrada, stop e alvos).",
+    "features": [
+      {
+        "title": "Escanear e analisar",
+        "text": "da câmera ou captura à análise completa em segundos"
+      },
+      {
+        "title": "Coach de trading com IA",
+        "text": "pergunte tudo sobre um setup e receba respostas claras"
+      },
+      {
+        "title": "Preços ao vivo",
+        "text": "watchlist com cotações em tempo real de cripto, ações, índices, forex e metais"
+      },
+      {
+        "title": "Setups de trade",
+        "text": "entrada, stop, alvos e invalidação, com nota de qualidade"
+      }
+    ],
+    "howTitle": "O QUE VOCÊ RECEBE",
+    "steps": [
+      {
+        "title": "Níveis e padrões",
+        "text": "suporte, resistência, estrutura e leitura de candles"
+      },
+      {
+        "title": "Notícias e resumo diário",
+        "text": "catalisadores macro e o que move seus mercados"
+      },
+      {
+        "title": "Diário e acompanhamento",
+        "text": "registre trades e acompanhe seu desempenho"
+      }
+    ],
+    "marketsTitle": "MERCADOS",
+    "marketsText": "Cripto, ações, índices, forex, metais e commodities, com dados de mercado ao vivo.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Scanner de Ações e Cripto",
+    "ctaText": "Escaneie qualquer gráfico para uma análise com IA na hora — níveis, tendência, risco e setups claros. Com coach IA, watchlist e notícias.",
+    "disclaimer": "Para day traders, swing traders e investidores que querem ler qualquer gráfico mais rápido e com mais clareza.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "ro": {
+    "code": "ro",
+    "hreflang": "ro",
+    "lang": "ro",
+    "label": "Română",
+    "ogLocale": "ro_RO",
+    "title": "ChartsGPT: Analiză grafice AI | Scaner Acțiuni și Cripto",
+    "description": "Scanează orice grafic pentru o analiză AI instantanee — niveluri, trend, risc și setup-uri clare. Cu coach AI, watchlist și știri de piață.",
+    "keywords": [
+      "trader",
+      "trading",
+      "acțiune",
+      "bursă",
+      "semnal",
+      "tehnică",
+      "investiții",
+      "piață",
+      "opțiuni",
+      "indicator",
+      "grafic",
+      "forex",
+      "cripto"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Scaner Acțiuni și Cripto",
+    "heroLead": "Analiză grafice AI",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Scaner Acțiuni și Cripto",
+    "phrases": [
+      "de la cameră sau captură la analiză completă în secunde",
+      "întreabă orice despre un setup și primești răspunsuri clare",
+      "watchlist cu cotații în timp real pentru cripto, acțiuni, indici, forex și metale"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: Analiză grafice AI",
+    "introText": "ChartsGPT transformă orice grafic într-o analiză clară și practică în câteva secunde. Fă o captură sau alege o piață: AI identifică simbolul și intervalul de timp și analizează structura, nivelurile cheie, trendul și riscul — cu setup-uri de tranzacționare clare (intrare, stop și ținte).",
+    "features": [
+      {
+        "title": "Scanează și analizează",
+        "text": "de la cameră sau captură la analiză completă în secunde"
+      },
+      {
+        "title": "Coach de trading AI",
+        "text": "întreabă orice despre un setup și primești răspunsuri clare"
+      },
+      {
+        "title": "Prețuri live",
+        "text": "watchlist cu cotații în timp real pentru cripto, acțiuni, indici, forex și metale"
+      },
+      {
+        "title": "Setup-uri",
+        "text": "intrare, stop, ținte și invalidare, cu scor de calitate"
+      }
+    ],
+    "howTitle": "CE PRIMEȘTI",
+    "steps": [
+      {
+        "title": "Niveluri și modele",
+        "text": "suport, rezistență, structură și citirea lumânărilor"
+      },
+      {
+        "title": "Știri și rezumat zilnic",
+        "text": "catalizatori macro și ce mișcă piețele tale"
+      },
+      {
+        "title": "Jurnal și urmărire",
+        "text": "înregistrează tranzacții și urmărește performanța"
+      }
+    ],
+    "marketsTitle": "PIEȚE",
+    "marketsText": "Cripto, acțiuni, indici, forex, metale și mărfuri, pe baza datelor de piață live.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Scaner Acțiuni și Cripto",
+    "ctaText": "Scanează orice grafic pentru o analiză AI instantanee — niveluri, trend, risc și setup-uri clare. Cu coach AI, watchlist și știri de piață.",
+    "disclaimer": "ChartsGPT este doar pentru educație și analiză și nu constituie sfat financiar. Tranzacționarea implică risc.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "sk": {
+    "code": "sk",
+    "hreflang": "sk",
+    "lang": "sk",
+    "label": "Slovenčina",
+    "ogLocale": "sk_SK",
+    "title": "ChartsGPT: Analýza grafov AI | Skener akcií a krypta",
+    "description": "Naskenuj akýkoľvek graf pre okamžitú AI analýzu — úrovne, trend, riziko a jasné setupy. S AI koučom, watchlistom a správami z trhu.",
+    "keywords": [
+      "trader",
+      "trading",
+      "akcie",
+      "burza",
+      "signál",
+      "technická",
+      "investície",
+      "trh",
+      "opcie",
+      "indikátor",
+      "graf",
+      "forex",
+      "krypto"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Skener akcií a krypta",
+    "heroLead": "Analýza grafov AI",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Skener akcií a krypta",
+    "phrases": [
+      "z kamery alebo screenshotu k úplnej analýze za sekundy",
+      "opýtaj sa na čokoľvek k setupu a dostaneš zrozumiteľnú odpoveď",
+      "watchlist s cenami v reálnom čase pre krypto, akcie, indexy, forex a kovy"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: Analýza grafov AI",
+    "introText": "ChartsGPT premení akýkoľvek graf na jasnú a praktickú analýzu za pár sekúnd. Odfoť obrazovku alebo vyber trh: AI rozpozná symbol a časový rámec a rozoberie štruktúru, kľúčové úrovne, trend a riziko — s jasnými obchodnými setupmi (vstup, stop a ciele).",
+    "features": [
+      {
+        "title": "Sken a analýza",
+        "text": "z kamery alebo screenshotu k úplnej analýze za sekundy"
+      },
+      {
+        "title": "AI obchodný kouč",
+        "text": "opýtaj sa na čokoľvek k setupu a dostaneš zrozumiteľnú odpoveď"
+      },
+      {
+        "title": "Živé ceny",
+        "text": "watchlist s cenami v reálnom čase pre krypto, akcie, indexy, forex a kovy"
+      },
+      {
+        "title": "Obchodné setupy",
+        "text": "vstup, stop, ciele a invalidácia, s hodnotením kvality"
+      }
+    ],
+    "howTitle": "ČO ZÍSKAŠ",
+    "steps": [
+      {
+        "title": "Úrovne a formácie",
+        "text": "support, rezistencia, štruktúra a čítanie sviečok"
+      },
+      {
+        "title": "Správy a denný prehľad",
+        "text": "makro udalosti a to, čo hýbe tvojimi trhmi"
+      },
+      {
+        "title": "Denník a sledovanie",
+        "text": "zaznamenávaj obchody a sleduj výkonnosť"
+      }
+    ],
+    "marketsTitle": "TRHY",
+    "marketsText": "Krypto, akcie, indexy, forex, kovy a komodity, na základe živých trhových dát.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Skener akcií a krypta",
+    "ctaText": "Naskenuj akýkoľvek graf pre okamžitú AI analýzu — úrovne, trend, riziko a jasné setupy. S AI koučom, watchlistom a správami z trhu.",
+    "disclaimer": "ChartsGPT slúži len na vzdelávanie a analýzu a nie je finančným poradenstvom. Obchodovanie je rizikové.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "sv": {
+    "code": "sv",
+    "hreflang": "sv",
+    "lang": "sv",
+    "label": "Svenska",
+    "ogLocale": "sv_SE",
+    "title": "ChartsGPT: AI diagramanalys | Aktie- & kryptoskanner",
+    "description": "Skanna vilken graf som helst för en direkt AI-analys — nivåer, trend, risk och tydliga setups. Med AI-coach, bevakningslista och marknadsnyheter.",
+    "keywords": [
+      "trader",
+      "trading",
+      "aktie",
+      "börs",
+      "signal",
+      "teknisk",
+      "investering",
+      "marknad",
+      "optioner",
+      "indikator",
+      "diagram",
+      "forex",
+      "krypto"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Aktie- & kryptoskanner",
+    "heroLead": "AI diagramanalys",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Aktie- & kryptoskanner",
+    "phrases": [
+      "från kamera eller skärmdump till full analys på sekunder",
+      "fråga vad som helst om ett setup och få tydliga svar",
+      "bevakningslista med realtidskurser för krypto, aktier, index, forex och metaller"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: AI diagramanalys",
+    "introText": "ChartsGPT förvandlar vilken graf som helst till en tydlig och användbar analys på sekunder. Ta en skärmdump eller välj en marknad: AI:n känner igen symbol och tidsram och analyserar struktur, viktiga nivåer, trend och risk — med tydliga trade-setups (ingång, stopp och mål).",
+    "features": [
+      {
+        "title": "Skanna & analysera",
+        "text": "från kamera eller skärmdump till full analys på sekunder"
+      },
+      {
+        "title": "AI-tradingcoach",
+        "text": "fråga vad som helst om ett setup och få tydliga svar"
+      },
+      {
+        "title": "Livepriser",
+        "text": "bevakningslista med realtidskurser för krypto, aktier, index, forex och metaller"
+      },
+      {
+        "title": "Trade-setups",
+        "text": "ingång, stopp, mål och invalidering, med kvalitetspoäng"
+      }
+    ],
+    "howTitle": "DET DU FÅR",
+    "steps": [
+      {
+        "title": "Nivåer & mönster",
+        "text": "stöd, motstånd, struktur och ljusläsning"
+      },
+      {
+        "title": "Marknadsnyheter & daglig översikt",
+        "text": "makrohändelser och det som rör dina marknader"
+      },
+      {
+        "title": "Journal & spårning",
+        "text": "logga affärer och följ din utveckling"
+      }
+    ],
+    "marketsTitle": "MARKNADER",
+    "marketsText": "Krypto, aktier, index, forex, metaller och råvaror, baserat på live marknadsdata.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Aktie- & kryptoskanner",
+    "ctaText": "Skanna vilken graf som helst för en direkt AI-analys — nivåer, trend, risk och tydliga setups. Med AI-coach, bevakningslista och marknadsnyheter.",
+    "disclaimer": "ChartsGPT är endast för utbildning och analys och är inte finansiell rådgivning. Handel innebär risk.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "th": {
+    "code": "th",
+    "hreflang": "th",
+    "lang": "th",
+    "label": "ไทย",
+    "ogLocale": "th_TH",
+    "title": "ChartsGPT: วิเคราะห์กราฟ AI | สแกนหุ้น คริปโต ฟอเร็กซ์",
+    "description": "สแกนกราฟใดก็ได้เพื่อรับการวิเคราะห์ AI ทันที — แนวรับแนวต้าน เทรนด์ ความเสี่ยง และแผนเทรดที่ชัดเจน พร้อมโค้ช AI วอทช์ลิสต์ และข่าว",
+    "keywords": [
+      "เทรด",
+      "เทรดเดอร์",
+      "หุ้น",
+      "ตลาดหุ้น",
+      "สัญญาณ",
+      "เทคนิค",
+      "รูปแบบ",
+      "ลงทุน",
+      "ตลาด",
+      "ออปชั่น",
+      "กราฟ",
+      "ฟอเร็กซ์",
+      "คริปโต"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "สแกนหุ้น คริปโต ฟอเร็กซ์",
+    "heroLead": "วิเคราะห์กราฟ AI",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "สแกนหุ้น คริปโต ฟอเร็กซ์",
+    "phrases": [
+      "จากกล้องหรือภาพหน้าจอสู่การวิเคราะห์เต็มรูปแบบในไม่กี่วินาที",
+      "ถามอะไรก็ได้เกี่ยวกับแผนเทรดและได้คำตอบที่เข้าใจง่าย",
+      "วอทช์ลิสต์คริปโต หุ้น ดัชนี ฟอเร็กซ์ และโลหะ"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: วิเคราะห์กราฟ AI",
+    "introText": "ChartsGPT เปลี่ยนกราฟใดก็ได้ให้เป็นการวิเคราะห์ที่ชัดเจนและใช้งานได้จริงในไม่กี่วินาที ถ่ายภาพหน้าจอหรือเลือกตลาด AI จะระบุสัญลักษณ์และไทม์เฟรม แล้ววิเคราะห์โครงสร้าง แนวราคาสำคัญ เทรนด์ และความเสี่ยง พร้อมแผนเทรดที่ชัดเจน (จุดเข้า จุดตัดขาดทุน และเป้าหมาย)",
+    "features": [
+      {
+        "title": "สแกนและวิเคราะห์",
+        "text": "จากกล้องหรือภาพหน้าจอสู่การวิเคราะห์เต็มรูปแบบในไม่กี่วินาที"
+      },
+      {
+        "title": "โค้ชเทรด AI",
+        "text": "ถามอะไรก็ได้เกี่ยวกับแผนเทรดและได้คำตอบที่เข้าใจง่าย"
+      },
+      {
+        "title": "ราคาเรียลไทม์",
+        "text": "วอทช์ลิสต์คริปโต หุ้น ดัชนี ฟอเร็กซ์ และโลหะ"
+      },
+      {
+        "title": "แผนเทรด",
+        "text": "จุดเข้า จุดตัดขาดทุน เป้าหมาย และจุดยกเลิก พร้อมคะแนนคุณภาพ"
+      }
+    ],
+    "howTitle": "สิ่งที่คุณจะได้รับ",
+    "steps": [
+      {
+        "title": "แนวราคาและรูปแบบ",
+        "text": "แนวรับ แนวต้าน โครงสร้าง และการอ่านแท่งเทียน"
+      },
+      {
+        "title": "ข่าวตลาดและสรุปรายวัน",
+        "text": "ปัจจัยมหภาคและสิ่งที่ขับเคลื่อนตลาดของคุณ"
+      },
+      {
+        "title": "บันทึกและติดตาม",
+        "text": "บันทึกการเทรดและติดตามผลงาน"
+      }
+    ],
+    "marketsTitle": "ตลาด",
+    "marketsText": "คริปโต หุ้น ดัชนี ฟอเร็กซ์ โลหะ และสินค้าโภคภัณฑ์ อ้างอิงข้อมูลตลาดเรียลไทม์",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "สแกนหุ้น คริปโต ฟอเร็กซ์",
+    "ctaText": "สแกนกราฟใดก็ได้เพื่อรับการวิเคราะห์ AI ทันที — แนวรับแนวต้าน เทรนด์ ความเสี่ยง และแผนเทรดที่ชัดเจน พร้อมโค้ช AI วอทช์ลิสต์ และข่าว",
+    "disclaimer": "ChartsGPT มีไว้เพื่อการศึกษาและวิเคราะห์เท่านั้น ไม่ใช่คำแนะนำทางการเงิน การเทรดมีความเสี่ยง",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "tr": {
+    "code": "tr",
+    "hreflang": "tr",
+    "lang": "tr",
+    "label": "Türkçe",
+    "ogLocale": "tr_TR",
+    "title": "ChartsGPT: Yapay Zeka Analiz | Hisse, Kripto & Forex Tarama",
+    "description": "Herhangi bir grafiği tarayın ve anında yapay zeka analizi alın — seviyeler, trend, risk ve net kurulumlar. Yapay zeka koçu, izleme listesi ve haberler.",
+    "keywords": [
+      "trader",
+      "trading",
+      "hisse",
+      "borsa",
+      "sinyal",
+      "teknik",
+      "mum",
+      "formasyon",
+      "yatırım",
+      "piyasa",
+      "opsiyon",
+      "gösterge",
+      "grafik",
+      "forex"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Hisse, Kripto & Forex Tarama",
+    "heroLead": "Yapay Zeka Analiz",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Hisse, Kripto & Forex Tarama",
+    "phrases": [
+      "kamera veya ekran görüntüsünden saniyeler içinde tam analiz",
+      "bir kurulum hakkında her şeyi sorun, net yanıt alın",
+      "kripto, hisse, endeks, forex ve metaller için gerçek zamanlı izleme listesi"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: Yapay Zeka Analiz",
+    "introText": "ChartsGPT herhangi bir grafiği saniyeler içinde net ve uygulanabilir bir analize dönüştürür. Ekran görüntüsü alın veya bir piyasa seçin: yapay zeka sembolü ve zaman dilimini tanır, ardından yapıyı, önemli seviyeleri, trendi ve riski çözümler — net işlem kurulumlarıyla (giriş, stop ve hedefler).",
+    "features": [
+      {
+        "title": "Tara ve analiz et",
+        "text": "kamera veya ekran görüntüsünden saniyeler içinde tam analiz"
+      },
+      {
+        "title": "Yapay zeka işlem koçu",
+        "text": "bir kurulum hakkında her şeyi sorun, net yanıt alın"
+      },
+      {
+        "title": "Canlı fiyatlar",
+        "text": "kripto, hisse, endeks, forex ve metaller için gerçek zamanlı izleme listesi"
+      },
+      {
+        "title": "İşlem kurulumları",
+        "text": "giriş, stop, hedefler ve geçersizlik, kalite puanıyla"
+      }
+    ],
+    "howTitle": "NELER SUNAR",
+    "steps": [
+      {
+        "title": "Seviyeler ve formasyonlar",
+        "text": "destek, direnç, yapı ve mum okuması"
+      },
+      {
+        "title": "Piyasa haberleri ve günlük özet",
+        "text": "makro gelişmeler ve piyasanı hareket ettirenler"
+      },
+      {
+        "title": "Günlük ve takip",
+        "text": "işlemleri kaydet ve performansını izle"
+      }
+    ],
+    "marketsTitle": "PİYASALAR",
+    "marketsText": "Kripto, hisse, endeks, forex, metal ve emtia, canlı piyasa verileriyle.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Hisse, Kripto & Forex Tarama",
+    "ctaText": "Herhangi bir grafiği tarayın ve anında yapay zeka analizi alın — seviyeler, trend, risk ve net kurulumlar. Yapay zeka koçu, izleme listesi ve haberler.",
+    "disclaimer": "ChartsGPT yalnızca eğitim ve analiz içindir ve finansal tavsiye değildir. İşlem yapmak risk içerir.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "uk": {
+    "code": "uk",
+    "hreflang": "uk",
+    "lang": "uk",
+    "label": "Українська",
+    "ogLocale": "uk_UA",
+    "title": "ChartsGPT: ШІ аналіз графіка | Акції, крипто та форекс скан",
+    "description": "Скануйте будь-який графік і отримайте миттєвий ШІ-аналіз — рівні, тренд, ризик і готові сетапи. З ШІ-коучем, вотчлистом і новинами.",
+    "keywords": [
+      "трейдинг",
+      "трейдер",
+      "акція",
+      "біржа",
+      "сигнал",
+      "технічний",
+      "свічка",
+      "патерн",
+      "інвестиції",
+      "ринок",
+      "опціони",
+      "індикатор"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Акції, крипто та форекс скан",
+    "heroLead": "ШІ аналіз графіка",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Акції, крипто та форекс скан",
+    "phrases": [
+      "від камери чи скріншота до повного аналізу за секунди",
+      "постав будь-яке запитання щодо сетапу та отримай зрозумілу відповідь",
+      "вотчлист із котируваннями в реальному часі: крипто, акції, індекси, форекс і метали"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: ШІ аналіз графіка",
+    "introText": "ChartsGPT за секунди перетворює будь-який графік на зрозумілий і практичний аналіз. Зробіть скріншот або виберіть ринок — ШІ визначить інструмент і таймфрейм та розбере структуру, ключові рівні, тренд і ризик, із чіткими торговими сетапами (вхід, стоп і цілі).",
+    "features": [
+      {
+        "title": "Скан і аналіз",
+        "text": "від камери чи скріншота до повного аналізу за секунди"
+      },
+      {
+        "title": "ШІ-коуч із трейдингу",
+        "text": "постав будь-яке запитання щодо сетапу та отримай зрозумілу відповідь"
+      },
+      {
+        "title": "Живі ціни",
+        "text": "вотчлист із котируваннями в реальному часі: крипто, акції, індекси, форекс і метали"
+      },
+      {
+        "title": "Торгові сетапи",
+        "text": "вхід, стоп, цілі та інвалідація, з оцінкою якості"
+      }
+    ],
+    "howTitle": "ЩО ВСЕРЕДИНІ",
+    "steps": [
+      {
+        "title": "Рівні та патерни",
+        "text": "підтримка, опір, структура і читання свічок"
+      },
+      {
+        "title": "Новини та дайджест",
+        "text": "макроподії та те, що рухає ваші ринки"
+      },
+      {
+        "title": "Журнал і трекер",
+        "text": "записуйте угоди й відстежуйте результати"
+      }
+    ],
+    "marketsTitle": "РИНКИ",
+    "marketsText": "Крипто, акції, індекси, форекс, метали та сировина, на основі живих ринкових даних.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Акції, крипто та форекс скан",
+    "ctaText": "Скануйте будь-який графік і отримайте миттєвий ШІ-аналіз — рівні, тренд, ризик і готові сетапи. З ШІ-коучем, вотчлистом і новинами.",
+    "disclaimer": "ChartsGPT призначений лише для навчання й аналізу та не є фінансовою порадою. Торгівля пов'язана з ризиком.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "vi": {
+    "code": "vi",
+    "hreflang": "vi",
+    "lang": "vi",
+    "label": "Tiếng Việt",
+    "ogLocale": "vi_VN",
+    "title": "ChartsGPT: Phân tích AI | Quét cổ phiếu & Crypto",
+    "description": "Quét bất kỳ biểu đồ nào để có phân tích AI tức thì — vùng giá, xu hướng, rủi ro và kèo rõ ràng. Cùng huấn luyện viên AI, watchlist và tin tức.",
+    "keywords": [
+      "trader",
+      "trading",
+      "cổ phiếu",
+      "tín hiệu",
+      "kỹ thuật",
+      "nến",
+      "mô hình",
+      "đầu tư",
+      "thị trường",
+      "chỉ báo",
+      "forex",
+      "crypto"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "Quét cổ phiếu & Crypto",
+    "heroLead": "Phân tích AI",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "Quét cổ phiếu & Crypto",
+    "phrases": [
+      "từ camera hoặc ảnh chụp đến phân tích đầy đủ trong vài giây",
+      "hỏi bất cứ điều gì về một kèo và nhận câu trả lời dễ hiểu",
+      "watchlist báo giá thời gian thực cho crypto, cổ phiếu, chỉ số, forex và kim loại"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT: Phân tích AI",
+    "introText": "ChartsGPT biến bất kỳ biểu đồ nào thành phân tích rõ ràng, thực dụng chỉ trong vài giây. Chụp màn hình hoặc chọn thị trường: AI nhận diện mã và khung thời gian rồi phân tích cấu trúc, vùng giá quan trọng, xu hướng và rủi ro — với các kèo giao dịch rõ ràng (điểm vào, cắt lỗ và mục tiêu).",
+    "features": [
+      {
+        "title": "Quét & phân tích",
+        "text": "từ camera hoặc ảnh chụp đến phân tích đầy đủ trong vài giây"
+      },
+      {
+        "title": "Huấn luyện viên giao dịch AI",
+        "text": "hỏi bất cứ điều gì về một kèo và nhận câu trả lời dễ hiểu"
+      },
+      {
+        "title": "Giá trực tiếp",
+        "text": "watchlist báo giá thời gian thực cho crypto, cổ phiếu, chỉ số, forex và kim loại"
+      },
+      {
+        "title": "Kèo giao dịch",
+        "text": "điểm vào, cắt lỗ, mục tiêu và điểm vô hiệu, kèm điểm chất lượng"
+      }
+    ],
+    "howTitle": "BẠN NHẬN ĐƯỢC",
+    "steps": [
+      {
+        "title": "Vùng giá & mô hình",
+        "text": "hỗ trợ, kháng cự, cấu trúc và đọc nến"
+      },
+      {
+        "title": "Tin tức & tóm tắt hằng ngày",
+        "text": "chất xúc tác vĩ mô và điều khiến thị trường biến động"
+      },
+      {
+        "title": "Nhật ký & theo dõi",
+        "text": "ghi lại giao dịch và theo dõi hiệu suất"
+      }
+    ],
+    "marketsTitle": "THỊ TRƯỜNG",
+    "marketsText": "Crypto, cổ phiếu, chỉ số, forex, kim loại và hàng hóa, dựa trên dữ liệu thị trường trực tiếp.",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "Quét cổ phiếu & Crypto",
+    "ctaText": "Quét bất kỳ biểu đồ nào để có phân tích AI tức thì — vùng giá, xu hướng, rủi ro và kèo rõ ràng. Cùng huấn luyện viên AI, watchlist và tin tức.",
+    "disclaimer": "ChartsGPT chỉ dành cho mục đích giáo dục và phân tích, không phải lời khuyên tài chính. Giao dịch có rủi ro.",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  },
+  "zh-hant": {
+    "code": "zh-hant",
+    "hreflang": "zh-Hant",
+    "lang": "zh-Hant",
+    "label": "繁體中文",
+    "ogLocale": "zh_TW",
+    "title": "ChartsGPT：AI圖表分析 | 股票 加密貨幣 外匯掃描",
+    "description": "掃描任意圖表，立即取得AI解讀——關鍵價位、趨勢、風險與清晰的交易方案。還有AI教練、自選清單與市場資訊。",
+    "keywords": [
+      "交易",
+      "交易員",
+      "炒股",
+      "K線",
+      "訊號",
+      "技術分析",
+      "形態",
+      "投資",
+      "行情",
+      "選擇權",
+      "指標",
+      "策略",
+      "選股",
+      "趨勢",
+      "停損",
+      "幣圈",
+      "比特幣",
+      "以太坊"
+    ],
+    "menu": "Menu",
+    "trust": "4.9 · App Store",
+    "audience": "股票 加密貨幣 外匯掃描",
+    "heroLead": "AI圖表分析",
+    "heroMiddle": "ChartsGPT",
+    "heroAccent": "股票 加密貨幣 外匯掃描",
+    "phrases": [
+      "掃描與分析——從相機或截圖到完整分析，只需幾秒",
+      "AI 交易教練——關於任意方案隨便問，得到淺顯易懂的解答",
+      "即時行情——自選清單，涵蓋加密貨幣、股票、指數、外匯與金屬的即時報價"
+    ],
+    "appStoreLabel": "ChartsGPT · App Store",
+    "androidLabel": "Google Play · Coming soon",
+    "androidTitle": "Android is on the way",
+    "androidText": "ChartsGPT is currently available for iPhone and iPad. The Android version is in development.",
+    "iosInstead": "Download for iOS",
+    "introTitle": "ChartsGPT：AI圖表分析",
+    "introText": "ChartsGPT 在幾秒內把任意圖表變成清晰、可執行的解讀。 截圖或選擇市場，AI 即可辨識商品與週期，並分析結構、關鍵價位、趨勢與風險，給出清晰的交易方案（進場、停損與目標）。",
+    "features": [
+      {
+        "title": "掃描與分析——從相機或截圖到完整分析，只需幾秒",
+        "text": "掃描與分析——從相機或截圖到完整分析，只需幾秒"
+      },
+      {
+        "title": "AI 交易教練——關於任意方案隨便問，得到淺顯易懂的解答",
+        "text": "AI 交易教練——關於任意方案隨便問，得到淺顯易懂的解答"
+      },
+      {
+        "title": "即時行情——自選清單，涵蓋加密貨幣、股票、指數、外匯與金屬的即時報價",
+        "text": "即時行情——自選清單，涵蓋加密貨幣、股票、指數、外匯與金屬的即時報價"
+      },
+      {
+        "title": "交易方案——進場、停損、目標與失效價，並附品質評分",
+        "text": "交易方案——進場、停損、目標與失效價，並附品質評分"
+      }
+    ],
+    "howTitle": "功能亮點",
+    "steps": [
+      {
+        "title": "關鍵價位與形態——支撐、壓力、結構與K線解讀",
+        "text": "關鍵價位與形態——支撐、壓力、結構與K線解讀"
+      },
+      {
+        "title": "市場資訊與每日簡報——總經催化劑與影響你市場的因素",
+        "text": "市場資訊與每日簡報——總經催化劑與影響你市場的因素"
+      },
+      {
+        "title": "交易日誌與追蹤——記錄交易並追蹤表現",
+        "text": "交易日誌與追蹤——記錄交易並追蹤表現"
+      }
+    ],
+    "marketsTitle": "涵蓋市場",
+    "marketsText": "加密貨幣、股票、指數、外匯、金屬與大宗商品，基於即時市場資料。",
+    "faqTitle": "",
+    "faqs": [],
+    "ctaTitle": "股票 加密貨幣 外匯掃描",
+    "ctaText": "掃描任意圖表，立即取得AI解讀——關鍵價位、趨勢、風險與清晰的交易方案。還有AI教練、自選清單與市場資訊。",
+    "disclaimer": "ChartsGPT 僅用於教育與分析，不構成投資建議。交易有風險。",
+    "languageLabel": "Language",
+    "footerLinks": {
+      "blog": "Blog",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "support": "Support"
+    }
+  }
+}

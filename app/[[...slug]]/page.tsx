@@ -14,6 +14,16 @@ import {
   slugToLegacyFile,
   toAbsoluteUrl
 } from "../_lib/legacy";
+import GotemGameplay from "../_components/GotemGameplay";
+import LocalizedLanding from "../_components/LocalizedLanding";
+import {
+  APP_STORE_URL,
+  SITE_URL,
+  isLocaleCode,
+  languageAlternates,
+  localeCodes,
+  locales
+} from "../_lib/locales";
 
 type PageProps = {
   params: { slug?: string[] };
@@ -58,11 +68,64 @@ export function generateStaticParams() {
     params.push({ slug });
   }
 
+  for (const locale of localeCodes) {
+    const key = locale;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    params.push({ slug: [locale] });
+  }
+
   return params;
 }
 
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
   const { slug } = props.params;
+  const localeCode = slug?.length === 1 && isLocaleCode(slug[0]) ? slug[0] : null;
+
+  if (localeCode) {
+    const content = locales[localeCode];
+    const canonical = `${SITE_URL}/${localeCode}/`;
+
+    return {
+      title: { absolute: content.title },
+      description: content.description,
+      keywords: content.keywords,
+      category: "finance",
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+          "max-video-preview": -1
+        }
+      },
+      alternates: { canonical, languages: languageAlternates },
+      openGraph: {
+        type: "website",
+        locale: content.ogLocale,
+        alternateLocale: localeCodes.filter((code) => code !== localeCode).map((code) => locales[code].ogLocale),
+        siteName: "ChartsGPT",
+        title: content.title,
+        description: content.description,
+        url: canonical,
+        images: [{ url: "/og.png", width: 1200, height: 630, alt: "ChartsGPT AI chart analysis" }]
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: content.title,
+        description: content.description,
+        images: ["/og.png"]
+      },
+      other: {
+        "apple-itunes-app": `app-id=6758857719, app-argument=${APP_STORE_URL}`,
+        "content-language": content.lang
+      }
+    };
+  }
+
   const legacyFile = slugToLegacyFile(slug);
 
   let html: string;
@@ -81,36 +144,51 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
   const canonicalAbs = canonical ? toAbsoluteUrl(canonical) : undefined;
   const ogImageAbs = ogImage ? toAbsoluteUrl(ogImage) : undefined;
+  const isGotem = slug?.[0] === "gotem";
+  const isPrayFirst = slug?.[0] === "prayfirst";
+  const isChartsGptHome = !slug || slug.length === 0;
+  const standaloneSiteName = isGotem ? "gotem" : isPrayFirst ? "pray first" : null;
 
   return {
-    title,
+    // Standalone products keep their browser title and social previews free of
+    // the ChartsGPT title template and app metadata.
+    title: standaloneSiteName || isChartsGptHome ? { absolute: title } : title,
     description,
     keywords,
     robots: robotsContent,
-    other: {
-      "apple-itunes-app": "app-id=6758857719"
-    },
-    alternates: canonicalAbs ? { canonical: canonicalAbs } : undefined,
+    other: standaloneSiteName ? undefined : { "apple-itunes-app": "app-id=6758857719" },
+    alternates: canonicalAbs
+      ? { canonical: canonicalAbs, ...(isChartsGptHome ? { languages: languageAlternates } : {}) }
+      : undefined,
     openGraph: {
       type: "website",
       locale: "en_US",
-      siteName: "ChartsGPT",
+      alternateLocale: isChartsGptHome ? localeCodes.map((code) => locales[code].ogLocale) : undefined,
+      siteName: standaloneSiteName ?? "ChartsGPT",
       title,
       description,
       url: canonicalAbs,
-      images: ogImageAbs ? [{ url: ogImageAbs }] : undefined
+      images: isChartsGptHome
+        ? [{ url: `${SITE_URL}/og.png`, width: 1200, height: 630, alt: "ChartsGPT AI chart analysis" }]
+        : ogImageAbs
+          ? [{ url: ogImageAbs }]
+          : undefined
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ogImageAbs ? [ogImageAbs] : undefined
+      images: isChartsGptHome ? [`${SITE_URL}/og.png`] : ogImageAbs ? [ogImageAbs] : undefined
     }
   };
 }
 
 export default async function LegacyPage(props: PageProps) {
   const { slug } = props.params;
+  const localeCode = slug?.length === 1 && isLocaleCode(slug[0]) ? slug[0] : null;
+  if (localeCode) return <LocalizedLanding content={locales[localeCode]} />;
+
+  const isGotem = slug?.[0] === "gotem";
   const legacyFile = slugToLegacyFile(slug);
 
   let html: string;
@@ -142,6 +220,7 @@ export default async function LegacyPage(props: PageProps) {
         <script key={`jsonld-${index}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: data }} />
       ))}
       <div dangerouslySetInnerHTML={{ __html: bodyInner }} />
+      {isGotem ? <GotemGameplay /> : null}
     </div>
   );
 }

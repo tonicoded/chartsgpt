@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s — ChartsGPT"
   },
   description:
-    "Upload any trading chart screenshot and get instant AI analysis: key support & resistance levels, bullish/bearish scenarios, entry triggers, and invalidation points. Works for crypto, forex, stocks, and metals.",
+    "Upload a trading chart screenshot for instant AI analysis with trend, key levels, entry, stop loss, and invalidation. For crypto, forex, stocks, and metals.",
   category: "finance",
   creator: "ChartsGPT",
   publisher: "ChartsGPT",
@@ -60,15 +60,15 @@ export const metadata: Metadata = {
     siteName: "ChartsGPT",
     title: "ChartsGPT — AI-Powered Trading Chart Analysis App",
     description:
-      "Upload any trading chart screenshot and get instant AI analysis: key support & resistance levels, bullish/bearish scenarios, entry triggers, and invalidation points. Works for crypto, forex, stocks, and metals.",
-    images: [{ url: "/chartsgptnewlogo.png" }]
+      "Upload a trading chart screenshot for instant AI analysis with trend, key levels, entry, stop loss, and invalidation. For crypto, forex, stocks, and metals.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "ChartsGPT AI chart analysis app" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "ChartsGPT — AI-Powered Trading Chart Analysis App",
     description:
       "Upload any trading chart screenshot and get instant AI analysis: key support & resistance levels, bullish/bearish scenarios, entry triggers, and invalidation points.",
-    images: ["/chartsgptnewlogo.png"]
+    images: ["/og.png"]
   },
   formatDetection: {
     telephone: false
@@ -84,7 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <Script src="/site-config.js" strategy="afterInteractive" />
-        <Script src="/site.js?v=20260324b" strategy="afterInteractive" />
+        <Script src="/site.js?v=20260722a" strategy="afterInteractive" />
         <Analytics />
       </body>
     </html>

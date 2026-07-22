@@ -1,0 +1,1356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>gotem — Catch what’s really out there</title>
+    <meta name="description" content="Photograph a real animal. Watch AI turn it into a one-of-one gotem card. Catch it, collect it, and battle." />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="gotem" />
+    <meta property="og:title" content="gotem — Catch what’s really out there" />
+    <meta property="og:description" content="Real animals become one-of-one collectible gotem cards." />
+    <meta property="og:image" content="/gotem-assets/logo.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="gotem — Catch what’s really out there" />
+    <meta name="twitter:description" content="Real animals become one-of-one collectible gotem cards." />
+    <meta name="twitter:image" content="/gotem-assets/logo.webp" />
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body class="gotem-landing">
+    <style>
+      html, body {
+        margin: 0;
+        overflow-x: hidden;
+        background: #ffffff;
+      }
+
+      @font-face {
+        font-family: "VT323";
+        src: url("/gotem-assets/VT323-Regular.ttf") format("truetype");
+        font-display: swap;
+      }
+
+      .gotem-landing {
+        --ink: #080808;
+        --paper: #ffffff;
+        --soft: #f4f4f1;
+        --muted: #6f6f6a;
+        --green: #22c788;
+        --red: #ea3346;
+        --gold: #efb62b;
+        --violet: #806cff;
+        min-height: 100svh;
+        overflow: hidden;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: "VT323", ui-monospace, monospace;
+        font-size: 20px;
+        line-height: 1.15;
+        color-scheme: light;
+      }
+
+      .gotem-landing *,
+      .gotem-landing *::before,
+      .gotem-landing *::after { box-sizing: border-box; }
+
+      .gotem-landing a { color: inherit; text-decoration: none; }
+      .gotem-landing img { display: block; max-width: 100%; }
+      .gotem-landing button,
+      .gotem-landing a { -webkit-tap-highlight-color: transparent; }
+
+      .gotem-landing button { font: inherit; }
+
+      .gotem-wrap {
+        width: min(1200px, calc(100% - 48px));
+        margin-inline: auto;
+      }
+
+      .gotem-nav {
+        position: fixed;
+        inset: 18px 0 auto;
+        z-index: 50;
+        pointer-events: none;
+      }
+
+      .gotem-nav-inner {
+        width: min(1200px, calc(100% - 36px));
+        min-height: 64px;
+        margin-inline: auto;
+        padding: 9px 10px 9px 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        border: 1px solid rgba(0, 0, 0, .09);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, .78);
+        box-shadow: 0 18px 60px rgba(0, 0, 0, .08);
+        backdrop-filter: blur(18px) saturate(1.2);
+        pointer-events: auto;
+      }
+
+      .gotem-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 34px;
+        line-height: 1;
+      }
+
+      .gotem-brand img {
+        width: 42px;
+        height: 42px;
+        padding: 3px;
+        object-fit: contain;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);
+      }
+
+      .gotem-nav-links {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        font-size: 21px;
+      }
+
+      .gotem-nav-links a { transition: opacity .2s ease; }
+      .gotem-nav-links a:hover { opacity: .55; }
+
+      .gotem-nav-cta,
+      .gotem-primary-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        color: #fff !important;
+        background: #080808;
+        border-radius: 11px;
+        box-shadow: 0 10px 24px rgba(0,0,0,.16);
+        transition: transform .2s ease, box-shadow .2s ease;
+      }
+
+      .gotem-nav-cta { min-height: 44px; padding: 0 19px; }
+      .gotem-primary-cta { min-height: 58px; padding: 0 25px; font-size: 27px; }
+      .gotem-nav-cta:hover,
+      .gotem-primary-cta:hover { transform: translateY(-2px); box-shadow: 0 15px 32px rgba(0,0,0,.22); }
+
+      .gotem-hero {
+        position: relative;
+        min-height: 100svh;
+        padding: 122px 0 62px;
+        display: grid;
+        align-items: center;
+        isolation: isolate;
+      }
+
+      .gotem-hero::before,
+      .gotem-hero::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 440px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        filter: blur(90px);
+        opacity: .17;
+        animation: gotem-drift 9s ease-in-out infinite alternate;
+      }
+
+      .gotem-hero::before { background: #55e6ad; top: 6%; left: -160px; }
+      .gotem-hero::after { background: #8a74ff; right: -180px; bottom: 0; animation-delay: -4s; }
+
+      .gotem-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(420px, .95fr);
+        align-items: center;
+        gap: clamp(44px, 7vw, 110px);
+      }
+
+      .gotem-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 8px 13px;
+        border: 1px solid rgba(0,0,0,.12);
+        border-radius: 999px;
+        background: rgba(255,255,255,.8);
+        color: #363633;
+        font-size: 18px;
+        letter-spacing: .03em;
+      }
+
+      .gotem-kicker-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--green);
+        box-shadow: 0 0 0 5px rgba(34,199,136,.14);
+        animation: gotem-pulse 1.8s ease-in-out infinite;
+      }
+
+      .gotem-hero h1 {
+        max-width: 680px;
+        margin: 28px 0 18px;
+        font-size: clamp(70px, 8vw, 126px);
+        font-weight: 400;
+        line-height: .79;
+        letter-spacing: -.045em;
+        text-wrap: balance;
+      }
+
+      .gotem-hero h1 span {
+        display: block;
+        color: transparent;
+        -webkit-text-stroke: 1.5px #080808;
+      }
+
+      .gotem-hero-copy {
+        max-width: 570px;
+        margin: 0;
+        color: #555550;
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: clamp(17px, 1.7vw, 21px);
+        line-height: 1.55;
+        letter-spacing: -.015em;
+      }
+
+      .gotem-hero-actions {
+        margin-top: 32px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .gotem-coming {
+        color: #777772;
+        font-size: 20px;
+      }
+
+      .gotem-store-row {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: stretch;
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .gotem-store-badge {
+        display: grid;
+        grid-template-columns: 38px 1fr;
+        align-items: center;
+        min-width: 202px;
+        min-height: 64px;
+        padding: 8px 16px;
+        color: #fff;
+        background: #080808;
+        border: 1px solid #080808;
+        border-radius: 14px;
+        box-shadow: 0 13px 30px rgba(0,0,0,.16);
+        text-decoration: none;
+        user-select: none;
+        transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+      }
+
+      a.gotem-store-badge { color: #fff; }
+      .gotem-store-badge:hover { transform: translateY(-2px); box-shadow: 0 18px 38px rgba(0,0,0,.22); }
+      .gotem-store-badge--next { opacity: 1; }
+      button.gotem-store-badge { cursor: pointer; text-align: left; }
+      .gotem-store-badge svg { width: 33px; height: 36px; overflow: visible; }
+      .gotem-store-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1; }
+      .gotem-store-copy small { font-size: 10px; font-weight: 500; letter-spacing: .025em; }
+      .gotem-store-copy strong { font-size: 21px; font-weight: 600; letter-spacing: -.035em; white-space: nowrap; }
+
+      .gotem-proof {
+        margin-top: 42px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        color: #777772;
+        font-size: 18px;
+      }
+
+      .gotem-proof-balls { display: flex; padding-left: 7px; }
+      .gotem-proof-balls img {
+        width: 37px;
+        height: 37px;
+        margin-left: -8px;
+        border-radius: 50%;
+        filter: drop-shadow(0 5px 8px rgba(0,0,0,.18));
+      }
+
+      .gotem-phone-shell {
+        position: relative;
+        display: grid;
+        place-items: center;
+        padding: 34px 18px 58px;
+      }
+
+      .gotem-phone-shell::before {
+        content: "";
+        position: absolute;
+        inset: 4% -4% 3%;
+        border: 1px solid rgba(0,0,0,.07);
+        border-radius: 52px;
+        background:
+          linear-gradient(rgba(0,0,0,.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0,0,0,.035) 1px, transparent 1px);
+        background-size: 32px 32px;
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.7), transparent 88%);
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,.7), transparent 88%);
+      }
+
+      .gotem-phone-glow {
+        position: absolute;
+        width: 105%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: conic-gradient(from 180deg, rgba(34,199,136,.38), rgba(128,108,255,.34), rgba(239,182,43,.32), rgba(34,199,136,.38));
+        filter: blur(72px);
+        opacity: .86;
+        animation: gotem-spin 12s linear infinite;
+      }
+
+      .gotem-phone {
+        position: relative;
+        z-index: 2;
+        width: min(100%, 520px);
+        aspect-ratio: 1206 / 1770;
+        overflow: visible;
+        padding: 9px;
+        border: 1px solid rgba(255,255,255,.65);
+        border-radius: 34px;
+        background: #090909;
+        box-shadow:
+          0 50px 110px rgba(16,24,22,.24),
+          0 12px 30px rgba(0,0,0,.16),
+          inset 0 0 0 1px rgba(255,255,255,.12);
+        isolation: isolate;
+      }
+
+      .gotem-phone::before,
+      .gotem-phone::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 70%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        filter: blur(65px);
+        opacity: .20;
+        animation: gotem-phone-ambient 14s ease-in-out infinite;
+      }
+
+      .gotem-phone::before { background: #39dba0; left: -25%; top: -12%; }
+      .gotem-phone::after { background: #9978ff; right: -28%; bottom: 2%; animation-delay: -7s; }
+
+      .gotem-app-video,
+      .gotem-app-poster {
+        position: absolute;
+        inset: 9px;
+        width: calc(100% - 18px);
+        height: calc(100% - 18px);
+        border-radius: 25px;
+        object-fit: cover;
+        background: #fff;
+      }
+
+      .gotem-app-video { z-index: 2; display: block; }
+      .gotem-app-poster { display: none; }
+
+      .gotem-screen-glass {
+        position: absolute;
+        z-index: 4;
+        inset: 9px;
+        border-radius: 25px;
+        box-shadow:
+          inset 0 0 0 1px rgba(0,0,0,.08),
+          inset 0 18px 28px rgba(255,255,255,.18);
+        pointer-events: none;
+      }
+
+      .gotem-live-badge,
+      .gotem-demo-label {
+        position: absolute;
+        z-index: 7;
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid rgba(255,255,255,.20);
+        box-shadow: 0 13px 34px rgba(0,0,0,.22);
+        backdrop-filter: blur(14px);
+      }
+
+      .gotem-live-badge {
+        top: -17px;
+        left: 24px;
+        gap: 8px;
+        padding: 9px 13px;
+        border-radius: 999px;
+        color: #fff;
+        background: rgba(8,8,8,.92);
+        font-size: 17px;
+        letter-spacing: .04em;
+      }
+
+      .gotem-live-badge i {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #34e3a2;
+        box-shadow: 0 0 0 5px rgba(52,227,162,.16);
+        animation: gotem-pulse 1.5s ease-in-out infinite;
+      }
+
+      .gotem-demo-label {
+        right: 20px;
+        bottom: -17px;
+        padding: 9px 13px;
+        border-color: rgba(0,0,0,.08);
+        border-radius: 10px;
+        color: #181816;
+        background: rgba(255,255,255,.90);
+        font-size: 16px;
+      }
+
+      .gotem-demo-notes {
+        position: absolute;
+        z-index: 3;
+        left: 50%;
+        bottom: 3px;
+        width: min(92%, 500px);
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        color: #777772;
+        font-size: 15px;
+        white-space: nowrap;
+      }
+
+      .gotem-demo-notes span { display: inline-flex; align-items: center; gap: 6px; }
+      .gotem-demo-notes b { color: #111; font-weight: 400; }
+
+      .gotem-phone-brand {
+        position: absolute;
+        top: 4.4%;
+        left: 50%;
+        z-index: 10;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 27px;
+      }
+
+      .gotem-phone-brand img { width: 32px; height: 32px; object-fit: contain; }
+
+      .gotem-battle-stage,
+      .gotem-reveal-stage { position: absolute; inset: 12% 3% 16%; }
+
+      .gotem-battle-stage { animation: gotem-battle-stage 14s linear infinite; }
+      .gotem-reveal-stage { opacity: 0; animation: gotem-reveal-stage 14s linear infinite; perspective: 1000px; }
+
+      .gotem-hp {
+        position: absolute;
+        z-index: 4;
+        width: 35%;
+        padding: 9px 10px 8px;
+        border: 1px solid rgba(0,0,0,.04);
+        border-radius: 10px;
+        background: rgba(255,255,255,.82);
+        box-shadow: 0 8px 18px rgba(0,0,0,.08);
+        font-size: 15px;
+      }
+
+      .gotem-hp-wild { left: 5%; top: 3%; }
+      .gotem-hp-player { right: 5%; bottom: 4%; }
+      .gotem-hp-track { height: 6px; margin-top: 4px; overflow: hidden; border-radius: 10px; background: rgba(0,0,0,.10); }
+      .gotem-hp-fill { height: 100%; border-radius: inherit; transform-origin: left; }
+      .gotem-hp-wild .gotem-hp-fill { background: var(--green); animation: gotem-wild-hp 14s linear infinite; }
+      .gotem-hp-player .gotem-hp-fill { width: 74%; background: var(--green); animation: gotem-player-hp 14s linear infinite; }
+
+      .gotem-fighter {
+        position: absolute;
+        z-index: 2;
+        object-fit: contain;
+        filter: drop-shadow(0 16px 16px rgba(0,0,0,.10));
+      }
+
+      .gotem-tiger {
+        width: 37%;
+        right: 8%;
+        top: 13%;
+        animation: gotem-tiger 14s cubic-bezier(.2,.8,.2,1) infinite;
+      }
+
+      .gotem-gorilla {
+        width: 35%;
+        left: 7%;
+        bottom: 14%;
+        animation: gotem-gorilla 14s cubic-bezier(.2,.8,.2,1) infinite;
+      }
+
+      .gotem-impact {
+        position: absolute;
+        right: 17%;
+        top: 25%;
+        width: 70px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: repeating-conic-gradient(from 0deg, var(--gold) 0 7deg, transparent 7deg 16deg);
+        opacity: 0;
+        animation: gotem-impact 14s linear infinite;
+      }
+
+      .gotem-throw-ball {
+        position: absolute;
+        z-index: 6;
+        width: 47px;
+        left: 18%;
+        bottom: 19%;
+        opacity: 0;
+        filter: drop-shadow(0 8px 10px rgba(0,0,0,.16));
+        animation: gotem-ball-throw 14s cubic-bezier(.25,.7,.25,1) infinite;
+      }
+
+      .gotem-mini-card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 46%;
+        aspect-ratio: 2 / 3;
+        overflow: hidden;
+        border-radius: 5.5%;
+        box-shadow: 0 20px 45px rgba(0,0,0,.24);
+        transform-style: preserve-3d;
+        background: center / cover no-repeat;
+      }
+
+      .gotem-mini-card img {
+        position: absolute;
+        left: 13%;
+        top: 12%;
+        width: 74%;
+        height: 35%;
+        object-fit: contain;
+      }
+
+      .gotem-mini-card span {
+        position: absolute;
+        left: 10%;
+        top: 5.6%;
+        z-index: 2;
+        color: #111;
+        font-size: clamp(10px, 1.4vw, 15px);
+      }
+
+      .gotem-mini-tiger {
+        z-index: 4;
+        background-image: url('/gotem-assets/card-fire.webp');
+        animation: gotem-card-center 14s cubic-bezier(.2,.75,.2,1) infinite;
+      }
+
+      .gotem-mini-gorilla {
+        z-index: 2;
+        background-image: url('/gotem-assets/card-stone.webp');
+        animation: gotem-card-left 14s cubic-bezier(.2,.75,.2,1) infinite;
+      }
+
+      .gotem-mini-shark {
+        z-index: 3;
+        background-image: url('/gotem-assets/card-water.webp');
+        animation: gotem-card-right 14s cubic-bezier(.2,.75,.2,1) infinite;
+      }
+
+      .gotem-phone-caption {
+        position: absolute;
+        left: 8%;
+        right: 8%;
+        bottom: 7%;
+        height: 47px;
+        text-align: center;
+        font-size: 27px;
+      }
+
+      .gotem-caption-line { position: absolute; inset: 0; opacity: 0; }
+      .gotem-caption-line::after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 4px;
+        margin: 7px auto 0;
+        border-radius: 4px;
+        background: currentColor;
+      }
+
+      .gotem-caption-line:nth-child(1) { color: var(--green); animation: gotem-caption 14s linear infinite; }
+      .gotem-caption-line:nth-child(2) { color: var(--red); animation: gotem-caption 14s linear 1.8s infinite; }
+      .gotem-caption-line:nth-child(3) { color: var(--gold); animation: gotem-caption 14s linear 4.8s infinite; }
+      .gotem-caption-line:nth-child(4) { color: var(--violet); animation: gotem-caption 14s linear 7.3s infinite; }
+      .gotem-caption-line:nth-child(5) { color: var(--gold); animation: gotem-caption 14s linear 9.8s infinite; }
+      .gotem-caption-line b { color: #0b0b0b; font-weight: 400; }
+
+      .gotem-scroll-cue {
+        position: absolute;
+        left: 50%;
+        bottom: 22px;
+        transform: translateX(-50%);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        color: #92928c;
+        font-size: 16px;
+      }
+
+      .gotem-scroll-cue::after {
+        content: "";
+        width: 1px;
+        height: 28px;
+        background: #aaa;
+        transform-origin: top;
+        animation: gotem-scroll 1.7s ease-in-out infinite;
+      }
+
+      .gotem-section { padding: clamp(90px, 12vw, 170px) 0; }
+      .gotem-section-label { margin: 0 0 24px; color: #83837d; font-size: 19px; letter-spacing: .11em; text-transform: uppercase; }
+      .gotem-section-title {
+        max-width: 900px;
+        margin: 0;
+        font-size: clamp(56px, 7vw, 104px);
+        font-weight: 400;
+        line-height: .85;
+        letter-spacing: -.035em;
+      }
+
+      .gotem-process {
+        border-top: 1px solid #e5e5e1;
+        background: #fff;
+      }
+
+      .gotem-process-grid {
+        margin-top: 70px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .gotem-step {
+        position: relative;
+        min-height: 520px;
+        overflow: hidden;
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #e4e4df;
+        border-radius: 24px;
+        background: #f7f7f4;
+      }
+
+      .gotem-step-no { color: #92928d; font-size: 19px; }
+      .gotem-step h3 {
+        min-height: 82px;
+        margin: 12px 0 8px;
+        font-size: 38px;
+        font-weight: 400;
+        line-height: 1.02;
+      }
+      .gotem-step p {
+        min-height: 68px;
+        margin: 0;
+        color: #6b6b66;
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 15px;
+        line-height: 1.45;
+      }
+
+      .gotem-step-visual {
+        position: relative;
+        inset: auto;
+        flex: 1 1 auto;
+        min-height: 250px;
+        margin-top: 18px;
+        display: grid;
+        place-items: center;
+      }
+      .gotem-step-animal {
+        width: min(82%, 320px);
+        max-height: 230px;
+        object-fit: contain;
+        filter: drop-shadow(0 20px 20px rgba(0,0,0,.12));
+        animation: gotem-float 3.8s ease-in-out infinite;
+      }
+
+      .gotem-scan-frame {
+        position: relative;
+        width: min(78%, 245px);
+        aspect-ratio: 1;
+        border: 2px solid #111;
+        border-radius: 28px;
+        background: radial-gradient(circle at center, rgba(34,199,136,.17), transparent 62%);
+      }
+
+      .gotem-scan-frame::before,
+      .gotem-scan-frame::after {
+        content: "";
+        position: absolute;
+        inset: 12px;
+        border: 1px dashed rgba(0,0,0,.26);
+        border-radius: 20px;
+      }
+
+      .gotem-scan-frame::after {
+        inset: 0 8%;
+        height: 2px;
+        top: 20%;
+        border: 0;
+        border-radius: 2px;
+        background: var(--green);
+        box-shadow: 0 0 18px var(--green);
+        animation: gotem-scan 2.4s ease-in-out infinite;
+      }
+
+      .gotem-scan-frame img { position: absolute; inset: 24%; width: 52%; height: 52%; object-fit: contain; }
+
+      .gotem-step-card {
+        position: relative;
+        width: min(54%, 158px);
+        aspect-ratio: 2 / 3;
+        border-radius: 10px;
+        background: url('/gotem-assets/card-fire.webp') center / cover;
+        box-shadow: 0 24px 50px rgba(232,55,65,.24);
+        transform: rotate(5deg);
+        animation: gotem-card-breathe 3s ease-in-out infinite;
+      }
+
+      .gotem-step-card img { position: absolute; left: 13%; top: 12%; width: 74%; height: 35%; object-fit: contain; }
+
+      .gotem-collection {
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+        background: #080808;
+      }
+
+      .gotem-collection::before {
+        content: "";
+        position: absolute;
+        inset: -30% 30% 20% -20%;
+        border-radius: 50%;
+        background: rgba(128,108,255,.20);
+        filter: blur(120px);
+      }
+
+      .gotem-collection-head { position: relative; display: flex; justify-content: space-between; align-items: end; gap: 40px; }
+      .gotem-collection .gotem-section-label { color: #9b9b96; }
+      .gotem-collection-copy {
+        max-width: 430px;
+        margin: 0 0 8px;
+        color: #aaa9a3;
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 17px;
+        line-height: 1.55;
+      }
+
+      .gotem-card-gallery {
+        position: relative;
+        min-height: 690px;
+        margin-top: 55px;
+        display: grid;
+        place-items: center;
+        perspective: 1400px;
+      }
+
+      .crittr-card {
+        position: absolute;
+        width: clamp(245px, 25vw, 330px);
+        aspect-ratio: 2 / 3;
+        overflow: hidden;
+        border-radius: 5.4%;
+        background: center / cover no-repeat;
+        box-shadow: 0 34px 80px rgba(0,0,0,.62);
+        transition: transform .45s cubic-bezier(.2,.8,.2,1), filter .45s ease;
+      }
+
+      .crittr-card:hover { z-index: 10; transform: translateY(-26px) rotate(0deg) scale(1.04) !important; filter: saturate(1.1); }
+      .crittr-card--stone { left: 7%; background-image: url('/gotem-assets/card-stone.webp'); transform: rotate(-10deg) translateY(25px); }
+      .crittr-card--fire { z-index: 3; background-image: url('/gotem-assets/card-fire.webp'); transform: translateY(-20px); box-shadow: 0 38px 95px rgba(224,48,55,.28); }
+      .crittr-card--water { right: 7%; background-image: url('/gotem-assets/card-water.webp'); transform: rotate(10deg) translateY(25px); box-shadow: 0 38px 95px rgba(93,82,255,.28); }
+
+      .crittr-card-header {
+        position: absolute;
+        left: 9%;
+        right: 9%;
+        top: 5.1%;
+        display: flex;
+        align-items: center;
+        color: #101010;
+        white-space: nowrap;
+      }
+
+      .crittr-card-name { font-size: clamp(16px, 1.6vw, 23px); }
+      .crittr-card-level { margin-left: 6px; color: rgba(0,0,0,.58); font: 700 clamp(8px, .75vw, 11px)/1 ui-sans-serif, sans-serif; }
+      .crittr-card-type { margin-left: auto; width: 22px; aspect-ratio: 1; border-radius: 50%; border: 2px solid rgba(0,0,0,.65); box-shadow: inset 0 0 0 3px rgba(255,255,255,.42); }
+      .crittr-card--fire .crittr-card-type { background: #f04539; }
+      .crittr-card--water .crittr-card-type { background: #496eff; }
+      .crittr-card--stone .crittr-card-type { background: #77716b; }
+
+      .crittr-card-animal { position: absolute; left: 10%; top: 10%; width: 80%; height: 39%; object-fit: contain; filter: drop-shadow(0 11px 9px rgba(0,0,0,.15)); }
+      .crittr-card-species { position: absolute; left: 18%; top: 52.1%; color: rgba(0,0,0,.70); font-size: clamp(12px, 1.2vw, 17px); letter-spacing: .04em; }
+      .crittr-card-info { position: absolute; left: 10%; right: 10%; top: 58%; color: rgba(0,0,0,.84); }
+      .crittr-move { display: grid; grid-template-columns: 12px 1fr auto; align-items: center; gap: 5px; margin: 0 0 6px; font-size: clamp(11px, 1vw, 15px); }
+      .crittr-move-dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+      .crittr-move-power { font-size: .82em; }
+      .crittr-card-flavor { margin: 10px 0 0; padding-top: 8px; border-top: 1px solid rgba(0,0,0,.18); font-size: clamp(8px, .72vw, 11px); line-height: 1.15; }
+      .crittr-card-stats { margin-top: 10px; display: flex; justify-content: space-between; font-size: clamp(9px, .8vw, 12px); }
+
+      .gotem-floating-ball { position: absolute; filter: drop-shadow(0 18px 22px rgba(0,0,0,.55)); animation: gotem-float 4s ease-in-out infinite; }
+      .gotem-floating-ball--a { width: 88px; left: 2%; top: 23%; }
+      .gotem-floating-ball--b { width: 110px; right: 0; bottom: 11%; animation-delay: -1.4s; }
+
+      .gotem-features { background: #fff; }
+      .gotem-feature-grid { margin-top: 70px; border-top: 1px solid #dddcd7; }
+      .gotem-feature-row {
+        display: grid;
+        grid-template-columns: 80px 1fr 1fr;
+        align-items: start;
+        gap: 28px;
+        padding: 34px 0;
+        border-bottom: 1px solid #dddcd7;
+      }
+
+      .gotem-feature-index { color: #9a9a94; }
+      .gotem-feature-row h3 { margin: 0; font-size: clamp(31px, 3vw, 44px); font-weight: 400; }
+      .gotem-feature-row p {
+        max-width: 520px;
+        margin: 4px 0 0;
+        color: #6d6d68;
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.55;
+      }
+
+      .gotem-final {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(110px, 15vw, 220px) 0 70px;
+        text-align: center;
+        color: #fff;
+        background: #080808;
+      }
+
+      .gotem-final::before {
+        content: "";
+        position: absolute;
+        inset: 10% 15% auto;
+        height: 300px;
+        border-radius: 50%;
+        background: linear-gradient(90deg, rgba(34,199,136,.32), rgba(128,108,255,.35), rgba(239,182,43,.25));
+        filter: blur(100px);
+      }
+
+      .gotem-final-logo { position: relative; width: 88px; margin: 0 auto 26px; filter: invert(1); }
+      .gotem-final h2 { position: relative; max-width: 930px; margin: 0 auto; font-size: clamp(65px, 10vw, 140px); font-weight: 400; line-height: .77; letter-spacing: -.04em; }
+      .gotem-final p { position: relative; margin: 30px 0; color: #aaa9a4; font-size: 23px; }
+      .gotem-final .gotem-primary-cta { position: relative; color: #080808 !important; background: #fff; }
+      .gotem-final .gotem-store-row { justify-content: center; margin-top: 30px; }
+      .gotem-final .gotem-store-badge { color: #080808; background: #fff; border-color: #fff; box-shadow: 0 17px 42px rgba(0,0,0,.40); }
+
+      .gotem-waitlist {
+        width: min(540px, calc(100% - 28px));
+        padding: 0;
+        color: var(--ink);
+        border: 1px solid rgba(255,255,255,.16);
+        border-radius: 26px;
+        background: #fff;
+        box-shadow: 0 30px 100px rgba(0,0,0,.38);
+        overflow: hidden;
+      }
+
+      .gotem-waitlist::backdrop { background: rgba(8,8,8,.62); backdrop-filter: blur(12px); }
+      .gotem-waitlist-inner { position: relative; padding: 34px; }
+      .gotem-waitlist-topline { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; color: #656560; font-size: 18px; }
+      .gotem-waitlist-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px rgba(34,199,136,.14); }
+      .gotem-waitlist h2 { margin: 0; font-size: clamp(48px, 10vw, 68px); font-weight: 400; line-height: .88; letter-spacing: -.025em; }
+      .gotem-waitlist-copy { margin: 17px 0 24px; color: #5e5e59; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 17px; line-height: 1.5; }
+      .gotem-waitlist-form { display: grid; gap: 10px; }
+      .gotem-waitlist-field { display: grid; grid-template-columns: 1fr auto; gap: 9px; padding: 7px; border: 1px solid rgba(0,0,0,.13); border-radius: 15px; background: #f5f5f2; }
+      .gotem-waitlist-field:focus-within { border-color: #080808; box-shadow: 0 0 0 3px rgba(0,0,0,.07); }
+      .gotem-waitlist-field input { min-width: 0; padding: 0 11px; color: #080808; border: 0; outline: 0; background: transparent; font: 17px/1.2 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .gotem-waitlist-submit { min-height: 48px; padding: 0 18px; color: #fff; border: 0; border-radius: 10px; background: #080808; cursor: pointer; }
+      .gotem-waitlist-submit:disabled { cursor: wait; opacity: .55; }
+      .gotem-waitlist-status { min-height: 22px; margin: 2px 2px 0; color: #6b6b66; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 13px; line-height: 1.4; }
+      .gotem-waitlist-status[data-state="success"] { color: #11865e; }
+      .gotem-waitlist-status[data-state="error"] { color: #c5293a; }
+      .gotem-waitlist-close { position: absolute; top: 18px; right: 18px; width: 38px; height: 38px; display: grid; place-items: center; padding: 0; color: #080808; border: 1px solid rgba(0,0,0,.1); border-radius: 50%; background: #f5f5f2; cursor: pointer; }
+      .gotem-waitlist-privacy { margin: 16px 0 0; color: #8a8a84; font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 12px; line-height: 1.4; }
+
+      .gotem-ball-row { position: relative; margin: 70px auto 110px; display: flex; justify-content: center; align-items: center; gap: clamp(9px, 2vw, 25px); }
+      .gotem-ball-row img { width: clamp(58px, 8vw, 112px); filter: drop-shadow(0 19px 23px rgba(0,0,0,.52)); transition: transform .25s ease; }
+      .gotem-ball-row img:nth-child(even) { transform: translateY(25px); }
+      .gotem-ball-row img:hover { transform: translateY(-12px) rotate(9deg); }
+
+      .gotem-footer {
+        position: relative;
+        width: min(1200px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 26px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        border-top: 1px solid rgba(255,255,255,.15);
+        color: #8e8e88;
+        font-size: 18px;
+      }
+
+      .gotem-footer-links { display: flex; gap: 24px; }
+      .gotem-footer a:hover { color: #fff; }
+
+      @keyframes gotem-drift { to { transform: translate(90px, 60px) scale(1.15); } }
+      @keyframes gotem-spin { to { transform: rotate(360deg); } }
+      @keyframes gotem-pulse { 50% { transform: scale(.76); opacity: .65; } }
+      @keyframes gotem-phone-ambient { 50% { transform: translate(30%, 35%) scale(1.18); } }
+      @keyframes gotem-scroll { 0%,100% { transform: scaleY(.35); opacity: .3; } 50% { transform: scaleY(1); opacity: 1; } }
+      @keyframes gotem-float { 50% { transform: translateY(-13px) rotate(1deg); } }
+      @keyframes gotem-scan { 0%,100% { top: 14%; opacity: .25; } 50% { top: 84%; opacity: 1; } }
+      @keyframes gotem-card-breathe { 50% { transform: rotate(2deg) translateY(-12px) scale(1.02); } }
+      @keyframes gotem-battle-stage { 0%,49% { opacity: 1; } 53%,100% { opacity: 0; } }
+      @keyframes gotem-reveal-stage { 0%,50% { opacity: 0; } 55%,96% { opacity: 1; } 100% { opacity: 0; } }
+      @keyframes gotem-tiger {
+        0%,2% { transform: translateX(160%); }
+        7%,16% { transform: translateX(0); }
+        18% { transform: translate(-8%, 7%) rotate(-5deg); }
+        20%,28% { transform: translateX(0); }
+        30% { transform: translate(-7%, 6%) rotate(-4deg); }
+        32%,42% { transform: translateX(0); }
+        47% { transform: translateX(0) scale(.04); opacity: 0; }
+        100% { opacity: 0; }
+      }
+      @keyframes gotem-gorilla {
+        0%,5% { transform: scale(.01); opacity: 0; }
+        9%,15% { transform: scale(1); opacity: 1; }
+        17% { transform: translate(12%, -7%) rotate(7deg); }
+        19%,26% { transform: none; }
+        28% { transform: translate(11%, -7%) rotate(7deg); }
+        30%,49% { transform: none; opacity: 1; }
+        53%,100% { transform: scale(.84); opacity: 0; }
+      }
+      @keyframes gotem-wild-hp { 0%,15% { width: 100%; background: var(--green); } 20%,27% { width: 55%; background: var(--green); } 33%,100% { width: 14%; background: var(--red); } }
+      @keyframes gotem-player-hp { 0%,21% { width: 100%; } 27%,100% { width: 74%; } }
+      @keyframes gotem-impact { 0%,16% { opacity: 0; transform: scale(.2) rotate(0); } 18% { opacity: .85; transform: scale(1.2) rotate(20deg); } 20%,28% { opacity: 0; } 30% { opacity: .9; transform: scale(1.25) rotate(60deg); } 32%,100% { opacity: 0; } }
+      @keyframes gotem-ball-throw {
+        0%,37% { opacity: 0; transform: translate(0,0) rotate(0); }
+        39% { opacity: 1; }
+        45% { opacity: 1; transform: translate(235%, -310%) rotate(900deg) scale(.72); }
+        48% { opacity: 1; transform: translate(235%, 22%) rotate(1080deg) scale(1); }
+        51%,100% { opacity: 0; transform: translate(235%, 22%) rotate(1120deg); }
+      }
+      @keyframes gotem-card-center {
+        0%,52% { opacity: 0; transform: translate(-50%,-50%) rotateY(90deg) scale(1.12); }
+        58% { opacity: 1; transform: translate(-50%,-50%) rotateY(0) scale(1); }
+        71%,96% { opacity: 1; transform: translate(-50%,-50%) scale(.72); }
+        100% { opacity: 0; transform: translate(-50%,-50%) scale(.62); }
+      }
+      @keyframes gotem-card-left { 0%,67% { opacity: 0; transform: translate(-50%,-50%) scale(.55); } 74%,96% { opacity: 1; transform: translate(-108%,-45%) rotate(-13deg) scale(.67); } 100% { opacity: 0; } }
+      @keyframes gotem-card-right { 0%,67% { opacity: 0; transform: translate(-50%,-50%) scale(.55); } 74%,96% { opacity: 1; transform: translate(8%,-45%) rotate(13deg) scale(.67); } 100% { opacity: 0; } }
+      @keyframes gotem-caption { 0% { opacity: 0; transform: translateY(8px); } 2%,12% { opacity: 1; transform: none; } 15%,100% { opacity: 0; transform: translateY(-5px); } }
+
+      @media (max-width: 820px) {
+        .gotem-hero { padding-top: 130px; }
+        .gotem-hero-grid { grid-template-columns: 1fr; text-align: center; }
+        .gotem-hero-copy { margin-inline: auto; }
+        .gotem-hero-actions, .gotem-proof { justify-content: center; }
+        .gotem-store-row { justify-content: center; }
+        .gotem-phone { width: min(100%, 520px); }
+        .gotem-scroll-cue { display: none; }
+        .gotem-process-grid { grid-template-columns: 1fr; }
+        .gotem-step { min-height: 520px; }
+        .gotem-step-visual { inset: auto; min-height: 250px; }
+        .gotem-collection-head { display: block; }
+        .gotem-collection-copy { margin-top: 26px; }
+        .gotem-card-gallery { min-height: 620px; }
+        .crittr-card--stone { left: 1%; }
+        .crittr-card--water { right: 1%; }
+      }
+
+      @media (max-width: 700px) {
+        .gotem-wrap { width: min(100% - 28px, 1200px); }
+        .gotem-nav { inset: 10px 0 auto; }
+        .gotem-nav-inner { width: calc(100% - 20px); min-height: 56px; border-radius: 15px; }
+        .gotem-brand { font-size: 29px; }
+        .gotem-brand img { width: 36px; height: 36px; }
+        .gotem-nav-links > a:not(.gotem-nav-cta) { display: none; }
+        .gotem-nav-cta { min-height: 39px; padding: 0 13px; font-size: 18px; }
+        .gotem-hero { min-height: auto; padding: 102px 0 90px; }
+        .gotem-hero-grid { gap: 58px; }
+        .gotem-hero h1 { margin-top: 22px; font-size: clamp(65px, 22vw, 94px); }
+        .gotem-kicker { font-size: 16px; }
+        .gotem-scroll-cue { display: none; }
+        .gotem-phone-shell { padding: 30px 0 54px; }
+        .gotem-phone { border-radius: 29px; }
+        .gotem-app-video,
+        .gotem-app-poster,
+        .gotem-screen-glass { border-radius: 21px; }
+        .gotem-live-badge { top: -14px; left: 17px; padding: 8px 11px; font-size: 15px; }
+        .gotem-demo-label { right: 12px; bottom: -14px; padding: 8px 10px; font-size: 14px; }
+        .gotem-demo-notes { gap: 7px; font-size: 12px; }
+        .gotem-section { padding: 90px 0; }
+        .gotem-process-grid { margin-top: 48px; }
+        .gotem-section-title { font-size: clamp(53px, 17vw, 78px); }
+        .gotem-card-gallery { min-height: 530px; transform: scale(.88); margin-inline: -30px; }
+        .crittr-card { width: min(58vw, 245px); }
+        .crittr-card--stone { left: -3%; transform: rotate(-11deg) translateY(20px); }
+        .crittr-card--water { right: -3%; transform: rotate(11deg) translateY(20px); }
+        .crittr-card--fire { transform: translateY(-10px); }
+        .gotem-floating-ball { display: none; }
+        .gotem-feature-row { grid-template-columns: 42px 1fr; gap: 14px; }
+        .gotem-feature-row p { grid-column: 2; }
+        .gotem-final { padding-bottom: 42px; }
+        .gotem-footer { width: calc(100% - 28px); display: block; text-align: center; }
+        .gotem-footer-links { justify-content: center; margin-top: 14px; flex-wrap: wrap; }
+      }
+
+      @media (max-width: 540px) {
+        .gotem-store-row { width: 100%; gap: 8px; }
+        .gotem-store-badge { flex: 1 1 0; grid-template-columns: 29px 1fr; min-width: 0; min-height: 58px; padding: 7px 9px; border-radius: 12px; }
+        .gotem-store-badge svg { width: 27px; height: 31px; }
+        .gotem-store-copy small { font-size: 8px; }
+        .gotem-store-copy strong { font-size: 17px; }
+        .gotem-waitlist-inner { padding: 29px 20px 22px; }
+        .gotem-waitlist-field { grid-template-columns: 1fr; }
+        .gotem-waitlist-field input { min-height: 46px; }
+        .gotem-waitlist-submit { width: 100%; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .gotem-landing *, .gotem-landing *::before, .gotem-landing *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+        .gotem-battle-stage { display: none; }
+        .gotem-reveal-stage { opacity: 1; }
+        .gotem-mini-tiger { opacity: 1; transform: translate(-50%,-50%) scale(.72); }
+        .gotem-mini-gorilla { opacity: 1; transform: translate(-108%,-45%) rotate(-13deg) scale(.67); }
+        .gotem-mini-shark { opacity: 1; transform: translate(8%,-45%) rotate(13deg) scale(.67); }
+        .gotem-caption-line { display: none; }
+        .gotem-caption-line:last-child { display: block; opacity: 1; }
+      }
+    </style>
+
+    <main class="gotem-site" id="top">
+      <nav class="gotem-nav" aria-label="Primary navigation">
+        <div class="gotem-nav-inner">
+          <a class="gotem-brand" href="/" aria-label="gotem home">
+            <img src="/gotem-assets/logo.webp" alt="" />
+            <span>gotem</span>
+          </a>
+          <div class="gotem-nav-links">
+            <a href="#how-it-works">how it works</a>
+            <a href="#collection">the collection</a>
+            <a class="gotem-nav-cta" href="#download"><span>start hunting</span><span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </nav>
+
+      <section class="gotem-hero">
+        <div class="gotem-wrap gotem-hero-grid">
+          <div class="gotem-hero-copyblock">
+            <div class="gotem-kicker"><span class="gotem-kicker-dot"></span> the wild is closer than you think</div>
+            <h1>catch what’s <span>really out there.</span></h1>
+            <p class="gotem-hero-copy">Point your camera at a real animal. gotem uses AI to turn that exact encounter into a one-of-one collectible card—with its own name, abilities, rarity, and battle stats.</p>
+            <div class="gotem-hero-actions">
+              <a class="gotem-primary-cta" href="#how-it-works"><span>see the hunt</span><span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="gotem-store-row" aria-label="gotem mobile release platforms">
+              <a class="gotem-store-badge" href="https://apps.apple.com/us/app/gotem-animal-identifier-ai/id6786046345" target="_blank" rel="noopener noreferrer" aria-label="Download gotem on the App Store">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.05 12.54c-.03-3.14 2.57-4.67 2.69-4.74-1.47-2.15-3.76-2.44-4.57-2.46-1.92-.2-3.79 1.15-4.77 1.15-1 0-2.5-1.13-4.13-1.1-2.09.03-4.04 1.24-5.11 3.13-2.21 3.83-.56 9.46 1.55 12.56 1.06 1.51 2.29 3.2 3.92 3.14 1.59-.07 2.19-1.01 4.12-1.01 1.91 0 2.47 1.01 4.13.97 1.71-.03 2.79-1.52 3.81-3.04 1.22-1.73 1.71-3.43 1.73-3.52-.04-.01-3.28-1.25-3.31-5.08ZM13.92 3.3A4.58 4.58 0 0 0 14.97 0a4.67 4.67 0 0 0-3.02 1.57 4.38 4.38 0 0 0-1.08 3.17 3.86 3.86 0 0 0 3.05-1.44Z"/></svg>
+                <span class="gotem-store-copy"><small>Download on the</small><strong>App Store</strong></span>
+              </a>
+              <button class="gotem-store-badge gotem-store-badge--next gotem-waitlist-trigger" type="button" aria-label="Join the Google Play waitlist">
+                <svg viewBox="0 0 32 36" aria-hidden="true"><path fill="#34a853" d="M1.3 1.1A3 3 0 0 0 .5 3.2v29.6c0 .8.3 1.5.8 2.1L18 18 1.3 1.1Z"/><path fill="#4285f4" d="m23.5 12.4-5.5 5.5L1.3 1.1c.5-.4 1.2-.5 1.9-.1l20.3 11.4Z"/><path fill="#fbbc04" d="M31 16.6 23.5 12.4 18 18l5.5 5.6 7.5-4.2c1.1-.6 1.1-2.2 0-2.8Z"/><path fill="#ea4335" d="M3.2 35c-.7.4-1.4.3-1.9-.1L18 18l5.5 5.6L3.2 35Z"/></svg>
+                <span class="gotem-store-copy"><small>Join the waitlist</small><strong>Google Play</strong></span>
+              </button>
+            </div>
+            <div class="gotem-proof">
+              <div class="gotem-proof-balls" aria-hidden="true">
+                <img src="/gotem-assets/ball-green.webp" alt="" />
+                <img src="/gotem-assets/ball-blue.webp" alt="" />
+                <img src="/gotem-assets/ball-red.webp" alt="" />
+              </div>
+              <span>scan · catch · collect · battle</span>
+            </div>
+          </div>
+
+          <div class="gotem-phone-shell" aria-label="Real footage of the gotem welcome battle, catch, and card reveal">
+            <div class="gotem-phone-glow"></div>
+            <div class="gotem-phone">
+              <video class="gotem-app-video" autoplay muted loop playsinline preload="auto" poster="/gotem-assets/welcome-poster.webp" aria-label="gotem gameplay: a gorilla battles and catches a tiger, revealing collectible cards">
+                <source src="/gotem-assets/gotem-gameplay-loop.mp4" type="video/mp4" />
+              </video>
+              <img class="gotem-app-poster" src="/gotem-assets/welcome-poster.webp" alt="A wild tiger facing Titanfist in gotem" />
+              <div class="gotem-screen-glass" aria-hidden="true"></div>
+              <div class="gotem-live-badge" aria-hidden="true"><i></i> real gotem gameplay</div>
+              <div class="gotem-demo-label" aria-hidden="true">battle → throw → reveal</div>
+            </div>
+            <div class="gotem-demo-notes" aria-hidden="true">
+              <span><b>01</b> real animal</span><span>·</span><span><b>02</b> AI generation</span><span>·</span><span><b>03</b> one-of-one card</span>
+            </div>
+          </div>
+        </div>
+        <div class="gotem-scroll-cue" aria-hidden="true">keep exploring</div>
+      </section>
+
+      <section class="gotem-section gotem-process" id="how-it-works">
+        <div class="gotem-wrap">
+          <p class="gotem-section-label">one real encounter. one impossible creature.</p>
+          <h2 class="gotem-section-title">the camera is your portal.</h2>
+          <div class="gotem-process-grid">
+            <article class="gotem-step">
+              <span class="gotem-step-no">01 / find</span>
+              <h3>spot something wild.</h3>
+              <p>A pet, a bird in the park, or something genuinely rare.</p>
+              <div class="gotem-step-visual"><img class="gotem-step-animal" src="/gotem-assets/tiger.webp" alt="A real tiger" /></div>
+            </article>
+            <article class="gotem-step">
+              <span class="gotem-step-no">02 / scan</span>
+              <h3>let AI discover it.</h3>
+              <p>Species, visual traits, rarity and powers are read from the encounter.</p>
+              <div class="gotem-step-visual"><div class="gotem-scan-frame"><img src="/gotem-assets/logo.webp" alt="gotem scan mark" /></div></div>
+            </article>
+            <article class="gotem-step">
+              <span class="gotem-step-no">03 / catch</span>
+              <h3>make it yours.</h3>
+              <p>Throw the right ball and reveal a gotem card nobody else owns.</p>
+              <div class="gotem-step-visual"><div class="gotem-step-card"><img src="/gotem-assets/tiger.webp" alt="Blazefang collectible card" /></div></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="gotem-section gotem-collection" id="collection">
+        <div class="gotem-wrap">
+          <div class="gotem-collection-head">
+            <div>
+              <p class="gotem-section-label">your encounters become your deck</p>
+              <h2 class="gotem-section-title">no two collections are alike.</h2>
+            </div>
+            <p class="gotem-collection-copy">Every card remembers the animal behind it. Different species, traits and rarity create wildly different creatures—and a deck that could only belong to you.</p>
+          </div>
+
+          <div class="gotem-card-gallery">
+            <img class="gotem-floating-ball gotem-floating-ball--a" src="/gotem-assets/ball-gold.webp" alt="" />
+            <img class="gotem-floating-ball gotem-floating-ball--b" src="/gotem-assets/ball-void.webp" alt="" />
+
+            <article class="crittr-card crittr-card--stone" aria-label="Titanfist legendary gotem card">
+              <div class="crittr-card-header"><span class="crittr-card-name">titanfist</span><span class="crittr-card-level">lv 30 · 159 hp</span><span class="crittr-card-type"></span></div>
+              <img class="crittr-card-animal" src="/gotem-assets/gorilla.webp" alt="Titanfist" />
+              <span class="crittr-card-species">mountain gorilla</span>
+              <div class="crittr-card-info">
+                <div class="crittr-move"><span class="crittr-move-dot"></span><span>seismic slam</span><span class="crittr-move-power">188</span></div>
+                <div class="crittr-move"><span class="crittr-move-dot"></span><span>iron grip</span><span class="crittr-move-power">143</span></div>
+                <div class="crittr-move"><span class="crittr-move-dot"></span><span>canopy crash</span><span class="crittr-move-power">166</span></div>
+                <p class="crittr-card-flavor">mountains learned to move out of its way.</p>
+                <div class="crittr-card-stats"><span>HP 159</span><span>ATK 148</span><span>DEF 155</span></div>
+              </div>
+            </article>
+
+            <article class="crittr-card crittr-card--fire" aria-label="Blazefang epic gotem card">
+              <div class="crittr-card-header"><span class="crittr-card-name">blazefang</span><span class="crittr-card-level">lv 21 · 132 hp</span><span class="crittr-card-type"></span></div>
+              <img class="crittr-card-animal" src="/gotem-assets/tiger.webp" alt="Blazefang" />
+              <span class="crittr-card-species">bengal tiger</span>
+              <div class="crittr-card-info">
+                <div class="crittr-move"><span class="crittr-move-dot"></span><span>ember pounce</span><span class="crittr-move-power">227</span></div>
+                <div class="crittr-move"><span class="crittr-move-dot"></span><span>striped blur</span><span class="crittr-move-power">169</span></div>
+                <div class="crittr-move"><span class="crittr-move-dot"></span><span>apex roar</span><span class="crittr-move-power">264</span></div>
+                <p class="crittr-card-flavor">its stripes smolder in the dark — prey sees the glow too late.</p>
+                <div class="crittr-card-stats"><span>HP 132</span><span>ATK 206</span><span>SPD 180</span></div>
+              </div>
+            </article>
+
+            <article class="crittr-card crittr-card--water" aria-label="Abyssmaw mythic gotem card">
+              <div class="crittr-card-header"><span class="crittr-card-name">abyssmaw ✦</span><span class="crittr-card-level">lv 38 · 192 hp</span><span class="crittr-card-type"></span></div>
+              <img class="crittr-card-animal" src="/gotem-assets/shark.webp" alt="Abyssmaw" />
+              <span class="crittr-card-species">great white shark</span>
+              <div class="crittr-card-info">
+                <div class="crittr-move"><span class="crittr-move-dot"></span><span>riptide maw</span><span class="crittr-move-power">271</span></div>
+                <div class="crittr-move"><span class="crittr-move-dot"></span><span>abyss dive</span><span class="crittr-move-power">181</span></div>
+                <div class="crittr-move"><span class="crittr-move-dot"></span><span>hull breaker</span><span class="crittr-move-power">216</span></div>
+                <p class="crittr-card-flavor">light bends around it — sailors swear the sea itself opens.</p>
+                <div class="crittr-card-stats"><span>HP 192</span><span>ATK 219</span><span>DEF 208</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="gotem-section gotem-features">
+        <div class="gotem-wrap">
+          <p class="gotem-section-label">more than a camera game</p>
+          <h2 class="gotem-section-title">the real world is the game board.</h2>
+          <div class="gotem-feature-grid">
+            <article class="gotem-feature-row"><span class="gotem-feature-index">01</span><h3>battle your catches</h3><p>Build a team from animals you actually found, then take their types, moves and stats into fast tactical battles.</p></article>
+            <article class="gotem-feature-row"><span class="gotem-feature-index">02</span><h3>walk for rare gear</h3><p>Your real steps unlock mystery boxes, stronger balls and better chances at the encounters that matter.</p></article>
+            <article class="gotem-feature-row"><span class="gotem-feature-index">03</span><h3>remember every find</h3><p>Your dex keeps the species, date and place behind every card—a living record of your own wild world.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="gotem-final" id="download">
+        <div class="gotem-wrap">
+          <img class="gotem-final-logo" src="/gotem-assets/logo.webp" alt="gotem" />
+          <h2>go outside.<br />find your first.</h2>
+          <p>Available now on iPhone. Coming next to Android.</p>
+          <div class="gotem-store-row" aria-label="gotem mobile release platforms">
+            <a class="gotem-store-badge" href="https://apps.apple.com/us/app/gotem-animal-identifier-ai/id6786046345" target="_blank" rel="noopener noreferrer" aria-label="Download gotem on the App Store">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.05 12.54c-.03-3.14 2.57-4.67 2.69-4.74-1.47-2.15-3.76-2.44-4.57-2.46-1.92-.2-3.79 1.15-4.77 1.15-1 0-2.5-1.13-4.13-1.1-2.09.03-4.04 1.24-5.11 3.13-2.21 3.83-.56 9.46 1.55 12.56 1.06 1.51 2.29 3.2 3.92 3.14 1.59-.07 2.19-1.01 4.12-1.01 1.91 0 2.47 1.01 4.13.97 1.71-.03 2.79-1.52 3.81-3.04 1.22-1.73 1.71-3.43 1.73-3.52-.04-.01-3.28-1.25-3.31-5.08ZM13.92 3.3A4.58 4.58 0 0 0 14.97 0a4.67 4.67 0 0 0-3.02 1.57 4.38 4.38 0 0 0-1.08 3.17 3.86 3.86 0 0 0 3.05-1.44Z"/></svg>
+              <span class="gotem-store-copy"><small>Download on the</small><strong>App Store</strong></span>
+            </a>
+            <button class="gotem-store-badge gotem-store-badge--next gotem-waitlist-trigger" type="button" aria-label="Join the Google Play waitlist">
+              <svg viewBox="0 0 32 36" aria-hidden="true"><path fill="#34a853" d="M1.3 1.1A3 3 0 0 0 .5 3.2v29.6c0 .8.3 1.5.8 2.1L18 18 1.3 1.1Z"/><path fill="#4285f4" d="m23.5 12.4-5.5 5.5L1.3 1.1c.5-.4 1.2-.5 1.9-.1l20.3 11.4Z"/><path fill="#fbbc04" d="M31 16.6 23.5 12.4 18 18l5.5 5.6 7.5-4.2c1.1-.6 1.1-2.2 0-2.8Z"/><path fill="#ea4335" d="M3.2 35c-.7.4-1.4.3-1.9-.1L18 18l5.5 5.6L3.2 35Z"/></svg>
+              <span class="gotem-store-copy"><small>Join the waitlist</small><strong>Google Play</strong></span>
+            </button>
+          </div>
+          <div class="gotem-ball-row" aria-hidden="true">
+            <img src="/gotem-assets/ball-green.webp" alt="" />
+            <img src="/gotem-assets/ball-blue.webp" alt="" />
+            <img src="/gotem-assets/ball-red.webp" alt="" />
+            <img src="/gotem-assets/ball-gold.webp" alt="" />
+            <img src="/gotem-assets/ball-void.webp" alt="" />
+          </div>
+        </div>
+        <footer class="gotem-footer">
+          <span>© 2026 gotem</span>
+          <div class="gotem-footer-links"><a href="/privacy/">privacy</a><a href="/terms/">terms</a><a href="/support/">support</a></div>
+        </footer>
+      </section>
+    </main>
+    <dialog class="gotem-waitlist" aria-labelledby="gotem-waitlist-title">
+      <div class="gotem-waitlist-inner">
+        <button class="gotem-waitlist-close" type="button" aria-label="Close waitlist">×</button>
+        <div class="gotem-waitlist-topline"><span class="gotem-waitlist-dot"></span> android transmission incoming</div>
+        <h2 id="gotem-waitlist-title">be first on<br />Google Play.</h2>
+        <p class="gotem-waitlist-copy">Drop your email and we’ll let you know the moment gotem lands on Android.</p>
+        <form class="gotem-waitlist-form" action="/api/android-waitlist/" method="POST">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none" />
+          <label class="gotem-waitlist-field">
+            <span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Email address</span>
+            <input type="email" name="email" placeholder="you@email.com" autocomplete="email" inputmode="email" required />
+            <button class="gotem-waitlist-submit" type="submit">join waitlist →</button>
+          </label>
+          <p class="gotem-waitlist-status" role="status" aria-live="polite">One email when Android is ready. No spam.</p>
+        </form>
+        <p class="gotem-waitlist-privacy">By joining, you agree that gotem may use your email only for Android launch updates. <a href="/privacy/">Privacy</a>.</p>
+      </div>
+    </dialog>
+    <script>
+      (() => {
+        const video = document.querySelector(".gotem-app-video");
+        const poster = document.querySelector(".gotem-app-poster");
+        if (!video) return;
+
+        const showPoster = () => {
+          video.style.display = "none";
+          if (poster) poster.style.display = "block";
+        };
+        const keepVideoRunning = () => {
+          video.muted = true;
+          video.defaultMuted = true;
+          video.loop = true;
+          const playback = video.play();
+          if (playback && typeof playback.catch === "function") {
+            playback.catch(() => {
+              video.controls = true;
+            });
+          }
+        };
+
+        video.addEventListener("loadeddata", keepVideoRunning);
+        video.addEventListener("canplay", keepVideoRunning);
+        video.addEventListener("ended", keepVideoRunning);
+        video.addEventListener("error", showPoster);
+        document.addEventListener("visibilitychange", () => {
+          if (!document.hidden) keepVideoRunning();
+        });
+        keepVideoRunning();
+      })();
+
+      (() => {
+        const dialog = document.querySelector(".gotem-waitlist");
+        const form = document.querySelector(".gotem-waitlist-form");
+        const email = form?.querySelector('input[type="email"]');
+        const submit = form?.querySelector(".gotem-waitlist-submit");
+        const status = form?.querySelector(".gotem-waitlist-status");
+        const honeypot = form?.querySelector('input[name="website"]');
+        if (!dialog || !form || !email || !submit || !status) return;
+
+        const showJoinedState = () => {
+          email.value = "";
+          status.textContent = "You’re on the list — see you in the wild.";
+          status.setAttribute("data-state", "success");
+          submit.disabled = false;
+          submit.textContent = "joined ✓";
+          if (!dialog.open) dialog.showModal();
+        };
+
+        document.querySelectorAll(".gotem-waitlist-trigger").forEach((trigger) => {
+          trigger.addEventListener("click", () => {
+            status.textContent = "One email when Android is ready. No spam.";
+            status.removeAttribute("data-state");
+            dialog.showModal();
+            requestAnimationFrame(() => email.focus());
+          });
+        });
+
+        dialog.querySelector(".gotem-waitlist-close")?.addEventListener("click", () => dialog.close());
+        dialog.addEventListener("click", (event) => {
+          if (event.target === dialog) dialog.close();
+        });
+
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          if (!form.reportValidity()) return;
+          submit.disabled = true;
+          submit.textContent = "sending...";
+          status.textContent = "Adding you to the Android waitlist...";
+          status.removeAttribute("data-state");
+
+          try {
+            const response = await fetch(form.action, {
+              method: "POST",
+              body: JSON.stringify({
+                email: email.value,
+                website: honeypot?.value || ""
+              }),
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json"
+              }
+            });
+            const result = await response.json().catch(() => ({}));
+            if (!response.ok || result.success === "false" || result.success === false) {
+              throw new Error(result.message || "signup failed");
+            }
+            showJoinedState();
+          } catch {
+            status.textContent = "Couldn’t join right now. Please try again.";
+            status.setAttribute("data-state", "error");
+            submit.textContent = "try again →";
+            submit.disabled = false;
+            return;
+          }
+
+          window.setTimeout(() => {
+            submit.disabled = false;
+            submit.textContent = "join waitlist →";
+          }, 2500);
+        });
+      })();
+    </script>
+  </body>
+</html>

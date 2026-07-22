@@ -1,13 +1,28 @@
 import fs from "node:fs";
 import path from "node:path";
+import { languageAlternates, localeCodes } from "../_lib/locales";
 
 export const dynamic = "force-static";
 
 export function GET() {
   const siteUrl = process.env.SITE_URL?.replace(/\/$/, "") || "https://charts-gpt.com";
 
-  const ignoredDirs = new Set(["app", "public", "node_modules", ".git"]);
-  const urlEntries: Array<{ loc: string; lastmod: string; changefreq: string; priority: number }> = [];
+  const languageUrls = Object.entries(languageAlternates).map(([lang, href]) => ({
+    lang,
+    href: href.replace("https://charts-gpt.com", siteUrl)
+  }));
+  const ignoredDirs = new Set([
+    "app", "public", "node_modules", ".git", ".next", "dev",
+    "autoslides", "footmaxxing", "girlmaxxing", "gotem", "prayfirst",
+    "smilelock", "soccergpt", "wilddex"
+  ]);
+  const urlEntries: Array<{
+    loc: string;
+    lastmod: string;
+    changefreq: string;
+    priority: number;
+    alternates?: typeof languageUrls;
+  }> = [];
 
   function formatDate(date: Date) {
     const yyyy = date.getUTCFullYear();
@@ -59,11 +74,25 @@ export function GET() {
 
   walk(process.cwd(), []);
 
+  const root = urlEntries.find((entry) => entry.loc === `${siteUrl}/`);
+  if (root) root.alternates = languageUrls;
+
+  const localizedLastmod = formatDate(new Date());
+  for (const locale of localeCodes) {
+    urlEntries.push({
+      loc: `${siteUrl}/${locale}/`,
+      lastmod: localizedLastmod,
+      changefreq: "weekly",
+      priority: 0.9,
+      alternates: languageUrls
+    });
+  }
+
   urlEntries.sort((a, b) => a.loc.localeCompare(b.loc));
 
   const xml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
     ...urlEntries.map(
       (u) =>
         [
@@ -72,6 +101,9 @@ export function GET() {
           `    <lastmod>${u.lastmod}</lastmod>`,
           `    <changefreq>${u.changefreq}</changefreq>`,
           `    <priority>${u.priority.toFixed(1)}</priority>`,
+          ...(u.alternates ?? []).map(
+            (alternate) => `    <xhtml:link rel="alternate" hreflang="${alternate.lang}" href="${alternate.href}" />`
+          ),
           "  </url>"
         ].join("\n")
     ),

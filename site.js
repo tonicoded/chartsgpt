@@ -79,11 +79,17 @@
   // ── Typewriter on hero subtitle ────────────────────────────────────
   const twText = document.querySelector(".tw-text");
   if (twText) {
-    const phrases = [
-      "Key levels, bias, entry, stop loss, and invalidation.",
-      "Works for crypto, forex, stocks, and metals.",
-      "Get your full trade plan in seconds."
-    ];
+    let localizedPhrases = null;
+    try {
+      localizedPhrases = JSON.parse(twText.dataset.phrases || "null");
+    } catch {}
+    const phrases = Array.isArray(localizedPhrases) && localizedPhrases.length
+      ? localizedPhrases
+      : [
+          "Key levels, bias, entry, stop loss, and invalidation.",
+          "Works for crypto, forex, stocks, and metals.",
+          "Get your full trade plan in seconds."
+        ];
     let pi = 0, ci = 0, deleting = false;
 
     function tick() {
@@ -114,7 +120,7 @@
   }
 
   // ── Count-up for "10k+" ────────────────────────────────────────────
-  const countEl = document.querySelector(".hero-v2-trust-traders strong");
+  const countEl = document.querySelector(".hero-v2-trust-traders strong[data-count-traders]");
   if (countEl) {
     const duration = 1400;
     const start = performance.now();
