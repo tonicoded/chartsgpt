@@ -6522,3 +6522,33 @@ body.home-body.home-v2,
     gap: 6px;
   }
 }
+
+/* Mobile hero must reserve the full height of the tall app screenshots. */
+@media (max-width: 760px) {
+  .seo-expanded .hero-v2 {
+    padding-bottom: 24px;
+    overflow: clip;
+  }
+
+  .seo-expanded .hero-v2-stage {
+    height: min(126vw, 570px);
+    min-height: min(126vw, 570px);
+    margin-top: 10px;
+    transform: none;
+  }
+
+  .seo-expanded .stage-phone-main {
+    top: 10px;
+  }
+
+  .seo-expanded .seo-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 0;
+    background: #030303;
+  }
+
+  .seo-expanded .seo-intro {
+    padding-top: 54px;
+  }
+}
