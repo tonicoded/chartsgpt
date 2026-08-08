@@ -141,11 +141,6 @@
           return;
         }
 
-        if (!restUrl || !config.supabaseAnonKey) {
-          setStatus(strings.error, "error");
-          return;
-        }
-
         submit.disabled = true;
         submit.textContent = strings.sending;
         setStatus("", "");
@@ -162,7 +157,50 @@
           user_agent: (navigator.userAgent || "").slice(0, 512)
         };
 
+        const succeed = (duplicate) => {
+          try {
+            window.localStorage.setItem(storageKey, "1");
+          } catch {}
+          markJoined();
+          setStatus(duplicate ? strings.already : strings.done, "ok");
+        };
+
+        // Same-origin first: some mobile networks, VPNs and content blockers
+        // drop direct requests to supabase.co, so the site's own API route is
+        // the reliable path. Falling back keeps it working on static hosting.
+        let lastError = "net";
         try {
+          const response = await fetch("/api/android-waitlist/", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+
+          if (response.ok) {
+            let duplicate = false;
+            try {
+              duplicate = (await response.json()).duplicate === true;
+            } catch {}
+            succeed(duplicate);
+            return;
+          }
+
+          if (response.status === 422) {
+            setStatus(strings.invalid, "error");
+            submit.disabled = false;
+            submit.textContent = strings.submit;
+            input.focus();
+            return;
+          }
+
+          lastError = `api${response.status}`;
+        } catch {
+          lastError = "api";
+        }
+
+        try {
+          if (!restUrl || !config.supabaseAnonKey) throw new Error("unconfigured");
+
           const response = await fetch(restUrl, {
             method: "POST",
             headers: {
@@ -176,21 +214,18 @@
 
           // 409 = unique violation, i.e. this email already signed up.
           if (response.ok || response.status === 409) {
-            try {
-              window.localStorage.setItem(storageKey, "1");
-            } catch {}
-            markJoined();
-            setStatus(response.status === 409 ? strings.already : strings.done, "ok");
+            succeed(response.status === 409);
             return;
           }
 
-          throw new Error(`waitlist_failed_${response.status}`);
+          lastError = `${lastError}/db${response.status}`;
         } catch {
-          setStatus(strings.error, "error");
-          submit.disabled = false;
-        } finally {
-          submit.textContent = strings.submit;
+          lastError = `${lastError}/db`;
         }
+
+        setStatus(`${strings.error} (${lastError})`, "error");
+        submit.disabled = false;
+        submit.textContent = strings.submit;
       });
     }
   }
