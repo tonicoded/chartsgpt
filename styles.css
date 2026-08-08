@@ -6552,3 +6552,167 @@ body.home-body.home-v2,
     padding-top: 54px;
   }
 }
+
+/* ── Android beta waitlist ────────────────────────────────────────── */
+
+.store-badge-hero.gp-trigger.beta-badge {
+  pointer-events: auto;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px 0 14px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(245, 189, 39, 0.34) !important;
+  background: rgba(245, 189, 39, 0.07) !important;
+  color: #ffffff;
+  text-align: left;
+  transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+}
+
+.store-badge-hero.gp-trigger.beta-badge:hover {
+  transform: translateY(-1px);
+  background: rgba(245, 189, 39, 0.13) !important;
+  border-color: rgba(245, 189, 39, 0.6) !important;
+}
+
+.store-badge-hero.gp-trigger.beta-badge:focus-visible {
+  outline: 2px solid var(--gold, #ffffff);
+  outline-offset: 3px;
+}
+
+.gp-modal-logo path {
+  fill: var(--gold, #34d17a);
+}
+
+.beta-badge-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--gold, #34d17a);
+}
+
+.beta-badge-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.beta-badge-kicker {
+  font-size: 0.62rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.beta-badge-title {
+  font-family: var(--font-semibold);
+  font-size: 1.02rem;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+}
+
+.wl-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wl-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.wl-input {
+  width: 100%;
+  padding: 13px 15px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  font-family: var(--font-base);
+  font-size: 0.92rem;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.wl-input::placeholder {
+  color: rgba(255, 255, 255, 0.32);
+}
+
+.wl-input:focus {
+  outline: none;
+  border-color: var(--gold, rgba(255, 255, 255, 0.4));
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.wl-submit {
+  width: 100%;
+}
+
+.wl-submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.wl-status {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.wl-status:empty {
+  display: none;
+}
+
+.wl-status[data-state="ok"] {
+  color: #4ade80;
+}
+
+.wl-status[data-state="error"] {
+  color: #f87171;
+}
+
+.wl-fineprint {
+  margin: 0;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.34);
+}
+
+.wl-form.is-joined .wl-input,
+.wl-form.is-joined .wl-submit,
+.wl-form.is-joined .wl-fineprint {
+  display: none;
+}
+
+.gp-modal-alt {
+  display: block;
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
+
+.gp-modal-alt:hover {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+  .store-badge-hero.gp-trigger.beta-badge {
+    min-width: 172px;
+    padding: 0 15px 0 12px !important;
+  }
+
+  .beta-badge-title {
+    font-size: 0.94rem;
+  }
+}

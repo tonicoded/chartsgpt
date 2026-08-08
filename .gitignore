@@ -2,3 +2,5 @@
 websitedoodl/
 node_modules/
 .next/
+
+supabase/.temp/

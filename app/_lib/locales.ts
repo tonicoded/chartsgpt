@@ -8,6 +8,47 @@ export type LocaleCode = string;
 type Feature = { title: string; text: string };
 type Faq = { question: string; answer: string };
 
+/** Copy for the "Sign up for the Android Beta" button + waitlist modal. */
+export type BetaCopy = {
+  kicker: string;
+  badge: string;
+  ariaLabel: string;
+  modalTitle: string;
+  modalText: string;
+  emailLabel: string;
+  placeholder: string;
+  submit: string;
+  sending: string;
+  done: string;
+  already: string;
+  invalid: string;
+  error: string;
+  fineprint: string;
+};
+
+export const BETA_COPY_DEFAULT: BetaCopy = {
+  kicker: "Sign up for the",
+  badge: "Android Beta",
+  ariaLabel: "Sign up for the ChartsGPT Android beta",
+  modalTitle: "Join the Android beta",
+  modalText:
+    "We're building the Android version now. Drop your email and you'll be first in line when the beta opens.",
+  emailLabel: "Email address",
+  placeholder: "you@example.com",
+  submit: "Join the waitlist",
+  sending: "Sending…",
+  done: "You're on the list. We'll email you when the beta opens.",
+  already: "You're already on the list — we'll be in touch.",
+  invalid: "Please enter a valid email address.",
+  error: "Something went wrong. Please try again.",
+  fineprint: "We'll only email you about the Android beta. No spam, unsubscribe anytime."
+};
+
+/** Locale copy falls back to English for anything not translated yet. */
+export function betaCopy(content: LocaleContent): BetaCopy {
+  return { ...BETA_COPY_DEFAULT, ...(content.beta ?? {}) };
+}
+
 export type LocaleContent = {
   code: LocaleCode;
   hreflang: string;
@@ -30,6 +71,7 @@ export type LocaleContent = {
   androidTitle: string;
   androidText: string;
   iosInstead: string;
+  beta?: Partial<BetaCopy>;
   introTitle: string;
   introText: string;
   features: Feature[];
@@ -72,6 +114,22 @@ const coreLocales: Record<LocaleCode, LocaleContent> = {
     androidTitle: "Android está en camino",
     androidText: "Estamos desarrollando la versión para Android. ChartsGPT está disponible actualmente en iPhone y iPad.",
     iosInstead: "Descargar para iOS",
+    beta: {
+      kicker: "Apúntate a la",
+      badge: "Beta de Android",
+      ariaLabel: "Apúntate a la beta de Android de ChartsGPT",
+      modalTitle: "Únete a la beta de Android",
+      modalText: "Estamos desarrollando la versión para Android. Déjanos tu correo y serás de los primeros en probar la beta.",
+      emailLabel: "Correo electrónico",
+      placeholder: "tu@ejemplo.com",
+      submit: "Unirme a la lista",
+      sending: "Enviando…",
+      done: "Ya estás en la lista. Te avisaremos cuando abra la beta.",
+      already: "Ya estabas en la lista: te escribiremos pronto.",
+      invalid: "Introduce un correo electrónico válido.",
+      error: "Algo ha salido mal. Inténtalo de nuevo.",
+      fineprint: "Solo te escribiremos sobre la beta de Android. Sin spam, puedes darte de baja cuando quieras."
+    },
     introTitle: "Análisis técnico con IA a partir de una captura",
     introText: "Sube una captura de TradingView o de cualquier plataforma. ChartsGPT identifica la dirección de la tendencia, la estructura del mercado, soportes, resistencias y escenarios posibles sin obligarte a configurar herramientas complejas.",
     features: [
@@ -125,6 +183,22 @@ const coreLocales: Record<LocaleCode, LocaleContent> = {
     androidTitle: "Android komt eraan",
     androidText: "We werken aan de Android-versie. ChartsGPT is nu beschikbaar voor iPhone en iPad.",
     iosInstead: "Download voor iOS",
+    beta: {
+      kicker: "Meld je aan voor de",
+      badge: "Android Beta",
+      ariaLabel: "Meld je aan voor de ChartsGPT Android-beta",
+      modalTitle: "Doe mee aan de Android-beta",
+      modalText: "We werken aan de Android-versie. Laat je e-mailadres achter en je bent als eerste aan de beurt zodra de beta opengaat.",
+      emailLabel: "E-mailadres",
+      placeholder: "jij@voorbeeld.nl",
+      submit: "Zet me op de wachtlijst",
+      sending: "Versturen…",
+      done: "Je staat op de lijst. We mailen je zodra de beta start.",
+      already: "Je staat al op de lijst — we houden je op de hoogte.",
+      invalid: "Vul een geldig e-mailadres in.",
+      error: "Er ging iets mis. Probeer het opnieuw.",
+      fineprint: "We mailen alleen over de Android-beta. Geen spam, altijd afmelden mogelijk."
+    },
     introTitle: "Technische analyse met AI vanuit één screenshot",
     introText: "Upload een screenshot uit TradingView of een ander handelsplatform. ChartsGPT herkent trendrichting, marktstructuur, steun, weerstand en mogelijke scenario’s zonder ingewikkelde instellingen.",
     features: [
@@ -174,6 +248,22 @@ const coreLocales: Record<LocaleCode, LocaleContent> = {
     androidTitle: "Android ist in Arbeit",
     androidText: "Wir entwickeln die Android-Version. ChartsGPT ist derzeit für iPhone und iPad verfügbar.",
     iosInstead: "Für iOS laden",
+    beta: {
+      kicker: "Anmelden für die",
+      badge: "Android-Beta",
+      ariaLabel: "Für die ChartsGPT Android-Beta anmelden",
+      modalTitle: "Zur Android-Beta anmelden",
+      modalText: "Wir entwickeln gerade die Android-Version. Trag deine E-Mail ein und du bist beim Beta-Start als Erstes dabei.",
+      emailLabel: "E-Mail-Adresse",
+      placeholder: "du@beispiel.de",
+      submit: "Auf die Warteliste",
+      sending: "Wird gesendet…",
+      done: "Du stehst auf der Liste. Wir melden uns zum Beta-Start.",
+      already: "Du stehst bereits auf der Liste — wir melden uns.",
+      invalid: "Bitte gib eine gültige E-Mail-Adresse ein.",
+      error: "Etwas ist schiefgelaufen. Bitte versuch es erneut.",
+      fineprint: "Wir schreiben dir nur zur Android-Beta. Kein Spam, jederzeit abbestellbar."
+    },
     introTitle: "Technische KI-Analyse aus einem Screenshot",
     introText: "Lade einen Screenshot aus TradingView oder einer anderen Plattform hoch. ChartsGPT erkennt Trendrichtung, Marktstruktur, Unterstützungen, Widerstände und mögliche Szenarien – ohne komplizierte Einrichtung.",
     features: [
@@ -223,6 +313,22 @@ const coreLocales: Record<LocaleCode, LocaleContent> = {
     androidTitle: "Android arrive bientôt",
     androidText: "Nous développons la version Android. ChartsGPT est actuellement disponible sur iPhone et iPad.",
     iosInstead: "Télécharger sur iOS",
+    beta: {
+      kicker: "Inscrivez-vous à la",
+      badge: "Bêta Android",
+      ariaLabel: "S'inscrire à la bêta Android de ChartsGPT",
+      modalTitle: "Rejoindre la bêta Android",
+      modalText: "Nous développons la version Android. Laissez votre e-mail pour être parmi les premiers à l'essayer.",
+      emailLabel: "Adresse e-mail",
+      placeholder: "vous@exemple.com",
+      submit: "Rejoindre la liste",
+      sending: "Envoi…",
+      done: "Vous êtes sur la liste. Nous vous écrirons à l'ouverture de la bêta.",
+      already: "Vous êtes déjà sur la liste — à bientôt.",
+      invalid: "Veuillez saisir une adresse e-mail valide.",
+      error: "Une erreur est survenue. Veuillez réessayer.",
+      fineprint: "Nous vous écrirons uniquement au sujet de la bêta Android. Pas de spam, désinscription à tout moment."
+    },
     introTitle: "Analyse technique par IA à partir d’une capture",
     introText: "Importez une capture de TradingView ou d’une autre plateforme. ChartsGPT repère la tendance, la structure du marché, les supports, les résistances et les scénarios possibles, sans configuration complexe.",
     features: [
@@ -273,6 +379,22 @@ const coreLocales: Record<LocaleCode, LocaleContent> = {
     androidTitle: "نسخة Android قادمة",
     androidText: "نعمل على تطوير نسخة Android. يتوفر ChartsGPT حاليًا على iPhone وiPad.",
     iosInstead: "التنزيل على iOS",
+    beta: {
+      kicker: "سجّل في",
+      badge: "نسخة Android التجريبية",
+      ariaLabel: "سجّل في نسخة ChartsGPT التجريبية لأندرويد",
+      modalTitle: "انضم إلى نسخة Android التجريبية",
+      modalText: "نعمل حاليًا على نسخة Android. اترك بريدك الإلكتروني لتكون أول من يجربها.",
+      emailLabel: "البريد الإلكتروني",
+      placeholder: "you@example.com",
+      submit: "انضم إلى قائمة الانتظار",
+      sending: "جارٍ الإرسال…",
+      done: "تم تسجيلك. سنراسلك عند إطلاق النسخة التجريبية.",
+      already: "أنت مسجّل بالفعل — سنتواصل معك.",
+      invalid: "يرجى إدخال بريد إلكتروني صحيح.",
+      error: "حدث خطأ ما. حاول مرة أخرى.",
+      fineprint: "سنراسلك فقط بخصوص نسخة Android التجريبية. بدون رسائل مزعجة، ويمكنك إلغاء الاشتراك في أي وقت."
+    },
     introTitle: "تحليل فني بالذكاء الاصطناعي من صورة واحدة",
     introText: "ارفع لقطة من TradingView أو أي منصة تداول. يحدد ChartsGPT اتجاه السوق والبنية والدعم والمقاومة والسيناريوهات المحتملة دون إعدادات معقدة.",
     features: [
@@ -322,6 +444,22 @@ const coreLocales: Record<LocaleCode, LocaleContent> = {
     androidTitle: "Android संस्करण जल्द आएगा",
     androidText: "हम Android संस्करण बना रहे हैं। ChartsGPT अभी iPhone और iPad पर उपलब्ध है।",
     iosInstead: "iOS पर डाउनलोड करें",
+    beta: {
+      kicker: "साइन अप करें",
+      badge: "Android बीटा",
+      ariaLabel: "ChartsGPT Android बीटा के लिए साइन अप करें",
+      modalTitle: "Android बीटा से जुड़ें",
+      modalText: "हम Android वर्शन बना रहे हैं। अपना ईमेल दें और बीटा शुरू होते ही सबसे पहले एक्सेस पाएं।",
+      emailLabel: "ईमेल पता",
+      placeholder: "you@example.com",
+      submit: "वेटलिस्ट में जुड़ें",
+      sending: "भेजा जा रहा है…",
+      done: "आप लिस्ट में हैं। बीटा शुरू होते ही हम ईमेल करेंगे।",
+      already: "आप पहले से लिस्ट में हैं — हम संपर्क करेंगे।",
+      invalid: "कृपया एक मान्य ईमेल पता डालें।",
+      error: "कुछ गड़बड़ हो गई। कृपया फिर कोशिश करें।",
+      fineprint: "हम केवल Android बीटा के बारे में ईमेल करेंगे। कोई स्पैम नहीं, कभी भी अनसब्सक्राइब करें।"
+    },
     introTitle: "एक स्क्रीनशॉट से AI तकनीकी विश्लेषण",
     introText: "TradingView या किसी अन्य प्लेटफॉर्म का स्क्रीनशॉट अपलोड करें। ChartsGPT बिना जटिल सेटअप के ट्रेंड, मार्केट स्ट्रक्चर, सपोर्ट, रेजिस्टेंस और संभावित परिदृश्य पहचानता है।",
     features: [
@@ -371,6 +509,22 @@ const coreLocales: Record<LocaleCode, LocaleContent> = {
     androidTitle: "Версия для Android уже в работе",
     androidText: "Мы разрабатываем версию для Android. Сейчас ChartsGPT доступен на iPhone и iPad.",
     iosInstead: "Скачать для iOS",
+    beta: {
+      kicker: "Записаться в",
+      badge: "Бету для Android",
+      ariaLabel: "Записаться в бета-версию ChartsGPT для Android",
+      modalTitle: "Запишитесь в бету для Android",
+      modalText: "Мы разрабатываем версию для Android. Оставьте почту — и вы одними из первых получите доступ к бете.",
+      emailLabel: "Электронная почта",
+      placeholder: "you@example.com",
+      submit: "В список ожидания",
+      sending: "Отправляем…",
+      done: "Вы в списке. Напишем, когда откроется бета.",
+      already: "Вы уже в списке — мы свяжемся с вами.",
+      invalid: "Введите корректный адрес электронной почты.",
+      error: "Что-то пошло не так. Попробуйте ещё раз.",
+      fineprint: "Пишем только о бете для Android. Без спама, отписаться можно в любой момент."
+    },
     introTitle: "Технический анализ с ИИ по одному скриншоту",
     introText: "Загрузите скриншот из TradingView или другой платформы. ChartsGPT определит тренд, структуру рынка, поддержку, сопротивление и возможные сценарии без сложной настройки.",
     features: [
@@ -420,6 +574,22 @@ const coreLocales: Record<LocaleCode, LocaleContent> = {
     androidTitle: "Android 版本正在开发",
     androidText: "我们正在开发 Android 版本。ChartsGPT 目前可用于 iPhone 和 iPad。",
     iosInstead: "下载 iOS 版本",
+    beta: {
+      kicker: "报名参加",
+      badge: "Android 测试版",
+      ariaLabel: "报名参加 ChartsGPT Android 测试版",
+      modalTitle: "加入 Android 测试版",
+      modalText: "我们正在开发 Android 版本。留下邮箱，测试版开放时你将第一批收到通知。",
+      emailLabel: "电子邮箱",
+      placeholder: "you@example.com",
+      submit: "加入等候名单",
+      sending: "提交中…",
+      done: "已加入名单。测试版开放时我们会发邮件通知你。",
+      already: "你已在名单中，我们会与你联系。",
+      invalid: "请输入有效的电子邮箱地址。",
+      error: "出了点问题，请重试。",
+      fineprint: "我们只会发送与 Android 测试版相关的邮件。无垃圾邮件，可随时退订。"
+    },
     introTitle: "一张截图即可完成 AI 技术分析",
     introText: "上传 TradingView 或其他平台的截图。ChartsGPT 无需复杂设置，即可识别趋势方向、市场结构、支撑阻力和潜在场景。",
     features: [

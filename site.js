@@ -63,17 +63,136 @@
     ].join("");
   });
 
-  // ── Google Play modal ──────────────────────────────────────────────
+  // ── Android beta waitlist modal ────────────────────────────────────
   const gpModal = document.getElementById("gp-modal");
   const gpTrigger = document.querySelector(".gp-trigger");
   if (gpModal && gpTrigger) {
-    gpTrigger.addEventListener("click", () => gpModal.showModal());
+    const openModal = () => {
+      if (typeof gpModal.showModal === "function") gpModal.showModal();
+      else gpModal.setAttribute("open", "");
+    };
+    const closeModal = () => {
+      if (typeof gpModal.close === "function") gpModal.close();
+      else gpModal.removeAttribute("open");
+    };
+
+    gpTrigger.addEventListener("click", () => {
+      openModal();
+      const input = gpModal.querySelector(".wl-input");
+      if (input && !input.disabled) setTimeout(() => input.focus(), 60);
+    });
     gpModal.addEventListener("click", (e) => {
-      if (e.target === gpModal) gpModal.close();
+      if (e.target === gpModal) closeModal();
     });
     // close button (inline onclick won't run on Vercel)
     const closeBtn = gpModal.querySelector(".gp-modal-close");
-    if (closeBtn) closeBtn.addEventListener("click", () => gpModal.close());
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+
+    const form = gpModal.querySelector(".wl-form");
+    if (form) {
+      const input = form.querySelector(".wl-input");
+      const submit = form.querySelector(".wl-submit");
+      const status = form.querySelector(".wl-status");
+      const strings = {
+        submit: submit ? submit.textContent.trim() : "Join the waitlist",
+        sending: form.dataset.sending || "Sending…",
+        done: form.dataset.done || "You're on the list. We'll email you when the beta opens.",
+        already: form.dataset.already || "You're already on the list — we'll be in touch.",
+        invalid: form.dataset.invalid || "Please enter a valid email address.",
+        error: form.dataset.error || "Something went wrong. Please try again."
+      };
+      const storageKey = "chartsgpt_android_waitlist";
+      const restUrl = config.supabaseUrl
+        ? `${String(config.supabaseUrl).replace(/\/+$/, "")}/rest/v1/${config.waitlistTable || "android_waitlist"}`
+        : null;
+
+      const setStatus = (message, state) => {
+        if (!status) return;
+        status.textContent = message || "";
+        status.dataset.state = state || "";
+      };
+
+      const markJoined = () => {
+        form.classList.add("is-joined");
+        if (input) {
+          input.disabled = true;
+          input.blur();
+        }
+        if (submit) submit.disabled = true;
+      };
+
+      let alreadyJoined = false;
+      try {
+        alreadyJoined = window.localStorage.getItem(storageKey) === "1";
+      } catch {}
+      if (alreadyJoined) {
+        markJoined();
+        setStatus(strings.already, "ok");
+      }
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!input || !submit || submit.disabled) return;
+
+        const email = input.value.trim();
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(email) || email.length > 254) {
+          setStatus(strings.invalid, "error");
+          input.focus();
+          return;
+        }
+
+        if (!restUrl || !config.supabaseAnonKey) {
+          setStatus(strings.error, "error");
+          return;
+        }
+
+        submit.disabled = true;
+        submit.textContent = strings.sending;
+        setStatus("", "");
+
+        // Localized pages carry their language on .home-body; the root page is en-US.
+        const localeEl = document.querySelector(".home-body[lang]");
+        const locale =
+          (localeEl && localeEl.getAttribute("lang")) || document.documentElement.lang || "en-US";
+        const payload = {
+          email,
+          locale: locale.slice(0, 16),
+          source: "website",
+          referrer: (document.referrer || "").slice(0, 512),
+          user_agent: (navigator.userAgent || "").slice(0, 512)
+        };
+
+        try {
+          const response = await fetch(restUrl, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              apikey: config.supabaseAnonKey,
+              Authorization: `Bearer ${config.supabaseAnonKey}`,
+              Prefer: "return=minimal"
+            },
+            body: JSON.stringify(payload)
+          });
+
+          // 409 = unique violation, i.e. this email already signed up.
+          if (response.ok || response.status === 409) {
+            try {
+              window.localStorage.setItem(storageKey, "1");
+            } catch {}
+            markJoined();
+            setStatus(response.status === 409 ? strings.already : strings.done, "ok");
+            return;
+          }
+
+          throw new Error(`waitlist_failed_${response.status}`);
+        } catch {
+          setStatus(strings.error, "error");
+          submit.disabled = false;
+        } finally {
+          submit.textContent = strings.submit;
+        }
+      });
+    }
   }
 
   // ── Typewriter on hero subtitle ────────────────────────────────────

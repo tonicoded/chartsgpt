@@ -1,4 +1,4 @@
-import { APP_STORE_URL, localeCodes, locales, type LocaleContent } from "../_lib/locales";
+import { APP_STORE_URL, betaCopy, localeCodes, locales, type LocaleContent } from "../_lib/locales";
 
 function LanguageLinks({ current, label }: { current: string; label: string }) {
   return (
@@ -62,6 +62,8 @@ function JsonLd({ content }: { content: LocaleContent }) {
 }
 
 export default function LocalizedLanding({ content }: { content: LocaleContent }) {
+  const beta = betaCopy(content);
+
   return (
     <div className="home-body home-v2 seo-expanded" dir={content.dir} lang={content.lang}>
       <JsonLd content={content} />
@@ -114,8 +116,14 @@ export default function LocalizedLanding({ content }: { content: LocaleContent }
                 <a className="store-badge store-badge-hero js-appstore" href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" aria-label={content.appStoreLabel}>
                   <img src="/appstore.svg" alt={content.appStoreLabel} />
                 </a>
-                <button className="store-badge store-badge-hero store-badge-static gp-trigger" aria-label={content.androidLabel} type="button">
-                  <img src="/googleplay.svg" alt={content.androidLabel} />
+                <button className="store-badge store-badge-hero gp-trigger beta-badge" aria-label={beta.ariaLabel} type="button">
+                  <svg className="beta-badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M3 20.5v-17c0-.83 1-.83 1.5-.5L20 12 4.5 21c-.5.33-1.5.33-1.5-.5Z" fill="currentColor" />
+                  </svg>
+                  <span className="beta-badge-copy">
+                    <span className="beta-badge-kicker">{beta.kicker}</span>
+                    <span className="beta-badge-title">{beta.badge}</span>
+                  </span>
                 </button>
               </div>
             </div>
@@ -194,9 +202,33 @@ export default function LocalizedLanding({ content }: { content: LocaleContent }
       <dialog className="gp-modal" id="gp-modal">
         <div className="gp-modal-inner">
           <div className="gp-modal-top"><span className="gp-modal-logo" aria-hidden="true">▶</span><button className="gp-modal-close" aria-label="Close">×</button></div>
-          <h3 className="gp-modal-title">{content.androidTitle}</h3>
-          <p className="gp-modal-text">{content.androidText}</p>
-          <a className="gp-modal-btn js-appstore" href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">{content.iosInstead}</a>
+          <h3 className="gp-modal-title">{beta.modalTitle}</h3>
+          <p className="gp-modal-text">{beta.modalText}</p>
+          <form
+            className="wl-form"
+            noValidate
+            data-sending={beta.sending}
+            data-done={beta.done}
+            data-already={beta.already}
+            data-invalid={beta.invalid}
+            data-error={beta.error}
+          >
+            <label className="wl-label" htmlFor="wl-email">{beta.emailLabel}</label>
+            <input
+              className="wl-input"
+              id="wl-email"
+              name="email"
+              type="email"
+              inputMode="email"
+              autoComplete="email"
+              placeholder={beta.placeholder}
+              required
+            />
+            <button className="gp-modal-btn wl-submit" type="submit">{beta.submit}</button>
+            <p className="wl-status" role="status" aria-live="polite" />
+            <p className="wl-fineprint">{beta.fineprint}</p>
+          </form>
+          <a className="gp-modal-alt js-appstore" href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">{content.iosInstead}</a>
         </div>
       </dialog>
     </div>

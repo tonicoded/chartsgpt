@@ -144,7 +144,7 @@
     </script>
     <link rel="alternate" type="application/rss+xml" title="ChartsGPT Blog" href="/feed.xml" />
     <script src="./site-config.js" defer></script>
-    <script src="./site.js?v=20260722a" defer></script>
+    <script src="./site.js?v=20260808a" defer></script>
     <link rel="preload" href="/Geist-Regular.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/Geist-Medium.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/Geist-SemiBold.ttf" as="font" type="font/ttf" crossorigin />
@@ -212,8 +212,14 @@
               >
                 <img src="./appstore.svg" alt="Download on the App Store" />
               </a>
-              <button class="store-badge store-badge-hero store-badge-static gp-trigger" aria-label="Google Play — coming soon" type="button">
-                <img src="./googleplay.svg" alt="Get it on Google Play" />
+              <button class="store-badge store-badge-hero gp-trigger beta-badge" aria-label="Sign up for the ChartsGPT Android beta" type="button">
+                <svg class="beta-badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M3 20.5v-17c0-.83 1-.83 1.5-.5L20 12 4.5 21c-.5.33-1.5.33-1.5-.5Z" fill="currentColor"/>
+                </svg>
+                <span class="beta-badge-copy">
+                  <span class="beta-badge-kicker">Sign up for the</span>
+                  <span class="beta-badge-title">Android Beta</span>
+                </span>
               </button>
             </div>
           </div>
@@ -338,9 +344,16 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
           </button>
         </div>
-        <h3 class="gp-modal-title">Android is on its way</h3>
-        <p class="gp-modal-text">We're actively building the Android version. ChartsGPT is currently available on iOS.</p>
-        <a class="gp-modal-btn js-appstore" href="https://apps.apple.com/app/chartsgpt-trading-assistant/id6758857719" target="_blank" rel="noopener noreferrer">
+        <h3 class="gp-modal-title">Join the Android beta</h3>
+        <p class="gp-modal-text">We're building the Android version now. Drop your email and you'll be first in line when the beta opens.</p>
+        <form class="wl-form" novalidate>
+          <label class="wl-label" for="wl-email">Email address</label>
+          <input class="wl-input" id="wl-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required />
+          <button class="gp-modal-btn wl-submit" type="submit">Join the waitlist</button>
+          <p class="wl-status" role="status" aria-live="polite"></p>
+          <p class="wl-fineprint">We'll only email you about the Android beta. No spam, unsubscribe anytime.</p>
+        </form>
+        <a class="gp-modal-alt js-appstore" href="https://apps.apple.com/app/chartsgpt-trading-assistant/id6758857719" target="_blank" rel="noopener noreferrer">
           Download on iOS instead
         </a>
       </div>
