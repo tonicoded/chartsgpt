@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "count": 320,
+  "timeframes": ["15m", "1h", "1d"],
+  "riskModes": ["conservative", "balanced", "aggressive"],
+  "assets": [
+    { "symbol": "BTCUSDT", "exchange": "Binance", "base": 62000.0, "drift": 21.0, "wave": 430.0, "volume": 1500.0 },
+    { "symbol": "EURUSD=X", "exchange": "Yahoo Finance", "base": 1.08, "drift": -0.000015, "wave": 0.0035, "volume": 0.0 },
+    { "symbol": "AAPL", "exchange": "Yahoo Finance", "base": 190.0, "drift": 0.055, "wave": 2.8, "volume": 1200000.0 }
+  ]
+}

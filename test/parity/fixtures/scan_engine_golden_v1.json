@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "flat_260",
+      "generator": "flat",
+      "count": 260,
+      "price": 100.0,
+      "expected": {
+        "ema20": 100.0,
+        "ema50": 100.0,
+        "ema200": 100.0,
+        "bollingerMiddle": 100.0,
+        "bollingerUpper": 100.0,
+        "bollingerLower": 100.0,
+        "macdHistogram": 0.0
+      }
+    },
+    {
+      "id": "bollinger_alternating",
+      "generator": "bollingerAlternating",
+      "count": 260,
+      "price": 100.0,
+      "expected": {
+        "bollingerMiddle": 101.0,
+        "bollingerUpper": 103.0,
+        "bollingerLower": 99.0
+      }
+    },
+    {
+      "id": "constant_true_range",
+      "generator": "constantRange",
+      "count": 260,
+      "price": 100.0,
+      "expected": {
+        "atr14": 4.0
+      }
+    },
+    {
+      "id": "stochastic_75",
+      "generator": "stochastic75",
+      "count": 254,
+      "price": 100.0,
+      "expected": {
+        "stochasticK": 75.0
+      }
+    },
+    {
+      "id": "rsi_up",
+      "generator": "rsiUp",
+      "count": 260,
+      "price": 100.0,
+      "expected": {
+        "rsi14": 100.0
+      }
+    },
+    {
+      "id": "rsi_down",
+      "generator": "rsiDown",
+      "count": 260,
+      "price": 400.0,
+      "expected": {
+        "rsi14": 0.0
+      }
+    }
+  ]
+}

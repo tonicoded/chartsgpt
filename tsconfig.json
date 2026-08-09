@@ -24,13 +24,22 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
   },
   "include": [
     "next-env.d.ts",
     "app/**/*.ts",
     "app/**/*.tsx",
+    "lib/**/*.ts",
+    "test/**/*.ts",
     "next.config.mjs",
+    "vitest.config.ts",
     ".next/types/**/*.ts"
   ],
   "exclude": [

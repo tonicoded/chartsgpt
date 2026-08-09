@@ -4,3 +4,6 @@ node_modules/
 .next/
 
 supabase/.temp/
+
+# Local environment (Supabase keys etc.)
+.env*.local
