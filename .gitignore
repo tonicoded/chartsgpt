@@ -7,3 +7,4 @@ supabase/.temp/
 
 # Local environment (Supabase keys etc.)
 .env*.local
+.vercel
