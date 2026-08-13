@@ -36,7 +36,7 @@
       <rect x="0" y="0" width="788" height="42" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
       <text x="16" y="27" font-size="14" fill="rgba(255,255,255,0.86)">Context (timeframe + market state)</text>
       <rect x="0" y="58" width="788" height="42" rx="14" fill="rgba(39,212,255,0.10)" stroke="rgba(39,212,255,0.20)"/>
-      <text x="16" y="85" font-size="14" fill="rgba(255,255,255,0.86)">Key levels (2–4) + why</text>
+      <text x="16" y="85" font-size="14" fill="rgba(255,255,255,0.86)">Key levels (2-4) + why</text>
       <rect x="0" y="116" width="788" height="42" rx="14" fill="rgba(124,92,255,0.10)" stroke="rgba(124,92,255,0.22)"/>
       <text x="16" y="143" font-size="14" fill="rgba(255,255,255,0.86)">Bull plan / Bear plan (trigger + invalidation)</text>
       <rect x="0" y="174" width="788" height="42" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>

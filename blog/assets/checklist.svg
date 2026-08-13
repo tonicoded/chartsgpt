@@ -44,7 +44,7 @@
       <g transform="translate(0 96)">
         <circle cx="16" cy="12" r="12" fill="rgba(39,212,255,0.20)" stroke="rgba(39,212,255,0.45)"/>
         <path d="M10 12 l4 4 l8 -10" fill="none" stroke="rgba(39,212,255,0.95)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <text x="44" y="18">2–4 key levels max</text>
+        <text x="44" y="18">2-4 key levels max</text>
       </g>
       <g transform="translate(0 144)">
         <circle cx="16" cy="12" r="12" fill="rgba(124,92,255,0.20)" stroke="rgba(124,92,255,0.45)"/>

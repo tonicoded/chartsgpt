@@ -149,10 +149,19 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   const isChartsGptHome = !slug || slug.length === 0;
   const standaloneSiteName = isGotem ? "gotem" : isPrayFirst ? "pray first" : null;
 
+  // Legacy pages author their own brand suffix in <title>. Letting the layout
+  // template append " — ChartsGPT" on top of that rendered every blog post as
+  // "… — ChartsGPT — ChartsGPT", so a title that already carries the brand is
+  // passed through untouched.
+  const alreadyBranded = /ChartsGPT/i.test(title);
+
   return {
     // Standalone products keep their browser title and social previews free of
     // the ChartsGPT title template and app metadata.
-    title: standaloneSiteName || isChartsGptHome ? { absolute: title } : title,
+    title:
+      standaloneSiteName || isChartsGptHome || alreadyBranded
+        ? { absolute: title }
+        : title,
     description,
     keywords,
     robots: robotsContent,

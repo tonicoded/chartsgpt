@@ -61,7 +61,7 @@
     <g transform="translate(270 0)">
       <rect x="0" y="0" width="240" height="210" rx="24" fill="rgba(0,0,0,0.22)" stroke="rgba(255,255,255,0.12)"/>
       <text x="22" y="52" font-size="18" font-weight="800" fill="rgba(255,255,255,0.92)">2) Key levels</text>
-      <text x="22" y="84" font-size="15" fill="rgba(255,255,255,0.70)">2–4 S/R zones only</text>
+      <text x="22" y="84" font-size="15" fill="rgba(255,255,255,0.70)">2-4 S/R zones only</text>
       <g transform="translate(22 112)">
         <rect x="0" y="0" width="196" height="86" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
         <path d="M16 60 C40 20, 72 72, 104 40 S160 65, 180 34" fill="none" stroke="rgba(39,212,255,0.85)" stroke-width="4" stroke-linecap="round"/>
