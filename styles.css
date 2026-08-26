@@ -26,43 +26,43 @@
 
 @font-face {
   font-family: "Geist-Regular";
-  src: url("/Geist-Regular.ttf") format("truetype");
+  src: url("/Geist-Regular.woff2") format("woff2"), url("/Geist-Regular.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Geist-Medium";
-  src: url("/Geist-Medium.ttf") format("truetype");
+  src: url("/Geist-Medium.woff2") format("woff2"), url("/Geist-Medium.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Geist-SemiBold";
-  src: url("/Geist-SemiBold.ttf") format("truetype");
+  src: url("/Geist-SemiBold.woff2") format("woff2"), url("/Geist-SemiBold.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Geist-Bold";
-  src: url("/Geist-Bold.ttf") format("truetype");
+  src: url("/Geist-Bold.woff2") format("woff2"), url("/Geist-Bold.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Unbounded-Regular";
-  src: url("./Unbounded-Regular.ttf") format("truetype");
+  src: url("/Unbounded-Regular.woff2") format("woff2"), url("/Unbounded-Regular.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Unbounded-SemiBold";
-  src: url("./Unbounded-SemiBold.ttf") format("truetype");
+  src: url("/Unbounded-SemiBold.woff2") format("woff2"), url("/Unbounded-SemiBold.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Unbounded-Black";
-  src: url("./Unbounded-Black.ttf") format("truetype");
+  src: url("/Unbounded-Black.woff2") format("woff2"), url("/Unbounded-Black.ttf") format("truetype");
   font-display: swap;
 }
 
@@ -6715,4 +6715,12 @@ body.home-body.home-v2,
   .beta-badge-title {
     font-size: 0.94rem;
   }
+}
+
+/* <picture> wraps the phone/rail screenshots for WebP delivery. The picture
+   element must not create its own layout box, or the absolutely positioned
+   .phone-screen images inside it shift. */
+.stage-phone picture,
+.seo-showcase-card picture {
+  display: contents;
 }

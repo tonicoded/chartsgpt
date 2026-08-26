@@ -48,7 +48,12 @@
   "@graph": [
     {
       "@type": "Article",
-      "headline": "Position Sizing Calculator (Risk Management)",
+   "author": {
+    "@type": "Organization",
+    "name": "ChartsGPT Team",
+    "url": "https://charts-gpt.com/about/"
+  },
+     "headline": "Position Sizing Calculator (Risk Management)",
       "datePublished": "2026-02-14",
       "dateModified": "2026-02-14",
       "inLanguage": "en",
@@ -161,7 +166,7 @@
             </div>
             <h1>Position Sizing Calculator (Risk Management)</h1>
             <p>Enter your account size, risk %, and stop distance to get an instant risk amount and position size.</p>
-            <div class="blog-meta">Published: February 14, 2026 • Last updated: February 14, 2026 • Reading time: ~6 minutes</div>
+            <div class="blog-meta">By <a href="../../about/" rel="author">ChartsGPT Team</a> • Published: February 14, 2026 • Last updated: February 14, 2026 • Reading time: ~6 minutes</div>
           </div>
 
           <article class="blog-card">
@@ -210,6 +215,144 @@ position_size = risk_amount ÷ stop_distance</code></pre>
               <p>
                 This calculator outputs position size in “units” of your stop distance. Your platform may use contracts, shares, lots, or
                 tokens, convert units accordingly.
+              </p>
+
+              
+              <h2>Why 1% is the default, and when it is not</h2>
+              <p>
+                One percent is not a magic number, it is a survival number. If you risk 1% per trade, a run of ten
+                straight losses leaves you down roughly 9.6%, which is annoying but recoverable. At 5% per trade the
+                same losing streak takes you down about 40%, and you now need a 67% gain just to get back to even.
+                That asymmetry is the whole argument. Losses compound against you faster than gains compound for you.
+              </p>
+              <p>
+                Ten losses in a row sounds unlikely until you do the maths. A strategy that wins 40% of the time will
+                produce a ten-loss streak roughly once every 165 trades. If you take three trades a day, that is a
+                normal Tuesday a few months from now, not a freak event. Size for the streak you will definitely
+                meet, not the one you hope to avoid.
+              </p>
+              <p>
+                Go below 1% when you are trading a new strategy with no live track record, when you are trading a
+                thin market where your stop may slip, or when you already hold correlated positions. Go above 1%
+                only when you have a measured edge over a meaningful sample, and even then 2% is a sensible ceiling
+                for discretionary trading.
+              </p>
+
+              <h2>Converting units into shares, lots, and contracts</h2>
+              <p>
+                The calculator returns position size in units of your stop distance. That number is only useful once
+                you convert it into whatever your broker actually trades. The conversion differs per asset class, and
+                getting it wrong is one of the most common ways traders accidentally take ten times the intended risk.
+              </p>
+              <p>
+                <strong>Stocks and ETFs.</strong> The unit is one share, so the output is already your share count.
+                Risking $100 with a $2.50 stop distance gives 40 shares. If the result is fractional and your broker
+                does not support fractional shares, always round down.
+              </p>
+              <p>
+                <strong>Forex.</strong> Convert through pip value. A standard lot of EUR/USD is 100,000 units, where
+                one pip is about $10. If you are risking $200 with a 25 pip stop, you can afford $8 per pip, which is
+                0.8 of a standard lot, or 8 mini lots. Pairs that do not have USD as the quote currency need the pip
+                value converted into your account currency first.
+              </p>
+              <p>
+                <strong>Crypto.</strong> The unit is the coin itself. Risking $150 on Bitcoin with a stop $900 below
+                entry gives 0.1667 BTC. Note that your position value here is far larger than your risk, which is
+                exactly as intended and exactly what confuses people about leverage.
+              </p>
+              <p>
+                <strong>Futures.</strong> Convert through tick value, and check the contract specification rather
+                than assuming. One ES point is $50 and one tick is $12.50, so a 12 point stop risks $600 per
+                contract. If your risk budget is $300, this trade does not fit in one contract and the honest answer
+                is to skip it or trade the micro contract instead.
+              </p>
+
+              <h2>Position size is not leverage</h2>
+              <p>
+                These two get conflated constantly, and the confusion is expensive. Leverage describes how much
+                capital your broker fronts you. Risk describes how much you lose if the trade goes against you to
+                your stop. They are independent, and only one of them can hurt you.
+              </p>
+              <p>
+                A trader with a $10,000 account who buys $50,000 of Bitcoin at 5x leverage with a 1% stop is risking
+                $500, or 5% of the account. Another trader at 20x leverage buying $200,000 with a 0.1% stop is
+                risking $200, or 2%. The second trader used four times the leverage and took less than half the
+                risk. Leverage sets your liquidation distance, your stop sets your loss. Size from the stop and
+                treat leverage purely as a margin constraint.
+              </p>
+              <div class="callout">
+                <strong>The one check that matters:</strong> before you send the order, multiply your position size
+                by your stop distance. If that number is not close to your intended risk amount, something in the
+                conversion is wrong. Do this every time, it takes four seconds.
+              </div>
+
+              <h2>Let the invalidation decide the size</h2>
+              <p>
+                The order of operations is fixed and most traders get it backwards. Find the level that proves your
+                idea wrong, place the stop beyond it, measure the distance, then let the calculator tell you the
+                size. Never pick a size first and then hunt for a stop that justifies it, because that is how stops
+                end up sitting inside noise where they get taken out for reasons that have nothing to do with your
+                thesis.
+              </p>
+              <p>
+                This has a consequence people dislike: wide stops produce small positions. A trade needing a 6% stop
+                on a $10,000 account at 1% risk gets you $1,667 of exposure, and that feels too small to bother
+                with. It is not too small, it is correctly sized. The alternative is not a bigger position, it is a
+                better entry closer to invalidation. If a setup only works with a stop you cannot afford, the setup
+                is telling you to wait.
+              </p>
+
+              <h2>Correlation is the risk you forget to count</h2>
+              <p>
+                Position sizing per trade is only half the job. Five separate 1% trades look like 5% of total risk,
+                but if all five are long altcoins, you do not have five positions, you have one position in five
+                wrappers. Crypto correlations routinely run above 0.8 against Bitcoin, and they tighten precisely
+                when things go wrong, which is the worst possible time for your diversification to evaporate.
+              </p>
+              <p>
+                Cap your risk per theme, not just per trade. Two percent total across everything long the same
+                driver is a reasonable ceiling. That driver might be the dollar, rates, oil, or simply risk appetite.
+                Gold and silver move together. EUR/USD and GBP/USD move together. Tech stocks and Bitcoin have
+                spent long stretches moving together. Group your positions by what actually drives them and size the
+                group.
+              </p>
+
+              <h2>Mistakes that quietly ruin the maths</h2>
+              <ul>
+                <li>
+                  <strong>Sizing on account balance instead of equity.</strong> Open losing positions have already
+                  reduced what you can risk. Use current equity, not deposits.
+                </li>
+                <li>
+                  <strong>Ignoring fees and funding.</strong> Commissions, spread, and overnight funding all come out
+                  of the same pocket. On short-term trades they can be a meaningful share of a 1% risk budget.
+                </li>
+                <li>
+                  <strong>Forgetting slippage on stops.</strong> A stop is an intention, not a guarantee. In fast
+                  markets and around news you can fill well beyond it, so treat your risk figure as a best case.
+                </li>
+                <li>
+                  <strong>Adding to losers without resizing.</strong> Averaging down changes your average entry and
+                  your total exposure, so the original stop no longer represents the original risk.
+                </li>
+                <li>
+                  <strong>Sizing up after a loss to win it back.</strong> The market has no memory of your last
+                  trade. Doubling size after a loss converts a normal drawdown into a serious one.
+                </li>
+              </ul>
+
+              <h2>Worked example, start to finish</h2>
+              <p>
+                Your account is at $8,400 in equity. You risk 1%, so $84. You are looking at a long on ETH at $2,180,
+                and the structure that invalidates the idea is a swing low at $2,105, so the stop goes just below at
+                $2,095. Stop distance is $85. Position size is $84 divided by $85, which is 0.988 ETH, worth about
+                $2,154. Your first target sits at the prior high near $2,350, which is $170 away, a reward to risk
+                of exactly 2 to 1.
+              </p>
+              <p>
+                Now sanity check it: 0.988 ETH times $85 of stop distance is $84. The maths holds. If ETH takes out
+                $2,095 you lose 1% and the thesis was wrong, which is the point. Notice that nothing in this process
+                required an opinion about where ETH is going, only about where you would be proven wrong.
               </p>
 
               <h2>Related posts</h2>

@@ -198,6 +198,7 @@ export default async function LegacyPage(props: PageProps) {
   if (localeCode) return <LocalizedLanding content={locales[localeCode]} />;
 
   const isGotem = slug?.[0] === "gotem";
+  const isChartsGptHome = !slug || slug.length === 0;
   const legacyFile = slugToLegacyFile(slug);
 
   let html: string;
@@ -225,6 +226,19 @@ export default async function LegacyPage(props: PageProps) {
 
   return (
     <div className={bodyClassName || undefined} suppressHydrationWarning>
+      {isChartsGptHome ? (
+        // LCP element on the homepage. React hoists this into <head>; the
+        // legacy file's own <head> is dropped, so it cannot live there.
+        <link
+          rel="preload"
+          as="image"
+          type="image/webp"
+          href="/screen2-900.webp"
+          imageSrcSet="/screen2-600.webp 600w, /screen2-900.webp 900w"
+          imageSizes="(max-width: 860px) 40vw, 290px"
+          fetchPriority="high"
+        />
+      ) : null}
       {jsonLd.map((data, index) => (
         <script key={`jsonld-${index}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: data }} />
       ))}

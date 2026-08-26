@@ -81,6 +81,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        {/* Above-the-fold faces only: Geist-Bold draws the hero headline and
+            Geist-Regular the body copy. The rest load on demand. */}
+        <link rel="preload" href="/Geist-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/Geist-Bold.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      </head>
       <body>
         {children}
         <Script src="/site-config.js" strategy="afterInteractive" />

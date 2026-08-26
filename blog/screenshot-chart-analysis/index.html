@@ -44,75 +44,103 @@
 
     <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "author": {
+    "@type": "Organization",
+    "name": "ChartsGPT Team",
+    "url": "https://charts-gpt.com/about/"
+   },
+   "headline": "Screenshot Chart Analysis: How It Works",
+   "datePublished": "2026-08-13",
+   "dateModified": "2026-08-13",
+   "inLanguage": "en",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://charts-gpt.com/blog/screenshot-chart-analysis/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "ChartsGPT",
+    "url": "https://charts-gpt.com/",
+    "logo": "https://charts-gpt.com/logo.png"
+   },
+   "image": [
+    "https://charts-gpt.com/blog/assets/checklist.png"
+   ],
+   "description": "Turn a chart screenshot into levels, scenarios, a trigger and an invalidation. How to capture a chart properly and what the output should look like."
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
     {
-      "@type": "Article",
-      "headline": "Screenshot Chart Analysis: How It Works",
-      "datePublished": "2026-08-13",
-      "dateModified": "2026-08-13",
-      "inLanguage": "en",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://charts-gpt.com/blog/screenshot-chart-analysis/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "ChartsGPT",
-        "url": "https://charts-gpt.com/",
-        "logo": "https://charts-gpt.com/logo.png"
-      },
-      "image": [
-        "https://charts-gpt.com/blog/assets/checklist.png"
-      ],
-      "description": "Turn a chart screenshot into levels, scenarios, a trigger and an invalidation. How to capture a chart properly and what the output should look like."
+     "@type": "Question",
+     "name": "Can AI analyse a trading chart from a screenshot?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. A chart already encodes price, time and structure visually, so levels, trend state and scenarios can be read from an image. What an image cannot contain is order flow or upcoming news."
+     }
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Can AI analyse a trading chart from a screenshot?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. A chart already encodes price, time and structure visually, so levels, trend state and scenarios can be read from an image. What an image cannot contain is order flow or upcoming news."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What makes a chart screenshot good enough to analyse?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Include the timeframe label and the price scale, keep the most recent swing high and low in frame, avoid stacking indicators over the candles, and capture one instrument at full resolution."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is screenshot analysis as accurate as a live chart?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "For structure, levels and scenarios it is equivalent, because those are visible in the image. For anything depending on live data such as order book depth or news, it is not a substitute."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I analyse a chart someone else posted?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, and it is one of the most useful cases. Running the same frame yourself shows whether their levels match real reactions and whether the idea has an invalidation level at all."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Does it work for crypto, forex and stocks?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The method is the same for any candlestick chart. Volatility differs per market, so stops and position size should be adjusted, but levels and scenarios are read identically."
-          }
-        }
-      ]
+     "@type": "Question",
+     "name": "What makes a chart screenshot good enough to analyse?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Include the timeframe label and the price scale, keep the most recent swing high and low in frame, avoid stacking indicators over the candles, and capture one instrument at full resolution."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is screenshot analysis as accurate as a live chart?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For structure, levels and scenarios it is equivalent, because those are visible in the image. For anything depending on live data such as order book depth or news, it is not a substitute."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I analyse a chart someone else posted?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, and it is one of the most useful cases. Running the same frame yourself shows whether their levels match real reactions and whether the idea has an invalidation level at all."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does it work for crypto, forex and stocks?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The method is the same for any candlestick chart. Volatility differs per market, so stops and position size should be adjusted, but levels and scenarios are read identically."
+     }
     }
-  ]
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://charts-gpt.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://charts-gpt.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Screenshot Chart Analysis",
+     "item": "https://charts-gpt.com/blog/screenshot-chart-analysis/"
+    }
+   ]
+  }
+ ]
 }
 </script>
 
@@ -164,7 +192,7 @@
             </div>
             <h1>Screenshot Chart Analysis: How It Works</h1>
             <p>You are already looking at a chart. Screenshot analysis skips the step where you rebuild it somewhere else, and returns <strong>levels</strong>, <strong>two scenarios</strong> and an <strong>invalidation</strong> from the image itself.</p>
-            <div class="blog-meta">Published: August 13, 2026 • Last updated: August 13, 2026</div>
+            <div class="blog-meta">By <a href="../../about/" rel="author">ChartsGPT Team</a> • Published: August 13, 2026 • Last updated: August 13, 2026</div>
           </div>
 
           <article class="blog-card">

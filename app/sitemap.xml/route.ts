@@ -1,3 +1,13 @@
+// Serves /sitemap.xml in production. Vercel prerenders this handler
+// (`dynamic = "force-static"`) and routes /sitemap.xml straight to it, so this
+// file IS the live sitemap -- verified against charts-gpt.com.
+//
+// Local `next start` is different: `trailingSlash: true` in next.config.mjs
+// makes it bounce /sitemap.xml -> /sitemap.xml/ -> 400, and it falls back to
+// public/sitemap.xml instead. scripts/generate-sitemap.mjs (npm run sitemap,
+// wired as prebuild) keeps that fallback byte-equivalent to this handler so the
+// two can never disagree. Change the ignore list in BOTH or neither.
+//
 import fs from "node:fs";
 import path from "node:path";
 import { languageAlternates, localeCodes } from "../_lib/locales";
@@ -14,7 +24,11 @@ export function GET() {
   const ignoredDirs = new Set([
     "app", "public", "node_modules", ".git", ".next", "dev",
     "autoslides", "footmaxxing", "girlmaxxing", "gotem", "prayfirst",
-    "smilelock", "soccergpt", "wilddex"
+    "smilelock", "soccergpt", "wilddex",
+    // Separate products that happen to share this domain. Listing them in the
+    // ChartsGPT sitemap dilutes topical relevance and submits thin pages
+    // (85-130 words) for indexing, so they stay out like the ones above.
+    "chain", "lumo", "pnl"
   ]);
   const urlEntries: Array<{
     loc: string;

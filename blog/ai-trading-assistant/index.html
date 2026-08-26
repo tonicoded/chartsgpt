@@ -44,75 +44,103 @@
 
     <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "author": {
+    "@type": "Organization",
+    "name": "ChartsGPT Team",
+    "url": "https://charts-gpt.com/about/"
+   },
+   "headline": "What an AI Trading Assistant Actually Does",
+   "datePublished": "2026-08-13",
+   "dateModified": "2026-08-13",
+   "inLanguage": "en",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://charts-gpt.com/blog/ai-trading-assistant/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "ChartsGPT",
+    "url": "https://charts-gpt.com/",
+    "logo": "https://charts-gpt.com/logo.png"
+   },
+   "image": [
+    "https://charts-gpt.com/blog/assets/ai-workflow.png"
+   ],
+   "description": "An AI trading assistant turns a chart into levels, two scenarios, a trigger and an invalidation. What to demand from one, and what it cannot do."
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
     {
-      "@type": "Article",
-      "headline": "What an AI Trading Assistant Actually Does",
-      "datePublished": "2026-08-13",
-      "dateModified": "2026-08-13",
-      "inLanguage": "en",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://charts-gpt.com/blog/ai-trading-assistant/"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "ChartsGPT",
-        "url": "https://charts-gpt.com/",
-        "logo": "https://charts-gpt.com/logo.png"
-      },
-      "image": [
-        "https://charts-gpt.com/blog/assets/ai-workflow.png"
-      ],
-      "description": "An AI trading assistant turns a chart into levels, two scenarios, a trigger and an invalidation. What to demand from one, and what it cannot do."
+     "@type": "Question",
+     "name": "What is an AI trading assistant?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Software that reads a chart and returns a structured plan: the key levels, a bull and a bear scenario, a trigger to enter and an invalidation level that proves the idea wrong. It assists your decision rather than making it."
+     }
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is an AI trading assistant?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Software that reads a chart and returns a structured plan: the key levels, a bull and a bear scenario, a trigger to enter and an invalidation level that proves the idea wrong. It assists your decision rather than making it."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can an AI trading assistant predict the market?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Nothing predicts the market reliably. A useful assistant gives you structure and scenarios so your decisions are consistent, and it states what would make each scenario wrong."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is an AI trading assistant better than trading signals?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "They solve different problems. A signal tells you to buy or sell. An assistant explains the level, the trigger and the invalidation, so you can judge the idea and learn from it instead of copying it."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do I still need to manage my own risk?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. An assistant cannot see your account size, your open positions or your risk tolerance, so position sizing and stop placement remain your decisions."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What makes a chart screenshot good enough to analyse?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Include the timeframe label, the price scale, enough candles for context and at least one clear reaction area. The quality of the output depends directly on the quality of the screenshot."
-          }
-        }
-      ]
+     "@type": "Question",
+     "name": "Can an AI trading assistant predict the market?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Nothing predicts the market reliably. A useful assistant gives you structure and scenarios so your decisions are consistent, and it states what would make each scenario wrong."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is an AI trading assistant better than trading signals?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "They solve different problems. A signal tells you to buy or sell. An assistant explains the level, the trigger and the invalidation, so you can judge the idea and learn from it instead of copying it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do I still need to manage my own risk?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. An assistant cannot see your account size, your open positions or your risk tolerance, so position sizing and stop placement remain your decisions."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What makes a chart screenshot good enough to analyse?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Include the timeframe label, the price scale, enough candles for context and at least one clear reaction area. The quality of the output depends directly on the quality of the screenshot."
+     }
     }
-  ]
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://charts-gpt.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://charts-gpt.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "AI Trading Assistant",
+     "item": "https://charts-gpt.com/blog/ai-trading-assistant/"
+    }
+   ]
+  }
+ ]
 }
 </script>
 
@@ -164,7 +192,7 @@
             </div>
             <h1>What an AI Trading Assistant Actually Does</h1>
             <p>Most tools that call themselves an AI trading assistant sell predictions. The useful ones sell <strong>structure</strong>: a few levels that matter, two scenarios, a trigger you can wait for, and a level that proves you wrong.</p>
-            <div class="blog-meta">Published: August 13, 2026 • Last updated: August 13, 2026</div>
+            <div class="blog-meta">By <a href="../../about/" rel="author">ChartsGPT Team</a> • Published: August 13, 2026 • Last updated: August 13, 2026</div>
           </div>
 
           <article class="blog-card">
