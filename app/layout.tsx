@@ -73,8 +73,9 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false
   },
-  other: {
-    "apple-itunes-app": "app-id=6758857719"
+  itunes: {
+    appId: "6758857719",
+    appArgument: "https://apps.apple.com/app/chartsgpt-trading-assistant/id6758857719"
   }
 };
 

@@ -119,8 +119,11 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
         description: content.description,
         images: ["/og.png"]
       },
+      itunes: {
+        appId: "6758857719",
+        appArgument: APP_STORE_URL
+      },
       other: {
-        "apple-itunes-app": `app-id=6758857719, app-argument=${APP_STORE_URL}`,
         "content-language": content.lang
       }
     };
@@ -165,7 +168,12 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     description,
     keywords,
     robots: robotsContent,
-    other: standaloneSiteName ? undefined : { "apple-itunes-app": "app-id=6758857719" },
+    itunes: standaloneSiteName
+      ? undefined
+      : {
+          appId: "6758857719",
+          appArgument: APP_STORE_URL
+        },
     alternates: canonicalAbs
       ? { canonical: canonicalAbs, ...(isChartsGptHome ? { languages: languageAlternates } : {}) }
       : undefined,
