@@ -90,6 +90,82 @@ body {
   overflow-y: auto;
 }
 
+/* iOS fallback for Apple's native Smart App Banner. Safari permanently hides
+   the system banner after a visitor dismisses it, so this remains available. */
+.ios-app-banner {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .is-ios-device .ios-app-banner {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    min-height: calc(76px + env(safe-area-inset-top, 0px));
+    padding: calc(10px + env(safe-area-inset-top, 0px)) 14px 10px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: #111114;
+    background: rgba(248, 248, 250, 0.96);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  .ios-app-banner-icon {
+    flex: 0 0 auto;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+  }
+
+  .ios-app-banner-copy {
+    min-width: 0;
+    display: grid;
+    gap: 2px;
+    line-height: 1.2;
+  }
+
+  .ios-app-banner-copy strong {
+    overflow: hidden;
+    color: #111114;
+    font-family: var(--font-semibold);
+    font-size: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .ios-app-banner-copy small {
+    overflow: hidden;
+    color: #6b6b70;
+    font-family: var(--font-base);
+    font-size: 11px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .ios-app-banner-action {
+    flex: 0 0 auto;
+    margin-left: auto;
+    padding: 8px 12px;
+    color: #fff;
+    background: #087bff;
+    border-radius: 999px;
+    font-family: var(--font-semibold);
+    font-size: 12px;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .ios-app-banner-action:focus-visible {
+    outline: 3px solid rgba(8, 123, 255, 0.34);
+    outline-offset: 2px;
+  }
+}
+
 body.home-body,
 .home-body {
   height: 100svh;

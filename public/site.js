@@ -3,6 +3,13 @@
   const appStoreUrl = config.appStoreUrl;
   const playStoreUrl = config.playStoreUrl;
 
+  // Safari's native Smart App Banner stays hidden after a visitor dismisses it.
+  // Keep a first-party App Store shortcut visible on iPhone and iPad as a fallback.
+  const isIOS =
+    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  if (isIOS) document.documentElement.classList.add("is-ios-device");
+
   const isValidUrl = (value) => typeof value === "string" && /^https?:\/\//i.test(value);
   const withUtm = (url, platform) => {
     try {

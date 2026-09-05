@@ -1,4 +1,5 @@
 import { APP_STORE_URL, betaCopy, localeCodes, locales, type LocaleContent } from "../_lib/locales";
+import IOSInstallBanner from "./IOSInstallBanner";
 
 function LanguageLinks({ current, label }: { current: string; label: string }) {
   return (
@@ -67,6 +68,7 @@ export default function LocalizedLanding({ content }: { content: LocaleContent }
   return (
     <div className="home-body home-v2 seo-expanded" dir={content.dir} lang={content.lang}>
       <JsonLd content={content} />
+      <IOSInstallBanner />
       <div className="home-shell home-shell-v2">
         <header className="site-header site-header-home" aria-label="ChartsGPT">
           <div className="site-header-inner">
