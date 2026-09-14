@@ -8,7 +8,25 @@ const output = resolve('.engine');
 mkdirSync(output, { recursive: true });
 const files = ['Models.swift', 'MarketAnalysisEngine.swift', 'SetupEdgeModel.swift', 'MarketContextSignals.swift', 'SetupQualityScorer.swift', 'HigherTimeframeAlignment.swift', 'main.swift'];
 const hash = createHash('sha256').update(files.map(f => readFileSync(`${source}/${f}`)).join('')).digest('hex');
+
+// Vercel's Linux build image does not ship with Apple's Swift compiler. The
+// server route has a TypeScript fallback for that environment, so a missing
+// compiler must not make the entire marketing site fail to deploy.
+if (process.env.VERCEL === '1') {
+  console.log('Vercel build detected; using the TypeScript analysis fallback.');
+  process.exit(0);
+}
 if (existsSync(`${output}/chartsgpt-engine`) && existsSync(`${output}/hash`) && readFileSync(`${output}/hash`, 'utf8') === hash) process.exit(0);
+const compiler = spawnSync('swiftc', ['--version'], { encoding: 'utf8' });
+if (compiler.error?.code === 'ENOENT') {
+  console.log('Swift compiler unavailable; using the TypeScript analysis fallback.');
+  process.exit(0);
+}
+if (compiler.status !== 0) {
+  console.error(compiler.stderr || 'Unable to verify the Swift compiler.');
+  process.exit(compiler.status ?? 1);
+}
+
 console.log('Building the ChartsGPT iOS analysis engine…');
 const result = spawnSync('swiftc', ['-O', '-module-cache-path', `${output}/module-cache`, '-o', `${output}/chartsgpt-engine`, ...files.map(f => `${source}/${f}`)], { stdio: 'inherit' });
 if (result.error) console.error(result.error.message);
