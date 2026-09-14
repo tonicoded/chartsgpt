@@ -90,7 +90,13 @@ export default function LocalizedLanding({ content }: { content: LocaleContent }
         </header>
 
         <main className="landing landing-home" aria-label={content.title}>
-          <section className="hero-v2 seo-hero" aria-labelledby="localized-hero-title">
+          <section className="hero-v2 seo-hero hero-command" aria-labelledby="localized-hero-title">
+            <div className="hero-market-rail" aria-hidden="true">
+              <div className="hero-market-track">
+                <span><b>BTC</b> $64,284 <i>+2.8%</i></span><span><b>ETH</b> $3,487 <i>+1.4%</i></span><span><b>EUR/USD</b> 1.0842 <i>+0.3%</i></span><span><b>XAU/USD</b> 2,361 <i>+0.7%</i></span><span><b>NASDAQ</b> 19,741 <i>+1.1%</i></span>
+                <span><b>BTC</b> $64,284 <i>+2.8%</i></span><span><b>ETH</b> $3,487 <i>+1.4%</i></span><span><b>EUR/USD</b> 1.0842 <i>+0.3%</i></span><span><b>XAU/USD</b> 2,361 <i>+0.7%</i></span><span><b>NASDAQ</b> 19,741 <i>+1.1%</i></span>
+              </div>
+            </div>
             <div className="container hero-v2-grid">
               <div className="hero-v2-copy reveal" style={{ "--delay": "60ms" } as React.CSSProperties}>
                 <div className="hero-v2-trust">
@@ -109,9 +115,15 @@ export default function LocalizedLanding({ content }: { content: LocaleContent }
               </div>
 
               <div className="hero-v2-stage reveal" style={{ "--delay": "160ms" } as React.CSSProperties} aria-label="ChartsGPT app">
+                <div className="stage-orbit stage-orbit-one" aria-hidden="true" />
+                <div className="stage-orbit stage-orbit-two" aria-hidden="true" />
+                <div className="stage-signal stage-signal-bias" aria-hidden="true"><small>AI BIAS</small><strong><i />BULLISH</strong><span>84% confidence</span></div>
+                <div className="stage-signal stage-signal-level" aria-hidden="true"><small>KEY LEVEL</small><strong>64,280</strong><span>Breakout trigger</span></div>
+                <div className="stage-signal stage-signal-risk" aria-hidden="true"><small>RISK / REWARD</small><strong>1 : 2.8</strong><span>Setup validated</span></div>
                 <div className="stage-phone stage-phone-main"><img src="/screen2.jpg" className="phone-screen phone-screen-a" alt="ChartsGPT AI chart analysis" loading="eager" /></div>
                 <div className="stage-phone stage-phone-left"><img src="/screen1.jpg" className="phone-screen phone-screen-a" alt="ChartsGPT chart upload" loading="lazy" /></div>
                 <div className="stage-phone stage-phone-right"><img src="/screen3.jpg" className="phone-screen phone-screen-a" alt="ChartsGPT entry and risk analysis" loading="lazy" /></div>
+                <div className="stage-scanline" aria-hidden="true" />
               </div>
 
               <div className="hero-v2-cta-row reveal" style={{ "--delay": "220ms" } as React.CSSProperties}>

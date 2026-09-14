@@ -9,8 +9,11 @@
     "lint": "next lint",
     "test": "vitest run",
     "test:watch": "vitest",
-    "prebuild": "node scripts/generate-sitemap.mjs",
-    "sitemap": "node scripts/generate-sitemap.mjs"
+    "prebuild": "node scripts/build-engine.mjs && node scripts/generate-sitemap.mjs",
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "engine:build": "node scripts/build-engine.mjs",
+    "predev": "node scripts/build-engine.mjs",
+    "pretest": "node scripts/build-engine.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.4",

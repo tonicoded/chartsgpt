@@ -40,7 +40,8 @@
     "test/**/*.ts",
     "next.config.mjs",
     "vitest.config.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".next-production/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
