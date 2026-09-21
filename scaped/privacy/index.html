@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SCAPED — privacy policy</title>
-    <meta name="description" content="How SCAPED handles your account, game progress, location, step count and public level-ups, which services are involved, and how to delete your data." />
+    <meta name="description" content="How SCAPED handles your account, game progress, location, step count, public level-ups, player reports and blocks, and how to delete your data." />
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href="https://charts-gpt.com/scaped/privacy/" />
   </head>
@@ -25,7 +25,7 @@
           <p class="sc-eyebrow">privacy · no ads · no tracking</p>
           <h1>Privacy Policy</h1>
           <p>What SCAPED collects to run your adventure, where it goes, how long we keep it, and how you delete it.</p>
-          <span class="sc-updated">Effective September 21, 2026</span>
+          <span class="sc-updated">Effective September 21, 2026 · updated for player safety tools</span>
         </section>
       </div>
 
@@ -39,16 +39,17 @@
           <a href="#location">5. Location</a>
           <a href="#health">6. Steps &amp; motion</a>
           <a href="#public">7. Public information</a>
-          <a href="#technical">8. Technical data</a>
-          <a href="#use">9. How we use data</a>
-          <a href="#providers">10. Service providers</a>
-          <a href="#retention">11. Retention &amp; deletion</a>
-          <a href="#choices">12. Your choices</a>
-          <a href="#rights">13. Your rights</a>
-          <a href="#children">14. Children</a>
-          <a href="#security">15. Security</a>
-          <a href="#changes">16. Changes</a>
-          <a href="#contact">17. Contact</a>
+          <a href="#moderation">8. Reports &amp; blocks</a>
+          <a href="#technical">9. Technical data</a>
+          <a href="#use">10. How we use data</a>
+          <a href="#providers">11. Service providers</a>
+          <a href="#retention">12. Retention &amp; deletion</a>
+          <a href="#choices">13. Your choices</a>
+          <a href="#rights">14. Your rights</a>
+          <a href="#children">15. Children</a>
+          <a href="#security">16. Security</a>
+          <a href="#changes">17. Changes</a>
+          <a href="#contact">18. Contact</a>
         </aside>
 
         <article class="sc-copy">
@@ -66,6 +67,8 @@
               <li>The game uses your <strong>location</strong> to build the world around you. Places where you play are part of your save.</li>
               <li>With your permission, SCAPED reads your <strong>step count</strong> to give Agility XP. It never writes to Apple Health.</li>
               <li>Your <strong>adventurer name and level-ups</strong> can appear in the public GLOBAL feed.</li>
+              <li>If you <strong>choose to be visible</strong>, nearby players see your character at a blurred spot (about 50 m off), never your exact location.</li>
+              <li>You can <strong>report or block another player</strong> from their in-game player menu.</li>
               <li>You can <strong>delete your account and all its data</strong> at any time inside the app.</li>
             </ul>
           </section>
@@ -94,6 +97,7 @@
             <ul>
               <li><strong>Stored in your save:</strong> the map coordinates of in-game places tied to your progress, such as markets and other world spots generated near where you play, your garden patches, and the resource you were gathering when you last closed the app (used for offline progress). Together these can show the general areas where you play.</li>
               <li><strong>Not stored:</strong> we don’t keep a continuous log or history of your movements on our server.</li>
+              <li><strong>Nearby players (only if you turn it on):</strong> while you play, the app sends a position blurred by a random offset of up to about 50 m. The server rounds it again and keeps a single record per player, which is overwritten each time and removed within minutes of you stopping. Other visible players within about 500 m see your character, name, combat level and worn gear at that blurred spot. If you stay hidden, nothing is sent and you don’t see others either.</li>
               <li><strong>Map tiles:</strong> to draw the map, your device downloads map tiles for the area on screen from OpenFreeMap. Like any web request, this shares your IP address and which map area is being viewed.</li>
               <li><strong>Weather:</strong> for in-game weather, your device sends coordinates rounded to about 1 km to Open-Meteo. In the Netherlands it also asks Buienradar for rain information at those rounded coordinates.</li>
             </ul>
@@ -114,24 +118,33 @@
             <p>Some things are visible to other players:</p>
             <ul>
               <li><strong>Level-up events</strong> in the GLOBAL feed: your adventurer name, the skill, the new level and the time.</li>
+              <li>If you choose to be visible: your character, name, combat level and worn gear, at a blurred spot, to players within about 500 m.</li>
+              <li><strong>Friends list:</strong> players who add you by name can see whether you’re online (active in the last few minutes), roughly when you last played, and your skill levels. They can’t see where you are.</li>
             </ul>
-            <p>Please don’t use your real name or other personal information as your adventurer name.</p>
+            <p>Please don’t use your real name or other personal information as your adventurer name. New names are automatically checked for prohibited words and impersonation. Blocking a player removes any friendship and prevents you from seeing each other in nearby players and the GLOBAL feed.</p>
+          </section>
+
+          <section id="moderation">
+            <h2>8. Player reports and blocks</h2>
+            <p>When you report another player, we store your account ID, the reported player’s account ID and adventurer name, the reason you select (offensive name, harassment, cheating or other), where the report was made, the report status and the time it was created. We use this information to investigate abuse, cheating and possible breaches of the <a href="../terms/">Terms of Service</a>.</p>
+            <p>When you block another player, we store the relationship between both account IDs so the block works across devices. Your block list is private and can be viewed and managed in Account settings.</p>
           </section>
 
           <section id="technical">
-            <h2>8. Technical data</h2>
+            <h2>9. Technical data</h2>
             <p>Our server and hosting providers automatically process technical information needed to run and secure the service. This includes your IP address, request times, the API calls made, and error details. We use it to keep SCAPED working, prevent abuse and investigate problems. We don’t use it to build advertising profiles.</p>
             <p>If you email support, we receive your email address, your message and anything you attach.</p>
           </section>
 
           <section id="use">
-            <h2>9. How we use data</h2>
+            <h2>10. How we use data</h2>
             <ul>
               <li>Create and secure your account and keep you signed in.</li>
               <li>Save, restore and sync your progress.</li>
               <li>Build the game world around your location and apply game rules such as interaction range.</li>
               <li>Turn steps into Agility XP.</li>
               <li>Show the GLOBAL level-up feed.</li>
+              <li>Filter prohibited adventurer names and operate player reporting and blocking tools.</li>
               <li>Prevent cheating, fraud and abuse, and enforce the <a href="../terms/">Terms of Service</a>.</li>
               <li>Answer support requests and meet legal obligations.</li>
             </ul>
@@ -139,11 +152,11 @@
           </section>
 
           <section id="providers">
-            <h2>10. Service providers</h2>
+            <h2>11. Service providers</h2>
             <table class="sc-table">
               <thead><tr><th>Provider</th><th>What for</th><th>Data involved</th></tr></thead>
               <tbody>
-                <tr><td><strong>Supabase</strong> (EU region, Ireland)</td><td>Accounts, database and server functions</td><td>Account, save file, level-up events, technical logs</td></tr>
+                <tr><td><strong>Supabase</strong> (EU region, Ireland)</td><td>Accounts, database and server functions</td><td>Account, save file, level-up events, reports, blocks, technical logs</td></tr>
                 <tr><td><strong>Apple</strong></td><td>App distribution, location services, Health, motion</td><td>Handled under Apple’s own privacy policy</td></tr>
                 <tr><td><strong>OpenFreeMap</strong></td><td>Map tiles (map data © OpenStreetMap contributors)</td><td>IP address, requested map area</td></tr>
                 <tr><td><strong>Open-Meteo</strong></td><td>Weather</td><td>IP address, coordinates rounded to ~1 km</td></tr>
@@ -155,43 +168,45 @@
           </section>
 
           <section id="retention">
-            <h2>11. Retention and deletion</h2>
-            <p>We keep your account, save file and level-up events for as long as your account exists.</p>
-            <p>When you choose <strong>Delete account and all data</strong> in the app, your account, save file and public level-up events are deleted from our live database straight away and can’t be recovered. Copies in our provider’s encrypted backups expire on the provider’s normal backup schedule. Server logs are kept for a limited period for security. The copy of your save on your device is removed when you delete the app.</p>
+            <h2>12. Retention and deletion</h2>
+            <p>We keep your account, save file, level-up events and block list for as long as your account exists. Reports are kept for as long as reasonably needed to investigate abuse, enforce our rules and keep an appropriate moderation record.</p>
+            <p>When you choose <strong>Delete account and all data</strong> in the app, your account, save file, public level-up events and block list are deleted from our live database straight away and can’t be recovered. A report you submitted may remain as a moderation record, but it will no longer contain your reporter account ID. Copies in our provider’s encrypted backups expire on the provider’s normal backup schedule. Server logs are kept for a limited period for security. The copy of your save on your device is removed when you delete the app.</p>
           </section>
 
           <section id="choices">
-            <h2>12. Your choices</h2>
+            <h2>13. Your choices</h2>
             <ul>
               <li><strong>Location:</strong> change it any time in iOS Settings › SCAPED › Location. The game world needs location to work.</li>
+              <li><strong>Nearby players:</strong> turn visibility on or off at any time in Account settings. Turning it off removes you from the map straight away.</li>
+              <li><strong>Reports and blocks:</strong> tap a player’s name in nearby players or the GLOBAL feed, or open a friend’s profile, to report or block them. Manage blocked players in Backpack › Account settings › Blocked players.</li>
               <li><strong>Health and Motion:</strong> turn off step access in the Health app › Sharing › Apps, or in iOS Settings. You’ll simply stop earning Agility XP from steps.</li>
               <li><strong>Delete your data:</strong> in the game, open your Backpack › Account settings › Delete account and all data.</li>
             </ul>
           </section>
 
           <section id="rights">
-            <h2>13. Your rights</h2>
+            <h2>14. Your rights</h2>
             <p>Depending on where you live (including under the GDPR in the EU/EEA and UK), you may have the right to access, correct, delete, restrict or object to processing of your personal data, to receive a copy of it (data portability), and to withdraw consent at any time. To make a request, email <a href="mailto:anthonyvvza@gmail.com">anthonyvvza@gmail.com</a> with your adventurer name. Because accounts have no email address, we may ask you to confirm ownership, for example by making a change from inside the logged-in app.</p>
             <p>You can also complain to a data-protection authority. In the Netherlands, that’s the Autoriteit Persoonsgegevens.</p>
           </section>
 
           <section id="children">
-            <h2>14. Children</h2>
+            <h2>15. Children</h2>
             <p>SCAPED isn’t intended for children under 13, and we don’t knowingly collect personal data from them. In some countries, including parts of the EU, the minimum age for using online services without a parent’s consent is higher (up to 16). If you’re below that age, only use SCAPED with a parent or guardian’s permission. If you think a child has created an account, contact us and we’ll delete it.</p>
           </section>
 
           <section id="security">
-            <h2>15. Security</h2>
+            <h2>16. Security</h2>
             <p>Data travels over encrypted connections (HTTPS). Passwords are stored as hashes, and database rules make sure each player can read only their own save. Saves can be changed only through server functions that validate them. No system is perfectly secure, so please use a unique password for SCAPED.</p>
           </section>
 
           <section id="changes">
-            <h2>16. Changes</h2>
+            <h2>17. Changes</h2>
             <p>We may update this policy as SCAPED evolves, for example when we add new features. We’ll change the effective date above and, for significant changes, tell you in the app.</p>
           </section>
 
           <section id="contact">
-            <h2>17. Contact</h2>
+            <h2>18. Contact</h2>
             <p>Questions or requests: <a href="mailto:anthonyvvza@gmail.com">anthonyvvza@gmail.com</a>. See also the <a href="../terms/">Terms of Service</a> and <a href="../support/">Support</a> pages.</p>
           </section>
         </article>
