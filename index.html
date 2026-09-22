@@ -255,14 +255,14 @@
     <link rel="alternate" type="application/rss+xml" title="ChartsGPT Blog" href="/feed.xml" />
     <script src="./site-config.js" defer></script>
     <script src="./site.js?v=20260808b" defer></script>
-    <link rel="preload" as="image" type="image/webp" href="/screen2-900.webp" imagesrcset="/screen2-600.webp 600w, /screen2-900.webp 900w" imagesizes="(max-width: 860px) 40vw, 290px" fetchpriority="high" />
+    <link rel="preload" as="image" type="image/webp" href="/app-shots/scan.webp" fetchpriority="high" />
     <link rel="preload" href="/Geist-Regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/Geist-Medium.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/Geist-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/Geist-Bold.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="./styles.css?v=20260722d" />
   </head>
-  <body class="home-body home-v2 seo-expanded">
+  <body class="home-body home-v2 seo-expanded home-clean">
     <aside class="ios-app-banner" aria-label="Download ChartsGPT from the App Store">
       <img class="ios-app-banner-icon" src="./apple-touch-icon.png" alt="" width="52" height="52" />
       <span class="ios-app-banner-copy">
@@ -293,53 +293,59 @@
         </div>
       </header>
       <main class="landing landing-home" aria-label="ChartsGPT landing page">
-        <section class="hero-v2" aria-label="Hero">
-          <div class="container hero-v2-grid">
-            <div class="hero-v2-copy reveal" style="--delay: 60ms">
-              <div class="hero-v2-trust">
-                <span class="hero-v2-trust-stars">★★★★★</span>
-                <span>4.6 on the App Store</span>
-                <span class="hero-v2-trust-divider" aria-hidden="true"></span>
-                <span class="hero-v2-trust-traders"><strong>Built for active traders</strong></span>
-              </div>
-              <h1 class="hero-v2-title">AI chart analysis.<br>Get the<br><span class="hero-title-green">trade plan.</span></h1>
-              <p class="hero-v2-sub"><span class="tw-text" data-phrases='["Key levels, bias, entry, stop loss, and invalidation.","Works for crypto, forex, stocks, and metals.","Get your full trade plan in seconds."]'>Key levels, bias, entry, stop loss, and invalidation.</span><span class="tw-cursor" aria-hidden="true"></span></p>
-            </div>
-
-            <div class="hero-v2-stage reveal" style="--delay: 160ms" aria-label="Product preview">
-              <div class="stage-phone stage-phone-main">
-                <picture><source type="image/webp" sizes="(max-width: 860px) 40vw, 290px" srcset="./screen2-600.webp 600w, ./screen2-900.webp 900w"><img src="./screen2.jpg" class="phone-screen phone-screen-a" alt="ChartsGPT AI chart analysis showing trend, key levels and bias" width="1284" height="2778" loading="eager" fetchpriority="high" decoding="async" /></picture>
-                <picture><source type="image/webp" sizes="(max-width: 860px) 40vw, 290px" srcset="./screen5-600.webp 600w, ./screen5-900.webp 900w"><img src="./screen5.jpg" class="phone-screen phone-screen-b" alt="ChartsGPT technical indicator breakdown for a crypto chart" width="1284" height="2778" loading="lazy" decoding="async" /></picture>
-              </div>
-              <div class="stage-phone stage-phone-left">
-                <picture><source type="image/webp" sizes="(max-width: 860px) 40vw, 290px" srcset="./screen1-600.webp 600w, ./screen1-900.webp 900w"><img src="./screen1.jpg" class="phone-screen phone-screen-a" alt="ChartsGPT camera capture flow for scanning a trading chart" width="1284" height="2778" loading="lazy" decoding="async" /></picture>
-                <picture><source type="image/webp" sizes="(max-width: 860px) 40vw, 290px" srcset="./screen4-600.webp 600w, ./screen4-900.webp 900w"><img src="./screen4.jpg" class="phone-screen phone-screen-b" alt="ChartsGPT trade setup card with entry, stop and invalidation" width="1284" height="2778" loading="lazy" decoding="async" /></picture>
-              </div>
-              <div class="stage-phone stage-phone-right">
-                <picture><source type="image/webp" sizes="(max-width: 860px) 40vw, 290px" srcset="./screen3-600.webp 600w, ./screen3-900.webp 900w"><img src="./screen3.jpg" class="phone-screen phone-screen-a" alt="ChartsGPT risk and entry view with stop loss and targets" width="1284" height="2778" loading="lazy" decoding="async" /></picture>
-                <picture><source type="image/webp" sizes="(max-width: 860px) 40vw, 290px" srcset="./screen6-600.webp 600w, ./screen6-900.webp 900w"><img src="./screen6.jpg" class="phone-screen phone-screen-b" alt="ChartsGPT real-time trading signal alert on a live chart" width="1284" height="2778" loading="lazy" decoding="async" /></picture>
-              </div>
-            </div>
-
-            <div class="hero-v2-cta-row reveal" style="--delay: 220ms">
-              <a
-                class="store-badge store-badge-hero js-appstore"
-                href="https://apps.apple.com/app/chartsgpt-trading-assistant/id6758857719"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Download ChartsGPT on the App Store"
-              >
-                <img src="./appstore.svg" alt="Download on the App Store" />
+        <section class="clean-hero" aria-labelledby="clean-hero-title">
+          <div class="clean-hero-copy">
+            <p class="clean-hero-rating"><span aria-hidden="true">★★★★★</span> <span>4.6 on the App Store</span><i aria-hidden="true"></i><strong>Built for active traders</strong></p>
+            <h1 id="clean-hero-title">AI chart analysis.<br>Get the <span>trade plan.</span></h1>
+            <p class="clean-hero-lead">Key levels, market bias, entry, stop and invalidation. All from one chart.</p>
+            <div class="clean-hero-actions">
+              <a class="clean-store-badge js-appstore" href="https://apps.apple.com/app/chartsgpt-trading-assistant/id6758857719" target="_blank" rel="noopener noreferrer" aria-label="Download ChartsGPT on the App Store">
+                <img src="./appstore.svg" alt="Download on the App Store" width="150" height="50" />
+                <span>Available now</span>
               </a>
-              <button class="store-badge store-badge-hero gp-trigger beta-badge" aria-label="Sign up for the ChartsGPT Android beta" type="button">
-                <svg class="beta-badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M3 20.5v-17c0-.83 1-.83 1.5-.5L20 12 4.5 21c-.5.33-1.5.33-1.5-.5Z" fill="currentColor"/>
-                </svg>
-                <span class="beta-badge-copy">
-                  <span class="beta-badge-kicker">Sign up for the</span>
-                  <span class="beta-badge-title">Android Beta</span>
-                </span>
+              <button class="clean-store-badge gp-trigger" type="button" aria-label="Google Play release coming soon. Join the Android beta waitlist">
+                <img src="./googleplay.svg" alt="Get it on Google Play" width="169" height="50" />
+                <span>Android beta · Join the waitlist</span>
               </button>
+            </div>
+          </div>
+          <div class="clean-hero-visual" aria-label="ChartsGPT app preview">
+            <img class="clean-preview clean-preview-left" src="./app-shots/breakdown.webp" alt="ChartsGPT live chart and analysis" width="720" height="1558" decoding="async" />
+            <img class="clean-preview clean-preview-right" src="./app-shots/plan.webp" alt="ChartsGPT trade plan with entry, stop and targets" width="720" height="1558" decoding="async" />
+            <img class="clean-preview clean-preview-main" src="./app-shots/scan.webp" alt="ChartsGPT app scanning a trading chart" width="720" height="1558" fetchpriority="high" decoding="async" />
+          </div>
+        </section>
+
+        <section class="clean-gallery" aria-labelledby="gallery-title">
+          <div class="clean-gallery-heading">
+            <p class="clean-eyebrow">The app, in action</p>
+            <h2 id="gallery-title">A closer look at ChartsGPT.</h2>
+            <p>From a chart image to market context and a trade plan. Explore the screens below.</p>
+          </div>
+          <div class="clean-marquee" aria-label="ChartsGPT app screenshots">
+            <div class="clean-marquee-track">
+              <div class="clean-marquee-set">
+                <figure><img src="./app-shots/scan.webp" alt="Scan a chart with the ChartsGPT camera" width="720" height="1558" loading="lazy" /><figcaption>Snap a chart</figcaption></figure>
+                <figure><img src="./app-shots/breakdown.webp" alt="View live chart, market read and trade plan" width="720" height="1558" loading="lazy" /><figcaption>Get a breakdown</figcaption></figure>
+                <figure><img src="./app-shots/plan.webp" alt="Review entry, stop and targets" width="720" height="1558" loading="lazy" /><figcaption>Build a plan</figcaption></figure>
+                <figure><img src="./app-shots/coach.webp" alt="Ask follow-up questions about a setup" width="720" height="1558" loading="lazy" /><figcaption>Ask AI Coach</figcaption></figure>
+                <figure><img src="./app-shots/signals.webp" alt="See live signals on a chart" width="720" height="1558" loading="lazy" /><figcaption>Spot live signals</figcaption></figure>
+                <figure><img src="./app-shots/indicators.webp" alt="Analyze patterns and indicators" width="720" height="1558" loading="lazy" /><figcaption>Go deeper</figcaption></figure>
+                <figure><img src="./app-shots/live-price.webp" alt="See live price on the lock screen" width="720" height="1558" loading="lazy" /><figcaption>Track live price</figcaption></figure>
+                <figure><img src="./app-shots/learn.webp" alt="Follow chart reading lessons" width="720" height="1558" loading="lazy" /><figcaption>Learn trading</figcaption></figure>
+                <figure><img src="./app-shots/news.webp" alt="Browse live market news" width="720" height="1558" loading="lazy" /><figcaption>Stay informed</figcaption></figure>
+              </div>
+              <div class="clean-marquee-set" aria-hidden="true">
+                <figure><img src="./app-shots/scan.webp" alt="" width="720" height="1558" loading="lazy" /><figcaption>Snap a chart</figcaption></figure>
+                <figure><img src="./app-shots/breakdown.webp" alt="" width="720" height="1558" loading="lazy" /><figcaption>Get a breakdown</figcaption></figure>
+                <figure><img src="./app-shots/plan.webp" alt="" width="720" height="1558" loading="lazy" /><figcaption>Build a plan</figcaption></figure>
+                <figure><img src="./app-shots/coach.webp" alt="" width="720" height="1558" loading="lazy" /><figcaption>Ask AI Coach</figcaption></figure>
+                <figure><img src="./app-shots/signals.webp" alt="" width="720" height="1558" loading="lazy" /><figcaption>Spot live signals</figcaption></figure>
+                <figure><img src="./app-shots/indicators.webp" alt="" width="720" height="1558" loading="lazy" /><figcaption>Go deeper</figcaption></figure>
+                <figure><img src="./app-shots/live-price.webp" alt="" width="720" height="1558" loading="lazy" /><figcaption>Track live price</figcaption></figure>
+                <figure><img src="./app-shots/learn.webp" alt="" width="720" height="1558" loading="lazy" /><figcaption>Learn trading</figcaption></figure>
+                <figure><img src="./app-shots/news.webp" alt="" width="720" height="1558" loading="lazy" /><figcaption>Stay informed</figcaption></figure>
+              </div>
             </div>
           </div>
         </section>
@@ -349,21 +355,6 @@
             <p class="seo-eyebrow">AI trading chart analyzer</p>
             <h2 id="home-analysis-title">Technical analysis from one chart screenshot</h2>
             <p class="seo-lead">Upload a screenshot from TradingView or another charting platform. ChartsGPT analyzes trend direction, market structure, support and resistance, common patterns, and possible bullish and bearish scenarios, without a complicated setup.</p>
-            <div class="seo-product-showcase" aria-label="ChartsGPT app preview">
-              <div class="seo-showcase-copy">
-                <span>AI chart intelligence</span>
-                <strong>From screenshot to structured market insight.</strong>
-              </div>
-              <figure class="seo-showcase-card seo-showcase-left">
-                <picture><source type="image/webp" sizes="(max-width: 860px) 60vw, 320px" srcset="./screen2-600.webp 600w, ./screen2-900.webp 900w"><img src="./screen2.jpg" alt="ChartsGPT AI chart analysis showing trend, key levels and bias" width="1284" height="2778" loading="lazy" decoding="async" /></picture>
-              </figure>
-              <figure class="seo-showcase-card seo-showcase-main">
-                <picture><source type="image/webp" sizes="(max-width: 860px) 60vw, 320px" srcset="./screen6-600.webp 600w, ./screen6-900.webp 900w"><img src="./screen6.jpg" alt="ChartsGPT real-time trading signal alert on a live chart" width="1284" height="2778" loading="lazy" decoding="async" /></picture>
-              </figure>
-              <figure class="seo-showcase-card seo-showcase-right">
-                <picture><source type="image/webp" sizes="(max-width: 860px) 60vw, 320px" srcset="./screen5-600.webp 600w, ./screen5-900.webp 900w"><img src="./screen5.jpg" alt="ChartsGPT technical indicator breakdown for a crypto chart" width="1284" height="2778" loading="lazy" decoding="async" /></picture>
-              </figure>
-            </div>
             <div class="seo-card-grid">
               <article class="seo-card"><h3>Levels and structure</h3><p>Find support, resistance, breakouts, structure shifts, and price zones worth watching.</p></article>
               <article class="seo-card"><h3>Risk-aware trade plan</h3><p>Review possible entries, stop loss, take profit, invalidation, and clear risk notes.</p></article>
