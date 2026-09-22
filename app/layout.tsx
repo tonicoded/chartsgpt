@@ -73,10 +73,6 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false
   },
-  itunes: {
-    appId: "6758857719",
-    appArgument: "https://apps.apple.com/app/chartsgpt-trading-assistant/id6758857719"
-  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

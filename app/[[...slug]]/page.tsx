@@ -17,7 +17,6 @@ import {
 import GotemGameplay from "../_components/GotemGameplay";
 import LocalizedLanding from "../_components/LocalizedLanding";
 import {
-  APP_STORE_URL,
   SITE_URL,
   isLocaleCode,
   languageAlternates,
@@ -119,10 +118,6 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
         description: content.description,
         images: ["/og.png"]
       },
-      itunes: {
-        appId: "6758857719",
-        appArgument: APP_STORE_URL
-      },
       other: {
         "content-language": content.lang
       }
@@ -168,12 +163,6 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     description,
     keywords,
     robots: robotsContent,
-    itunes: standaloneSiteName
-      ? undefined
-      : {
-          appId: "6758857719",
-          appArgument: APP_STORE_URL
-        },
     alternates: canonicalAbs
       ? { canonical: canonicalAbs, ...(isChartsGptHome ? { languages: languageAlternates } : {}) }
       : undefined,
