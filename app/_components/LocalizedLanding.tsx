@@ -63,9 +63,20 @@ function JsonLd({ content }: { content: LocaleContent }) {
 
 export default function LocalizedLanding({ content }: { content: LocaleContent }) {
   const beta = betaCopy(content);
+  const screenshots = [
+    ["scan", content.steps[0]?.title ?? "Scan a chart"],
+    ["breakdown", content.features[0]?.title ?? "Chart breakdown"],
+    ["plan", content.features[1]?.title ?? "Trade plan"],
+    ["coach", "AI Coach"],
+    ["signals", content.features[2]?.title ?? "Live signals"],
+    ["indicators", content.features[3]?.title ?? "Indicators"],
+    ["live-price", "Live price"],
+    ["learn", content.steps[2]?.title ?? "Learn"],
+    ["news", content.marketsTitle]
+  ];
 
   return (
-    <div className="home-body home-v2 seo-expanded" dir={content.dir} lang={content.lang}>
+    <div className="home-body home-v2 seo-expanded home-clean" dir={content.dir} lang={content.lang}>
       <JsonLd content={content} />
       <div className="home-shell home-shell-v2">
         <header className="site-header site-header-home" aria-label="ChartsGPT">
@@ -88,109 +99,97 @@ export default function LocalizedLanding({ content }: { content: LocaleContent }
         </header>
 
         <main className="landing landing-home" aria-label={content.title}>
-          <section className="hero-v2 seo-hero" aria-labelledby="localized-hero-title">
-            <div className="container hero-v2-grid">
-              <div className="hero-v2-copy reveal" style={{ "--delay": "60ms" } as React.CSSProperties}>
-                <div className="hero-v2-trust">
-                  <span className="hero-v2-trust-stars" aria-hidden="true">★★★★★</span>
-                  <span>{content.trust}</span>
-                  <span className="hero-v2-trust-divider" aria-hidden="true" />
-                  <span className="hero-v2-trust-traders"><strong>{content.audience}</strong></span>
-                </div>
-                <h1 className="hero-v2-title" id="localized-hero-title">
-                  {content.heroLead}<br />{content.heroMiddle}<br /><span className="hero-title-green">{content.heroAccent}</span>
-                </h1>
-                <p className="hero-v2-sub">
-                  <span className="tw-text" data-phrases={JSON.stringify(content.phrases)}>{content.phrases[0]}</span>
-                  <span className="tw-cursor" aria-hidden="true" />
-                </p>
-              </div>
-
-              <div className="hero-v2-stage reveal" style={{ "--delay": "160ms" } as React.CSSProperties} aria-label="ChartsGPT app">
-                <div className="stage-phone stage-phone-main"><img src="/screen2.jpg" className="phone-screen phone-screen-a" alt="ChartsGPT AI chart analysis" loading="eager" /></div>
-                <div className="stage-phone stage-phone-left"><img src="/screen1.jpg" className="phone-screen phone-screen-a" alt="ChartsGPT chart upload" loading="lazy" /></div>
-                <div className="stage-phone stage-phone-right"><img src="/screen3.jpg" className="phone-screen phone-screen-a" alt="ChartsGPT entry and risk analysis" loading="lazy" /></div>
-              </div>
-
-              <div className="hero-v2-cta-row reveal" style={{ "--delay": "220ms" } as React.CSSProperties}>
-                <a className="store-badge store-badge-hero js-appstore" href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" aria-label={content.appStoreLabel}>
-                  <img src="/appstore.svg" alt={content.appStoreLabel} />
+          <section className="clean-hero" aria-labelledby="localized-hero-title">
+            <div className="clean-hero-copy">
+              <p className="clean-hero-rating"><span aria-hidden="true">★★★★★</span><span>{content.trust}</span><i aria-hidden="true" /><strong>{content.audience}</strong></p>
+              <h1 id="localized-hero-title">{content.heroLead}<br />{content.heroMiddle} <span>{content.heroAccent}</span></h1>
+              <p className="clean-hero-lead">{content.phrases[0]}</p>
+              <div className="clean-hero-actions">
+                <a className="clean-store-badge js-appstore" href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" aria-label={content.appStoreLabel}>
+                  <img src="/appstore.svg" alt={content.appStoreLabel} width="150" height="50" /><span>{content.appStoreLabel}</span>
                 </a>
-                <button className="store-badge store-badge-hero gp-trigger beta-badge" aria-label={beta.ariaLabel} type="button">
-                  <svg className="beta-badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M3 20.5v-17c0-.83 1-.83 1.5-.5L20 12 4.5 21c-.5.33-1.5.33-1.5-.5Z" fill="currentColor" />
-                  </svg>
-                  <span className="beta-badge-copy">
-                    <span className="beta-badge-kicker">{beta.kicker}</span>
-                    <span className="beta-badge-title">{beta.badge}</span>
-                  </span>
+                <button className="clean-store-badge gp-trigger" aria-label={beta.ariaLabel} type="button">
+                  <img src="/googleplay.svg" alt={content.androidLabel} width="169" height="50" /><span>{beta.badge}</span>
                 </button>
+              </div>
+            </div>
+            <div className="clean-hero-visual" aria-label="ChartsGPT app preview">
+              <img className="clean-preview clean-preview-left" src="/app-shots/breakdown.webp" alt="ChartsGPT chart breakdown" width="720" height="1558" />
+              <img className="clean-preview clean-preview-right" src="/app-shots/plan.webp" alt="ChartsGPT trade plan" width="720" height="1558" />
+              <img className="clean-preview clean-preview-main" src="/app-shots/scan.webp" alt="ChartsGPT chart scanner" width="720" height="1558" />
+            </div>
+          </section>
+
+          <section className="clean-gallery" aria-labelledby="localized-gallery-title">
+            <div className="clean-gallery-heading">
+              <p className="clean-eyebrow">ChartsGPT</p>
+              <h2 id="localized-gallery-title">{content.howTitle}</h2>
+              <p>{content.introText}</p>
+            </div>
+            <div className="clean-marquee" aria-label="ChartsGPT app screenshots">
+              <div className="clean-marquee-track">
+                {[false, true].map((duplicate) => (
+                  <div className="clean-marquee-set" aria-hidden={duplicate || undefined} key={duplicate ? "duplicate" : "primary"}>
+                    {screenshots.map(([image, label]) => (
+                      <figure key={`${duplicate}-${image}`}><img src={`/app-shots/${image}.webp`} alt={duplicate ? "" : label} width="720" height="1558" loading="lazy" /><figcaption>{label}</figcaption></figure>
+                    ))}
+                  </div>
+                ))}
               </div>
             </div>
           </section>
 
-          <div className="seo-content">
-            <section className="seo-section seo-intro" aria-labelledby="seo-intro-title">
-              <p className="seo-eyebrow">ChartsGPT AI Chart Analyzer</p>
-              <h2 id="seo-intro-title">{content.introTitle}</h2>
-              <p className="seo-lead">{content.introText}</p>
-              <div className="seo-product-showcase" aria-label="ChartsGPT app preview">
-                <div className="seo-showcase-copy">
-                  <span>{content.audience}</span>
-                  <strong>{content.heroLead} {content.heroAccent}</strong>
+          <div className="clean-content">
+            <section className="clean-intro" aria-labelledby="localized-intro-title">
+              <div className="clean-intro-copy">
+                <p className="clean-kicker">ChartsGPT AI</p>
+                <h2 id="localized-intro-title">{content.introTitle}</h2>
+                <p>{content.introText}</p>
+                <div className="clean-steps">
+                  {content.steps.map((step, index) => <div key={step.title}><span>0{index + 1}</span><strong>{step.title}</strong><small>{step.text}</small></div>)}
                 </div>
-                <figure className="seo-showcase-card seo-showcase-left">
-                  <img src="/screen2.jpg" alt="ChartsGPT AI chart analysis preview" loading="lazy" />
-                </figure>
-                <figure className="seo-showcase-card seo-showcase-main">
-                  <img src="/screen6.jpg" alt="ChartsGPT real-time trading signals preview" loading="lazy" />
-                </figure>
-                <figure className="seo-showcase-card seo-showcase-right">
-                  <img src="/screen5.jpg" alt="ChartsGPT technical indicators preview" loading="lazy" />
-                </figure>
               </div>
-              <div className="seo-card-grid">
-                {content.features.map((feature) => (
-                  <article className="seo-card" key={feature.title}><h3>{feature.title}</h3><p>{feature.text}</p></article>
-                ))}
-              </div>
+              <div className="clean-intro-art"><img src="/app-shots/scan.webp" alt="ChartsGPT chart scanner" width="720" height="1558" loading="lazy" /></div>
             </section>
 
-            <section className="seo-section seo-section-muted" aria-labelledby="seo-how-title">
-              <h2 id="seo-how-title">{content.howTitle}</h2>
-              <div className="seo-step-grid">
-                {content.steps.map((step) => (
-                  <article className="seo-step" key={step.title}><h3>{step.title}</h3><p>{step.text}</p></article>
-                ))}
+            <section className="clean-feature clean-feature-dark">
+              <div className="clean-feature-copy">
+                <p className="clean-kicker">ChartsGPT</p><h2>{content.features[0]?.title}</h2><p>{content.features[0]?.text}</p>
+                <ul className="clean-check-list">{content.features.slice(1, 4).map((feature) => <li key={feature.title}>{feature.title}</li>)}</ul>
+              </div>
+              <div className="clean-feature-image"><img src="/app-shots/breakdown.webp" alt="ChartsGPT technical analysis" width="720" height="1558" loading="lazy" /></div>
+            </section>
+
+            <section className="clean-feature clean-feature-plan">
+              <div className="clean-feature-image"><img src="/app-shots/plan.webp" alt="ChartsGPT trade plan" width="720" height="1558" loading="lazy" /></div>
+              <div className="clean-feature-copy">
+                <p className="clean-kicker">{content.audience}</p><h2>{content.features[1]?.title}</h2><p>{content.features[1]?.text}</p>
+                <ul className="clean-check-list">{content.steps.map((step) => <li key={step.title}>{step.title}</li>)}</ul><small>{content.disclaimer}</small>
               </div>
             </section>
 
-            <section className="seo-section seo-market" aria-labelledby="seo-markets-title">
-              <div><p className="seo-eyebrow">Multi-market chart analysis</p><h2 id="seo-markets-title">{content.marketsTitle}</h2></div>
-              <p>{content.marketsText}</p>
+            <section className="clean-toolkit">
+              <div className="clean-section-heading"><p className="clean-kicker">ChartsGPT</p><h2>{content.howTitle}</h2><p>{content.phrases[1] ?? content.introText}</p></div>
+              <div className="clean-toolkit-grid">
+                {content.features.map((feature, index) => {
+                  const image = ["coach", "signals", "learn", "live-price"][index];
+                  return <article className="clean-tool-card" key={feature.title}><div className="clean-tool-art"><img src={`/app-shots/${image}.webp`} alt={feature.title} width="720" height="1558" loading="lazy" /></div><div className="clean-tool-copy"><span>0{index + 1} / ChartsGPT</span><h3>{feature.title}</h3><p>{feature.text}</p></div></article>;
+                })}
+              </div>
             </section>
 
-            {content.faqs.length ? (
-              <section className="seo-section" aria-labelledby="seo-faq-title">
-                <h2 id="seo-faq-title">{content.faqTitle}</h2>
-                <div className="faq seo-faq">
-                  {content.faqs.map((faq) => (
-                    <details className="faq-item" key={faq.question}><summary>{faq.question}</summary><div className="faq-body">{faq.answer}</div></details>
-                  ))}
-                </div>
-              </section>
-            ) : null}
+            <section className="clean-markets"><div><p className="clean-kicker">ChartsGPT</p><h2>{content.marketsTitle}</h2><p>{content.marketsText}</p></div><ul><li>Crypto</li><li>Forex</li><li>Stocks</li><li>Indices</li><li>Metals</li></ul></section>
 
-            <section className="seo-section seo-cta" aria-label={content.ctaTitle}>
-              <div><h2>{content.ctaTitle}</h2><p>{content.ctaText}</p></div>
-              <a className="seo-download-button js-appstore" href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">{content.appStoreLabel}</a>
-            </section>
+            {content.faqs.length ? <section className="clean-faq-section"><div className="clean-section-heading"><p className="clean-kicker">ChartsGPT</p><h2>{content.faqTitle}</h2></div><div className="faq clean-faq">{content.faqs.map((faq) => <details className="faq-item" key={faq.question}><summary>{faq.question}</summary><div className="faq-body">{faq.answer}</div></details>)}</div></section> : null}
+
+            <section className="clean-final-cta" aria-label={content.ctaTitle}><div><p className="clean-kicker">ChartsGPT</p><h2>{content.ctaTitle}</h2><p>{content.ctaText}</p></div><a className="js-appstore" href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" aria-label={content.appStoreLabel}><img src="/appstore.svg" alt={content.appStoreLabel} width="150" height="50" /></a></section>
           </div>
         </main>
 
         <footer className="seo-footer">
           <div className="seo-footer-inner">
-            <LanguageLinks current={content.code} label={content.languageLabel} />
+            <div className="clean-footer-brand"><strong>ChartsGPT</strong><p>{content.ctaTitle}</p></div>
+            <details className="clean-language-picker"><summary>{content.languageLabel}: {content.label}</summary><LanguageLinks current={content.code} label={content.languageLabel} /></details>
             <nav className="seo-footer-links" aria-label="ChartsGPT">
               <a href="/blog/">{content.footerLinks.blog}</a><a href="/privacy/">{content.footerLinks.privacy}</a><a href="/terms/">{content.footerLinks.terms}</a><a href="/support/">{content.footerLinks.support}</a>
             </nav>

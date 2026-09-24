@@ -4,8 +4,8 @@ import { Analytics } from "@vercel/analytics/next";
 import "../styles.css";
 
 export const viewport: Viewport = {
-  themeColor: "#030303",
-  colorScheme: "dark",
+  themeColor: "#ffffff",
+  colorScheme: "light",
   width: "device-width",
   initialScale: 1
 };
