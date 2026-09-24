@@ -7657,3 +7657,152 @@ body.home-body.home-v2.seo-expanded.home-clean,
   .home-clean .site-brand img { width: 32px; height: 32px; }
   .home-clean .clean-hero { padding-top: 35px; }
 }
+
+/* Premium product story: show every App Store screenshot in full. */
+.home-clean .clean-intro {
+  position: relative;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, .72fr);
+  gap: clamp(56px, 8vw, 118px);
+  margin: 96px 0 112px;
+  padding: clamp(54px, 6vw, 82px);
+  overflow: hidden;
+  border: 1px solid #ebe7dc;
+  border-radius: 36px;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(229,174,54,.09), transparent 31%),
+    linear-gradient(145deg, #fff 0%, #fbfaf7 100%);
+  box-shadow: 0 28px 80px rgba(31,26,16,.06);
+}
+.home-clean .clean-intro::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(#e8b64b, #8d630d);
+}
+.home-clean .clean-intro h2 {
+  max-width: 10.5ch;
+  font-size: clamp(2.8rem, 4.1vw, 4.15rem);
+  line-height: 1.01;
+}
+.home-clean .clean-intro-art {
+  position: relative;
+  height: 610px;
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+}
+.home-clean .clean-intro-art::before {
+  content: "";
+  position: absolute;
+  inset: 8% 1% 2%;
+  z-index: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(224,174,66,.22), rgba(224,174,66,0) 69%);
+  filter: blur(18px);
+}
+.home-clean .clean-intro-art img {
+  position: relative;
+  z-index: 1;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  border: 1px solid rgba(208,161,58,.42);
+  border-radius: 25px;
+  box-shadow: 0 30px 65px rgba(22,18,10,.2);
+}
+
+.home-clean .clean-feature {
+  min-height: 610px;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 28px 80px rgba(24,20,13,.08);
+}
+.home-clean .clean-feature-dark {
+  padding: 64px 78px 0;
+  background:
+    radial-gradient(circle at 82% 42%, rgba(220,164,45,.15), transparent 34%),
+    linear-gradient(145deg, #111 0%, #080808 100%);
+}
+.home-clean .clean-feature-plan {
+  padding: 64px 78px 0;
+  border-color: #e9e4d8;
+  background:
+    radial-gradient(circle at 16% 34%, rgba(220,164,45,.12), transparent 32%),
+    linear-gradient(145deg, #fbfaf7 0%, #f3f0e8 100%);
+}
+.home-clean .clean-feature h2 { font-size: clamp(2.65rem, 4vw, 4rem); }
+.home-clean .clean-feature-image {
+  height: 570px;
+  overflow: visible;
+}
+.home-clean .clean-feature-image img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 24px 24px 0 0;
+}
+
+.home-clean .clean-tool-card {
+  border-color: #e7e1d4;
+  border-radius: 25px;
+  box-shadow: 0 16px 45px rgba(30,25,15,.055);
+}
+.home-clean .clean-tool-art {
+  height: 365px;
+  padding: 24px 18px 0;
+  align-items: flex-end;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(226,173,56,.16), transparent 42%),
+    #10100f;
+}
+.home-clean .clean-tool-art img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  margin: 0;
+  object-fit: contain;
+  border: 1px solid rgba(218,170,65,.28);
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 20px 42px rgba(0,0,0,.28);
+}
+.home-clean .clean-tool-copy { padding: 27px 25px 30px; }
+
+@media (max-width: 980px) {
+  .home-clean .clean-intro {
+    grid-template-columns: 1fr minmax(240px, .62fr);
+    gap: 34px;
+    margin: 74px 0 88px;
+    padding: 48px;
+  }
+  .home-clean .clean-intro-art { height: 520px; }
+  .home-clean .clean-feature-dark,
+  .home-clean .clean-feature-plan { padding-inline: 48px; }
+  .home-clean .clean-tool-art { height: 380px; }
+}
+
+@media (max-width: 760px) {
+  .home-clean .clean-intro {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin: 55px 0 72px;
+    padding: 38px 26px 0;
+    border-radius: 28px;
+  }
+  .home-clean .clean-intro h2 { font-size: clamp(2.35rem, 10vw, 3.15rem); }
+  .home-clean .clean-intro-art { height: 500px; }
+  .home-clean .clean-intro-art img { height: 100%; border-radius: 20px 20px 0 0; }
+  .home-clean .clean-feature-dark,
+  .home-clean .clean-feature-plan { padding: 42px 26px 0; }
+  .home-clean .clean-feature-image { height: 470px; }
+  .home-clean .clean-feature-image img { height: 100%; }
+  .home-clean .clean-tool-art { height: 390px; }
+  .home-clean .clean-tool-art img { width: auto; height: 100%; }
+}
+
+@media (max-width: 430px) {
+  .home-clean .clean-intro-art { height: 450px; }
+  .home-clean .clean-feature-image { height: 430px; }
+  .home-clean .clean-tool-art { height: 350px; }
+}
