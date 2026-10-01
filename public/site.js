@@ -422,16 +422,20 @@
   });
 
   dragger.addEventListener("pointerdown", (event) => {
+    event.preventDefault();
     dragging = true;
     dragger.setPointerCapture?.(event.pointerId);
     chooser.classList.add("is-dragging");
     setPosition(event.clientX);
   });
   dragger.addEventListener("pointermove", (event) => {
-    if (dragging) setPosition(event.clientX);
-  });
-  const finishDrag = () => {
     if (!dragging) return;
+    event.preventDefault();
+    setPosition(event.clientX);
+  });
+  const finishDrag = (event) => {
+    if (!dragging) return;
+    event?.preventDefault();
     dragging = false;
     chooser.classList.remove("is-dragging");
     if (position <= 34) choose("dark");
@@ -444,6 +448,9 @@
   };
   dragger.addEventListener("pointerup", finishDrag);
   dragger.addEventListener("pointercancel", finishDrag);
+  dragger.addEventListener("touchstart", (event) => event.preventDefault(), { passive: false });
+  dragger.addEventListener("touchmove", (event) => event.preventDefault(), { passive: false });
+  chooser.addEventListener("selectstart", (event) => event.preventDefault());
   dragger.addEventListener("keydown", (event) => {
     if (event.key === "ArrowLeft") { event.preventDefault(); choose("dark"); }
     if (event.key === "ArrowRight") { event.preventDefault(); choose("light"); }

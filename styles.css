@@ -8005,6 +8005,8 @@ html[data-chart-theme="dark"] .home-clean .clean-faq .faq-item summary { color: 
 html[data-chart-theme="dark"] .home-clean .clean-faq .faq-body { color: #9d9b94; }
 html[data-chart-theme="dark"] .home-clean .clean-learn { border-color: #24231f; }
 html[data-chart-theme="dark"] .home-clean .clean-learn-grid a { border-color: #292824; color: #f1ede5; background: #10100f; }
+html[data-chart-theme="dark"] .home-clean .clean-learn-grid strong { color: #f5f1e8 !important; }
+html[data-chart-theme="dark"] .home-clean .clean-learn-grid b { color: #f5f1e8; }
 html[data-chart-theme="dark"] .home-clean .clean-learn-grid small { color: #96948d; }
 html[data-chart-theme="dark"] .home-clean .seo-footer { border-color: #1e1e1b; background: #090909; }
 html[data-chart-theme="dark"] .home-clean .clean-footer-brand strong { color: #f3efe7; }
@@ -8035,6 +8037,16 @@ html[data-chart-theme="dark"] .home-clean .seo-footer-links a { color: #898780; 
 /* The chooser shows two live, inert copies of the actual homepage. */
 .style-chooser::before,
 .style-chooser::after { opacity: 0; }
+.style-chooser,
+.style-chooser * {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+.style-chooser {
+  touch-action: none;
+  overscroll-behavior: none;
+}
 .style-preview {
   position: absolute;
   inset: 0;
@@ -8054,6 +8066,8 @@ html[data-chart-theme="dark"] .home-clean .seo-footer-links a { color: #898780; 
   border: 0;
   background: inherit;
   pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 .style-chooser.is-dragging .style-preview { transition: none; }
 .style-chooser-brand,
@@ -8093,6 +8107,12 @@ html[data-chart-theme="dark"] .home-clean .seo-footer-links a { color: #898780; 
   white-space: nowrap;
 }
 .style-dragger { top: 52%; }
+.style-dragger::before {
+  content: "";
+  position: absolute;
+  inset: -34px -26px;
+  border-radius: 999px;
+}
 .style-drag-hint { top: calc(52% + 58px); }
 
 @media (max-width: 700px) {
