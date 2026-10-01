@@ -290,3 +290,171 @@
     setTimeout(() => requestAnimationFrame(countUp), 600);
   }
 })();
+
+// ── Premium Light / Dark style chooser ─────────────────────────────
+(() => {
+  const page = document.querySelector(".home-clean");
+  if (!page) return;
+
+  const storageKey = "chartsgpt-style-v1";
+  const searchParams = new URLSearchParams(window.location.search);
+  const forceChooser = searchParams.has("choose-style");
+  const previewTheme = ["light", "dark"].includes(searchParams.get("theme-preview"))
+    ? searchParams.get("theme-preview")
+    : null;
+  const html = document.documentElement;
+  const getSavedTheme = () => {
+    try {
+      const value = window.localStorage.getItem(storageKey);
+      return value === "light" || value === "dark" ? value : null;
+    } catch {
+      return null;
+    }
+  };
+
+  let activeTheme = previewTheme || getSavedTheme() || "light";
+  const applyTheme = (theme, persist = true) => {
+    activeTheme = theme === "dark" ? "dark" : "light";
+    html.dataset.chartTheme = activeTheme;
+    html.style.colorScheme = activeTheme;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", activeTheme === "dark" ? "#050505" : "#ffffff");
+    if (persist) {
+      try { window.localStorage.setItem(storageKey, activeTheme); } catch {}
+    }
+    const toggle = document.querySelector(".style-theme-toggle");
+    if (toggle) {
+      const next = activeTheme === "dark" ? "light" : "dark";
+      toggle.dataset.theme = activeTheme;
+      toggle.setAttribute("aria-label", `Switch to ${next} style`);
+      toggle.setAttribute("title", `Switch to ${next} style`);
+    }
+  };
+  applyTheme(activeTheme, false);
+
+  // The split-screen preview renders the real homepage in two inert frames.
+  // Preview frames apply their requested theme without saving or nesting the chooser.
+  if (previewTheme) return;
+
+  const header = page.querySelector(".site-header-inner");
+  const menu = header?.querySelector(".blog-menu");
+  if (header && !header.querySelector(".style-theme-toggle")) {
+    const toggle = document.createElement("button");
+    toggle.className = "style-theme-toggle";
+    toggle.type = "button";
+    toggle.innerHTML = '<span class="style-toggle-sun" aria-hidden="true">☼</span><span class="style-toggle-moon" aria-hidden="true">◐</span>';
+    toggle.addEventListener("click", () => applyTheme(activeTheme === "dark" ? "light" : "dark"));
+    header.insertBefore(toggle, menu || null);
+    applyTheme(activeTheme, false);
+  }
+
+  if (getSavedTheme() && !forceChooser) return;
+
+  const lang = (page.getAttribute("lang") || html.lang || "en").toLowerCase().split("-")[0];
+  const copy = {
+    en: ["Choose your style", "Slide toward the experience you want", "Light", "Clean clarity", "Dark", "Focused intensity", "Drag to choose"],
+    nl: ["Kies je stijl", "Schuif naar de ervaring die bij je past", "Licht", "Heldere eenvoud", "Donker", "Volledige focus", "Sleep om te kiezen"],
+    de: ["Wähle deinen Stil", "Schiebe zu deinem bevorzugten Erlebnis", "Hell", "Klare Übersicht", "Dunkel", "Volle Konzentration", "Zum Wählen ziehen"],
+    es: ["Elige tu estilo", "Desliza hacia la experiencia que prefieras", "Claro", "Claridad limpia", "Oscuro", "Máxima concentración", "Desliza para elegir"],
+    fr: ["Choisissez votre style", "Faites glisser vers votre expérience préférée", "Clair", "Clarté absolue", "Sombre", "Concentration totale", "Glissez pour choisir"]
+  }[lang] || ["Choose your style", "Slide toward the experience you want", "Light", "Clean clarity", "Dark", "Focused intensity", "Drag to choose"];
+
+  const chooser = document.createElement("div");
+  chooser.className = "style-chooser";
+  chooser.setAttribute("role", "dialog");
+  chooser.setAttribute("aria-modal", "true");
+  chooser.setAttribute("aria-labelledby", "style-chooser-title");
+  chooser.style.setProperty("--style-split", "50%");
+  chooser.innerHTML = `
+    <div class="style-preview style-preview-light" aria-hidden="true"><iframe title="" tabindex="-1"></iframe></div>
+    <div class="style-preview style-preview-dark" aria-hidden="true"><iframe title="" tabindex="-1"></iframe></div>
+    <div class="style-chooser-title">
+      <p>${copy[1]}</p>
+      <h2 id="style-chooser-title">${copy[0]}</h2>
+    </div>
+    <button class="style-select-side style-select-light" type="button" data-style="light" aria-label="${copy[2]}"></button>
+    <button class="style-select-side style-select-dark" type="button" data-style="dark" aria-label="${copy[4]}"></button>
+    <div class="style-divider" aria-hidden="true"></div>
+    <button class="style-dragger" type="button" aria-label="${copy[6]}" aria-describedby="style-drag-hint">
+      <span class="style-dragger-light">☼</span><i></i><span class="style-dragger-dark">◐</span>
+    </button>
+    <p class="style-drag-hint" id="style-drag-hint"><span>←</span>${copy[6]}<span>→</span></p>
+  `;
+
+  const previewUrl = new URL(window.location.href);
+  previewUrl.searchParams.delete("choose-style");
+  previewUrl.searchParams.set("theme-preview", "light");
+  chooser.querySelector(".style-preview-light iframe").src = previewUrl.href;
+  previewUrl.searchParams.set("theme-preview", "dark");
+  chooser.querySelector(".style-preview-dark iframe").src = previewUrl.href;
+
+  document.body.appendChild(chooser);
+  document.body.classList.add("style-chooser-open");
+
+  const dragger = chooser.querySelector(".style-dragger");
+  let dragging = false;
+  let position = 50;
+  let completed = false;
+
+  const setPosition = (clientX) => {
+    const width = Math.max(window.innerWidth, 1);
+    position = Math.max(8, Math.min(92, (clientX / width) * 100));
+    chooser.style.setProperty("--style-split", `${position}%`);
+    chooser.classList.toggle("leans-dark", position < 42);
+    chooser.classList.toggle("leans-light", position > 58);
+  };
+
+  const choose = (theme) => {
+    if (completed) return;
+    completed = true;
+    const chosenPosition = theme === "dark" ? 0 : 100;
+    chooser.style.setProperty("--style-split", `${chosenPosition}%`);
+    chooser.classList.add("is-chosen", `chose-${theme}`);
+    applyTheme(theme);
+    window.setTimeout(() => {
+      chooser.classList.add("is-leaving");
+      document.body.classList.remove("style-chooser-open");
+    }, 430);
+    window.setTimeout(() => chooser.remove(), 1050);
+  };
+
+  chooser.querySelectorAll(".style-select-side").forEach((button) => {
+    button.addEventListener("click", () => choose(button.dataset.style));
+  });
+
+  dragger.addEventListener("pointerdown", (event) => {
+    dragging = true;
+    dragger.setPointerCapture?.(event.pointerId);
+    chooser.classList.add("is-dragging");
+    setPosition(event.clientX);
+  });
+  dragger.addEventListener("pointermove", (event) => {
+    if (dragging) setPosition(event.clientX);
+  });
+  const finishDrag = () => {
+    if (!dragging) return;
+    dragging = false;
+    chooser.classList.remove("is-dragging");
+    if (position <= 34) choose("dark");
+    else if (position >= 66) choose("light");
+    else {
+      position = 50;
+      chooser.style.setProperty("--style-split", "50%");
+      chooser.classList.remove("leans-light", "leans-dark");
+    }
+  };
+  dragger.addEventListener("pointerup", finishDrag);
+  dragger.addEventListener("pointercancel", finishDrag);
+  dragger.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") { event.preventDefault(); choose("dark"); }
+    if (event.key === "ArrowRight") { event.preventDefault(); choose("light"); }
+  });
+  let loadedFrames = 0;
+  chooser.querySelectorAll("iframe").forEach((frame) => {
+    frame.addEventListener("load", () => {
+      loadedFrames += 1;
+      if (loadedFrames === 2) chooser.classList.add("is-ready");
+    }, { once: true });
+  });
+  window.setTimeout(() => chooser.classList.add("is-ready"), 1200);
+  window.setTimeout(() => dragger.focus({ preventScroll: true }), 520);
+})();
