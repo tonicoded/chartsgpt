@@ -313,21 +313,37 @@
   };
 
   let activeTheme = previewTheme || getSavedTheme() || "light";
-  const applyTheme = (theme, persist = true) => {
-    activeTheme = theme === "dark" ? "dark" : "light";
-    html.dataset.chartTheme = activeTheme;
-    html.style.colorScheme = activeTheme;
-    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", activeTheme === "dark" ? "#050505" : "#ffffff");
-    if (persist) {
-      try { window.localStorage.setItem(storageKey, activeTheme); } catch {}
+  const applyTheme = (theme, persist = true, animate = persist) => {
+    const nextTheme = theme === "dark" ? "dark" : "light";
+    const commit = () => {
+      activeTheme = nextTheme;
+      html.dataset.chartTheme = activeTheme;
+      html.style.colorScheme = activeTheme;
+      document.querySelector('meta[name="theme-color"]')?.setAttribute("content", activeTheme === "dark" ? "#050505" : "#ffffff");
+      if (persist) {
+        try { window.localStorage.setItem(storageKey, activeTheme); } catch {}
+      }
+      const toggle = document.querySelector(".style-theme-toggle");
+      if (toggle) {
+        const next = activeTheme === "dark" ? "light" : "dark";
+        toggle.dataset.theme = activeTheme;
+        toggle.setAttribute("aria-label", `Switch to ${next} style`);
+        toggle.setAttribute("title", `Switch to ${next} style`);
+      }
+    };
+
+    if (!animate || !document.startViewTransition || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      commit();
+      return;
     }
+
     const toggle = document.querySelector(".style-theme-toggle");
-    if (toggle) {
-      const next = activeTheme === "dark" ? "light" : "dark";
-      toggle.dataset.theme = activeTheme;
-      toggle.setAttribute("aria-label", `Switch to ${next} style`);
-      toggle.setAttribute("title", `Switch to ${next} style`);
-    }
+    const rect = toggle?.getBoundingClientRect();
+    html.style.setProperty("--theme-reveal-x", `${rect ? rect.left + rect.width / 2 : window.innerWidth / 2}px`);
+    html.style.setProperty("--theme-reveal-y", `${rect ? rect.top + rect.height / 2 : window.innerHeight / 2}px`);
+    html.dataset.themeTransition = nextTheme;
+    const transition = document.startViewTransition(commit);
+    transition.finished.finally(() => delete html.dataset.themeTransition);
   };
   applyTheme(activeTheme, false);
 
@@ -409,7 +425,7 @@
     const chosenPosition = theme === "dark" ? 0 : 100;
     chooser.style.setProperty("--style-split", `${chosenPosition}%`);
     chooser.classList.add("is-chosen", `chose-${theme}`);
-    applyTheme(theme);
+    applyTheme(theme, true, false);
     window.setTimeout(() => {
       chooser.classList.add("is-leaving");
       document.body.classList.remove("style-chooser-open");
@@ -464,4 +480,73 @@
   });
   window.setTimeout(() => chooser.classList.add("is-ready"), 1200);
   window.setTimeout(() => dragger.focus({ preventScroll: true }), 520);
+})();
+
+// ── Clean motion system ─────────────────────────────────────────────
+(() => {
+  const page = document.querySelector(".home-clean");
+  if (!page || new URLSearchParams(window.location.search).has("theme-preview")) return;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) return;
+
+  const revealGroups = [
+    [".clean-hero-rating,.clean-hero h1,.clean-hero-lead,.clean-hero-actions", "motion-reveal motion-from-left"],
+    [".clean-hero-visual,.clean-intro-art,.clean-feature-image", "motion-reveal motion-from-right"],
+    [".clean-gallery-heading,.clean-intro-copy,.clean-feature-copy,.clean-section-heading,.clean-markets > div,.clean-markets > ul,.clean-final-cta > *", "motion-reveal"],
+    [".clean-steps > div,.clean-tool-card,.clean-faq .faq-item,.clean-learn-grid a", "motion-reveal motion-card"]
+  ];
+
+  const revealItems = [];
+  revealGroups.forEach(([selector, classNames]) => {
+    page.querySelectorAll(selector).forEach((element, index) => {
+      element.classList.add(...classNames.split(" "));
+      element.style.setProperty("--motion-delay", `${Math.min(index % 4, 3) * 70}ms`);
+      revealItems.push(element);
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -7% 0px" });
+  revealItems.forEach((item) => observer.observe(item));
+
+  const hero = page.querySelector(".clean-hero");
+  const heroVisual = page.querySelector(".clean-hero-visual");
+  if (hero && heroVisual && window.matchMedia("(pointer: fine)").matches) {
+    hero.addEventListener("pointermove", (event) => {
+      const rect = hero.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      heroVisual.style.setProperty("--hero-tilt-x", `${(-y * 2.4).toFixed(2)}deg`);
+      heroVisual.style.setProperty("--hero-tilt-y", `${(x * 3).toFixed(2)}deg`);
+      heroVisual.style.setProperty("--hero-shift-x", `${(x * 7).toFixed(1)}px`);
+      heroVisual.style.setProperty("--hero-shift-y", `${(y * 5).toFixed(1)}px`);
+    }, { passive: true });
+    hero.addEventListener("pointerleave", () => {
+      ["--hero-tilt-x", "--hero-tilt-y", "--hero-shift-x", "--hero-shift-y"].forEach((property) => heroVisual.style.removeProperty(property));
+    });
+  }
+
+  const progress = document.createElement("div");
+  progress.className = "clean-scroll-progress";
+  progress.setAttribute("aria-hidden", "true");
+  document.body.appendChild(progress);
+  let progressQueued = false;
+  const updateProgress = () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const value = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+    progress.style.transform = `scaleX(${value})`;
+    progressQueued = false;
+  };
+  window.addEventListener("scroll", () => {
+    if (progressQueued) return;
+    progressQueued = true;
+    requestAnimationFrame(updateProgress);
+  }, { passive: true });
+  updateProgress();
 })();

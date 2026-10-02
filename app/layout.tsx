@@ -77,7 +77,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: "try{const p=new URLSearchParams(location.search).get('theme-preview');const s=localStorage.getItem('chartsgpt-style-v1');const t=p==='light'||p==='dark'?p:s;if(t==='light'||t==='dark'){document.documentElement.dataset.chartTheme=t;document.documentElement.style.colorScheme=t}}catch(e){}" }} />
         {/* Above-the-fold faces only: Geist-Bold draws the hero headline and
@@ -88,7 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <Script src="/site-config.js" strategy="afterInteractive" />
-        <Script src="/site.js?v=20261001d" strategy="afterInteractive" />
+        <Script src="/site.js?v=20261002a" strategy="afterInteractive" />
         <Analytics />
       </body>
     </html>
