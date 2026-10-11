@@ -144,8 +144,9 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   const ogImageAbs = ogImage ? toAbsoluteUrl(ogImage) : undefined;
   const isGotem = slug?.[0] === "gotem";
   const isPrayFirst = slug?.[0] === "prayfirst";
+  const isBullBuddy = slug?.[0] === "bullbuddy";
   const isChartsGptHome = !slug || slug.length === 0;
-  const standaloneSiteName = isGotem ? "gotem" : isPrayFirst ? "pray first" : null;
+  const standaloneSiteName = isGotem ? "gotem" : isPrayFirst ? "pray first" : isBullBuddy ? "Bull Buddy" : null;
 
   // Legacy pages author their own brand suffix in <title>. Letting the layout
   // template append " — ChartsGPT" on top of that rendered every blog post as

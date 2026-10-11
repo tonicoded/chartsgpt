@@ -19,7 +19,7 @@ const SITE_URL = (process.env.SITE_URL || "https://charts-gpt.com").replace(/\/$
 const IGNORED_DIRS = new Set([
   "app", "public", "node_modules", ".git", ".next", "dev", "scripts", "test",
   "autoslides", "footmaxxing", "girlmaxxing", "gotem", "prayfirst",
-  "smilelock", "soccergpt", "wilddex", "chain", "lumo", "pnl"
+  "smilelock", "soccergpt", "wilddex", "chain", "lumo", "pnl", "bullbuddy"
 ]);
 
 function readLocales() {
