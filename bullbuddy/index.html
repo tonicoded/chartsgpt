@@ -41,12 +41,13 @@
         <section class="bb-hero" aria-labelledby="bb-hero-title">
           <div class="bb-wrap bb-hero-grid">
             <div class="bb-hero-copy">
-              <p class="bb-tagline">Your personal trading &amp; investing buddy</p>
+              <p class="bb-pill"><span class="bb-dot"></span>Stocks · Forex · Crypto · Commodities</p>
               <h1 id="bb-hero-title">
                 <span class="bb-line-1">Every market.</span>
                 <span class="bb-line-2">Explained clearly.</span>
               </h1>
-              <p class="bb-lead">Live prices, alerts the moment big money moves, an AI buddy that explains why, a journal that keeps you honest and an academy that makes it click. For stocks, forex, crypto and commodities.</p>
+              <p class="bb-tagline">Your personal trading &amp; investing buddy</p>
+              <p class="bb-lead">Live markets, whale and liquidation alerts, and an AI buddy that explains every move.</p>
               <div class="bb-actions">
                 <a class="bb-store" href="#download" aria-label="Bull Buddy for iPhone, coming soon to the App Store">
                   <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M16.37 12.62c-.02-2.3 1.88-3.4 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.78 2.29-1.61 2.8-.41 6.94 1.16 9.21.77 1.11 1.68 2.36 2.88 2.31 1.16-.05 1.6-.75 3-.75 1.4 0 1.79.75 3.01.72 1.25-.02 2.04-1.13 2.8-2.25.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.46-3.7zM14.07 5.86c.64-.78 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.77-.97 2.82 1.03.08 2.07-.52 2.71-1.28z"/></svg>
@@ -56,13 +57,41 @@
               </div>
               <p class="bb-micro">For iPhone · Educational, never financial advice</p>
             </div>
-            <div class="bb-hero-art">
+            <div class="bb-stage">
               <img class="bb-candles" src="/bullbuddy/candles.webp" width="1200" height="1016" alt="" aria-hidden="true" />
               <div class="bb-glow" aria-hidden="true"></div>
               <picture>
-                <source srcset="/bullbuddy/bull-720.webp 720w, /bullbuddy/bull.webp 1400w" sizes="(max-width: 860px) 90vw, 560px" type="image/webp" />
-                <img class="bb-bull" src="/bullbuddy/bull.png" width="1400" height="1171" alt="The Bull Buddy bull: a gold and black low-poly bull with candlesticks on its side" fetchpriority="high" />
+                <source srcset="/bullbuddy/bull-720.webp 720w, /bullbuddy/bull.webp 1400w" sizes="(max-width: 860px) 70vw, 520px" type="image/webp" />
+                <img class="bb-stage-bull" src="/bullbuddy/bull.png" width="1400" height="1171" alt="The Bull Buddy bull: a gold and black low-poly bull with candlesticks on its side" fetchpriority="high" />
               </picture>
+              <div class="bb-phone bb-stage-phone" aria-hidden="true">
+                  <div class="bb-screen">
+                    <div class="ps-island"></div>
+                    <div class="ps-status"><span>9:41</span><span class="ps-bars"><i></i><i></i><i></i></span></div>
+                    <div class="ps-head"><img src="/bullbuddy/logo-64.png" alt="" /><b>BULL <em>BUDDY</em></b><span class="ps-bell"></span></div>
+                    <p class="ps-greet">Good morning, Alex</p>
+                    <div class="ps-tiles">
+                      <div><small>S&amp;P 500</small><b>6,512</b><span class="up">+0.82%</span></div>
+                      <div><small>BTC</small><b>82,140</b><span class="up">+2.14%</span></div>
+                      <div><small>Gold</small><b>4,204</b><span class="up">+1.03%</span></div>
+                      <div><small>EUR/USD</small><b>1.1034</b><span class="down">−0.12%</span></div>
+                    </div>
+                    <div class="ps-card">
+                      <small class="ps-eyebrow">Market pulse</small>
+                      <b class="ps-big">Risk-on</b>
+                      <div class="ps-scale"><i style="width:68%"></i></div>
+                    </div>
+                    <div class="ps-card ps-row"><div><small class="ps-eyebrow">Coming up</small><b>US CPI</b></div><span class="ps-badge">in 2h 14m</span></div>
+                    <div class="ps-card ps-insight"><small class="ps-eyebrow gold">Bull's take</small><p>Risk appetite is firm: equities and crypto up, VIX lower. CPI at 14:30 is today's big test.</p></div>
+                    <small class="ps-eyebrow">Watchlist</small>
+                    <div class="ps-list">
+                      <div><b>NVDA</b><span>182.40</span><em class="up">+1.84%</em></div>
+                      <div><b>WTI</b><span>71.26</span><em class="down">−0.62%</em></div>
+                    </div>
+                  </div>
+                </div>
+              <div class="bb-float bb-float-alert" aria-hidden="true"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M2 16c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/></svg></i><p><b>$1.4M whale buy</b><span>BTC · Binance · just now</span></p></div>
+              <div class="bb-float bb-float-spike" aria-hidden="true"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-8 6 16 3-8h4"/></svg></i><p><b>Gold +$22 in 5 min</b><span>7× the normal move</span></p></div>
             </div>
           </div>
         </section>
@@ -77,6 +106,121 @@
               <li>Stocks</li><li>Forex</li><li>Crypto</li><li>Gold &amp; silver</li><li>Oil &amp; gas</li><li>Indices</li><li>ETFs</li><li>Rates</li><li>Macro</li>
             </ul>
           </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="bb-section bb-gallery" aria-labelledby="bb-gallery-title">
+          <div class="bb-wrap">
+            <div class="bb-heading bb-heading-center">
+              <p class="bb-kicker">The app, up close</p>
+              <h2 id="bb-gallery-title">A closer look at <span>Bull Buddy.</span></h2>
+              <p>From your morning brief to the moment big money moves — every screen built to make markets make sense.</p>
+            </div>
+          </div>
+          <div class="bb-gallery-row" role="list">
+            <figure role="listitem"><div class="bb-phone " aria-hidden="true">
+                  <div class="bb-screen">
+                    <div class="ps-island"></div>
+                    <div class="ps-status"><span>9:41</span><span class="ps-bars"><i></i><i></i><i></i></span></div>
+                    <div class="ps-head"><img src="/bullbuddy/logo-64.png" alt="" /><b>BULL <em>BUDDY</em></b><span class="ps-bell"></span></div>
+                    <p class="ps-greet">Good morning, Alex</p>
+                    <div class="ps-tiles">
+                      <div><small>S&amp;P 500</small><b>6,512</b><span class="up">+0.82%</span></div>
+                      <div><small>BTC</small><b>82,140</b><span class="up">+2.14%</span></div>
+                      <div><small>Gold</small><b>4,204</b><span class="up">+1.03%</span></div>
+                      <div><small>EUR/USD</small><b>1.1034</b><span class="down">−0.12%</span></div>
+                    </div>
+                    <div class="ps-card">
+                      <small class="ps-eyebrow">Market pulse</small>
+                      <b class="ps-big">Risk-on</b>
+                      <div class="ps-scale"><i style="width:68%"></i></div>
+                    </div>
+                    <div class="ps-card ps-row"><div><small class="ps-eyebrow">Coming up</small><b>US CPI</b></div><span class="ps-badge">in 2h 14m</span></div>
+                    <div class="ps-card ps-insight"><small class="ps-eyebrow gold">Bull's take</small><p>Risk appetite is firm: equities and crypto up, VIX lower. CPI at 14:30 is today's big test.</p></div>
+                    <small class="ps-eyebrow">Watchlist</small>
+                    <div class="ps-list">
+                      <div><b>NVDA</b><span>182.40</span><em class="up">+1.84%</em></div>
+                      <div><b>WTI</b><span>71.26</span><em class="down">−0.62%</em></div>
+                    </div>
+                  </div>
+                </div><figcaption>Your morning brief</figcaption></figure>
+            <figure role="listitem"><div class="bb-phone " aria-hidden="true">
+                  <div class="bb-screen">
+                    <div class="ps-island"></div>
+                    <div class="ps-status"><span>9:41</span><span class="ps-bars"><i></i><i></i><i></i></span></div>
+                    <p class="ps-title">Markets</p>
+                    <div class="ps-tabs"><span>Overview</span><span>Stocks</span><span class="on">Forex</span><span>Crypto</span></div>
+                    <div class="ps-card">
+                      <small class="ps-eyebrow">Trading sessions</small>
+                      <div class="ps-sessions">
+                        <div><i></i><small>Closed</small><b>Tokyo</b></div>
+                        <div class="open"><i></i><small>Open</small><b>London</b></div>
+                        <div class="open"><i></i><small>Open</small><b>New York</b></div>
+                      </div>
+                      <p class="ps-note gold">London–New York overlap: peak volume</p>
+                    </div>
+                    <div class="ps-list">
+                      <div><b>EUR/USD</b><span>1.1034</span><em class="up">+0.31%</em></div>
+                      <div><b>GBP/USD</b><span>1.2871</span><em class="up">+0.12%</em></div>
+                      <div><b>USD/JPY</b><span>148.22</span><em class="down">−0.20%</em></div>
+                      <div><b>AUD/USD</b><span>0.6620</span><em class="up">+0.44%</em></div>
+                      <div><b>USD/CAD</b><span>1.3712</span><em class="down">−0.08%</em></div>
+                      <div><b>NZD/USD</b><span>0.5984</span><em class="up">+0.21%</em></div>
+                      <div><b>EUR/GBP</b><span>0.8573</span><em class="up">+0.18%</em></div>
+                      <div><b>GBP/JPY</b><span>190.77</span><em class="down">−0.07%</em></div>
+                    </div>
+                  </div>
+                </div><figcaption>Forex, live by session</figcaption></figure>
+            <figure role="listitem"><div class="bb-phone " aria-hidden="true">
+                  <div class="bb-screen">
+                    <div class="ps-island"></div>
+                    <div class="ps-status"><span>9:41</span><span class="ps-bars"><i></i><i></i><i></i></span></div>
+                    <p class="ps-title">Market alerts</p>
+                    <div class="ps-tabs"><span class="on">All</span><span>Whales</span><span>Liquidations</span></div>
+                    <small class="ps-eyebrow">Today</small>
+                    <div class="ps-alerts">
+                      <div><i class="up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M2 16c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/></svg></i><p><b>$1.4M whale buy</b><span>BTC · Binance</span></p><em>2m</em></div>
+                      <div><i class="down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></i><p><b>$620K long liquidated</b><span>ETH · Bybit</span></p><em>6m</em></div>
+                      <div><i class="up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-8 6 16 3-8h4"/></svg></i><p><b>Gold +$22 in 5 min</b><span>7× the normal move</span></p><em>14m</em></div>
+                      <div><i class="down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M2 16c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/></svg></i><p><b>$480K whale sell</b><span>NVDA · Binance</span></p><em>21m</em></div>
+                      <div><i class="up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-8 6 16 3-8h4"/></svg></i><p><b>EUR/USD +34 pips</b><span>in 10 min</span></p><em>38m</em></div>
+                      <div><i class="down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></i><p><b>$12M liquidated in 10 min</b><span>78% longs · 3 exchanges</span></p><em>1h</em></div>
+                    </div>
+                  </div>
+                </div><figcaption>Whales &amp; liquidations</figcaption></figure>
+            <figure role="listitem"><div class="bb-phone " aria-hidden="true">
+                  <div class="bb-screen">
+                    <div class="ps-island"></div>
+                    <div class="ps-status"><span>9:41</span><span class="ps-bars"><i></i><i></i><i></i></span></div>
+                    <p class="ps-title">Ask Bull</p>
+                    <div class="ps-chat">
+                      <p class="me">Why is gold up today?</p>
+                      <div class="bull"><img src="/bullbuddy/logo-64.png" alt="" /><p>Gold is up about 1% while the dollar slipped 0.3% and the 10-year yield fell 4 bp. A weaker dollar and lower yields usually support gold.</p></div>
+                      <span class="ps-used">Used: Gold · DXY · US 10Y</span>
+                      <p class="me">What could change that?</p>
+                      <div class="bull"><img src="/bullbuddy/logo-64.png" alt="" /><p>US CPI at 14:30. A hot print could lift yields and the dollar again.</p></div>
+                    </div>
+                    <div class="ps-input">Ask Bull anything…</div>
+                  </div>
+                </div><figcaption>Ask Bull anything</figcaption></figure>
+            <figure role="listitem"><div class="bb-phone " aria-hidden="true">
+                  <div class="bb-screen">
+                    <div class="ps-island"></div>
+                    <div class="ps-status"><span>9:41</span><span class="ps-bars"><i></i><i></i><i></i></span></div>
+                    <p class="ps-title">Learn</p>
+                    <div class="ps-card ps-iq"><div><small class="ps-eyebrow">Trader IQ</small><b class="ps-big">412</b><span>Top 30% this week</span></div><div class="ps-ring"><i></i></div></div>
+                    <small class="ps-eyebrow">Continue</small>
+                    <div class="ps-lessons">
+                      <div><b>Reading candlesticks</b><span>4 min · Technical</span><i style="width:70%"></i></div>
+                      <div><b>Position sizing</b><span>5 min · Risk</span><i style="width:35%"></i></div>
+                      <div><b>Why CPI moves markets</b><span>3 min · Macro</span><i style="width:10%"></i></div>
+                      <div><b>Forex sessions</b><span>4 min · Forex</span><i style="width:0%"></i></div>
+                      <div><b>Reading the order flow</b><span>5 min · Crypto</span><i style="width:0%"></i></div>
+                    </div>
+                  </div>
+                </div><figcaption>Learn &amp; earn Trader IQ</figcaption></figure>
+          </div>
+          <p class="bb-illustration bb-gallery-note">Illustrative screens · numbers are examples</p>
         </section>
 
         <!-- For every trader -->
