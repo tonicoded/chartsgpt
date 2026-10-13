@@ -41,36 +41,47 @@
       <main>
         <!-- Hero -->
         <section class="bb-hero" aria-labelledby="bb-hero-title">
+          <div class="bb-hero-bg" aria-hidden="true">
+            <div class="bb-chart"><div class="bb-chart-track"><img src="/bullbuddy/chart.svg" width="2000" height="700" alt="" /><img src="/bullbuddy/chart.svg" width="2000" height="700" alt="" /></div></div>
+            <div class="bb-scan"></div>
+          </div>
           <div class="bb-wrap bb-hero-grid">
             <div class="bb-hero-copy">
-              <p class="bb-pill"><span class="bb-dot"></span>Stocks · Forex · Crypto · Commodities</p>
+              <p class="bb-pill bb-in" style="--d:0s"><span class="bb-dot"></span>Stocks · Forex · Crypto · Commodities</p>
               <h1 id="bb-hero-title">
-                <span class="bb-line-1">Every market.</span>
-                <span class="bb-line-2">Explained clearly.</span>
+                <span class="bb-line-1 bb-in" style="--d:.08s">Every market.</span>
+                <span class="bb-line-2 bb-in bb-shine" style="--d:.18s">Explained clearly.</span>
               </h1>
-              <p class="bb-tagline">Your personal trading &amp; investing buddy</p>
-              <p class="bb-lead">A morning briefing, every move explained on the chart, and an AI buddy that answers with real market data.</p>
-              <div class="bb-actions">
+              <p class="bb-tagline bb-in" style="--d:.28s">Your personal trading &amp; investing buddy</p>
+              <p class="bb-lead bb-in" style="--d:.36s">A morning briefing, every move explained on the chart, and an AI buddy that answers with real market data.</p>
+              <div class="bb-actions bb-in" style="--d:.44s">
                 <a class="bb-store" href="#download" aria-label="Bull Buddy for iPhone, coming soon to the App Store">
                   <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M16.37 12.62c-.02-2.3 1.88-3.4 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.78 2.29-1.61 2.8-.41 6.94 1.16 9.21.77 1.11 1.68 2.36 2.88 2.31 1.16-.05 1.6-.75 3-.75 1.4 0 1.79.75 3.01.72 1.25-.02 2.04-1.13 2.8-2.25.88-1.29 1.24-2.54 1.26-2.6-.03-.01-2.42-.93-2.46-3.7zM14.07 5.86c.64-.78 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.77-.97 2.82 1.03.08 2.07-.52 2.71-1.28z"/></svg>
                   <span><small>Coming soon to the</small>App Store</span>
                 </a>
                 <a class="bb-button bb-button-ghost" href="#app">See the app <span aria-hidden="true">→</span></a>
               </div>
-              <p class="bb-micro">For iPhone · Educational, never financial advice</p>
+              <p class="bb-micro bb-in" style="--d:.52s">For iPhone · Educational, never financial advice</p>
             </div>
 
             <div class="bb-stage">
-              <img class="bb-candles" src="/bullbuddy/candles.webp" width="1200" height="1016" alt="" aria-hidden="true" />
+              <div class="bb-rays" aria-hidden="true"></div>
               <div class="bb-glow" aria-hidden="true"></div>
-              <picture>
-                <source srcset="/bullbuddy/bull-720.webp 720w, /bullbuddy/bull.webp 1400w" sizes="(max-width: 860px) 90vw, 560px" type="image/webp" />
-                <img class="bb-stage-bull" src="/bullbuddy/bull.png" width="1400" height="1171" alt="The Bull Buddy bull: a gold and black low-poly bull with candlesticks on its side" fetchpriority="high" />
-              </picture>
-              <div class="bb-phone bb-stage-phone"><img src="/bullbuddy/shots/today.webp" width="720" height="1565" alt="Bull Buddy's Today screen: a morning briefing with overnight moves and the stories that matter" /></div>
+              <div class="bb-bull-wrap">
+                <picture>
+                  <source srcset="/bullbuddy/bull-720.webp 720w, /bullbuddy/bull.webp 1400w" sizes="(max-width: 860px) 90vw, 640px" type="image/webp" />
+                  <img class="bb-stage-bull" src="/bullbuddy/bull.png" width="1400" height="1171" alt="The Bull Buddy bull: a gold and black low-poly bull with candlesticks on its side" fetchpriority="high" />
+                </picture>
+              </div>
+              <div class="bb-sparks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="bb-phone bb-stage-phone"><img src="/bullbuddy/shots/today.webp" width="720" height="1565" alt="Bull Buddy's Today screen: a morning briefing with overnight moves and the stories that matter" /><span class="bb-glare" aria-hidden="true"></span></div>
               <div class="bb-float bb-float-top" aria-hidden="true">
                 <img src="/bullbuddy/logo-64.png" width="40" height="40" alt="" />
                 <p><b>Your briefing is ready</b><span>Gold −0.2% · CPI at 14:30</span></p>
+              </div>
+              <div class="bb-float bb-float-mid" aria-hidden="true">
+                <i class="bb-i-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></i>
+                <p><b>Insider buy · $2.4M</b><span>CEO, open market</span></p>
               </div>
               <div class="bb-float bb-float-bottom" aria-hidden="true">
                 <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-8 6 16 3-8h4"/></svg></i>
