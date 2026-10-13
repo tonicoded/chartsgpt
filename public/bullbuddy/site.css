@@ -171,27 +171,25 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
 }
 .bb-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--bb-positive); box-shadow: 0 0 0 4px rgba(31, 174, 107, 0.16); }
 
-/* A live chart scrolls behind the whole hero; the bull stands in a gold light
-   with rays and rising sparks; the phone floats in front. CSS only — the page
-   body is rendered as static HTML, so nothing here needs JavaScript. */
+/* One gold price line draws itself behind the hero, then rests on a live dot.
+   CSS only — the page body is rendered as static HTML, without JavaScript. */
 .bb-hero { overflow: hidden; isolation: isolate; }
 .bb-hero-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
-.bb-chart {
-  position: absolute;
-  left: 0; right: 0; top: 18%; height: 66%;
-  opacity: 0.28;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 45%, #000 88%, transparent 100%), linear-gradient(180deg, transparent, #000 25%, #000 70%, transparent);
-          mask-image: linear-gradient(90deg, transparent 0%, #000 45%, #000 88%, transparent 100%), linear-gradient(180deg, transparent, #000 25%, #000 70%, transparent);
-  -webkit-mask-composite: source-in; mask-composite: intersect;
+.bb-line-chart {
+  position: absolute; left: 0; right: 0; bottom: 4%; width: 100%; height: 72%;
+  -webkit-mask-image: linear-gradient(90deg, transparent 22%, #000 62%);
+          mask-image: linear-gradient(90deg, transparent 22%, #000 62%);
 }
-.bb-chart-track { display: flex; height: 100%; width: max-content; animation: bb-scroll 70s linear infinite; }
-.bb-chart-track img { height: 100%; width: auto; max-width: none; }
-.bb-scan {
-  position: absolute; top: 0; bottom: 0; width: 30%;
-  background: linear-gradient(90deg, transparent, rgba(240, 198, 98, 0.06) 70%, rgba(240, 198, 98, 0.16) 99%, transparent);
-  animation: bb-scan 9s cubic-bezier(.5, 0, .5, 1) infinite;
-}
-@keyframes bb-scan { from { transform: translateX(-100%); } to { transform: translateX(400%); } }
+.bb-lc-grid line { stroke: #fff; stroke-opacity: 0.045; stroke-dasharray: 2 8; }
+.bb-lc-line { stroke-dasharray: 1; stroke-dashoffset: 1; filter: drop-shadow(0 0 8px rgba(240, 198, 98, 0.45)); animation: bb-draw 3.4s cubic-bezier(.45, 0, .2, 1) .3s forwards; }
+.bb-lc-area { opacity: 0; animation: bb-fade 1.6s ease 2.6s forwards; }
+.bb-lc-now { stroke: #F0C662; stroke-opacity: 0; stroke-dasharray: 3 7; animation: bb-now 1.2s ease 3.6s forwards; }
+.bb-lc-dot { fill: #F0C662; opacity: 0; animation: bb-fade .4s ease 3.6s forwards; }
+.bb-lc-ring { fill: none; stroke: #F0C662; stroke-width: 1.5; opacity: 0; transform-box: fill-box; transform-origin: center; animation: bb-ping 2.4s ease-out 3.9s infinite; }
+@keyframes bb-draw { to { stroke-dashoffset: 0; } }
+@keyframes bb-fade { to { opacity: 1; } }
+@keyframes bb-now { to { stroke-opacity: 0.25; } }
+@keyframes bb-ping { 0% { opacity: 0.8; transform: scale(1); } 100% { opacity: 0; transform: scale(3.2); } }
 
 .bb-stage { position: relative; height: 660px; }
 .bb-glow {
@@ -199,58 +197,16 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
   inset: 8% -18% 0 14%;
   background: radial-gradient(closest-side, rgba(212, 165, 55, 0.42), rgba(212, 165, 55, 0.1) 60%, transparent 80%);
   filter: blur(28px);
-  animation: bb-pulse 6s ease-in-out infinite;
 }
-@keyframes bb-pulse { 50% { opacity: 0.65; transform: scale(0.96); } }
-.bb-rays {
-  position: absolute;
-  left: 30%; top: 50%; width: 900px; height: 900px; margin: -450px 0 0 -250px;
-  background: repeating-conic-gradient(from 0deg, rgba(240, 198, 98, 0.09) 0deg 5deg, transparent 5deg 18deg);
-  -webkit-mask-image: radial-gradient(closest-side, #000 10%, transparent 70%);
-          mask-image: radial-gradient(closest-side, #000 10%, transparent 70%);
-  animation: bb-spin 80s linear infinite;
-}
-@keyframes bb-spin { to { transform: rotate(360deg); } }
-
 .bb-bull-wrap { position: absolute; right: -30%; bottom: -10px; width: 108%; animation: bb-bull-in 1.4s cubic-bezier(.2, .7, .2, 1) .1s both; }
-.bb-stage-bull { width: 100%; max-width: none; filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 40px rgba(212, 165, 55, 0.18)); animation: bb-breathe 9s ease-in-out 1.5s infinite; transform-origin: 60% 90%; }
+.bb-stage-bull { width: 100%; max-width: none; filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.65)); animation: bb-breathe 9s ease-in-out 1.5s infinite; transform-origin: 60% 90%; }
 @keyframes bb-bull-in { from { opacity: 0; transform: translateX(60px) scale(0.94); } }
 @keyframes bb-breathe { 50% { transform: translateY(-8px) scale(1.012); } }
-
-.bb-sparks { position: absolute; inset: 0; pointer-events: none; }
-.bb-sparks i {
-  position: absolute; bottom: 8%; width: 4px; height: 4px; border-radius: 50%;
-  background: var(--bb-gold-bright); box-shadow: 0 0 10px 2px rgba(240, 198, 98, 0.7);
-  opacity: 0; animation: bb-rise 7s linear infinite;
-}
-.bb-sparks i:nth-child(1) { left: 52%; animation-delay: 0s; }
-.bb-sparks i:nth-child(2) { left: 64%; animation-delay: 1.3s; animation-duration: 8s; }
-.bb-sparks i:nth-child(3) { left: 78%; animation-delay: 2.6s; width: 3px; height: 3px; }
-.bb-sparks i:nth-child(4) { left: 90%; animation-delay: 3.4s; animation-duration: 9s; }
-.bb-sparks i:nth-child(5) { left: 58%; animation-delay: 4.2s; width: 2px; height: 2px; }
-.bb-sparks i:nth-child(6) { left: 71%; animation-delay: 5.1s; animation-duration: 6s; }
-.bb-sparks i:nth-child(7) { left: 84%; animation-delay: 0.7s; width: 3px; height: 3px; animation-duration: 10s; }
-.bb-sparks i:nth-child(8) { left: 46%; animation-delay: 2s; width: 2px; height: 2px; animation-duration: 9s; }
-.bb-sparks i:nth-child(9) { left: 96%; animation-delay: 5.8s; animation-duration: 7.5s; }
-.bb-sparks i:nth-child(10) { left: 68%; animation-delay: 6.4s; width: 2px; height: 2px; }
-@keyframes bb-rise {
-  0% { opacity: 0; transform: translate(0, 0); }
-  15% { opacity: 1; }
-  100% { opacity: 0; transform: translate(-30px, -420px); }
-}
 
 .bb-stage-phone { position: absolute; left: 0; top: 0; z-index: 2; width: 300px; animation: bb-phone-in 1.1s cubic-bezier(.2, .7, .2, 1) .25s both, bb-hover 8s ease-in-out 1.4s infinite; }
 @keyframes bb-phone-in { from { opacity: 0; transform: perspective(1400px) rotateY(-8deg) translateY(60px); } to { transform: perspective(1400px) rotateY(-8deg); } }
 @keyframes bb-hover { 0%, 100% { transform: perspective(1400px) rotateY(-8deg); } 50% { transform: perspective(1400px) rotateY(-5deg) translateY(-10px); } }
 .bb-phone { position: relative; }
-.bb-glare { position: absolute; inset: 9px; border-radius: 40px; overflow: hidden; pointer-events: none; }
-.bb-glare::after {
-  content: ""; position: absolute; top: -20%; bottom: -20%; width: 40%; left: -60%;
-  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.09), transparent);
-  transform: skewX(-12deg);
-  animation: bb-glare 8s ease-in-out 2s infinite;
-}
-@keyframes bb-glare { 0%, 70% { left: -60%; } 100% { left: 130%; } }
 
 .bb-float {
   position: absolute;
@@ -279,17 +235,10 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
 @keyframes bb-pop { from { opacity: 0; transform: translateY(14px) scale(0.9); } }
 @keyframes bb-bob { 50% { transform: translateY(-8px); } }
 
-/* Copy: a staggered entrance, and light passing over the gold line. */
+/* Copy: a quiet staggered entrance. */
 .bb-in { animation: bb-up .9s cubic-bezier(.2, .7, .2, 1) var(--d, 0s) both; }
-@keyframes bb-up { from { opacity: 0; transform: translateY(22px); filter: blur(4px); } }
-.bb-shine {
-  background: linear-gradient(100deg, var(--bb-gold-bright) 0%, var(--bb-gold-bright) 40%, #FFF3CF 50%, var(--bb-gold-bright) 60%, var(--bb-gold-bright) 100%);
-  background-size: 300% 100%;
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: bb-up .9s cubic-bezier(.2, .7, .2, 1) var(--d, 0s) both, bb-shine 6s ease-in-out 1.2s infinite;
-}
-@keyframes bb-shine { 0% { background-position: 100% 0; } 60%, 100% { background-position: 0% 0; } }
+@keyframes bb-up { from { opacity: 0; transform: translateY(16px); } }
+
 
 /* ---------- Phone frame (real screenshots) ---------- */
 
@@ -507,7 +456,7 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
   .bb-navlinks { display: none; }
   .bb-nav-inner { justify-content: space-between; height: 60px; }
 
-  .bb-hero { --bb-browser-bar: 84px; height: calc(100svh - 60px - 58px - var(--bb-browser-bar)); min-height: 580px; padding: 22px 0 0; }
+  .bb-hero { --bb-browser-bar: 44px; height: calc(100svh - 60px - 58px - var(--bb-browser-bar)); min-height: 580px; padding: 22px 0 0; }
   .bb-hero > .bb-wrap { height: 100%; }
   .bb-hero-grid { display: flex; flex-direction: column; height: 100%; gap: 0; }
   .bb-hero-copy { text-align: center; display: flex; flex-direction: column; align-items: center; }
@@ -515,21 +464,23 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
   .bb-hero .bb-tagline { font-size: 10.5px; letter-spacing: 0.12em; margin-bottom: 10px; }
   .bb-lead { font-size: 15.5px; max-width: 23em; }
   .bb-actions { justify-content: center; margin-top: 20px; }
-  .bb-micro, .bb-float-mid, .bb-float-bottom { display: none; }
-  .bb-stage { flex: 1; min-height: 0; height: auto; width: 100%; max-width: 480px; margin: 10px auto 0; clip-path: inset(-60% -60% 0 -60%); }
-  .bb-bull-wrap { inset: 0 -9% 0 12%; width: auto; }
+  /* No phone mockup here: the bull carries the first screen, standing on the
+     gold line as it draws, with two moments floating around it. */
+  .bb-micro, .bb-float-mid, .bb-stage-phone { display: none; }
+  .bb-stage { flex: 1; min-height: 0; height: auto; width: 100%; max-width: 520px; margin: 4px auto 0; }
+  .bb-bull-wrap { inset: 6% -4% 0 -4%; width: auto; }
   .bb-bull-wrap picture { position: absolute; inset: 0; }
-  .bb-stage-bull { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center 70%; }
-  .bb-stage-phone { width: min(44%, 200px); left: 3%; top: 14px; padding: 6px; border-radius: 32px; }
-  .bb-stage-phone img, .bb-glare { border-radius: 27px; }
-  .bb-glare { inset: 6px; }
-  .bb-float-top { left: auto; right: 0; top: 4px; padding: 8px 12px 8px 8px; gap: 8px; border-radius: 16px; }
-  .bb-float-top img { width: 30px; height: 30px; padding: 3px; }
-  .bb-float-top b { font-size: 12.5px; }
-  .bb-float-top span { font-size: 10.5px; }
-  .bb-glow { inset: 0 -20% 0 0; }
-  .bb-rays { left: 62%; top: 60%; width: 640px; height: 640px; margin: -320px 0 0 -320px; }
-  .bb-chart { top: 40%; height: 50%; opacity: 0.22; }
+  .bb-stage-bull { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
+  .bb-float { padding: 8px 14px 8px 8px; gap: 10px; border-radius: 16px; }
+  .bb-float img, .bb-float i { width: 32px; height: 32px; }
+  .bb-float img { padding: 4px; }
+  .bb-float i svg { width: 15px; height: 15px; }
+  .bb-float b { font-size: 13px; }
+  .bb-float span { font-size: 11px; }
+  .bb-float-top { left: 0; right: auto; top: 4%; }
+  .bb-float-bottom { left: auto; right: 0; bottom: 10%; }
+  .bb-glow { inset: 10% -10% 0 -10%; }
+  .bb-line-chart { height: 42%; bottom: 7%; -webkit-mask-image: linear-gradient(90deg, transparent, #000 30%); mask-image: linear-gradient(90deg, transparent, #000 30%); }
 
   .bb-marquee { height: 58px; padding: 0; display: flex; align-items: center; }
   .bb-marquee li { font-size: 13px; gap: 28px; padding-right: 28px; }
@@ -579,8 +530,9 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bb-marquee-track, .bb-float, .bb-carousel-track, .bb-chart-track, .bb-scan, .bb-rays, .bb-glow, .bb-sparks i, .bb-glare::after, .bb-stage-bull, .bb-bull-wrap, .bb-stage-phone, .bb-in, .bb-shine { animation: none; }
-  .bb-sparks { display: none; }
+  .bb-marquee-track, .bb-float, .bb-carousel-track, .bb-stage-bull, .bb-bull-wrap, .bb-stage-phone, .bb-in, .bb-lc-line, .bb-lc-area, .bb-lc-now, .bb-lc-dot, .bb-lc-ring { animation: none; }
+  .bb-lc-line { stroke-dashoffset: 0; }
+  .bb-lc-area, .bb-lc-dot { opacity: 1; }
   .bb-carousel { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
   .bb-carousel-set[aria-hidden="true"] { display: none; }
   .bb-card, .bb-button { transition: none; }
