@@ -551,7 +551,7 @@
   updateProgress();
 })();
 
-// ── Epic layer: live chart, AI scan, typewriter, spotlight ─────────
+// ── Epic layer: gold line, typewriter, spotlight ───────────────────
 (() => {
   const page = document.querySelector(".home-clean");
   const hero = page?.querySelector(".clean-hero");
@@ -574,22 +574,6 @@
   glow.className = "epic-aura";
   glow.setAttribute("aria-hidden", "true");
   hero.prepend(glow);
-
-  // The camera screen gets a scan line moving over it.
-  const visual = hero.querySelector(".clean-hero-visual");
-  const main = visual?.querySelector(".clean-preview-main");
-  if (visual && main) {
-    const scan = document.createElement("div");
-    scan.className = "epic-phone-scan";
-    scan.setAttribute("aria-hidden", "true");
-    scan.innerHTML = "<i></i>";
-    visual.appendChild(scan);
-    const place = () => {
-      Object.assign(scan.style, { left: `${main.offsetLeft}px`, top: `${main.offsetTop}px`, width: `${main.offsetWidth}px`, height: `${main.offsetHeight}px`, transform: getComputedStyle(main).transform });
-    };
-    if (main.complete) place(); else main.addEventListener("load", place);
-    window.addEventListener("resize", place);
-  }
 
   if (isPreview || reduceMotion) return;
 

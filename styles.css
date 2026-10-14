@@ -8294,7 +8294,11 @@ html[data-chart-theme="dark"] .home-clean .epic-aura {
 @keyframes epic-ping { 0% { opacity: .9; transform: scale(1); } 100% { opacity: 0; transform: scale(3.4); } }
 
 /* The phones fan open from behind the main screen, then float. */
-.home-clean .clean-hero-visual .clean-preview-main { animation: epic-rise 1s cubic-bezier(.2,.75,.2,1) .15s both, epic-float 7s ease-in-out 1.3s infinite !important; }
+.home-clean .clean-hero-visual .clean-preview-main { animation: epic-rise 1s cubic-bezier(.2,.75,.2,1) .15s both, epic-float 7s ease-in-out 1.3s infinite, epic-halo 6s ease-in-out 1.3s infinite !important; }
+@keyframes epic-halo {
+  0%, 100% { box-shadow: 0 30px 70px rgba(0,0,0,.35), 0 0 0 1px rgba(231,173,52,.3), 0 0 30px rgba(231,173,52,.12); }
+  50% { box-shadow: 0 30px 70px rgba(0,0,0,.35), 0 0 0 1px rgba(240,198,97,.6), 0 0 70px rgba(231,173,52,.38); }
+}
 .home-clean .clean-hero-visual .clean-preview-left { animation: epic-fan-l 1.1s cubic-bezier(.2,.75,.2,1) .45s both, epic-float 8s ease-in-out 1.7s infinite !important; }
 .home-clean .clean-hero-visual .clean-preview-right { animation: epic-fan-r 1.1s cubic-bezier(.2,.75,.2,1) .45s both, epic-float 9s ease-in-out 2s infinite !important; }
 @keyframes epic-rise { from { opacity: 0; translate: 0 60px; } }
@@ -8317,8 +8321,7 @@ html[data-chart-theme="dark"] .home-clean .epic-aura {
 }
 
 /* ── Epic layer ─────────────────────────────────────────────────────
-   A live chart behind the hero (drawn by site.js), a scan over the camera
-   screen, floating phones, a typewriter caret, pointer-following light on
+   Floating phones with a gold halo, a typewriter caret, pointer-following light on
    cards and a slowly turning gold edge around the final call to action. */
 .home-clean .landing-home { overflow-x: clip; }
 .home-clean .clean-hero { position: relative; isolation: isolate; }
@@ -8334,39 +8337,6 @@ html[data-chart-theme="dark"] .home-clean .epic-aura {
 html[data-chart-theme="dark"] .home-clean .clean-hero-visual .clean-preview-main { box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 50px rgba(231,173,52,.18), 0 0 0 1px rgba(231,173,52,.3); }
 @keyframes epic-float { 50% { translate: 0 -12px; } }
 
-.home-clean .epic-phone-scan {
-  position: absolute;
-  z-index: 4;
-  overflow: hidden;
-  border-radius: 24px;
-  pointer-events: none;
-  animation: epic-rise 1s cubic-bezier(.2,.75,.2,1) .15s both, epic-float 7s ease-in-out 1.3s infinite !important;
-}
-.home-clean .epic-phone-scan i {
-  position: absolute;
-  left: 6%;
-  right: 6%;
-  top: 0;
-  height: 2px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, transparent, #F0C661 20%, #FFE7A6 50%, #F0C661 80%, transparent);
-  box-shadow: 0 0 18px 3px rgba(240,198,97,.55);
-  animation: epic-scan 3.6s cubic-bezier(.45,0,.55,1) 1.2s infinite !important;
-  opacity: 0;
-}
-.home-clean .epic-phone-scan i::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 2px;
-  height: 70px;
-  background: linear-gradient(0deg, rgba(240,198,97,.2), transparent);
-}
-@keyframes epic-scan {
-  0% { top: 24%; opacity: 0; }
-  10% { opacity: 1; }
-  75% { opacity: 1; }
-  90%, 100% { top: 74%; opacity: 0; }
-}
 
 /* Typewriter caret on the gold words. */
 .home-clean .clean-hero h1 span { white-space: nowrap; }
@@ -8433,20 +8403,13 @@ html[data-chart-theme="dark"] .home-clean .clean-hero-visual .clean-preview-main
   90% { box-shadow: 0 8px 30px rgba(231,173,52,.45); }
 }
 
-@media (max-width: 760px) {
-  .home-clean .epic-phone-scan { border-radius: 20px; }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .home-clean .clean-hero-visual::before,
   .home-clean .clean-hero-visual .clean-preview,
-  .home-clean .epic-phone-scan,
-  .home-clean .epic-phone-scan i,
   .home-clean .epic-caret,
   .home-clean .clean-final-cta::before,
   .home-clean .clean-hero .js-appstore img,
   .home-clean .epic-stroke, .home-clean .epic-area, .home-clean .epic-now, .home-clean .epic-dot, .home-clean .epic-ring { animation: none !important; }
   .home-clean .epic-stroke { stroke-dashoffset: 0; }
   .home-clean .epic-area, .home-clean .epic-dot { opacity: 1; }
-  .home-clean .epic-phone-scan { display: none; }
 }

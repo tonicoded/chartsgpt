@@ -88,7 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <Script src="/site-config.js" strategy="afterInteractive" />
-        <Script src="/site.js?v=20261014b" strategy="afterInteractive" />
+        <Script src="/site.js?v=20261014c" strategy="afterInteractive" />
         <Analytics />
       </body>
     </html>
