@@ -8246,3 +8246,155 @@ html[data-theme-transition] .home-clean * { transition: none !important; }
   .home-clean .clean-hero-visual::after { display: none; }
   .clean-scroll-progress { display: none; }
 }
+
+/* ── Epic layer ─────────────────────────────────────────────────────
+   A live chart behind the hero (drawn by site.js), a scan over the camera
+   screen, floating phones, a typewriter caret, pointer-following light on
+   cards and a slowly turning gold edge around the final call to action. */
+.home-clean .landing-home { overflow-x: clip; }
+.home-clean .clean-hero { position: relative; isolation: isolate; }
+.home-clean .clean-hero > .clean-hero-copy,
+.home-clean .clean-hero > .clean-hero-visual { position: relative; z-index: 1; }
+.home-clean .epic-chart {
+  position: absolute;
+  z-index: 0;
+  top: -58px;
+  bottom: -40px;
+  left: 50%;
+  width: 100vw;
+  height: calc(100% + 98px);
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: .62;
+  -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.35) 38%, #000 70%), linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+          mask-image: linear-gradient(90deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.35) 38%, #000 70%), linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  -webkit-mask-composite: source-in;
+          mask-composite: intersect;
+}
+html[data-chart-theme="dark"] .home-clean .epic-chart { opacity: .72; }
+
+/* Gold light breathing behind the phones. */
+.home-clean .clean-hero-visual::before { animation: epic-breathe 7s ease-in-out infinite; }
+@keyframes epic-breathe { 50% { transform: scale(1.08); opacity: .75; } }
+
+/* Each phone floats on its own rhythm; `translate` stacks with the tilt. */
+.home-clean .clean-hero-visual .clean-preview-main { animation: epic-float 7s ease-in-out infinite; box-shadow: 0 30px 70px rgba(24,20,12,.22), 0 0 0 1px rgba(231,173,52,.25); }
+.home-clean .clean-hero-visual .clean-preview-left { animation: epic-float 8s ease-in-out -2.5s infinite; }
+.home-clean .clean-hero-visual .clean-preview-right { animation: epic-float 9s ease-in-out -5s infinite; }
+html[data-chart-theme="dark"] .home-clean .clean-hero-visual .clean-preview-main { box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 50px rgba(231,173,52,.18), 0 0 0 1px rgba(231,173,52,.3); }
+@keyframes epic-float { 50% { translate: 0 -12px; } }
+
+.home-clean .epic-phone-scan {
+  position: absolute;
+  z-index: 4;
+  overflow: hidden;
+  border-radius: 24px;
+  pointer-events: none;
+  animation: epic-float 7s ease-in-out infinite;
+}
+.home-clean .epic-phone-scan i {
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  top: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, #F0C661 20%, #FFE7A6 50%, #F0C661 80%, transparent);
+  box-shadow: 0 0 18px 3px rgba(240,198,97,.55);
+  animation: epic-scan 3.6s cubic-bezier(.45,0,.55,1) 1.2s infinite;
+  opacity: 0;
+}
+.home-clean .epic-phone-scan i::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 2px;
+  height: 70px;
+  background: linear-gradient(0deg, rgba(240,198,97,.2), transparent);
+}
+@keyframes epic-scan {
+  0% { top: 24%; opacity: 0; }
+  10% { opacity: 1; }
+  75% { opacity: 1; }
+  90%, 100% { top: 74%; opacity: 0; }
+}
+
+/* Typewriter caret on the gold words. */
+.home-clean .clean-hero h1 span { white-space: nowrap; }
+.home-clean .epic-caret {
+  display: inline-block;
+  width: .07em;
+  height: .82em;
+  margin-left: .05em;
+  vertical-align: -.04em;
+  border-radius: 2px;
+  background: currentColor;
+  animation: epic-blink 1s steps(1) infinite;
+}
+@keyframes epic-blink { 50% { opacity: 0; } }
+
+/* Pointer-following light on cards. */
+.home-clean .epic-spot { position: relative; isolation: isolate; }
+.home-clean .epic-spot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 50%), rgba(231,173,52,.14), transparent 60%);
+  opacity: 0;
+  transition: opacity .35s ease;
+  pointer-events: none;
+}
+.home-clean .epic-spot:hover::after { opacity: 1; }
+
+/* Final call to action: a gold edge travels around the card. */
+@property --epic-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+.home-clean .clean-final-cta { position: relative; isolation: isolate; }
+.home-clean .clean-final-cta::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  padding: 1.5px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--epic-angle), transparent 0deg, rgba(240,198,97,.9) 40deg, transparent 90deg, transparent 180deg, rgba(240,198,97,.5) 220deg, transparent 270deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: epic-orbit 6s linear infinite;
+  pointer-events: none;
+}
+.home-clean .clean-final-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(60% 120% at 85% 50%, rgba(231,173,52,.22), transparent 70%);
+  pointer-events: none;
+}
+@keyframes epic-orbit { to { --epic-angle: 360deg; } }
+
+/* The App Store badge catches the light now and then. */
+.home-clean .clean-hero .clean-store-badge img { position: relative; }
+.home-clean .clean-hero .js-appstore img { animation: epic-glint 6s ease-in-out 2.5s infinite; }
+@keyframes epic-glint {
+  0%, 82%, 100% { box-shadow: 0 0 0 rgba(231,173,52,0); }
+  90% { box-shadow: 0 8px 30px rgba(231,173,52,.45); }
+}
+
+@media (max-width: 760px) {
+  .home-clean .epic-chart { opacity: .6; top: auto; bottom: 0; height: 52%; -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 80%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 80%, transparent 100%); }
+  .home-clean .epic-phone-scan { border-radius: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-clean .clean-hero-visual::before,
+  .home-clean .clean-hero-visual .clean-preview,
+  .home-clean .epic-phone-scan,
+  .home-clean .epic-phone-scan i,
+  .home-clean .epic-caret,
+  .home-clean .clean-final-cta::before,
+  .home-clean .clean-hero .js-appstore img { animation: none !important; }
+  .home-clean .epic-phone-scan { display: none; }
+}

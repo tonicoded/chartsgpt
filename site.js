@@ -550,3 +550,249 @@
   }, { passive: true });
   updateProgress();
 })();
+
+// ── Epic layer: live chart, AI scan, typewriter, spotlight ─────────
+(() => {
+  const page = document.querySelector(".home-clean");
+  const hero = page?.querySelector(".clean-hero");
+  if (!page || !hero) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const isPreview = params.has("theme-preview");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const html = document.documentElement;
+  const isDark = () => html.dataset.chartTheme === "dark";
+
+  // A candlestick chart builds itself behind the hero, then an AI scan
+  // sweeps across it and lays down a trade plan: the product in one loop.
+  // It is an illustration, so it carries labels and never prices.
+  const canvas = document.createElement("canvas");
+  canvas.className = "epic-chart";
+  canvas.setAttribute("aria-hidden", "true");
+  hero.prepend(canvas);
+  const ctx = canvas.getContext("2d");
+
+  let width = 0, height = 0, ratio = 1;
+  let candles = [], plan = null, startedAt = 0, running = false, frame = 0;
+  const CANDLE_MS = 55, SCAN_MS = 1500, LEVEL_MS = 260, HOLD_MS = 4200, FADE_MS = 700;
+
+  const resize = () => {
+    const rect = canvas.getBoundingClientRect();
+    ratio = Math.min(window.devicePixelRatio || 1, 2);
+    width = rect.width; height = rect.height;
+    canvas.width = Math.round(width * ratio);
+    canvas.height = Math.round(height * ratio);
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+  };
+
+  const build = () => {
+    const spacing = width < 700 ? 16 : 22;
+    const count = Math.max(24, Math.floor(width / spacing));
+    const rangeEnd = Math.floor(count * 0.62);
+    let price = 100;
+    const rangeTop = 106, rangeLow = 96;
+    candles = [];
+    for (let i = 0; i < count; i++) {
+      const open = price;
+      let drift;
+      if (i < rangeEnd) {
+        // Coil inside a range, bouncing off its edges.
+        drift = (Math.random() - 0.5) * 4.2;
+        if (price > rangeTop - 1.5) drift -= 2.4;
+        if (price < rangeLow + 1.5) drift += 2.4;
+      } else {
+        // Break out and trend, with shallow pullbacks.
+        drift = (Math.random() - 0.32) * 3.6;
+      }
+      price = open + drift;
+      const high = Math.max(open, price) + Math.random() * 1.6;
+      const low = Math.min(open, price) - Math.random() * 1.6;
+      candles.push({ open, close: price, high, low });
+    }
+    const highs = candles.map((c) => c.high), lows = candles.map((c) => c.low);
+    const max = Math.max(...highs), min = Math.min(...lows);
+    const entry = rangeTop + 1.8;
+    plan = {
+      spacing, max: max + 3, min: min - 3, breakout: rangeEnd,
+      levels: [
+        { key: "Resistance", value: rangeTop, tone: "muted" },
+        { key: "Support", value: rangeLow, tone: "muted" },
+        { key: "Entry", value: entry, tone: "gold" },
+        { key: "Stop", value: (rangeTop + rangeLow) / 2 - 0.5, tone: "down" },
+        { key: "Target", value: Math.min(max + 1, entry + (entry - rangeLow) * 1.6), tone: "up" }
+      ]
+    };
+    startedAt = performance.now();
+  };
+
+  const palette = () => isDark()
+    ? { up: "#E7AD34", down: "rgba(244,241,233,.55)", grid: "rgba(255,255,255,.05)", text: "#F4F1E9", pill: "rgba(17,17,17,.9)", muted: "rgba(244,241,233,.4)", red: "#F06B5F", green: "#3DD68C", gold: "#F0C661" }
+    : { up: "#D49A22", down: "rgba(23,23,23,.45)", grid: "rgba(0,0,0,.05)", text: "#171717", pill: "rgba(255,255,255,.95)", muted: "rgba(23,23,23,.35)", red: "#D9443A", green: "#1A9F5F", gold: "#C88D1F" };
+
+  const draw = (now) => {
+    if (!plan) return;
+    const t = now - startedAt;
+    const c = palette();
+    const top = height * 0.2, bottom = height * 0.9;
+    const y = (v) => bottom - ((v - plan.min) / (plan.max - plan.min)) * (bottom - top);
+    const total = candles.length;
+    const shown = Math.min(total, t / CANDLE_MS);
+    const buildDone = total * CANDLE_MS;
+    const fadeStart = buildDone + SCAN_MS + LEVEL_MS * plan.levels.length + HOLD_MS;
+    const alpha = t > fadeStart ? Math.max(0, 1 - (t - fadeStart) / FADE_MS) : 1;
+
+    ctx.clearRect(0, 0, width, height);
+    ctx.globalAlpha = alpha;
+
+    ctx.strokeStyle = c.grid; ctx.lineWidth = 1;
+    for (let i = 1; i < 6; i++) {
+      const gy = Math.round(top + ((bottom - top) / 6) * i) + 0.5;
+      ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(width, gy); ctx.stroke();
+    }
+
+    const bodyW = Math.max(4, plan.spacing * 0.5);
+    for (let i = 0; i < Math.ceil(shown); i++) {
+      const k = candles[i];
+      const grow = Math.min(1, shown - i);
+      const x = i * plan.spacing + plan.spacing / 2;
+      const close = k.open + (k.close - k.open) * grow;
+      const up = close >= k.open;
+      ctx.strokeStyle = up ? c.up : c.down;
+      ctx.fillStyle = up ? c.up : c.down;
+      ctx.lineWidth = 1.2;
+      ctx.beginPath(); ctx.moveTo(x, y(k.high * grow + Math.max(k.open, close) * (1 - grow))); ctx.lineTo(x, y(k.low * grow + Math.min(k.open, close) * (1 - grow))); ctx.stroke();
+      const yTop = y(Math.max(k.open, close)), h = Math.max(1.5, y(Math.min(k.open, close)) - yTop);
+      if (up) ctx.fillRect(x - bodyW / 2, yTop, bodyW, h);
+      else ctx.strokeRect(x - bodyW / 2 + 0.6, yTop + 0.6, bodyW - 1.2, h - 1.2);
+    }
+
+    // The scan: a gold beam crosses the finished chart.
+    const scanT = (t - buildDone) / SCAN_MS;
+    if (scanT > 0 && scanT < 1.15) {
+      const sx = Math.min(scanT, 1) * width;
+      const beam = ctx.createLinearGradient(sx - 140, 0, sx, 0);
+      beam.addColorStop(0, "rgba(240,198,97,0)");
+      beam.addColorStop(1, isDark() ? "rgba(240,198,97,.22)" : "rgba(212,154,34,.16)");
+      ctx.fillStyle = beam; ctx.fillRect(sx - 140, top - 20, 140, bottom - top + 40);
+      ctx.fillStyle = c.gold; ctx.fillRect(sx - 1, top - 20, 2, bottom - top + 40);
+    }
+
+    // Labels keep at least 26px apart so neighbouring levels stay readable.
+    const labelY = plan.levels.map((level, index) => ({ index, y: y(level.value) })).sort((a, b) => a.y - b.y);
+    for (let i = 1; i < labelY.length; i++) labelY[i].y = Math.max(labelY[i].y, labelY[i - 1].y + 26);
+    const labelAt = [];
+    labelY.forEach(({ index, y: ly }) => { labelAt[index] = ly; });
+
+    // The plan: each level draws in from the left with its label.
+    plan.levels.forEach((level, index) => {
+      const lt = (t - buildDone - SCAN_MS * 0.85 - index * LEVEL_MS) / 520;
+      if (lt <= 0) return;
+      const p = 1 - Math.pow(1 - Math.min(lt, 1), 3);
+      const ly = Math.round(y(level.value)) + 0.5;
+      const color = level.tone === "gold" ? c.gold : level.tone === "down" ? c.red : level.tone === "up" ? c.green : c.muted;
+      const startX = plan.breakout * plan.spacing * 0.35;
+      ctx.strokeStyle = color; ctx.lineWidth = level.tone === "muted" ? 1 : 1.6;
+      ctx.setLineDash(level.tone === "muted" ? [4, 6] : level.tone === "gold" ? [] : [8, 6]);
+      ctx.beginPath(); ctx.moveTo(startX, ly); ctx.lineTo(startX + (width - startX - 8) * p, ly); ctx.stroke();
+      ctx.setLineDash([]);
+      if (lt > 0.6) {
+        ctx.globalAlpha = alpha * Math.min(1, (lt - 0.6) / 0.4);
+        ctx.font = "600 11px Geist, -apple-system, sans-serif";
+        const label = level.key.toUpperCase();
+        const tw = ctx.measureText(label).width;
+        const px = width - tw - 34, py = labelAt[index] - 11;
+        ctx.fillStyle = c.pill; ctx.strokeStyle = color; ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.roundRect(px, py, tw + 20, 22, 11); ctx.fill(); ctx.stroke();
+        ctx.fillStyle = color; ctx.fillText(label, px + 10, py + 15);
+        ctx.globalAlpha = alpha;
+      }
+    });
+
+    ctx.globalAlpha = 1;
+    if (t > fadeStart + FADE_MS + 300) build();
+  };
+
+  const loop = (now) => {
+    if (!running) return;
+    draw(now);
+    frame = requestAnimationFrame(loop);
+  };
+  const start = () => { if (running || reduceMotion) return; running = true; frame = requestAnimationFrame(loop); };
+  const stop = () => { running = false; cancelAnimationFrame(frame); };
+
+  resize(); build();
+  if (reduceMotion) {
+    startedAt = performance.now() - (candles.length * CANDLE_MS + SCAN_MS + LEVEL_MS * 6 + 600);
+    draw(performance.now());
+  } else {
+    new IntersectionObserver(([entry]) => (entry.isIntersecting ? start() : stop())).observe(hero);
+    document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
+  }
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => { resize(); build(); if (reduceMotion) draw(performance.now() + 1e6); }, 150);
+  });
+  new MutationObserver(() => { if (!running) draw(performance.now()); }).observe(html, { attributes: true, attributeFilter: ["data-chart-theme"] });
+
+  // The camera screen gets a scan line moving over it.
+  const visual = hero.querySelector(".clean-hero-visual");
+  const main = visual?.querySelector(".clean-preview-main");
+  if (visual && main) {
+    const scan = document.createElement("div");
+    scan.className = "epic-phone-scan";
+    scan.setAttribute("aria-hidden", "true");
+    scan.innerHTML = "<i></i>";
+    visual.appendChild(scan);
+    const place = () => {
+      Object.assign(scan.style, { left: `${main.offsetLeft}px`, top: `${main.offsetTop}px`, width: `${main.offsetWidth}px`, height: `${main.offsetHeight}px`, transform: getComputedStyle(main).transform });
+    };
+    if (main.complete) place(); else main.addEventListener("load", place);
+    window.addEventListener("resize", place);
+  }
+
+  if (isPreview || reduceMotion) return;
+
+  // Typewriter on the gold words of the English headline.
+  const accent = hero.querySelector("h1 span");
+  const lang = (page.getAttribute("lang") || html.lang || "en").toLowerCase();
+  if (accent && lang.startsWith("en") && accent.textContent.trim() === "trade plan.") {
+    const h1 = accent.closest("h1");
+    h1.setAttribute("aria-label", h1.textContent.replace(/\s+/g, " ").trim());
+    const words = ["trade plan.", "key levels.", "entry zone.", "stop loss."];
+    const text = document.createElement("span");
+    text.className = "epic-typed";
+    text.textContent = words[0];
+    const caret = document.createElement("i");
+    caret.className = "epic-caret";
+    accent.textContent = "";
+    accent.append(text, caret);
+    accent.setAttribute("aria-hidden", "true");
+    let wi = 0, ci = words[0].length, deleting = true;
+    const tick = () => {
+      const word = words[wi];
+      if (deleting) {
+        text.textContent = word.slice(0, --ci);
+        if (ci === 0) { deleting = false; wi = (wi + 1) % words.length; setTimeout(tick, 260); return; }
+        setTimeout(tick, 34);
+      } else {
+        text.textContent = words[wi].slice(0, ++ci);
+        if (ci === words[wi].length) { deleting = true; setTimeout(tick, 2600); return; }
+        setTimeout(tick, 70);
+      }
+    };
+    setTimeout(tick, 3200);
+  }
+
+  // A soft gold light follows the pointer across cards.
+  if (window.matchMedia("(pointer: fine)").matches) {
+    page.querySelectorAll(".clean-tool-card, .clean-learn-grid a, .clean-faq .faq-item, .clean-steps > div").forEach((card) => {
+      card.classList.add("epic-spot");
+      card.addEventListener("pointermove", (event) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty("--mx", `${event.clientX - rect.left}px`);
+        card.style.setProperty("--my", `${event.clientY - rect.top}px`);
+      }, { passive: true });
+    });
+  }
+})();
