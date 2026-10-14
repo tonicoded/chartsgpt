@@ -207,34 +207,6 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
 @keyframes bb-phone-in { from { opacity: 0; transform: perspective(1400px) rotateY(-8deg) translateY(60px); } to { transform: perspective(1400px) rotateY(-8deg); } }
 @keyframes bb-hover { 0%, 100% { transform: perspective(1400px) rotateY(-8deg); } 50% { transform: perspective(1400px) rotateY(-5deg) translateY(-10px); } }
 .bb-phone { position: relative; }
-
-.bb-float {
-  position: absolute;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 18px 12px 12px;
-  border-radius: 20px;
-  background: rgba(19, 24, 37, 0.86);
-  border: 1px solid var(--bb-border);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-}
-.bb-float img { width: 40px; height: 40px; border-radius: 50%; background: var(--bb-bg); border: 1.5px solid var(--bb-gold); padding: 5px; }
-.bb-float i { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(31, 174, 107, 0.14); color: var(--bb-positive); border: 1px solid rgba(31, 174, 107, 0.35); }
-.bb-float i.bb-i-gold { background: var(--bb-gold-soft); color: var(--bb-gold-bright); border-color: var(--bb-gold-edge); }
-.bb-float i svg { width: 18px; height: 18px; }
-.bb-float p { margin: 0; line-height: 1.3; }
-.bb-float b { display: block; white-space: nowrap; font-size: 15px; font-weight: 700; color: var(--bb-text); }
-.bb-float span { font-size: 12.5px; color: var(--bb-text-muted); }
-.bb-float-top { left: 50%; top: 36px; animation: bb-pop .7s cubic-bezier(.2, .9, .3, 1.3) .9s both, bb-bob 7s ease-in-out 1.6s infinite; }
-.bb-float-mid { right: -4%; top: 46%; animation: bb-pop .7s cubic-bezier(.2, .9, .3, 1.3) 1.25s both, bb-bob 9s ease-in-out 2s infinite; }
-.bb-float-bottom { left: 40%; bottom: 36px; animation: bb-pop .7s cubic-bezier(.2, .9, .3, 1.3) 1.6s both, bb-bob 8s ease-in-out 2.3s infinite; }
-@keyframes bb-pop { from { opacity: 0; transform: translateY(14px) scale(0.9); } }
-@keyframes bb-bob { 50% { transform: translateY(-8px); } }
-
 /* Copy: a quiet staggered entrance. */
 .bb-in { animation: bb-up .9s cubic-bezier(.2, .7, .2, 1) var(--d, 0s) both; }
 @keyframes bb-up { from { opacity: 0; transform: translateY(16px); } }
@@ -445,9 +417,7 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
   .bb-feature { padding: 48px; gap: 40px; }
   .bb-stage-phone { width: 260px; }
   .bb-bull-wrap { right: -12%; width: 96%; }
-  .bb-float-mid { display: none; }
-  .bb-float-top { left: 44%; }
-}
+    }
 
 /* Phones: one centred column. The first screen is exactly one screen: the
    copy, the bull and the market strip as its lower edge, kept clear of the
@@ -464,23 +434,19 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
   .bb-hero .bb-tagline { font-size: 10.5px; letter-spacing: 0.12em; margin-bottom: 10px; }
   .bb-lead { font-size: 15.5px; max-width: 23em; }
   .bb-actions { justify-content: center; margin-top: 20px; }
-  /* No phone mockup here: the bull carries the first screen, standing on the
-     gold line as it draws, with two moments floating around it. */
-  .bb-micro, .bb-float-mid, .bb-stage-phone { display: none; }
-  .bb-stage { flex: 1; min-height: 0; height: auto; width: 100%; max-width: 520px; margin: 4px auto 0; }
-  .bb-bull-wrap { inset: 6% -4% 0 -4%; width: auto; }
+  /* The phone stands in front, the bull rises behind it to the right; the
+     phone fades into the market strip so the screen ends cleanly. */
+  .bb-micro { display: none; }
+  .bb-stage { flex: 1; min-height: 0; height: auto; width: 100%; max-width: 520px; margin: 22px auto 0; }
+  .bb-stage::after { content: ""; position: absolute; left: -20px; right: -20px; bottom: 0; height: 26%; z-index: 3; pointer-events: none; background: linear-gradient(180deg, rgba(10, 15, 25, 0), #0A0F19 92%); }
+  .bb-bull-wrap { inset: 4% -1% 0 28%; width: auto; }
   .bb-bull-wrap picture { position: absolute; inset: 0; }
-  .bb-stage-bull { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
-  .bb-float { padding: 8px 14px 8px 8px; gap: 10px; border-radius: 16px; }
-  .bb-float img, .bb-float i { width: 32px; height: 32px; }
-  .bb-float img { padding: 4px; }
-  .bb-float i svg { width: 15px; height: 15px; }
-  .bb-float b { font-size: 13px; }
-  .bb-float span { font-size: 11px; }
-  .bb-float-top { left: 0; right: auto; top: 4%; }
-  .bb-float-bottom { left: auto; right: 0; bottom: 10%; }
-  .bb-glow { inset: 10% -10% 0 -10%; }
-  .bb-line-chart { height: 42%; bottom: 7%; -webkit-mask-image: linear-gradient(90deg, transparent, #000 30%); mask-image: linear-gradient(90deg, transparent, #000 30%); }
+  .bb-stage-bull { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: right 35%; }
+  .bb-stage-phone { width: min(54%, 236px); left: 4%; top: 0; padding: 7px; border-radius: 38px; }
+  .bb-stage-phone img { border-radius: 32px; }
+  .bb-glow { inset: 0 -20% 0 10%; }
+  .bb-line-chart { height: 40%; bottom: 8%; -webkit-mask-image: linear-gradient(90deg, transparent, #000 40%); mask-image: linear-gradient(90deg, transparent, #000 40%); }
+  .bb-lc-now, .bb-lc-grid { display: none; }
 
   .bb-marquee { height: 58px; padding: 0; display: flex; align-items: center; }
   .bb-marquee li { font-size: 13px; gap: 28px; padding-right: 28px; }
@@ -530,8 +496,7 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bb-marquee-track, .bb-float, .bb-carousel-track, .bb-stage-bull, .bb-bull-wrap, .bb-stage-phone, .bb-in, .bb-lc-line, .bb-lc-area, .bb-lc-now, .bb-lc-dot, .bb-lc-ring { animation: none; }
-  .bb-lc-line { stroke-dashoffset: 0; }
+  .bb-marquee-track,   .bb-lc-line { stroke-dashoffset: 0; }
   .bb-lc-area, .bb-lc-dot { opacity: 1; }
   .bb-carousel { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
   .bb-carousel-set[aria-hidden="true"] { display: none; }
