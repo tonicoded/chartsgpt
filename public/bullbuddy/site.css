@@ -207,6 +207,28 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
 @keyframes bb-phone-in { from { opacity: 0; transform: perspective(1400px) rotateY(-8deg) translateY(60px); } to { transform: perspective(1400px) rotateY(-8deg); } }
 @keyframes bb-hover { 0%, 100% { transform: perspective(1400px) rotateY(-8deg); } 50% { transform: perspective(1400px) rotateY(-5deg) translateY(-10px); } }
 .bb-phone { position: relative; }
+/* The landing page opens full screen: the brand sits on the hero, no bar. */
+.bb-nav-overlay { position: absolute; left: 0; right: 0; top: 0; background: none; border: 0; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.bb-nav-overlay .bb-nav-inner { height: 88px; }
+.bb-hero { min-height: 100svh; display: flex; align-items: center; padding: 100px 0 56px; }
+
+.bb-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* Typewriter: each line types out, holds, erases, and hands over to the next.
+   Every word is capped by max-width, so the line is exactly as wide as the
+   letters typed so far and the caret follows them. */
+.bb-typed { display: block; min-height: 1.1em; white-space: nowrap; }
+.bb-words { display: inline-grid; vertical-align: bottom; }
+.bb-words > span { grid-area: 1 / 1; overflow: hidden; max-width: 0; animation: bb-type 17.5s calc(0.6s + var(--i) * 3.5s) infinite both; }
+.bb-caret { display: inline-block; width: 0.08em; height: 0.82em; margin-left: 0.06em; vertical-align: -0.04em; border-radius: 2px; background: var(--bb-gold-bright); animation: bb-blink 1s steps(1) infinite; }
+@keyframes bb-type {
+  0% { max-width: 0; animation-timing-function: steps(17, end); }
+  7% { max-width: var(--w); }
+  16% { max-width: var(--w); animation-timing-function: steps(17, end); }
+  19.5%, 100% { max-width: 0; }
+}
+@keyframes bb-blink { 50% { opacity: 0; } }
+
 /* Copy: a quiet staggered entrance. */
 .bb-in { animation: bb-up .9s cubic-bezier(.2, .7, .2, 1) var(--d, 0s) both; }
 @keyframes bb-up { from { opacity: 0; transform: translateY(16px); } }
@@ -426,7 +448,9 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
   .bb-navlinks { display: none; }
   .bb-nav-inner { justify-content: space-between; height: 60px; }
 
-  .bb-hero { --bb-browser-bar: 44px; height: calc(100svh - 60px - 58px - var(--bb-browser-bar)); min-height: 580px; padding: 22px 0 0; }
+  .bb-nav-overlay .bb-nav-inner { height: 64px; justify-content: center; }
+  .bb-nav-overlay .bb-button-small { display: none; }
+  .bb-hero { --bb-browser-bar: 44px; display: block; height: calc(100svh - 58px - var(--bb-browser-bar)); min-height: 620px; padding: 64px 0 0; }
   .bb-hero > .bb-wrap { height: 100%; }
   .bb-hero-grid { display: flex; flex-direction: column; height: 100%; gap: 0; }
   .bb-hero-copy { text-align: center; display: flex; flex-direction: column; align-items: center; }
@@ -496,9 +520,13 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bb-marquee-track,   .bb-lc-line { stroke-dashoffset: 0; }
+  .bb-marquee-track, .bb-carousel-track, .bb-stage-bull, .bb-bull-wrap, .bb-stage-phone, .bb-in, .bb-words > span, .bb-caret, .bb-lc-line, .bb-lc-area, .bb-lc-now, .bb-lc-dot, .bb-lc-ring { animation: none; }
+  .bb-words > span:not(:first-child) { display: none; }
+  .bb-words > span:first-child { max-width: none; }
+  .bb-lc-line { stroke-dashoffset: 0; }
   .bb-lc-area, .bb-lc-dot { opacity: 1; }
   .bb-carousel { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
   .bb-carousel-set[aria-hidden="true"] { display: none; }
   .bb-card, .bb-button { transition: none; }
 }
+
