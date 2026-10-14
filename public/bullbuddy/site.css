@@ -207,6 +207,11 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
 @keyframes bb-phone-in { from { opacity: 0; transform: perspective(1400px) rotateY(-8deg) translateY(60px); } to { transform: perspective(1400px) rotateY(-8deg); } }
 @keyframes bb-hover { 0%, 100% { transform: perspective(1400px) rotateY(-8deg); } 50% { transform: perspective(1400px) rotateY(-5deg) translateY(-10px); } }
 .bb-phone { position: relative; }
+/* Desktop shows one phone beside the bull; the fan and the bull behind the
+   copy are the phone layout. */
+.bb-fan { display: contents; }
+.bb-fan-side, .bb-copy-bull { display: none; }
+
 /* The landing page opens full screen: the brand sits on the hero, no bar. */
 .bb-nav-overlay { position: absolute; left: 0; right: 0; top: 0; background: none; border: 0; -webkit-backdrop-filter: none; backdrop-filter: none; }
 .bb-nav-overlay .bb-nav-inner { height: 88px; }
@@ -454,23 +459,38 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
   .bb-hero > .bb-wrap { height: 100%; }
   .bb-hero-grid { display: flex; flex-direction: column; height: 100%; gap: 0; }
   .bb-hero-copy { text-align: center; display: flex; flex-direction: column; align-items: center; }
-  .bb-hero h1 { font-size: clamp(36px, 10vw, 56px); margin: 16px 0 10px; }
+  .bb-hero h1 { font-size: clamp(32px, 9vw, 56px); margin: 16px 0 10px; }
   .bb-hero .bb-tagline { font-size: 10.5px; letter-spacing: 0.12em; margin-bottom: 10px; }
   .bb-lead { font-size: 15.5px; max-width: 23em; }
   .bb-actions { justify-content: center; margin-top: 20px; }
-  /* The phone stands in front, the bull rises behind it to the right; the
-     phone fades into the market strip so the screen ends cleanly. */
-  .bb-micro { display: none; }
-  .bb-stage { flex: 1; min-height: 0; height: auto; width: 100%; max-width: 520px; margin: 22px auto 0; }
-  .bb-stage::after { content: ""; position: absolute; left: -20px; right: -20px; bottom: 0; height: 26%; z-index: 3; pointer-events: none; background: linear-gradient(180deg, rgba(10, 15, 25, 0), #0A0F19 92%); }
-  .bb-bull-wrap { inset: 4% -1% 0 28%; width: auto; }
-  .bb-bull-wrap picture { position: absolute; inset: 0; }
-  .bb-stage-bull { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: right 35%; }
-  .bb-stage-phone { width: min(54%, 236px); left: 4%; top: 0; padding: 7px; border-radius: 38px; }
-  .bb-stage-phone img { border-radius: 32px; }
-  .bb-glow { inset: 0 -20% 0 10%; }
-  .bb-line-chart { height: 40%; bottom: 8%; -webkit-mask-image: linear-gradient(90deg, transparent, #000 40%); mask-image: linear-gradient(90deg, transparent, #000 40%); }
-  .bb-lc-now, .bb-lc-grid { display: none; }
+  /* The bull becomes the backdrop of the copy, faint and large; below the
+     buttons three real screens fan out — Today in front, Gold and Ask Buddy
+     tilted behind it — and sink into the market strip. */
+  .bb-micro, .bb-bull-wrap, .bb-line-chart { display: none; }
+  .bb-hero-copy { position: relative; z-index: 1; }
+  .bb-copy-bull {
+    display: block; position: absolute; z-index: 0; left: 50%; top: 40px; width: 118%; max-width: 620px;
+    transform: translateX(-50%); opacity: 0.24; pointer-events: none;
+    -webkit-mask-image: radial-gradient(farthest-side, #000 60%, transparent);
+            mask-image: radial-gradient(farthest-side, #000 60%, transparent);
+    animation: bb-copy-bull 1.6s cubic-bezier(.2, .7, .2, 1) both;
+  }
+  .bb-copy-bull img { width: 100%; filter: saturate(1.15); }
+  @keyframes bb-copy-bull { from { opacity: 0; transform: translateX(-50%) scale(1.06); } }
+  .bb-glow { inset: 0 -10%; }
+
+  .bb-stage { flex: 1; min-height: 0; height: auto; width: 100%; max-width: 520px; margin: 26px auto 0; }
+  .bb-stage::after { content: ""; position: absolute; left: -20px; right: -20px; bottom: 0; height: 30%; z-index: 5; pointer-events: none; background: linear-gradient(180deg, rgba(10, 15, 25, 0), #0A0F19 90%); }
+  .bb-fan { display: block; position: absolute; inset: 0; }
+  .bb-fan .bb-phone { position: absolute; padding: 6px; border-radius: 34px; }
+  .bb-fan .bb-phone img { border-radius: 28px; }
+  .bb-fan .bb-stage-phone { left: 50%; top: 0; width: min(48%, 220px); margin-left: calc(min(48%, 220px) / -2); z-index: 3; animation: bb-fan-c 1s cubic-bezier(.2, .7, .2, 1) .2s both; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 0 0 60px rgba(212, 165, 55, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
+  .bb-fan-side { display: block; top: 9%; width: min(40%, 186px); z-index: 2; filter: brightness(0.62); }
+  .bb-fan-l { left: 50%; margin-left: calc(min(40%, 186px) * -1.12); transform-origin: bottom right; animation: bb-fan-l 1.1s cubic-bezier(.2, .7, .2, 1) .35s both; transform: rotate(-8deg) translateX(-14%); }
+  .bb-fan-r { left: 50%; margin-left: calc(min(40%, 186px) * 0.12); transform-origin: bottom left; animation: bb-fan-r 1.1s cubic-bezier(.2, .7, .2, 1) .35s both; transform: rotate(8deg) translateX(14%); }
+  @keyframes bb-fan-c { from { opacity: 0; transform: translateY(50px); } }
+  @keyframes bb-fan-l { from { opacity: 0; transform: rotate(0deg) translateX(0); } }
+  @keyframes bb-fan-r { from { opacity: 0; transform: rotate(0deg) translateX(0); } }
 
   .bb-marquee { height: 58px; padding: 0; display: flex; align-items: center; }
   .bb-marquee li { font-size: 13px; gap: 28px; padding-right: 28px; }
@@ -520,7 +540,7 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bb-marquee-track, .bb-carousel-track, .bb-stage-bull, .bb-bull-wrap, .bb-stage-phone, .bb-in, .bb-words > span, .bb-caret, .bb-lc-line, .bb-lc-area, .bb-lc-now, .bb-lc-dot, .bb-lc-ring { animation: none; }
+  .bb-marquee-track, .bb-carousel-track, .bb-stage-bull, .bb-bull-wrap, .bb-stage-phone, .bb-in, .bb-copy-bull, .bb-fan .bb-phone, .bb-words > span, .bb-caret, .bb-lc-line, .bb-lc-area, .bb-lc-now, .bb-lc-dot, .bb-lc-ring { animation: none; }
   .bb-words > span:not(:first-child) { display: none; }
   .bb-words > span:first-child { max-width: none; }
   .bb-lc-line { stroke-dashoffset: 0; }
