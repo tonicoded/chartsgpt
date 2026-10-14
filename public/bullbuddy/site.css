@@ -453,9 +453,12 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
   .bb-navlinks { display: none; }
   .bb-nav-inner { justify-content: space-between; height: 60px; }
 
-  .bb-nav-overlay .bb-nav-inner { height: 64px; justify-content: center; }
+  .bb-nav-overlay .bb-nav-inner { height: 76px; justify-content: center; }
+  .bb-site .bb-nav-overlay .bb-brand { gap: 12px; }
+  .bb-site .bb-nav-overlay .bb-brand img { width: 46px; height: 46px; filter: drop-shadow(0 4px 14px rgba(212, 165, 55, 0.35)); }
+  .bb-site .bb-nav-overlay .bb-wordmark { font-size: 21px; letter-spacing: 0.08em; }
   .bb-nav-overlay .bb-button-small { display: none; }
-  .bb-hero { --bb-browser-bar: 44px; display: block; height: calc(100svh - 58px - var(--bb-browser-bar)); min-height: 620px; padding: 64px 0 0; }
+  .bb-hero { --bb-browser-bar: 0px; display: block; height: calc(100svh - 58px - var(--bb-browser-bar)); min-height: 620px; padding: 74px 0 0; }
   .bb-hero > .bb-wrap { height: 100%; }
   .bb-hero-grid { display: flex; flex-direction: column; height: 100%; gap: 0; }
   .bb-hero-copy { text-align: center; display: flex; flex-direction: column; align-items: center; }
@@ -466,8 +469,13 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
   /* The bull becomes the backdrop of the copy, faint and large; below the
      buttons three real screens fan out — Today in front, Gold and Ask Buddy
      tilted behind it — and sink into the market strip. */
-  .bb-micro, .bb-bull-wrap, .bb-line-chart { display: none; }
-  .bb-hero-copy { position: relative; z-index: 1; }
+  .bb-micro, .bb-bull-wrap, .bb-lc-grid { display: none; }
+  /* The gold line rises behind the fan and settles on its live dot top right. */
+  .bb-hero-bg { z-index: 2; }
+  .bb-line-chart { height: 30%; bottom: 33%; -webkit-mask-image: linear-gradient(90deg, transparent 2%, #000 30%); mask-image: linear-gradient(90deg, transparent 2%, #000 30%); }
+  .bb-lc-line { stroke-width: 4; }
+  .bb-lc-area { display: none; }
+  .bb-hero-copy { position: relative; z-index: 4; }
   .bb-copy-bull {
     display: block; position: absolute; z-index: 0; left: 50%; top: 40px; width: 118%; max-width: 620px;
     transform: translateX(-50%); opacity: 0.24; pointer-events: none;
@@ -484,10 +492,10 @@ html:has(.bb-site), body:has(.bb-site) { margin: 0; background: #0A0F19; }
   .bb-fan { display: block; position: absolute; inset: 0; }
   .bb-fan .bb-phone { position: absolute; padding: 6px; border-radius: 34px; }
   .bb-fan .bb-phone img { border-radius: 28px; }
-  .bb-fan .bb-stage-phone { left: 50%; top: 0; width: min(48%, 220px); margin-left: calc(min(48%, 220px) / -2); z-index: 3; animation: bb-fan-c 1s cubic-bezier(.2, .7, .2, 1) .2s both; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 0 0 60px rgba(212, 165, 55, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
-  .bb-fan-side { display: block; top: 9%; width: min(40%, 186px); z-index: 2; filter: brightness(0.62); }
-  .bb-fan-l { left: 50%; margin-left: calc(min(40%, 186px) * -1.12); transform-origin: bottom right; animation: bb-fan-l 1.1s cubic-bezier(.2, .7, .2, 1) .35s both; transform: rotate(-8deg) translateX(-14%); }
-  .bb-fan-r { left: 50%; margin-left: calc(min(40%, 186px) * 0.12); transform-origin: bottom left; animation: bb-fan-r 1.1s cubic-bezier(.2, .7, .2, 1) .35s both; transform: rotate(8deg) translateX(14%); }
+  .bb-fan .bb-stage-phone { left: 50%; top: 0; width: min(56%, 260px); margin-left: calc(min(56%, 260px) / -2); z-index: 3; animation: bb-fan-c 1s cubic-bezier(.2, .7, .2, 1) .2s both; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 0 0 60px rgba(212, 165, 55, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.1); }
+  .bb-fan-side { display: block; top: 8%; width: min(46%, 214px); z-index: 1; filter: brightness(0.62); }
+  .bb-fan-l { left: 50%; margin-left: calc(min(46%, 214px) * -1.12); transform-origin: bottom right; animation: bb-fan-l 1.1s cubic-bezier(.2, .7, .2, 1) .35s both; transform: rotate(-8deg) translateX(-14%); }
+  .bb-fan-r { left: 50%; margin-left: calc(min(46%, 214px) * 0.12); transform-origin: bottom left; animation: bb-fan-r 1.1s cubic-bezier(.2, .7, .2, 1) .35s both; transform: rotate(8deg) translateX(14%); }
   @keyframes bb-fan-c { from { opacity: 0; transform: translateY(50px); } }
   @keyframes bb-fan-l { from { opacity: 0; transform: rotate(0deg) translateX(0); } }
   @keyframes bb-fan-r { from { opacity: 0; transform: rotate(0deg) translateX(0); } }
