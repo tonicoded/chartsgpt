@@ -561,179 +561,19 @@
   const isPreview = params.has("theme-preview");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const html = document.documentElement;
-  const isDark = () => html.dataset.chartTheme === "dark";
 
-  // A candlestick chart builds itself behind the hero, then an AI scan
-  // sweeps across it and lays down a trade plan: the product in one loop.
-  // It is an illustration, so it carries labels and never prices.
-  const canvas = document.createElement("canvas");
-  canvas.className = "epic-chart";
-  canvas.setAttribute("aria-hidden", "true");
-  hero.prepend(canvas);
-  const ctx = canvas.getContext("2d");
-
-  let width = 0, height = 0, ratio = 1;
-  let candles = [], plan = null, startedAt = 0, running = false, frame = 0;
-  const CANDLE_MS = 55, SCAN_MS = 1500, LEVEL_MS = 260, HOLD_MS = 4200, FADE_MS = 700;
-
-  const resize = () => {
-    const rect = canvas.getBoundingClientRect();
-    ratio = Math.min(window.devicePixelRatio || 1, 2);
-    width = rect.width; height = rect.height;
-    canvas.width = Math.round(width * ratio);
-    canvas.height = Math.round(height * ratio);
-    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-  };
-
-  const build = () => {
-    const spacing = width < 700 ? 16 : 22;
-    const count = Math.max(24, Math.floor(width / spacing));
-    const rangeEnd = Math.floor(count * 0.62);
-    let price = 100;
-    const rangeTop = 106, rangeLow = 96;
-    candles = [];
-    for (let i = 0; i < count; i++) {
-      const open = price;
-      let drift;
-      if (i < rangeEnd) {
-        // Coil inside a range, bouncing off its edges.
-        drift = (Math.random() - 0.5) * 4.2;
-        if (price > rangeTop - 1.5) drift -= 2.4;
-        if (price < rangeLow + 1.5) drift += 2.4;
-      } else {
-        // Break out and trend, with shallow pullbacks.
-        drift = (Math.random() - 0.32) * 3.6;
-      }
-      price = open + drift;
-      const high = Math.max(open, price) + Math.random() * 1.6;
-      const low = Math.min(open, price) - Math.random() * 1.6;
-      candles.push({ open, close: price, high, low });
-    }
-    const highs = candles.map((c) => c.high), lows = candles.map((c) => c.low);
-    const max = Math.max(...highs), min = Math.min(...lows);
-    const entry = rangeTop + 1.8;
-    plan = {
-      spacing, max: max + 3, min: min - 3, breakout: rangeEnd,
-      levels: [
-        { key: "Resistance", value: rangeTop, tone: "muted" },
-        { key: "Support", value: rangeLow, tone: "muted" },
-        { key: "Entry", value: entry, tone: "gold" },
-        { key: "Stop", value: (rangeTop + rangeLow) / 2 - 0.5, tone: "down" },
-        { key: "Target", value: Math.min(max + 1, entry + (entry - rangeLow) * 1.6), tone: "up" }
-      ]
-    };
-    startedAt = performance.now();
-  };
-
-  const palette = () => isDark()
-    ? { up: "#E7AD34", down: "rgba(244,241,233,.55)", grid: "rgba(255,255,255,.05)", text: "#F4F1E9", pill: "rgba(17,17,17,.9)", muted: "rgba(244,241,233,.4)", red: "#F06B5F", green: "#3DD68C", gold: "#F0C661" }
-    : { up: "#D49A22", down: "rgba(23,23,23,.45)", grid: "rgba(0,0,0,.05)", text: "#171717", pill: "rgba(255,255,255,.95)", muted: "rgba(23,23,23,.35)", red: "#D9443A", green: "#1A9F5F", gold: "#C88D1F" };
-
-  const draw = (now) => {
-    if (!plan) return;
-    const t = now - startedAt;
-    const c = palette();
-    const top = height * 0.2, bottom = height * 0.9;
-    const y = (v) => bottom - ((v - plan.min) / (plan.max - plan.min)) * (bottom - top);
-    const total = candles.length;
-    const shown = Math.min(total, t / CANDLE_MS);
-    const buildDone = total * CANDLE_MS;
-    const fadeStart = buildDone + SCAN_MS + LEVEL_MS * plan.levels.length + HOLD_MS;
-    const alpha = t > fadeStart ? Math.max(0, 1 - (t - fadeStart) / FADE_MS) : 1;
-
-    ctx.clearRect(0, 0, width, height);
-    ctx.globalAlpha = alpha;
-
-    ctx.strokeStyle = c.grid; ctx.lineWidth = 1;
-    for (let i = 1; i < 6; i++) {
-      const gy = Math.round(top + ((bottom - top) / 6) * i) + 0.5;
-      ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(width, gy); ctx.stroke();
-    }
-
-    const bodyW = Math.max(4, plan.spacing * 0.5);
-    for (let i = 0; i < Math.ceil(shown); i++) {
-      const k = candles[i];
-      const grow = Math.min(1, shown - i);
-      const x = i * plan.spacing + plan.spacing / 2;
-      const close = k.open + (k.close - k.open) * grow;
-      const up = close >= k.open;
-      ctx.strokeStyle = up ? c.up : c.down;
-      ctx.fillStyle = up ? c.up : c.down;
-      ctx.lineWidth = 1.2;
-      ctx.beginPath(); ctx.moveTo(x, y(k.high * grow + Math.max(k.open, close) * (1 - grow))); ctx.lineTo(x, y(k.low * grow + Math.min(k.open, close) * (1 - grow))); ctx.stroke();
-      const yTop = y(Math.max(k.open, close)), h = Math.max(1.5, y(Math.min(k.open, close)) - yTop);
-      if (up) ctx.fillRect(x - bodyW / 2, yTop, bodyW, h);
-      else ctx.strokeRect(x - bodyW / 2 + 0.6, yTop + 0.6, bodyW - 1.2, h - 1.2);
-    }
-
-    // The scan: a gold beam crosses the finished chart.
-    const scanT = (t - buildDone) / SCAN_MS;
-    if (scanT > 0 && scanT < 1.15) {
-      const sx = Math.min(scanT, 1) * width;
-      const beam = ctx.createLinearGradient(sx - 140, 0, sx, 0);
-      beam.addColorStop(0, "rgba(240,198,97,0)");
-      beam.addColorStop(1, isDark() ? "rgba(240,198,97,.22)" : "rgba(212,154,34,.16)");
-      ctx.fillStyle = beam; ctx.fillRect(sx - 140, top - 20, 140, bottom - top + 40);
-      ctx.fillStyle = c.gold; ctx.fillRect(sx - 1, top - 20, 2, bottom - top + 40);
-    }
-
-    // Labels keep at least 26px apart so neighbouring levels stay readable.
-    const labelY = plan.levels.map((level, index) => ({ index, y: y(level.value) })).sort((a, b) => a.y - b.y);
-    for (let i = 1; i < labelY.length; i++) labelY[i].y = Math.max(labelY[i].y, labelY[i - 1].y + 26);
-    const labelAt = [];
-    labelY.forEach(({ index, y: ly }) => { labelAt[index] = ly; });
-
-    // The plan: each level draws in from the left with its label.
-    plan.levels.forEach((level, index) => {
-      const lt = (t - buildDone - SCAN_MS * 0.85 - index * LEVEL_MS) / 520;
-      if (lt <= 0) return;
-      const p = 1 - Math.pow(1 - Math.min(lt, 1), 3);
-      const ly = Math.round(y(level.value)) + 0.5;
-      const color = level.tone === "gold" ? c.gold : level.tone === "down" ? c.red : level.tone === "up" ? c.green : c.muted;
-      const startX = plan.breakout * plan.spacing * 0.35;
-      ctx.strokeStyle = color; ctx.lineWidth = level.tone === "muted" ? 1 : 1.6;
-      ctx.setLineDash(level.tone === "muted" ? [4, 6] : level.tone === "gold" ? [] : [8, 6]);
-      ctx.beginPath(); ctx.moveTo(startX, ly); ctx.lineTo(startX + (width - startX - 8) * p, ly); ctx.stroke();
-      ctx.setLineDash([]);
-      if (lt > 0.6) {
-        ctx.globalAlpha = alpha * Math.min(1, (lt - 0.6) / 0.4);
-        ctx.font = "600 11px Geist, -apple-system, sans-serif";
-        const label = level.key.toUpperCase();
-        const tw = ctx.measureText(label).width;
-        const px = width - tw - 34, py = labelAt[index] - 11;
-        ctx.fillStyle = c.pill; ctx.strokeStyle = color; ctx.lineWidth = 1;
-        ctx.beginPath(); ctx.roundRect(px, py, tw + 20, 22, 11); ctx.fill(); ctx.stroke();
-        ctx.fillStyle = color; ctx.fillText(label, px + 10, py + 15);
-        ctx.globalAlpha = alpha;
-      }
-    });
-
-    ctx.globalAlpha = 1;
-    if (t > fadeStart + FADE_MS + 300) build();
-  };
-
-  const loop = (now) => {
-    if (!running) return;
-    draw(now);
-    frame = requestAnimationFrame(loop);
-  };
-  const start = () => { if (running || reduceMotion) return; running = true; frame = requestAnimationFrame(loop); };
-  const stop = () => { running = false; cancelAnimationFrame(frame); };
-
-  resize(); build();
-  if (reduceMotion) {
-    startedAt = performance.now() - (candles.length * CANDLE_MS + SCAN_MS + LEVEL_MS * 6 + 600);
-    draw(performance.now());
-  } else {
-    new IntersectionObserver(([entry]) => (entry.isIntersecting ? start() : stop())).observe(hero);
-    document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
-  }
-  let resizeTimer;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => { resize(); build(); if (reduceMotion) draw(performance.now() + 1e6); }, 150);
-  });
-  new MutationObserver(() => { if (!running) draw(performance.now()); }).observe(html, { attributes: true, attributeFilter: ["data-chart-theme"] });
+  // One gold price line draws itself behind the hero and settles on a live
+  // dot. Pure SVG + CSS: nothing re-renders on scroll or resize.
+  const chartLine = "M0.0,505.6 C5.8,500.3 23.1,479.3 34.7,473.9 C46.2,468.4 57.8,472.6 69.3,472.9 C80.9,473.1 92.4,470.4 104.0,475.6 C115.6,480.7 127.1,499.4 138.7,503.9 C150.2,508.3 161.8,512.1 173.3,502.4 C184.9,492.6 196.4,459.8 208.0,445.7 C219.6,431.5 231.1,431.2 242.7,417.6 C254.2,404.0 265.8,376.4 277.3,364.0 C288.9,351.6 300.4,351.2 312.0,343.3 C323.6,335.3 335.1,323.9 346.7,316.4 C358.2,308.9 369.8,291.5 381.3,298.3 C392.9,305.1 404.4,355.1 416.0,357.2 C427.6,359.4 439.1,314.7 450.7,311.2 C462.2,307.8 473.8,328.0 485.3,336.5 C496.9,345.0 508.4,347.8 520.0,362.1 C531.6,376.4 543.1,401.7 554.7,422.1 C566.2,442.5 577.8,469.5 589.3,484.3 C600.9,499.1 612.4,505.0 624.0,510.9 C635.6,516.9 647.1,522.3 658.7,520.0 C670.2,517.7 681.8,502.1 693.3,496.9 C704.9,491.6 716.4,495.1 728.0,488.4 C739.6,481.6 751.1,458.9 762.7,456.3 C774.2,453.7 785.8,473.8 797.3,472.6 C808.9,471.5 820.4,457.7 832.0,449.4 C843.6,441.0 855.1,424.2 866.7,422.5 C878.2,420.9 889.8,450.5 901.3,439.7 C912.9,428.9 924.4,377.0 936.0,357.8 C947.6,338.5 959.1,339.8 970.7,324.2 C982.2,308.5 993.8,262.0 1005.3,264.0 C1016.9,265.9 1028.4,320.7 1040.0,336.1 C1051.6,351.6 1063.1,352.5 1074.7,356.5 C1086.2,360.6 1097.8,360.8 1109.3,360.4 C1120.9,360.1 1132.4,361.6 1144.0,354.4 C1155.6,347.3 1167.1,327.3 1178.7,317.7 C1190.2,308.1 1201.8,308.5 1213.3,297.0 C1224.9,285.4 1236.4,251.6 1248.0,248.4 C1259.6,245.2 1271.1,271.1 1282.7,277.9 C1294.2,284.6 1305.8,297.4 1317.3,289.1 C1328.9,280.8 1340.4,243.7 1352.0,227.9 C1363.6,212.1 1375.1,203.4 1386.7,194.4 C1398.2,185.3 1409.8,181.9 1421.3,173.8 C1432.9,165.6 1444.4,141.7 1456.0,145.6 C1467.6,149.5 1479.1,190.7 1490.7,197.2 C1502.2,203.7 1513.8,197.6 1525.3,184.8 C1536.9,171.9 1554.2,130.8 1560.0,120.0";
+  const art = document.createElement("div");
+  art.className = "epic-line";
+  art.setAttribute("aria-hidden", "true");
+  art.innerHTML = `<svg viewBox="0 0 1600 600" preserveAspectRatio="xMaxYMid slice"><defs><linearGradient id="epicArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E7AD34" stop-opacity=".26"/><stop offset="1" stop-color="#E7AD34" stop-opacity="0"/></linearGradient><linearGradient id="epicStroke" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E7AD34" stop-opacity="0"/><stop offset=".3" stop-color="#E7AD34"/><stop offset="1" stop-color="#F6CF6E"/></linearGradient><linearGradient id="epicFade" x1="0" y1="0" x2="1" y2="0"><stop offset=".8" stop-color="#fff"/><stop offset=".975" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="epicMask"><rect width="1600" height="600" fill="url(#epicFade)"/></mask></defs><path class="epic-area" d="${chartLine} L1560,600 L0,600 Z" fill="url(#epicArea)" mask="url(#epicMask)"/><path class="epic-stroke" d="${chartLine}" pathLength="1" fill="none" stroke="url(#epicStroke)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><line class="epic-now" x1="0" y1="120" x2="1600" y2="120"/><circle class="epic-ring" cx="1560" cy="120" r="8"/><circle class="epic-dot" cx="1560" cy="120" r="6"/></svg>`;
+  hero.prepend(art);
+  const glow = document.createElement("div");
+  glow.className = "epic-aura";
+  glow.setAttribute("aria-hidden", "true");
+  hero.prepend(glow);
 
   // The camera screen gets a scan line moving over it.
   const visual = hero.querySelector(".clean-hero-visual");
